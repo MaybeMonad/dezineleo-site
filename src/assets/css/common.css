@@ -1,0 +1,40 @@
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.jc-between {
+  justify-content: space-between;
+}
+
+.jc-evenly {
+  justify-content: space-evenly;
+}
+
+.jc-start {
+  justify-content: flex-start;
+}
+
+.jc-end {
+  justify-content: flex-end;
+}
+
+.al-center {
+  align-items: center;
+}
+
+.section {
+  padding: 40px;
+}
+
+.btn {
+  background: #000;
+  color: #fff;
+  font-family: 'robotobold';
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 100px;
+}

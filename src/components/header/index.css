@@ -1,0 +1,35 @@
+.header {
+  background: #fff;
+  height: 90px;
+  line-height: 90px;
+  border-bottom: 1px solid #dedede;
+  padding: 0 40px;
+}
+
+.header .menu {
+  width: 30vw;
+}
+
+.header .logo {
+  display: inline-flex;
+}
+
+.header img {
+  height: 36px;
+}
+
+.header img,
+.header .menu ul,
+.header .menu li {
+  margin: 0;
+}
+
+.header .menu li{
+  list-style: none;
+  margin-right: 20px;
+  font-family: 'robotobold';
+}
+
+.header .menu li:last-child {
+  margin:0;
+}
