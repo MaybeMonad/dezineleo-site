@@ -1,6 +1,6 @@
-# Gatsby Crash Course
+# Dezineleo's Blog
 
-This is a sample Gatsby website with a Markdown blog. It is the project from the Gatsby JS Crash Course on YouTube by Traversy Media
+This is a just another Gatsby website with a Markdown blog.
 
 ## Install
 

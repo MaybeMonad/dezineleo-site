@@ -6,24 +6,39 @@ import '../assets/css/common.css';
 import '../assets/css/blog.css';
 
 const BlogPage = ({ data }) => (
-  <div className="post-list flex jc-start al-center">
+  <div className="post-list flex jc-start">
     {data.allMarkdownRemark.edges.map((post, index) => {
       const {
         title,
         author,
         date,
         path,
+        categories,
+        tags,
         thumbnail: {
           childImageSharp: { sizes }
         }
       } = post.node.frontmatter;
 
+      const tagItems = tags.map(tag =>
+        <li className="tag" key={tag}>{tag}</li>
+      );
+
+      const catItems = categories.map(cat => <b key={cat}>{cat}</b>);
+
       return (
         <div className="post-card" key={index}>
-          <Img className="thumbnail" sizes={sizes} />
-          <h3>{title}</h3>
-          <small>Posted by {author} on{' '} {date}</small>
-          <Link to={path} className="btn read-more">Read More</Link>
+          <Link to={path}>
+            <div className="top">
+              <div className="time">{date}</div>
+              <Img className="thumbnail" sizes={sizes} />
+            </div>
+            <div className="content">
+              <h3>{title}</h3>
+              <small>Posted by {author} on {catItems}</small>
+              <ul className="tags flex jc-start flex-wrap">{tagItems}</ul>
+            </div>
+          </Link>
         </div>
       );
     })}
@@ -32,7 +47,18 @@ const BlogPage = ({ data }) => (
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      limit: 6
+      sort: {
+        fields: [frontmatter___date],
+        order: DESC
+      }
+      filter: {
+        frontmatter: {
+          published: { eq: true }
+        }
+      }
+    ) {
       edges {
         node {
           id
@@ -48,6 +74,8 @@ export const pageQuery = graphql`
                 }
               }
             }
+            categories
+            tags
           }
         }
       }

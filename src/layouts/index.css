@@ -47,6 +47,7 @@ html {
 }
 body {
   margin: 0;
+  padding: 90px 0 32px 0;
 }
 article,
 aside,
@@ -284,6 +285,7 @@ h2 {
 }
 h3 {
   font-size: 1.38316rem;
+  /* font-size: 4vw; */
 }
 h4 {
   font-family: 'robotoregular', georgia, serif;
@@ -595,5 +597,12 @@ pre tt:after {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  body {
+    margin: 0;
+    padding: 70px 0 90px 0;
   }
 }

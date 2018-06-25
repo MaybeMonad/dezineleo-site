@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .flex-column {
   flex-direction: column;
 }
@@ -28,6 +32,13 @@
 
 .section {
   padding: 40px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.main-section {
+  background: #f7f7f7;
+  min-height: 100vh;
 }
 
 .btn {
