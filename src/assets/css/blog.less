@@ -1,9 +1,38 @@
 .blog-post {
+  max-width: 742px;
+  margin: 0 auto;
+  h1 {
+    margin-bottom: 42px;
+  }
+  h4.post-info {
+    margin: 12px 0;
+    color: #aaa;
+    font-family: 'robotolight';
+  }
   .brief-intro {
     padding: 20px;
     background: #000;
     color: #fff;
     border-radius: 8px;
+  }
+  .blog-content {
+    padding: 36px 0;
+    font-family: 'loraregular';
+    font-size: 19px;
+    line-height: 30px;
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'robotobold';
+      margin: 32px 0 20px 0;
+    }
+    a {
+      font-family: 'robotobold';
+      color: #D0021B;
+      border-bottom: 3px solid rgba(208, 2, 27, 0.12);
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        border-color: #D0021B;
+      }
+    }
   }
 }
 
@@ -20,6 +49,7 @@
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.04);
   overflow: hidden;
+  transition: 0.4s;
   &:nth-child(3n-1) {
     margin: 0 40px 56px;
   }
@@ -50,6 +80,7 @@
       color: #888;
       font-size: 14px;
       margin: 0 0 24px 0;
+      text-transform: uppercase;
     }
     .tags {
       margin: 0;
@@ -62,6 +93,15 @@
         display: inline-block;
         margin: 0 8px 0 0;
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .post-card {
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
     }
   }
 }

@@ -40,6 +40,24 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'lorabold';
+  src: url('../assets/fonts/lora-bold-webfont.woff2') format('woff2'),
+       url('../assets/fonts/lora-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'loraregular';
+  src: url('../assets/fonts/lora-regular-webfont.woff2') format('woff2'),
+       url('../assets/fonts/lora-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -372,6 +390,7 @@ figure {
   margin-bottom: 1.45rem;
 }
 pre {
+  border-radius: 8px;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;

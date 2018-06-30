@@ -9,14 +9,12 @@ export default function Template({ data }) {
 
   return (
     <div className="blog-post">
-      <Link to="/blog">Go Back</Link>
-      <hr />
+      {/* <Link to="/blog">Go Back</Link>
+      <hr /> */}
+      <h4 className="post-info">Posted by <Link to="/about">{author}</Link> on {date}</h4>
       <h1>{title}</h1>
-      <h4>
-        Posted by {author} on {date}
-      </h4>
       <div className="brief-intro">{briefIntro}</div>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
   )
 }

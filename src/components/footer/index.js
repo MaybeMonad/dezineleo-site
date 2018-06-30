@@ -6,7 +6,7 @@ import '../../assets/css/common.css';
 import './index.css';
 
 const Footer = () => (
-  <div className="footer">Designed && Developed by Leo</div>
+  <div className="footer">Get your hands dirty!</div>
 );
 
 export default Footer;
