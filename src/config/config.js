@@ -40,11 +40,16 @@ const bottomMenu = [{
   path: '/about',
 }];
 
-const briefIntro = "Hi there, this is Leo, a web developer as well as a UI designer living in Hangzhou, China.";
+const briefIntro = "Leo, web developer && UI designer, 🇨🇳🇨🇳🇨🇳";
+
+const siteInfo = {
+  title: "The Dezineleo",
+}
 
 export {
   leftMenu,
   rightMenu,
   bottomMenu,
   briefIntro,
+  siteInfo,
 };

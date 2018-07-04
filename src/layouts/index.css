@@ -33,14 +33,6 @@
 }
 
 @font-face {
-  font-family: 'playfair_displayblack';
-  src: url('../assets/fonts/playfairdisplay-black-webfont.woff2') format('woff2'),
-       url('../assets/fonts/playfairdisplay-black-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'lorabold';
   src: url('../assets/fonts/lora-bold-webfont.woff2') format('woff2'),
        url('../assets/fonts/lora-bold-webfont.woff') format('woff');
@@ -65,7 +57,7 @@ html {
 }
 body {
   margin: 0;
-  padding: 90px 0 32px 0;
+  padding: 90px 0 0 0;
 }
 article,
 aside,
@@ -103,6 +95,7 @@ a {
   -webkit-text-decoration-skip: objects;
   color: #333;
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
 }
 a:active,
 a:hover {
@@ -285,14 +278,15 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: inherit;
-  font-family: 'playfair_displayblack', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  color: #000;
+  font-family: 'playfair_displaybold', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   margin: 0 0 0.45rem 0;
   padding: 0;
   line-height: 1.1;
+  letter-spacing: -0.5px;
 }
 
 h1 {
@@ -507,7 +501,7 @@ th {
   font-weight: bold;
 }
 li {
-  margin-bottom: calc(1.45rem / 2);
+  margin-bottom: calc(1.225rem / 2);
 }
 ol li {
   padding-left: 0;
@@ -622,6 +616,6 @@ pre tt:after {
 @media only screen and (max-width: 1120px) {
   body {
     margin: 0;
-    padding: 70px 0 90px 0;
+    padding: 70px 0 70px 0;
   }
 }

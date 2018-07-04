@@ -15,10 +15,12 @@ const BlogPage = ({ data }) => (
         path,
         categories,
         tags,
+        excerpt,
         thumbnail: {
           childImageSharp: { sizes }
         }
       } = post.node.frontmatter;
+      const timeToRead = post.node.timeToRead;
 
       const tagItems = tags.map(tag =>
         <li className="tag" key={tag}>{tag}</li>
@@ -30,13 +32,13 @@ const BlogPage = ({ data }) => (
         <div className="post-card" key={index}>
           <Link to={path}>
             <div className="top">
-              <div className="time">{date}</div>
               <Img className="thumbnail" sizes={sizes} />
             </div>
             <div className="content">
+              <div className="time">{date}</div>
               <h3>{title}</h3>
-              <small>Posted by {author} on {catItems}</small>
-              <ul className="tags flex jc-start flex-wrap">{tagItems}</ul>
+              <small>{excerpt}</small>
+              <div className="time-to-read">{timeToRead} min read</div>
             </div>
           </Link>
         </div>
@@ -62,11 +64,13 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          timeToRead
           frontmatter {
             path
             title
-            date
+            date(formatString: "MMMM DD, YYYY")
             author
+            excerpt
             thumbnail {
               childImageSharp {
                 sizes(maxWidth: 400, maxHeight: 240) {
