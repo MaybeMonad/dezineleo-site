@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import Header from '../components/header/index';
 import { leftMenu, rightMenu, bottomMenu } from '../config/config';
 
+import '../assets/css/prism.css';
 import './index.css';
 import '../assets/css/common.css';
 import Footer from '../components/footer';
@@ -42,10 +43,8 @@ class Layout extends React.Component {
           ]}
         />
         <Header leftMenu={leftMenu} rightMenu={rightMenu} />
-        <div className="main-section">
-          <div className="section">
-            {children()}
-          </div>
+        <div className="main-body">
+          {children()}
         </div>
         {this.state.windowWidth < 1120 && <BottomNav bottomMenu={bottomMenu} />}
         <Footer />

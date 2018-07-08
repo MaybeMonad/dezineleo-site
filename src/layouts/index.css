@@ -33,9 +33,18 @@
 }
 
 @font-face {
-  font-family: 'lorabold';
-  src: url('../assets/fonts/lora-bold-webfont.woff2') format('woff2'),
-       url('../assets/fonts/lora-bold-webfont.woff') format('woff');
+  font-family: 'lorabold_italic';
+  src: url('../assets/fonts/lora-bolditalic-webfont.woff2') format('woff2'),
+       url('../assets/fonts/lora-bolditalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'loraitalic';
+  src: url('../assets/fonts/lora-italic-webfont.woff2') format('woff2'),
+       url('../assets/fonts/lora-italic-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
@@ -47,7 +56,22 @@
        url('../assets/fonts/lora-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+}
 
+@font-face {
+  font-family: 'source_code_prolight';
+  src: url('../assets/fonts/sourcecodepro-light-webfont.woff2') format('woff2'),
+       url('../assets/fonts/sourcecodepro-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source_code_proregular';
+  src: url('../assets/fonts/sourcecodepro-regular-webfont.woff2') format('woff2'),
+       url('../assets/fonts/sourcecodepro-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 html {
@@ -100,6 +124,13 @@ a {
 a:active,
 a:hover {
   outline-width: 0;
+}
+em {
+  font-family: 'loraitalic';
+  background: #000;
+  color: white;
+  padding: 0 8px;
+  border-radius: 3px;
 }
 abbr[title] {
   border-bottom: none;
@@ -396,7 +427,6 @@ pre {
   font-size: 0.85rem;
   line-height: 1.42;
   background: hsla(0, 0%, 0%, 0.04);
-  border-radius: 3px;
   overflow: auto;
   word-wrap: normal;
   padding: 1.45rem;
@@ -493,6 +523,7 @@ b {
 }
 strong {
   font-weight: bold;
+  font-family: 'robotobold';
 }
 dt {
   font-weight: bold;

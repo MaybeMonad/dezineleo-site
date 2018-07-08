@@ -10,7 +10,7 @@ tags: ['DezineLeo', 'Gatsby']
 excerpt: "In this post I’ll give you a quick introduction and an overview of my own thoughts on Gatsby."
 ---
 
-Yo! What's up everybody?! Today is the big day for Dezineleo.com. It's alive! Also, I wanna introduce you the coolest site generator I've ever used, Gatsby!
+Yo! What's up everybody?! Today is the big day for [Dezineleo.com](https://dezineleo.com). It's alive! Also, I wanna introduce you the coolest site generator I've ever used, Gatsby!
 
 ## What is Gatsby?
 [Gatsby](https://www.gatsbyjs.org/) is a blazing fast static site generator for [React](https://reactjs.com). Actually, it is more than that. I’ve tried and struggled with WordPress throughout the years. However, Gatsby might be the ideal solution I’ve been searching for.
@@ -38,12 +38,12 @@ Here is a quick guide to set up your local dev environment.
 
 Open your terminal(I’m a MAC OSX user) and type in.
 
-```
+```javascript
 // Install gatsby-cli
 npm install --global gatsby-cli
 
 // Create your first gatsby site
-gatsby new your-site
+gatsby new yoursite
 
 // Switch to your site folder
 cd gatsby-site

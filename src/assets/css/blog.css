@@ -65,6 +65,9 @@
 .blog-post .blog-content a:hover {
   border-color: #D0021B;
 }
+.blog-post .blog-content a.anchor {
+  border: 0;
+}
 .blog-post .tags {
   font-size: 16px;
 }

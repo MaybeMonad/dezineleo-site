@@ -21,35 +21,37 @@ export default function Template({ data }) {
   } = post.frontmatter;
 
   const tagList = tags.map(item => (
-      <Link to={`/${item}`}>{item}</Link>
+      <Link to={`/${item}`} key={item}>{item}</Link>
   ))
 
   return (
-    <div className="blog-post">
-      <Helmet
-        title={title + ' | ' + siteInfo.title}
-        meta={[
-          {
-            name: 'description',
-            content: excerpt,
-          },
-          { name: 'keywords', content: tags },
-        ]}
-      />
-      {/* <Link to="/blog">Go Back</Link>
-      <hr /> */}
-      <div className="author flex jc-start al-center">
-        <img className="avatar" src={avatar} />
-        <div className="author-info">
-          <Link className="name" to="/about">{author}</Link>
-          <div className="intro">{briefIntro}</div>
-          <div className="date">{timeToRead} min read · {date}</div>
+    <div className="section">
+      <div className="blog-post">
+        <Helmet
+          title={title + ' | ' + siteInfo.title}
+          meta={[
+            {
+              name: 'description',
+              content: excerpt,
+            },
+            { name: 'keywords', content: tags },
+          ]}
+        />
+        {/* <Link to="/blog">Go Back</Link>
+        <hr /> */}
+        <div className="author flex jc-start al-center">
+          <img className="avatar" src={avatar} />
+          <div className="author-info">
+            <Link className="name" to="/about">{author}</Link>
+            <div className="intro">{briefIntro}</div>
+            <div className="date">{timeToRead} min read · {date}</div>
+          </div>
         </div>
+        <h1>{title}</h1>
+        <Img className="featured-img" sizes={sizes} />
+        <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="tags">Tagged with {tagList}</div>
       </div>
-      <h1>{title}</h1>
-      <Img className="featured-img" sizes={sizes} />
-      <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-      <div className="tags">Tagged with {tagList}</div>
     </div>
   )
 }
