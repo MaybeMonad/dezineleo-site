@@ -126,11 +126,11 @@ a:hover {
   outline-width: 0;
 }
 em {
-  font-family: 'loraitalic';
   background: #000;
   color: white;
-  padding: 0 8px;
+  padding: 2px 8px;
   border-radius: 3px;
+  font: 88.5%/1.45em 'loraitalic';
 }
 abbr[title] {
   border-bottom: none;
@@ -456,14 +456,10 @@ fieldset {
   margin-bottom: 1.45rem;
 }
 blockquote {
-  margin-left: 1.45rem;
-  margin-right: 1.45rem;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  border-left: 3px solid #000;
+  margin: 0 0 1.45rem 0;
+  padding: 0 1.45rem;
+  font-family: 'loraitalic';
 }
 form {
   margin-left: 0;
