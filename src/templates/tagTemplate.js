@@ -12,19 +12,21 @@ const Tags = ({ pathContext, data }) => {
   } tagged with "${tag}"`;
 
   return (
-    <div>
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { path, title } = node.frontmatter;
-          return (
-            <li key={path}>
-              <Link to={path}>{title}</Link>
-            </li>
-          );
-        })}
-      </ul>
-      <Link to="/tags">All tags</Link>
+    <div className="main-section">
+      <div className="section">
+        <h1>{tagHeader}</h1>
+        <ul>
+          {edges.map(({ node }) => {
+            const { path, title } = node.frontmatter;
+            return (
+              <li key={path}>
+                <Link to={path}>{title}</Link>
+              </li>
+            );
+          })}
+        </ul>
+        <Link to="/tags">All tags</Link>
+      </div>
     </div>
   );
 };

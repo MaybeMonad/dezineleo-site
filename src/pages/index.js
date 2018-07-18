@@ -1,4 +1,6 @@
 import React from 'react'
+
+// Components
 import Link from 'gatsby-link'
 
 const IndexPage = () => (
@@ -10,4 +12,4 @@ const IndexPage = () => (
   </div>
 )
 
-export default IndexPage
+export default IndexPage;
