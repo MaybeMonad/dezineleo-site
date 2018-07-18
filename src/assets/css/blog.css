@@ -109,12 +109,10 @@
   line-height: 1.56rem;
 }
 .post-card .time {
-  padding: 0 16px;
-  color: #fff;
-  font-size: 12px;
-  font-family: 'robotoregular';
+  color: #D0021B;
+  font-size: 13px;
+  font-family: 'robotobold';
   border-radius: 100px;
-  background: #D0021B;
   z-index: 9;
   display: inline-block;
   margin: 0 0 12px 0;
@@ -147,8 +145,8 @@
   .post-card:nth-child(3n) {
     margin: 0 0 56px;
   }
-  .post-card:nth-child(2n-1) {
-    margin: 0 40px 56px 0;
+  .post-card:nth-child(3n-1) {
+    margin: 0 0 56px 0;
   }
 }
 @media only screen and (max-width: 560px) {

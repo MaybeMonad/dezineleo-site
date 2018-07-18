@@ -40,7 +40,7 @@ const bottomMenu = [{
   path: '/about',
 }];
 
-const briefIntro = "Leo, web developer && UI designer, 🇨🇳🇨🇳🇨🇳";
+const briefIntro = "Leo, web developer && UI designer 🇨🇳";
 
 const siteInfo = {
   title: "The Dezineleo",

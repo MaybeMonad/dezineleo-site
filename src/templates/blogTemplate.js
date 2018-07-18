@@ -1,8 +1,16 @@
 import React from 'react';
+
+// Utilities
+import kebabCase from "lodash/kebabCase";
+
+// Components
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
+
+// Configurations
 import { briefIntro, siteInfo } from '../config/config';
+
 import '../assets/css/blog.css';
 import avatar from '../assets/imgs/avatars/avatar_01.jpg'
 
@@ -20,8 +28,8 @@ export default function Template({ data }) {
     }
   } = post.frontmatter;
 
-  const tagList = tags.map(item => (
-      <Link to={`/${item}`} key={item}>{item}</Link>
+  const tagList = tags.map(tag => (
+      <Link to={`/tags/${kebabCase(tag)}`} key={tag}>{tag}</Link>
   ))
 
   return (
@@ -37,8 +45,6 @@ export default function Template({ data }) {
             { name: 'keywords', content: tags },
           ]}
         />
-        {/* <Link to="/blog">Go Back</Link>
-        <hr /> */}
         <div className="author flex jc-start al-center">
           <img className="avatar" src={avatar} />
           <div className="author-info">

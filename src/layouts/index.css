@@ -126,11 +126,11 @@ a:hover {
   outline-width: 0;
 }
 em {
-  background: #000;
-  color: white;
-  padding: 2px 8px;
+  background: #282c34;
+  color: #ABB2BF;
+  padding: 1px 8px;
   border-radius: 3px;
-  font: 88.5%/1.45em 'loraitalic';
+  font: 88.5%/1.45em 'source_code_prolight', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 abbr[title] {
   border-bottom: none;

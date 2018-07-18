@@ -6,11 +6,21 @@ author: "Leo"
 thumbnail: "./thumbnail.jpg"
 published: true
 categories: ['Tutorial', 'Gatsby']
-tags: ['DezineLeo', 'Gatsby']
+tags: ['Dezineleo', 'Gatsby']
 excerpt: "In this post I’ll give you a quick introduction and an overview of my own thoughts on Gatsby."
 ---
 
 Yo! What's up everybody?! Today is the big day for [Dezineleo.com](https://dezineleo.com). It's alive! Also, I wanna introduce you the coolest site generator I've ever used, Gatsby!
+
+Topics I gonna cover:
+
+- [What is Gatsby?](#what-is-gatsby)
+- [Why Gatsby?](#why-gatsby)
+- [How to start your own Gatsby site?](#how-to-start-your-own-gatsby-site)
+- [Add a markdown page](#add-a-markdown-page)
+- [Deploy your site](#deploy-your-site)
+- [In Conclusion](#in-conclusion)
+- [Ready to get your hands dirty?](#ready-to-get-your-hands-dirty)
 
 ## What is Gatsby?
 [Gatsby](https://www.gatsbyjs.org/) is a blazing fast static site generator for [React](https://reactjs.com). Actually, it is more than that. I’ve tried and struggled with WordPress throughout the years. However, Gatsby might be the ideal solution I’ve been searching for.
@@ -38,25 +48,75 @@ Here is a quick guide to set up your local dev environment.
 
 Open your terminal(I’m a MAC OSX user) and type in.
 
-```javascript
-// Install gatsby-cli
+```bash
+# Install gatsby-cli
 npm install --global gatsby-cli
 
-// Create your first gatsby site
+# Create your first gatsby site
 gatsby new yoursite
 
-// Switch to your site folder
+# Switch to your site folder
 cd gatsby-site
 
-// Boom, your local site will be alive by default at localhost:8000
+# Boom, your local site will be alive by default at localhost:8000
 gatsby develop
 
-// Production build
+# Production build
 gatsby build
 
-// Test before deploy your code
+# Test before deploy your code
 gatsby serve
 ```
+
+## Add a markdown page
+
+Make sure you've already installed *gatsby-source-filesystem* plugin correctly. If not, please follow the steps.
+
+```bash
+# install gatsby-source-filesystem plugin
+npm i --save gatsby-source-filesystem
+```
+
+Open *gatsby-config.js* and add the plugin.
+
+```javascript
+plugins: [
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      path: `${__dirname}/path/to/markdown/files`,
+      name: "markdown-pages",
+    },
+  },
+];
+```
+
+Then we should transform the markdown files.
+
+```bash
+# install gatsby-transformer-remark plugin
+npm i --save gatsby-transformer-remark
+```
+
+```javascript
+// update gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      path: `${__dirname}/path/to/markdown/files`,
+      name: "markdown-pages",
+    },
+  },
+  `gatsby-transformer-remark`,
+];
+```
+
+Then we should create a *template* for the markdown data. Firstly, Create a folder named *templates* in the */src* directory. Secondly, create a *blogTemplate.js* inside that folder.
+
+
+
+More info: [Adding Markdown Pages](https://www.gatsbyjs.org/docs/adding-markdown-pages/)
 
 ## Deploy your site
 You can use your favorite hosting to host your site. Right now I’m using [Vultr](https://www.vultr.com/?ref=7443872) to host dezineleo.com. So far so good. Later I’ll write an article about how to choose your hosting.

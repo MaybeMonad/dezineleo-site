@@ -6,15 +6,15 @@ author: "Leo"
 thumbnail: "./thumbnail.jpg"
 published: true
 categories: ['Coding', 'Frontend']
-tags: ['ES6', 'React', 'ECMAScript']
-excerpt: "In this post I’ll give you a full list to basic items of ES6 to start your React-learning-journey."
+tags: ['ES6', 'React', 'ECMAScript', 'JavaScript']
+excerpt: "In this post I’ll give you a full list to basic items of ES6 to boost your React-learning-journey."
 ---
 
 I’ve learned React for a while and found out that if you wanna have a quick start for React, you need have a minimal knowledge about ES6 firstly.
 
 I picked some of the most basic items from ES6 to help you skyrocket right now.
 
-Topics I’m gonna cover in this article.
+Topics I gonna cover in this article.
 
 - [What is ES6?](#what-is-es6)
 - [Let and Const](#let-and-const)

@@ -23,12 +23,8 @@ const BlogPage = ({ data }) => (
             }
           } = post.node.frontmatter;
           const timeToRead = post.node.timeToRead;
-
-          const tagItems = tags.map(tag =>
-            <li className="tag" key={tag}>{tag}</li>
-          );
-
           const catItems = categories.map(cat => <b key={cat}>{cat}</b>);
+          const tagItems = tags.map(tag => <li className="tag" key={tag}>{tag}</li>);
 
           return (
             <div className="post-card" key={index}>
