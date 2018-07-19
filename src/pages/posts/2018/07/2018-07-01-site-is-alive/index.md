@@ -81,7 +81,10 @@ Make sure you've already installed *gatsby-source-filesystem* plugin correctly. 
 More info: [Adding Markdown Pages](https://www.gatsbyjs.org/docs/adding-markdown-pages/)
 
 ## Deploy your site
+
 You can use your favorite hosting to host your site. Right now I’m using [Vultr](https://www.vultr.com/?ref=7443872) to host dezineleo.com. So far so good. Later I’ll write an article about how to choose your hosting.
+
+[Deploy to Netlify](https://www.gatsbyjs.org/docs/deploy-gatsby/#netlify)
 
 ## In Conclusion
 With modern Javascript, React’s component model, and Progressive Web App features built in, Gatsby is a compelling alternative to traditional CMS site building.
