@@ -72,49 +72,11 @@ gatsby serve
 
 Make sure you've already installed *gatsby-source-filesystem* plugin correctly. If not, please follow the steps.
 
-```bash
-# install gatsby-source-filesystem plugin
-npm i --save gatsby-source-filesystem
-```
-
-Open *gatsby-config.js* and add the plugin.
-
-```javascript
-plugins: [
-  {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      path: `${__dirname}/path/to/markdown/files`,
-      name: "markdown-pages",
-    },
-  },
-];
-```
-
-Then we should transform the markdown files.
-
-```bash
-# install gatsby-transformer-remark plugin
-npm i --save gatsby-transformer-remark
-```
-
-```javascript
-// update gatsby-config.js
-plugins: [
-  {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      path: `${__dirname}/path/to/markdown/files`,
-      name: "markdown-pages",
-    },
-  },
-  `gatsby-transformer-remark`,
-];
-```
-
-Then we should create a *template* for the markdown data. Firstly, Create a folder named *templates* in the */src* directory. Secondly, create a *blogTemplate.js* inside that folder.
-
-
+1. Install *gatsby-source-filesystem* and *gatsby-transformer-remark* plugin.
+2. Add these two plugins to **gatsby-config.js**.
+3. Create a **template** like **blogTemplate.js** to set up your blog post page.
+4. Use GraphQL to get markdown data.
+5. Update your **gatsby-node.js** to create static page.
 
 More info: [Adding Markdown Pages](https://www.gatsbyjs.org/docs/adding-markdown-pages/)
 
@@ -122,6 +84,8 @@ More info: [Adding Markdown Pages](https://www.gatsbyjs.org/docs/adding-markdown
 You can use your favorite hosting to host your site. Right now I’m using [Vultr](https://www.vultr.com/?ref=7443872) to host dezineleo.com. So far so good. Later I’ll write an article about how to choose your hosting.
 
 ## In Conclusion
+With modern Javascript, React’s component model, and Progressive Web App features built in, Gatsby is a compelling alternative to traditional CMS site building.
+
 Gatsby may not be the ideal solution for your project right now. But I thoroughly recommend giving Gatsby a go and see where Gatsby can take us next.
 
 ## Ready to get your hands dirty?
@@ -129,6 +93,6 @@ Gatsby may not be the ideal solution for your project right now. But I thoroughl
 2. [React | A JavaScript library for building user interfaces](https://reactjs.org/)
 3. [Gatsby.js Tutorial | GatsbyJS](https://www.gatsbyjs.org/tutorial/)
 4. [JAMstack | JavaScript, APIs, and Markup](https://jamstack.org/)
-5. [Gatsby Tutorials | YouTube](https://www.youtube.com/watch?v=b2H7fWhQcdE&list=PLLnpHn493BHHfoINKLELxDch3uJlSapxg)
+5. [Gatsby Tutorials | YouTube](https://www.youtube.com/playlist?list=PLT_i4XJaEf8vSP_ludWfdKvrtQT9W7-sO)
 6. [KNW Photography - Digital portfolio site based on Gatsby](https://github.com/ryanwiemer/knw)
 7. [Migration to GatsbyJS and JAM stack from WordPress](https://www.gatsbyjs.org/blog/2018-03-29-migration-from-wordpress-to-gatsby/)

@@ -20,7 +20,7 @@ const rightMenu = [{
   path: '/ins',
 }, {
   name: 'Dribbble',
-  path: '/dribbble',
+  path: 'https://dribbble.com/DezineLeo',
 }, {
   name: 'Be',
   path: '/behance',

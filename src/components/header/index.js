@@ -38,9 +38,19 @@ class Header extends React.Component {
     );
   
     // Right Menu
-    const rightMenuItems = rightMenu.map(({name, path}) => 
-      <li key={name}><Link to={path}>{name}</Link></li>
-    );
+    const rightMenuItems = rightMenu.map(({name, path}) => {
+      const internal = /^\/(?!\/)/.test(path);
+
+      if (internal) {
+        return (
+          <li key={name}><Link to={path}>{name}</Link></li>
+        );
+      }
+
+      return (
+        <li key={name}><a href={path}>{name}</a></li>
+      );
+    });
   
     const mobileMenu = (
       <div className="header mobile-header flex al-center jc-between">
