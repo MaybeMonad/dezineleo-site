@@ -14,7 +14,7 @@ const leftMenu = [{
 
 const rightMenu = [{
   name: 'GitHub',
-  path: '/github',
+  path: 'https://github.com/DezineLeo',
 }, {
   name: 'Ins',
   path: '/ins',

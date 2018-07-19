@@ -1,21 +1,14 @@
 # Dezineleo's Blog
 
-This is a just another Gatsby website with a Markdown blog.
+This is leo's personal blog, which mainly focuses on **Web Design** and **Web Development**.
 
-## Install
+## Articles
 
-Make sure that you have the Gatsby CLI program installed:
+1. [Start your blazing fast static site based on GatsbyJS](https://dezineleo.com/posts/2018/07/site-is-alive)
+2. [ES6 knowledge map for React Beginner](https://dezineleo.com/posts/2018/07/es6-knowledge-map-for-react-beginner)
+3. [Regular expression in JavaScript](https://dezineleo.com/posts/2018/07/regular-expression-in-javascript)
 
-```sh
-npm install -g gatsby-cli
-```
+## Based on GatsbyJS
 
-Install the dependencies:
+[GatsbyJS](https://www.gatsbyjs.org/)
 
-```sh
-npm install
-```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
