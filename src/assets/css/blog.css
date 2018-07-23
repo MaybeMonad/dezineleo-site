@@ -142,11 +142,11 @@
   .post-card {
     width: calc((100% - 40px)/2);
   }
-  .post-card:nth-child(3n) {
-    margin: 0 0 56px;
-  }
-  .post-card:nth-child(3n-1) {
+  .post-card:nth-child(2n) {
     margin: 0 0 56px 0;
+  }
+  .post-card:nth-child(2n-1) {
+    margin-right: 40px;
   }
 }
 @media only screen and (max-width: 560px) {
