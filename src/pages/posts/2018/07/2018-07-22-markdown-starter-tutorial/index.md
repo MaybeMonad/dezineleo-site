@@ -14,7 +14,7 @@ Dude, it's 2018! Please markdown your f**kin coding life.
 
 Look, I'm using markdown to write my blog right now. It's an incredible powerful and lightweight way to write rich content. Websites like [GitHub](https://github.com) and [Reddit](https://reddit.com) are using Markdown to style their comments.
 
-It seems a little daunting at the beginning, but you might be suprised how fast and easy
+It seems a little daunting at the beginning, but you might be suprised how fast and efficient it is to content creation.
 
 Here is a quick preview of the topics.
 - [What is Markdown?](#what-is-markdown)
