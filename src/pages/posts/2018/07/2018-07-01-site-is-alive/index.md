@@ -5,6 +5,7 @@ title: "Start your blazing fast static site based on GatsbyJS"
 author: "Leo"
 thumbnail: "./thumbnail.jpg"
 published: true
+type: "post"
 categories: ['Tutorial', 'Gatsby']
 tags: ['Dezineleo', 'Gatsby']
 excerpt: "In this post I’ll give you a quick introduction and an overview of my own thoughts on Gatsby."
@@ -70,9 +71,9 @@ gatsby serve
 
 ## Add a markdown page
 
-Make sure you've already installed *gatsby-source-filesystem* plugin correctly. If not, please follow the steps.
+Make sure you've already installed `gatsby-source-filesystem` plugin correctly. If not, please follow the steps.
 
-1. Install *gatsby-source-filesystem* and *gatsby-transformer-remark* plugin.
+1. Install `gatsby-source-filesystem` and `gatsby-transformer-remark` plugin.
 2. Add these two plugins to **gatsby-config.js**.
 3. Create a **template** like **blogTemplate.js** to set up your blog post page.
 4. Use GraphQL to get markdown data.

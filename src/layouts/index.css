@@ -126,11 +126,7 @@ a:hover {
   outline-width: 0;
 }
 em {
-  background: #282c34;
-  color: #ABB2BF;
-  padding: 1px 8px;
-  border-radius: 3px;
-  font: 88.5%/1.45em 'source_code_prolight', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: 'lorabold_italic';
 }
 abbr[title] {
   border-bottom: none;
@@ -317,7 +313,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.45rem 0;
   padding: 0;
   line-height: 1.1;
-  letter-spacing: -0.5px;
+  /* letter-spacing: -0.5px; */
 }
 
 h1 {
@@ -403,6 +399,9 @@ p {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+}
+p:last-child {
+  margin: 0;
 }
 figure {
   margin-left: 0;

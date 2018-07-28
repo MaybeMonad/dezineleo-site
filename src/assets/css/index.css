@@ -1,0 +1,12 @@
+.about-leo {
+  margin-bottom: 56px;
+  padding: 48px;
+  background: #f7f7f7;
+  border-radius: 8px;
+}
+.about-leo h1 {
+  font-size: 2.14rem;
+}
+.about-leo p {
+  font-size: 1.2rem;
+}

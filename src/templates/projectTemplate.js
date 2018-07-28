@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Utilities
-import kebabCase from "lodash";
+import kebabCase from "lodash/kebabCase";
 
 // Components
 import Helmet from 'react-helmet';
@@ -11,7 +11,7 @@ import Img from 'gatsby-image';
 // Configurations
 import { briefIntro, siteInfo } from '../config/config';
 
-import '../assets/css/blog.css';
+import '../assets/css/portfolio.css';
 import avatar from '../assets/imgs/avatars/avatar_01.jpg'
 
 export default function Template({ data }) {
@@ -56,18 +56,15 @@ export default function Template({ data }) {
         <h1>{title}</h1>
         <Img className="featured-img" sizes={sizes} />
         <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-        <div className="tags">Tagged with {tagList}</div>
+        {/* <div className="tags">Tagged with {tagList}</div> */}
       </div>
     </div>
   )
 }
 
 export const postQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: {
-      path: { eq: $path }
-      type: { eq: "post" }
-    }) {
+  query ProjectByPath($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       timeToRead
       frontmatter {

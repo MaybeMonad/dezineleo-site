@@ -4,6 +4,7 @@ const _ = require('lodash');
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
   const postTemplate = path.resolve('src/templates/blogTemplate.js');
+  const projectTemplate = path.resolve('src/templates/projectTemplate.js');
   const tagTemplate = path.resolve('src/templates/tagTemplate.js');
 
   return graphql(`
@@ -36,11 +37,30 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     // Create post detail pages
     posts.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: postTemplate,
-      });
+      console.log(/^\/projects\//.test(node.frontmatter.path))
+      if (/^\/projects\//.test(node.frontmatter.path)) {
+        createPage({
+          path: node.frontmatter.path,
+          component: projectTemplate,
+        })
+      } else {
+        createPage({
+          path: node.frontmatter.path,
+          component: postTemplate,
+        });
+      }
+      
     });
+
+    // const projects = res.data.allMarkdownRemark.edges;
+    
+    // create project detial pages
+    // projects.forEach(({ node }) => {
+    //   createPage({
+    //     path: node.frontmatter.path,
+    //     component: projectTemplate,
+    //   })
+    // })
 
     // Tag pages:
     let tags = [];

@@ -5,6 +5,7 @@ title: "Regular expression in JavaScript"
 author: "Leo"
 thumbnail: "./thumbnail.jpg"
 published: true
+type: "post"
 categories: ['Coding', 'Frontend']
 tags: ['Regular Expression', 'JavaScript', 'RegExp']
 excerpt: "In this post I’ll tell you how to use regular expression in JavaScript."
@@ -42,7 +43,7 @@ In addition to Chrome console, you can also test the regex code in [Regex101](ht
 
 ```javascript
 // Set up the target string
-// Now if we want to match 'dezineleo', you can use two different
+// Now if we want to match 'dezineleo', you can use two different expression
 const targetStr = 'Leo is nobody and his blog dezineleo.com is not cool.';
 const reg1 = new RegExp('dezineleo', 'g'); // flags 'g' is not a must
 const reg2 = /dezineleo/;
@@ -71,7 +72,7 @@ reg1.test(username1); // output is true
 reg2.test(username2); // output is false
 ```
 
-Don't worry, I'll explain the code piece by piece. As you can see above, there're some special characters like *^* *[a-zA-Z]* *+* *$* :
+Don't worry, I'll explain the code piece by piece. As you can see above, there're some special characters like `^[a-zA-Z]+$` :
 
 ```javascript
 '^…$' -	Starts and ends

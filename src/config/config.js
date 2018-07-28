@@ -17,13 +17,13 @@ const rightMenu = [{
   path: 'https://github.com/DezineLeo',
 }, {
   name: 'Ins',
-  path: '/ins',
+  path: 'https://www.instagram.com/dezineleo/',
 }, {
   name: 'Dribbble',
   path: 'https://dribbble.com/DezineLeo',
 }, {
   name: 'Be',
-  path: '/behance',
+  path: 'https://www.behance.net/dezineleo',
 }];
 
 const bottomMenu = [{

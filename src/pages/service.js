@@ -1,8 +1,8 @@
 import React from 'react'
 
 const ServicesPage = () => (
-  <div>
-    <h1>Our Services</h1>
+  <div className="section">
+    <h1>Services</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
       adipisci, voluptatum, nisi velit praesentium error quia explicabo voluptas

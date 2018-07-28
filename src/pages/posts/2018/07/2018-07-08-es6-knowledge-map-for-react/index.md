@@ -5,6 +5,7 @@ title: "ES6 knowledge map for React Beginner"
 author: "Leo"
 thumbnail: "./thumbnail.jpg"
 published: true
+type: "post"
 categories: ['Coding', 'Frontend']
 tags: ['ES6', 'React', 'ECMAScript', 'JavaScript']
 excerpt: "In this post I’ll give you a full list to basic items of ES6 to boost your React-learning-journey."

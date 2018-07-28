@@ -5,6 +5,7 @@ title: "Markdown tutorial for novice starters"
 author: "Leo"
 thumbnail: "./thumbnail.jpg"
 published: true
+type: "post"
 categories: ['Beginner Series']
 tags: ['Markdown', 'Beginner', 'novice']
 excerpt: "In this post I’ll tell you how to use Markdown to skyrocket your content producing."
