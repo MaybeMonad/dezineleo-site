@@ -6,7 +6,7 @@ author: "Leo"
 thumbnail: "./thumbnail.jpg"
 published: true
 type: "post"
-categories: ['Coding', 'Frontend']
+categories: ['Development', 'Frontend']
 tags: ['Regular Expression', 'JavaScript', 'RegExp']
 excerpt: "In this post I’ll tell you how to use regular expression in JavaScript."
 ---

@@ -28,6 +28,7 @@
   list-style: none;
   margin-right: 20px;
   font-family: 'robotobold';
+  font-size: 18px;
 }
 .header .menu li:last-child {
   margin: 0;

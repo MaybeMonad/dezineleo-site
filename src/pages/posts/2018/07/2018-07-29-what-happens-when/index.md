@@ -6,8 +6,8 @@ author: "Leo"
 thumbnail: "./thumbnail.jpg"
 published: true
 type: "post"
-categories: ['Beginner Series']
-tags: ['HTTP', 'TCP']
+categories: ['Development', 'Beginner Series']
+tags: ['HTTP', 'TCP', 'Network']
 excerpt: "In this post I’ll try to answer the age-old interview question."
 ---
 
