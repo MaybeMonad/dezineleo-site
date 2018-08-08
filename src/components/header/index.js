@@ -58,7 +58,7 @@ class Header extends React.Component {
         <div className={`menu mobile-menu ${this.state.showMenu ? 'show' : ''}`}>
           <div className="menu-icon" onClick={this.showMenu}>Follow Me</div>
           <div className="menu-items" onClick={this.showMenu}>
-            <ul className="flex jc-start flex-wrap">{rightMenuItems}</ul>
+            <ul className="flex al-center flex-wrap">{rightMenuItems}</ul>
           </div>
         </div>
       </div>
