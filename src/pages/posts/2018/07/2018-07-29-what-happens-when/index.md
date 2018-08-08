@@ -107,6 +107,7 @@ Although it only takes a few seconds to render a web page, the behind scenes is 
 2. [TCP - 4 way handshake](https://stackoverflow.com/questions/46212623/why-tcp-connect-termination-need-4-way-handshake)
 3. [What happens when you type an URL in the browser and press enter](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a)
 4. [How browsers work](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
+5. [Computer Network](https://github.com/CyC2018/Interview-Notebook/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md)
 
 
 
