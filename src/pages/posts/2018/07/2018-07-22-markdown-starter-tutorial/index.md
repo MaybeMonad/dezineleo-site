@@ -6,7 +6,7 @@ author: "Leo"
 thumbnail: "./thumbnail.jpg"
 published: true
 type: "post"
-categories: ['Development', 'Beginner Series']
+categories: ['Dev', 'Beginner Series']
 tags: ['Markdown', 'Beginner', 'novice']
 excerpt: "In this post I’ll tell you how to use Markdown to skyrocket your content producing."
 ---

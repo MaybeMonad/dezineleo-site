@@ -1,0 +1,107 @@
+.footer {
+  text-align: center;
+  font-family: 'roboto_monoregular';
+  width: 100%;
+  display: inline-block;
+  font-size: 16px;
+  background: #222;
+  color: #666;
+  padding: 24px 0;
+  .footer-info {
+    width: 76%;
+    height: 172px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    position: relative;
+    .year {
+      height: 172px;
+      text-align: center;
+      border-right: 1px solid #666;
+      position: relative;
+      padding: 15px;
+      p {
+        transform: rotate(-90deg);        
+      }
+    }
+    .quote {
+      color: #666;
+      font-size: 13px;
+      padding: 28px;
+      border-right: 1px solid #666;
+      height: 172px;
+      min-width: 238px;
+      h3 {
+        font-size: 14px;
+        color: #fff;
+        font-family: 'roboto_monoregular';
+      }
+    }
+    .contact {
+      font-size: 13px;
+      width: 100%;
+      .email {
+        color: #fff;
+      }
+      .social {
+        a {
+          margin-left: 18px;
+          border: 0;
+        }
+      }
+      .wechat {
+        color: #fff;
+        text-align: left;
+        span {
+          color: #666;
+        }
+      }
+      .top {
+        padding: 30px;
+        border-bottom: 1px solid #666;
+      }
+      .bottom {
+        padding: 30px;
+      }
+      a {
+        color: #666;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .footer-info {
+    .quote {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .footer-info {
+    height: auto!important;
+    .year {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 632px) {
+  img {
+    margin: 0 auto 36px auto;
+  }
+  .footer-info {
+    width: 100%!important;
+  }
+}
+
+@media only screen and (max-width: 521px) {
+  img {
+    margin: 0 auto 36px auto;
+  }
+  .footer-info {
+    .social {
+      display: none;
+    }
+  }
+}

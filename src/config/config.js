@@ -1,12 +1,12 @@
 const leftMenu = [{
-  name: 'Portfolio',
-  path: '/portfolio',
+  name: 'Home',
+  path: '/',
+}, {
+  name: 'Work',
+  path: '/work',
 }, {
   name: 'Blog',
   path: '/blog',
-}, {
-  name: 'Service',
-  path: '/service',
 }, {
   name: 'About',
   path: '/about',
@@ -16,11 +16,11 @@ const rightMenu = [{
   name: 'GitHub',
   path: 'https://github.com/DezineLeo',
 }, {
-  name: 'Ins',
-  path: 'https://www.instagram.com/dezineleo/',
-}, {
   name: 'Dribbble',
   path: 'https://dribbble.com/DezineLeo',
+}, {
+  name: 'Ins',
+  path: 'https://www.instagram.com/dezineleo/',
 }, {
   name: 'Be',
   path: 'https://www.behance.net/dezineleo',
@@ -33,8 +33,8 @@ const bottomMenu = [{
   name: 'Blog',
   path: '/blog',
 }, {
-  name: 'Portfolio',
-  path: '/portfolio',
+  name: 'Work',
+  path: '/work',
 }, {
   name: 'About',
   path: '/about',

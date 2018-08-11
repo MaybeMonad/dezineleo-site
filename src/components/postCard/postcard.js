@@ -6,7 +6,7 @@ import Img from "gatsby-image";
 
 import '../../assets/css/common.css';
 import '../../assets/css/blog.css';
-import './index.css';
+import './postcard.css';
 
 const PostCard = ({post}) => {
   const {
@@ -14,9 +14,7 @@ const PostCard = ({post}) => {
     date,
     path,
     excerpt,
-    thumbnail: {
-      childImageSharp: { sizes }
-    }
+    categories
   } = post.node.frontmatter;
   const timeToRead = post.node.timeToRead;
 
@@ -24,10 +22,13 @@ const PostCard = ({post}) => {
     <div className="post-card">
       <Link to={path}>
         <div className="top">
-          <Img className="thumbnail" sizes={sizes} />
+        {
+          post.node.frontmatter.thumbnail ?
+            (<Img className="thumbnail" sizes={post.node.frontmatter.thumbnail.childImageSharp.sizes} />) : false
+        }
         </div>
         <div className="content">
-          <div className="time">{date}</div>
+          <div className="time">{categories[0]} | {date}</div>
           <h3>{title}</h3>
           <small>{excerpt}</small>
           <div className="time-to-read">{timeToRead} min read</div>

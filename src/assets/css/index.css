@@ -1,12 +1,87 @@
-.about-leo {
-  margin-bottom: 56px;
-  padding: 48px;
-  background: #f7f7f7;
+.home-page .about-leo {
+  position: relative;
+  margin: 56px 0;
+  padding: 72px 0;
   border-radius: 8px;
 }
-.about-leo h1 {
-  font-size: 2.14rem;
+.home-page .about-leo::before {
+  content: '';
+  width: 300px;
+  background-image: linear-gradient(54deg, #FFFDDF 1%, #FFFABB 100%);
+  height: 300px;
+  border-radius: 100%;
+  position: absolute;
+  top: 24px;
+  left: 36px;
 }
-.about-leo p {
-  font-size: 1.2rem;
+.home-page .about-leo h1 {
+  font-size: 1.96rem;
+  margin-bottom: 16px;
+  font-family: 'robotobold';
+  position: relative;
+}
+.home-page .about-leo p {
+  font-size: 0.96rem;
+  font-family: 'roboto_monoregular';
+  color: #888;
+  position: relative;
+  margin-top: 32px;
+}
+.home-page .about-leo hr {
+  position: relative;
+  height: 56px;
+  border-top: 2px solid #222;
+  background: none;
+  width: 160px;
+  margin: 18px 56px 0 0;
+}
+.home-page .post-list {
+  padding: 36px 0 0 0;
+}
+.home-page .tags {
+  padding: 72px 0;
+  width: 100%;
+}
+.home-page .portfolio {
+  padding: 72px 0;
+}
+.home-page .portfolio img {
+  padding: 0 48px;
+}
+.home-page .portfolio .right {
+  position: relative;
+}
+.home-page .portfolio .right .as-designer {
+  position: absolute;
+  top: 40%;
+  left: -72px;
+  text-align: right;
+}
+.home-page .portfolio .right .as-designer h2 {
+  margin-bottom: 16px;
+}
+.home-page .portfolio .right .as-designer p {
+  font-family: 'roboto_monoregular';
+  color: #888;
+  font-size: 0.96rem;
+}
+.home-page .portfolio .right hr {
+  position: absolute;
+  height: 56px;
+  border-top: 2px solid #222;
+  background: none;
+  width: 120px;
+  margin: 18px 56px 0 0;
+  top: 0px;
+  right: -220px;
+}
+@media only screen and (max-width: 642px) {
+  .home-page .portfolio .right .as-designer {
+    left: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .home-page .portfolio .right .as-designer hr {
+    display: none;
+  }
 }

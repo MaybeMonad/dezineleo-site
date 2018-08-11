@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import Header from '../components/header/index';
-import { leftMenu, rightMenu, bottomMenu } from '../config/config';
+import { leftMenu, rightMenu } from '../config/config';
 
 import '../assets/css/prism.css';
 import './index.css';
 import '../assets/css/common.css';
-import Footer from '../components/footer';
-import BottomNav from '../components/bottomNav';
+import Footer from '../components/footer/footer';
 
 class Layout extends React.Component {
   constructor(props) {
@@ -46,7 +45,6 @@ class Layout extends React.Component {
         <div className="main-body">
           {children()}
         </div>
-        {this.state.windowWidth < 1120 && <BottomNav bottomMenu={bottomMenu} />}
         <Footer />
       </div>
     )

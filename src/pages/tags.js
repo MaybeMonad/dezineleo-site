@@ -1,12 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-// Utilities
-import kebabCase from "lodash/kebabCase";
-
 // Components
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
+import Tags from '../components/tags/tags';
+import '../assets/css/pages/tags.css';
 
 const TagsPage = ({
   data: {
@@ -19,17 +18,9 @@ const TagsPage = ({
   <div className="main-section">
     <div className="section">
       <Helmet title={title} />
-      <div>
+      <div className="tags-page">
         <h1>Tags</h1>
-        <ul>
-          {group.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <Tags tags={group} />
       </div>
     </div>
   </div>
@@ -55,7 +46,7 @@ TagsPage.propTypes = {
 
 export default TagsPage;
 
-export const pageQuery = graphql`
+export const tagsQuery = graphql`
   query TagsQuery {
     site {
       siteMetadata {

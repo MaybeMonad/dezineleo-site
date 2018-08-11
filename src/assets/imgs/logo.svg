@@ -1,48 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="142px" height="142px" viewBox="0 0 142 142" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
-    <title>dezineleo_logo</title>
+<svg width="47px" height="38px" viewBox="0 0 47 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <linearGradient x1="14.9593094%" y1="83.1828029%" x2="66.4006636%" y2="0%" id="linearGradient-1">
-            <stop stop-color="#EA053A" offset="0%"></stop>
-            <stop stop-color="#D0021B" offset="100%"></stop>
-        </linearGradient>
-        <circle id="path-2" cx="71" cy="71" r="71"></circle>
-        <linearGradient x1="9.55000377%" y1="35.4235615%" x2="44.8387074%" y2="11.7601709%" id="linearGradient-4">
-            <stop stop-color="#DD0334" offset="0%"></stop>
-            <stop stop-color="#B80117" offset="100%"></stop>
-        </linearGradient>
-        <linearGradient x1="22.4690036%" y1="24.7525539%" x2="45.9161841%" y2="5.18107328%" id="linearGradient-5">
-            <stop stop-color="#CB052E" offset="0%"></stop>
-            <stop stop-color="#9B0214" offset="100%"></stop>
-        </linearGradient>
-        <circle id="path-6" cx="19.5" cy="19.5" r="19"></circle>
-    </defs>
+    <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="logo-copy-6" transform="translate(-146.000000, -223.000000)">
-            <g id="Group-2" transform="translate(146.000000, 223.000000)">
-                <g id="dezineleo_logo">
-                    <mask id="mask-3" fill="white">
-                        <use xlink:href="#path-2"></use>
-                    </mask>
-                    <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
-                    <circle id="Oval" fill="url(#linearGradient-4)" mask="url(#mask-3)" cx="151.5" cy="172.5" r="134.5"></circle>
-                    <circle id="Oval-Copy" fill="url(#linearGradient-5)" mask="url(#mask-3)" cx="151.5" cy="215.5" r="134.5"></circle>
-                    <g id="Group" mask="url(#mask-3)">
-                        <g transform="translate(28.000000, 38.000000)">
-                            <g id="Rectangle" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, 17.000000)">
-                                <mask id="mask-7" fill="white">
-                                    <use xlink:href="#path-6"></use>
-                                </mask>
-                                <circle stroke="#FFFFFF" stroke-width="12.5" cx="19.5" cy="19.5" r="12.75"></circle>
-                            </g>
-                            <path d="M29.5412356,6.24262732 L40.6238899,1.93806017 L40.6238899,1.93806017 C41.6535217,1.53814518 42.8123984,2.04863158 43.2123134,3.07826345 C43.3019907,3.30914906 43.348,3.55468388 43.348,3.80237358 L43.348,53.312 L43.348,53.312 C43.348,54.4165695 42.4525695,55.312 41.348,55.312 L33.1286375,55.312 L33.1286375,55.312 C32.4281339,55.312 31.7786863,54.9455046 31.4165776,54.3458526 L30,52 L26.9997484,10.2580188 L26.9997484,10.2580188 C26.8738806,8.50684206 27.9046533,6.87828537 29.5412356,6.24262732 Z" id="Combined-Shape" stroke="none" fill="#FFFFFF" fill-rule="evenodd"></path>
-                            <ellipse id="Combined-Shape" stroke="#FFFFFF" stroke-width="14" fill="none" cx="69.4790448" cy="36.5" rx="13.4800195" ry="13.5"></ellipse>
-                        </g>
-                    </g>
-                </g>
-            </g>
+        <g id="02" transform="translate(-937.000000, -36.000000)" fill="#222222" fill-rule="nonzero">
+            <path d="M965,51 C965,56.0720497 965,59.0720497 965,60 C965,62.7614237 967.238576,65 970,65 C972.761424,65 975,62.7614237 975,60 C975,58.0280007 973.858386,56.3226396 972.199999,55.5087581 C971.536119,55.1829477 970.789424,55 970,55 L966.25,49.75 L970,46 C972.219978,46 974.319272,46.5167078 976.184178,47.4364185 C980.814574,49.7199788 984,54.4879914 984,60 C984,67.7319865 977.731986,74 970,74 C962.268014,74 956,67.7319865 956,60 L965,51 Z M956,45 L954.5,45 C952.014719,45 950,42.9852814 950,40.5 C950,38.0147186 952.014719,36 954.5,36 L960.5,36 C962.985281,36 965,38.0147186 965,40.5 L965,59.5 C965,59.5605613 964.998804,59.6208431 964.996433,59.6808232 C964.998807,59.7869284 965,59.8933249 965,60 C965,62.7614237 967.238576,65 970,65 C972.761424,65 975,62.7614237 975,60 L984,60 C984,67.7319865 977.731986,74 970,74 C966.333331,74 962.995888,72.5904154 960.5,70.2835746 C958.004112,72.5904154 954.666669,74 951,74 C943.268014,74 937,67.7319865 937,60 C937,52.2680135 943.268014,46 951,46 C952.761596,46 954.4472,46.3253571 956,46.9192576 L956,45 Z M946,60 C946,62.7614237 948.238576,65 951,65 C953.761424,65 956,62.7614237 956,60 C956,57.2385763 953.761424,55 951,55 C948.238576,55 946,57.2385763 946,60 Z M970,55 C967.514719,55 965.5,52.9852814 965.5,50.5 C965.5,48.0147186 967.514719,46 970,46 C972.485281,46 974.5,48.0147186 974.5,50.5 C974.5,52.9852814 972.485281,55 970,55 Z" id="Combined-Shape"></path>
         </g>
     </g>
 </svg>

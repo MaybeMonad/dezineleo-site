@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 import Logo from '../../assets/imgs/logo.svg';
 
 import '../../assets/css/common.css';
-import './index.css';
+import './header.css';
 
 class Header extends React.Component {
   constructor(props) {
@@ -11,6 +11,7 @@ class Header extends React.Component {
     this.state = {
       showMenu: false,
       windowWidth: null,
+      pathUrl: undefined,
     }
     this.showMenu = this.showMenu.bind(this);
   }
@@ -19,10 +20,22 @@ class Header extends React.Component {
       windowWidth: window.innerWidth,
     }));
   }
+  updatePath() {
+    const curPathName = window.location.pathname.split('/')[1];
+    if (curPathName) {
+      if (curPathName === 'posts') {
+        this.state.pathUrl = 'blog';
+      } else {        
+        this.state.pathUrl = curPathName;
+      }
+    } else {
+      this.state.pathUrl = 'home';
+    }
+  }
   componentDidMount() {
     this.headerFix();
-
     window.addEventListener('resize', () => this.headerFix());
+    this.state.pathUrl = window.location.pathname.split('/')[1];
   }
   showMenu() {
     this.setState(({showMenu}) => ({
@@ -33,8 +46,8 @@ class Header extends React.Component {
     const { leftMenu, rightMenu } = this.props;
 
     // Left Menu
-    const leftMenuItems = leftMenu.map(({name, path}) => 
-      <li key={name}><Link to={path}>{name}</Link></li>
+    const leftMenuItems = leftMenu.map(({name, path}) =>
+      <li key={name} onClick={this.updatePath()} className={this.state.pathUrl === name.toLowerCase() ? 'active' : ''}><Link to={path}>{name}</Link></li>
     );
   
     // Right Menu
@@ -56,9 +69,9 @@ class Header extends React.Component {
       <div className="header mobile-header flex al-center jc-between">
         <Link to="/" className="logo"><img src={Logo} /></Link>
         <div className={`menu mobile-menu ${this.state.showMenu ? 'show' : ''}`}>
-          <div className="menu-icon" onClick={this.showMenu}>Follow Me</div>
+          <div className="menu-icon" onClick={this.showMenu}>Menu<span></span></div>
           <div className="menu-items" onClick={this.showMenu}>
-            <ul className="flex al-center flex-wrap">{rightMenuItems}</ul>
+            <ul className="flex al-center flex-wrap">{leftMenuItems}</ul>
           </div>
         </div>
       </div>
@@ -71,10 +84,7 @@ class Header extends React.Component {
         </div>
         <Link to="/" className="logo"><img src={Logo} /></Link>
         <div className="menu right-menu">
-          <ul className="flex jc-end">
-            <li>Follow Me</li>
-            {rightMenuItems}
-          </ul>
+          <ul className="flex jc-end">{rightMenuItems}</ul>
         </div>
       </div>
     );

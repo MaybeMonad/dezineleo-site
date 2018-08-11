@@ -7,7 +7,7 @@ thumbnail: "./thumbnail.jpg"
 published: true
 type: "post"
 categories: ['Design']
-tags: ['dribbble', 'design', 'portfolio']
+tags: ['Dribbble', 'design', 'portfolio', 'Dezineleo']
 excerpt: "Thanks to the Dribbble community."
 ---
 

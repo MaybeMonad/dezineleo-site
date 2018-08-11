@@ -5,9 +5,9 @@ import Link from 'gatsby-link';
 import Img from "gatsby-image";
 
 import '../assets/css/common.css';
-import '../assets/css/portfolio.css';
+import '../assets/css/work.css';
 
-const PortfolioPage = ({ data }) => (
+const WorkPage = ({ data }) => (
   <div className="main-section">
     <div className="section">
       <div className="post-list flex jc-start">
@@ -46,7 +46,7 @@ const PortfolioPage = ({ data }) => (
 );
 
 export const pageQuery = graphql`
-  query PortfolioIndexQuery {
+  query WorkIndexQuery {
     allMarkdownRemark(
       limit: 6
       sort: {
@@ -86,4 +86,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default PortfolioPage;
+export default WorkPage;

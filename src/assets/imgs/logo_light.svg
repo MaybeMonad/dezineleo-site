@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="47px" height="39px" viewBox="0 0 47 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5 Copy 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="39.6319742%" y1="75.0938653%" x2="16.0732587%" y2="68.2798659%" id="linearGradient-1">
+            <stop stop-color="#D8D8D8" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.16" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="54.8206702%" y1="16.0394335%" x2="76.9093001%" y2="29.4874912%" id="linearGradient-2">
+            <stop stop-color="#D8D8D8" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.15698596" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="25.4778349%" y1="80.3278618%" x2="9.96968237%" y2="58.8715824%" id="linearGradient-3">
+            <stop stop-color="#D8D8D8" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.15698596" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="02-copy" transform="translate(-400.000000, -1563.000000)" fill-rule="nonzero">
+            <g id="Group-8" transform="translate(0.000000, 1391.000000)">
+                <g id="Group-5-Copy-5" transform="translate(400.000000, 172.000000)">
+                    <path d="M28,16 C28,21.0720497 28,24.0720497 28,25 C28,27.7614237 30.2385763,30 33,30 C35.7614237,30 38,27.7614237 38,25 C38,23.0280007 36.8583859,21.3226396 35.1999992,20.5087581 C34.5361191,20.1829477 33.7894244,20 33,20 L29.25,14.75 L33,11 C35.2199779,11 37.3192721,11.5167078 39.1841779,12.4364185 C43.8145739,14.7199788 47,19.4879914 47,25 C47,32.7319865 40.7319865,39 33,39 C25.2680135,39 19,32.7319865 19,25 L28,16 Z" id="Combined-Shape-Copy-6" fill="#FFFFFF"></path>
+                    <circle id="Oval" fill="#FFFFFF" cx="33" cy="15.5" r="4.5"></circle>
+                    <path d="M28,25 C28,27.7614237 30.2385763,30 33,30 C35.7614237,30 38,27.7614237 38,25 L47,25 C47,32.7319865 40.7319865,39 33,39 C25.2680135,39 19,32.7319865 19,25 L28,25 Z" id="Combined-Shape-Copy-6" fill="url(#linearGradient-1)"></path>
+                    <g id="Group">
+                        <path d="M14,39 C6.2680135,39 0,32.7319865 0,25 C0,17.2680135 6.2680135,11 14,11 C21.7319865,11 28,17.2680135 28,25 C28,32.7319865 21.7319865,39 14,39 Z M14,30 C16.7614237,30 19,27.7614237 19,25 C19,22.2385763 16.7614237,20 14,20 C11.2385763,20 9,22.2385763 9,25 C9,27.7614237 11.2385763,30 14,30 Z" id="Combined-Shape-Copy-5" fill="#FFFFFF"></path>
+                        <path d="M19,25 C19,22.2385763 16.7614237,20 14,20 C11.2385763,20 9,22.2385763 9,25 L0,25 C0,17.2680135 6.2680135,11 14,11 C21.7319865,11 28,17.2680135 28,25 L19,25 Z" id="Combined-Shape-Copy-5" fill="url(#linearGradient-2)"></path>
+                        <rect id="Rectangle-3" fill="#FFFFFF" x="19" y="0" width="9" height="29" rx="4.5"></rect>
+                        <path d="M23.5,0 L23.5,0 C25.9852814,-4.56538782e-16 28,2.01471863 28,4.5 L28,13 L19,13 L19,4.5 C19,2.01471863 21.0147186,4.56538782e-16 23.5,0 Z" id="Rectangle-3" fill="url(#linearGradient-3)"></path>
+                        <rect id="Rectangle-3" fill="#FFFFFF" transform="translate(21.000000, 4.500000) rotate(90.000000) translate(-21.000000, -4.500000) " x="16.5" y="-2.5" width="9" height="14" rx="4.5"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

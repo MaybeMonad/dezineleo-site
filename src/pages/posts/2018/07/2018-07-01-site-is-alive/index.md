@@ -6,7 +6,7 @@ author: "Leo"
 thumbnail: "./thumbnail.jpg"
 published: true
 type: "post"
-categories: ['Development']
+categories: ['Dev']
 tags: ['Dezineleo', 'Gatsby', 'Tutorial']
 excerpt: "In this post I’ll give you a quick introduction and an overview of my own thoughts on Gatsby."
 ---

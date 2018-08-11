@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Components
-import PostCard from '../components/postCard';
+import PostCard from '../components/postCard/postcard';
 
 import '../assets/css/common.css';
 import '../assets/css/blog.css';

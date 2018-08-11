@@ -11,7 +11,7 @@ import Img from 'gatsby-image';
 // Configurations
 import { briefIntro, siteInfo } from '../config/config';
 
-import '../assets/css/portfolio.css';
+import '../assets/css/work.css';
 import avatar from '../assets/imgs/avatars/avatar_01.jpg'
 
 export default function Template({ data }) {
@@ -27,10 +27,6 @@ export default function Template({ data }) {
       childImageSharp: { sizes }
     }
   } = post.frontmatter;
-
-  const tagList = tags.map(tag => (
-      <Link to={`/tags/${kebabCase(tag)}`} key={tag}>{tag}</Link>
-  ))
 
   return (
     <div className="section">

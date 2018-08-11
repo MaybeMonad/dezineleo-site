@@ -13,7 +13,7 @@ const Tags = ({ pathContext, data }) => {
 
   return (
     <div className="main-section">
-      <div className="section">
+      <div className="section tags-page">
         <h1>{tagHeader}</h1>
         <ul>
           {edges.map(({ node }) => {
@@ -25,7 +25,7 @@ const Tags = ({ pathContext, data }) => {
             );
           })}
         </ul>
-        <Link to="/tags">All tags</Link>
+        <Link className="all-tags-btn" to="/tags">All tags</Link>
       </div>
     </div>
   );

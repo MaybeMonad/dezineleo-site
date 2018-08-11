@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Link from "gatsby-link";
 
 // Components
-import PostCard from '../components/postCard';
+import PostCard from '../components/postCard/postcard';
 
 import '../assets/css/common.css';
 import '../assets/css/blog.css';
@@ -19,16 +19,16 @@ const BlogPage = ({ data, pathContext }) => {
   const { group, index, first, last, pageCount } = pathContext;
   const previousUrl = index - 1 == 1 ? "" : (index - 1).toString();
   const nextUrl = (index + 1).toString();
-  console.log(pathContext, data)
 
   return (
     <div className="main-section">
       <div className="section">
         <div className="post-list flex jc-start">
           {group.map((post, index) => {
-            return (
-              <PostCard post={post} key={index} />
-            );
+            if (post.node.frontmatter.type === 'post')
+              return (
+                <PostCard post={post} key={index} />
+              );
           })}
         </div>
         <div className="pagination flex al-center jc-between">

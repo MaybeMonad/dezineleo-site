@@ -1,64 +1,62 @@
 import React from 'react';
 
 // Components
-import Link from 'gatsby-link';
-import PostCard from '../components/postCard';
+import PostCard from '../components/postCard/postcard';
+import Tag from '../components/tag/tag';
 
 import '../assets/css/common.css';
 import '../assets/css/blog.css';
 import '../assets/css/index.css';
+import Portfolio from '../assets/imgs/index/portfolio.svg';
+import Triangle from '../assets/imgs/index/triangle.svg';
 
 const IndexPage = ({data}) => (
-  <div className="section">
-    <div className="about-leo">
-      <h1>Hi There, This Is Leo,</h1>
-      <p>based in Hangzhou, China.</p>
-      <h1>Yet Another UI Designer.</h1>
-      <p>Working as a web developer.</p>
+  <div className="section home-page">
+    <div className="about-leo flex jc-start">
+      <hr />
+      <div className="">
+        <h1>Hi, I am Leo,</h1>
+        <h1>enthusing about learning</h1>
+        <h1>and working as a Web Developer.</h1>
+        <p>Currently, I’m living in Hangzhou, China.</p>
+      </div>
     </div>
     <div className="post-list flex jc-start">
       {data.allMarkdownRemark.edges.map((post, index) => {
-        if (index < 2) {
-          return (
-            <PostCard post={post} key={index} />
-          );
-        }
+        if (index < 6)
+          return (<PostCard post={post} key={index} />)
       })}
-      {/* post list without thumbnail */}
-      <div className="post-card no-thumbnail-list">
-        {data.allMarkdownRemark.edges.map((post, index) => {
-          const {
-            title,
-            path,
-          } = post.node.frontmatter;
-          const timeToRead = post.node.timeToRead;
-
-          if (index > 1) {
-            return (
-              <Link to={path} className="flex al-center jc-start" key={index}>
-                <div className="arrow-circle">
-                  <svg width="38" height="38">
-                    <circle className="path" fill="none" strokeWidth="6" strokeLinecap="round" cx="19" cy="19" r="18"></circle>
-                  </svg>
-                </div>
-                <div className="order">{index - 1}</div>
-                <div className="detail">
-                  <h4>{title}</h4>
-                  <p>{timeToRead} min read</p>
-                </div>
-              </Link>
-            );
-          }
-        })}
+    </div>
+    <div className="portfolio flex flex-wrap jc-around al-center">
+      <img className="left h-col-6" src={Portfolio} />
+      <div className="right">
+        <div className="as-designer">
+          <h2>UI/Graphic Designer</h2>
+          <p>I also do some design stuff.</p>
+          <hr />
+        </div>
+        <img src={Triangle} />
       </div>
     </div>
+    {/* <div className="flex jc-between">
+      <div className="tags">
+        <ul className="flex flex-wrap">
+        {
+          data.allMarkdownRemark.group.map(tag => {
+            if (tag.totalCount > 1)
+              return ( <Tag tag={tag} key={tag.fieldValue} /> )
+          })
+        }
+        </ul>
+      </div>
+    </div> */}
   </div>
 )
 
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
-      limit: 5
+      limit: 2000
       sort: {
         fields: [frontmatter___date],
         order: DESC
@@ -70,6 +68,10 @@ export const pageQuery = graphql`
         }
       }
     ) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+      }
       edges {
         node {
           id
@@ -80,13 +82,6 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             author
             excerpt
-            thumbnail {
-              childImageSharp {
-                sizes(maxWidth: 400, maxHeight: 240) {
-                  ...GatsbyImageSharpSizes
-                }
-              }
-            }
             categories
             tags
           }

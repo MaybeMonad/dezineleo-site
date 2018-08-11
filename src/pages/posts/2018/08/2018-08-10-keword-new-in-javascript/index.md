@@ -1,13 +1,13 @@
 ---
-path: "/posts/2018/08/prototype-in-javascript"
-date: 2018-08-05
-title: "Prototype in JavaScript"
+path: "/posts/2018/08/keword-new-in-javascript"
+date: 2018-08-10
+title: "Keyword 'new' in JavaScript"
 author: "Leo"
 thumbnail: "./thumbnail.jpg"
-published: true
+published: false
 type: "post"
 categories: ['Dev', 'Beginner Series']
-tags: ['JavaScript', 'Prototype', 'Object']
+tags: ['JavaScript', 'New', 'Object']
 excerpt: "Prototype is a fundamental concept that every JavaScript developer must understand."
 ---
 

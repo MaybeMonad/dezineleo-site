@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Utilities
-import kebabCase from "lodash";
+import kebabCase from 'lodash/kebabCase';
 
 // Components
 import Helmet from 'react-helmet';
@@ -16,7 +16,6 @@ import avatar from '../assets/imgs/avatars/avatar_01.jpg'
 
 export default function Template({ data }) {
   const post = data.markdownRemark;
-  console.log(post)
   const timeToRead = post.timeToRead;
   const {
     title,
