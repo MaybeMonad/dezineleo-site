@@ -12,6 +12,7 @@ class Header extends React.Component {
       showMenu: false,
       windowWidth: null,
       pathUrl: undefined,
+      window: undefined,
     }
     this.showMenu = this.showMenu.bind(this);
   }
@@ -21,7 +22,10 @@ class Header extends React.Component {
     }));
   }
   updatePath() {
-    const curPathName = window.location.pathname.split('/')[1];
+    if (!this.state.window)
+      return;
+
+    const curPathName = this.state.window.location.pathname.split('/')[1];
     if (curPathName) {
       if (curPathName === 'posts') {
         this.state.pathUrl = 'blog';
@@ -34,6 +38,7 @@ class Header extends React.Component {
   }
   componentDidMount() {
     this.headerFix();
+    this.state.window = window;
     window.addEventListener('resize', () => this.headerFix());
     this.state.pathUrl = window.location.pathname.split('/')[1];
   }
