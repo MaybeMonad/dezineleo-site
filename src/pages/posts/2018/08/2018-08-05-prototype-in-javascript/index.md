@@ -164,9 +164,14 @@ In **prototypal inheritance**, instances inherit from other instances. Using del
 
 ## Function.__proto__ === Function.prototype
 
-This might confuse you, let me explain why it is valid. Firstly, JavaScript engine create `Object.prototype` and then create the `Function.prototype`. Both of them are connected with `__proto__`. And because of this mechanism, `let func = Object.create(Function.prototype)` has no prototype property.
+This might confuse you, let me explain why it is valid. Firstly, JavaScript engine create `Object.prototype` and then create the `Function.prototype`. Both of them are connected with `__proto__`. And because of this mechanism, functions created by `Function.prototype` will have no prototype property.
 
-All the other constructor functions can find the final `Function.prototype` through the prototype chain. and `function Function()` is just a normal function indeed. So we can have the `Function.__proto__ === Function.prototype`.
+```javascript
+let func = Object.create(Function.prototype);
+console.log(func.prototype); // undefined
+```
+
+All the other constructor functions can find the final `Function.prototype` through the prototype chain. and `function Function()` is just a normal function indeed.
 
 ## Conclusion
 
