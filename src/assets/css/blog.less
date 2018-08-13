@@ -35,6 +35,12 @@
         -webkit-line-clamp:2;
         letter-spacing: 0;
       }
+      .date {
+        color: #666;
+        font-size: 13px;
+        text-transform: uppercase;
+        margin-top: 4px;
+      }
     }
   }
   h1 {
@@ -52,7 +58,7 @@
     font-family: 'robotolight';
     font-size: 19px;
     line-height: 36px;
-    letter-spacing: 0.2px;
+    letter-spacing: 0px;
     h1, h2, h3, h4, h5, h6 {
       font-family: 'robotobold';
       margin: 32px 0 20px 0;
@@ -103,3 +109,11 @@
   position: relative;
 }
 
+@media only screen and (max-width: 480px) {
+  .blog-post {
+    .blog-content {
+      font-size: 17px;
+      line-height: 32px;
+    }
+  }
+}

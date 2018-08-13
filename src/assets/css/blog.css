@@ -37,6 +37,12 @@
   -webkit-line-clamp: 2;
   letter-spacing: 0;
 }
+.blog-post .author .author-info .date {
+  color: #666;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
 .blog-post h1 {
   margin-bottom: 42px;
   letter-spacing: 1px;
@@ -52,7 +58,7 @@
   font-family: 'robotolight';
   font-size: 19px;
   line-height: 36px;
-  letter-spacing: 0.2px;
+  letter-spacing: 0px;
 }
 .blog-post .blog-content h1,
 .blog-post .blog-content h2,
@@ -101,4 +107,10 @@
   flex-wrap: wrap;
   width: 100%;
   position: relative;
+}
+@media only screen and (max-width: 480px) {
+  .blog-post .blog-content {
+    font-size: 17px;
+    line-height: 32px;
+  }
 }
