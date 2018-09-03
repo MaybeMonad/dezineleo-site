@@ -1,5 +1,5 @@
 ---
-path: "/posts/2018/08/keword-new-in-javascript"
+path: "/posts/2018/08/keyword-new-in-javascript"
 date: 2018-08-10
 title: "Keyword 'new' in JavaScript"
 author: "Leo"
