@@ -88,47 +88,47 @@ There are 2 stages to an  `execution context` :
 
 ```javascript
 function site(name, url) {
-		const sayHello = 'Hello';
-		const siteInfo = function getInfo() {};
-		function getPosts() {};
+	const sayHello = 'Hello';
+	const siteInfo = function getInfo() {};
+	function getPosts() {};
 }
 
 site('Dezineleo', 'https://dezineleo.com');
 
 // A pseudo-overview of the Creation Stage
 siteExecutionContext = {
-		scopeChain: { ... },
-		variableObject: {
-			arguments: {
-				0: 'Dezineleo',
-				1: 'https://dezineleo.com',
-				length: 2
-			},
-			name: 'Dezineleo',
-			url: 'https://dezineleo.com',
-			getPosts: pointer to function getPosts(),
-			sayHello: undefined,
-			siteInfo: undefined
+	scopeChain: { ... },
+	variableObject: {
+		arguments: {
+			0: 'Dezineleo',
+			1: 'https://dezineleo.com',
+			length: 2
 		},
-		this: { ... }
+		name: 'Dezineleo',
+		url: 'https://dezineleo.com',
+		getPosts: pointer to function getPosts(),
+		sayHello: undefined,
+		siteInfo: undefined
+	},
+	this: { ... }
 }
 
 // A pseudo-overview of the Execution Stage
 siteExecutionContext = {
-		scopeChain: { ... },
-		variableObject: {
-			arguments: {
-				0: 'Dezineleo',
-				1: 'https://dezineleo.com',
-				length: 2
-			},
-			name: 'Dezineleo',
-			url: 'https://dezineleo.com',
-			getPosts: pointer to function getPosts(),
-			sayHello: 'Dezineleo',
-			siteInfo: pointer to function getInfo()
+	scopeChain: { ... },
+	variableObject: {
+		arguments: {
+			0: 'Dezineleo',
+			1: 'https://dezineleo.com',
+			length: 2
 		},
-		this: { ... }
+		name: 'Dezineleo',
+		url: 'https://dezineleo.com',
+		getPosts: pointer to function getPosts(),
+		sayHello: 'Dezineleo',
+		siteInfo: pointer to function getInfo()
+	},
+	this: { ... }
 }
 ```
 
@@ -136,19 +136,19 @@ We can also use this term to explain how the `hosting`  works. Here’s a simple
 
 ```javascript
 (function() {
-		console.log(typeof site);
-		console.log(typeof fn);
+	console.log(typeof site);
+	console.log(typeof fn);
 
-		var site = 'Dezineleo';
-		var fn = function() {
-			return 'Function';
-		};
+	var site = 'Dezineleo';
+	var fn = function() {
+		return 'Function';
+	};
 
-		console.log(typeof fn);
+	console.log(typeof fn);
 
-		function site() {
-			return 'Dezineleo';
-		}
+	function site() {
+		return 'Dezineleo';
+	}
 }());​
 
 // output -> function
@@ -160,13 +160,13 @@ As you can see above, in `creation stage` , the variables have been declared. Bu
 
 ```javascript
 ExecutionContext = {
-		scopeChain: { ... },
-		variableObject: {
-			arguments: {},
-			site: pointer to function site(),
-			fn: undefined
-		},
-		this: { ... }
+	scopeChain: { ... },
+	variableObject: {
+		arguments: {},
+		site: pointer to function site(),
+		fn: undefined
+	},
+	this: { ... }
 }
 ```
 
