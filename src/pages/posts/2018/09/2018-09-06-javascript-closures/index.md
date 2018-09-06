@@ -1,7 +1,7 @@
 ---
-path: "/posts/2018/09/javascript-closure"
+path: "/posts/2018/09/javascript-closures"
 date: 2018-09-06
-title: "Keyword 'this' in JavaScript"
+title: "JavaScript Closures"
 author: "Leo"
 thumbnail: "./thumbnail.jpg"
 published: true
