@@ -2,6 +2,8 @@
 
 This is leo's personal blog, which mainly focuses on **Web Design** and **Web Development**.
 
+This is an old version.
+
 ## Articles
 
 1. [Start your blazing fast static site based on GatsbyJS](https://dezineleo.com/posts/2018/07/site-is-alive)
