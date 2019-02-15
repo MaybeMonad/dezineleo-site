@@ -1,18 +1,15 @@
-# Dezineleo's Blog
+# [overreacted.io](https://overreacted.io/)
 
-This is leo's personal blog, which mainly focuses on **Web Design** and **Web Development**.
+My personal blog. Forked from [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog). Syntax theme based on [Sarah Drasner's Night Owl](https://github.com/sdras/night-owl-vscode-theme/) with small tweaks.
 
-This is an old version. Check out the master branch.
+To run locally, `yarn`, then `yarn dev`, then open https://localhost:8000.
 
-## Articles
+## Contributing Translations
 
-1. [Start your blazing fast static site based on GatsbyJS](https://dezineleo.com/posts/2018/07/site-is-alive)
-2. [ES6 knowledge map for React Beginner](https://dezineleo.com/posts/2018/07/es6-knowledge-map-for-react-beginner)
-3. [Regular expression in JavaScript](https://dezineleo.com/posts/2018/07/regular-expression-in-javascript)
-4. [Markdown your life](https://dezineleo.com/posts/2018/07/markdown-starter-tutorial)
-5. [What happens when you type an URL in the browser and press enter?](https://dezineleo.com/posts/2018/07/what-happens-when)
+You can translate any article on the website into your language!
 
-## Based on GatsbyJS
+Add a Markdown file with the translation to the corresponding article folder. For example `index.fr.md` in `src/pages/optimized-for-change/`.
 
-[GatsbyJS](https://www.gatsbyjs.org/)
+If you're the first one to translate a post to your language, you'll need to add it to to the list in `./i18n.js`. See [this PR](https://github.com/gaearon/overreacted.io/pull/159) for an example. If your language needs special font characters, add it to the appropriate place in [this list](https://github.com/gaearon/overreacted.io/blob/5de6c128f798506a54a1a34c32cd5446beecc272/src/utils/i18n.js#L15).
 
+**Please don't send translations for the Russian language — I will be translating into it myself when I find time.**
