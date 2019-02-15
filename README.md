@@ -2,7 +2,7 @@
 
 This is leo's personal blog, which mainly focuses on **Web Design** and **Web Development**.
 
-This is an old version.
+This is an old version. Check out the master branch.
 
 ## Articles
 
