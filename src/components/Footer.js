@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { rhythm } from '../utils/typography';
+import { rhythm } from '../utils/typography'
 
 class Footer extends React.Component {
   render() {
@@ -17,7 +17,7 @@ class Footer extends React.Component {
           </a>
         </div>
         <a
-          href="https://mobile.twitter.com/dan_abramov"
+          href="https://mobile.twitter.com/dezineleo"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -25,7 +25,7 @@ class Footer extends React.Component {
         </a>{' '}
         &bull;{' '}
         <a
-          href="https://github.com/gaearon"
+          href="https://github.com/dezineleo"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -33,15 +33,15 @@ class Footer extends React.Component {
         </a>{' '}
         &bull;{' '}
         <a
-          href="https://stackoverflow.com/users/458193/dan-abramov"
+          href="https://dribbble.com/dezineleo"
           target="_blank"
           rel="noopener noreferrer"
         >
-          stack overflow
+          dribbble
         </a>
       </footer>
-    );
+    )
   }
 }
 
-export default Footer;
+export default Footer

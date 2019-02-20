@@ -1,7 +1,7 @@
 ---
-title: New year, new updates
+title: 新年新气象
 date: '2019-02-13'
-spoiler: It's 2019, start to build up my own empire.
+spoiler: 都 2019 年了，是不是该整点像样的了？！
 ---
 
 去年用 [GatsbyJS](https://www.gatsbyjs.org/) 搭了这个博客，[开博头篇文章](/site-is-alive/)也做了简单介绍，今天趁着升级版本再次安利一波。
