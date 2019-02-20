@@ -1,23 +1,23 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-import get from 'lodash/get';
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import get from 'lodash/get'
 
-import Bio from '../components/Bio';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import Footer from '../components/Footer';
-import { formatPostDate, formatReadingTime } from '../utils/helpers';
-import { rhythm } from '../utils/typography';
-import Panel from '../components/Panel';
+import Bio from '../components/Bio'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
+import Footer from '../components/Footer'
+import { formatPostDate, formatReadingTime } from '../utils/helpers'
+import { rhythm } from '../utils/typography'
+import Panel from '../components/Panel'
 
 class BlogIndexTemplate extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
-    const langKey = this.props.pageContext.langKey;
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const langKey = this.props.pageContext.langKey
 
     const posts = get(this, 'props.data.allMarkdownRemark.edges').filter(
       ({ node }) => node.fields.langKey === langKey
-    );
+    )
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -29,7 +29,7 @@ class BlogIndexTemplate extends React.Component {
           {langKey !== 'en' && <Panel>仔细看，这不是翻译，也许有彩蛋。</Panel>}
 
           {posts.map(({ node }) => {
-            const title = get(node, 'frontmatter.title') || node.fields.slug;
+            const title = get(node, 'frontmatter.title') || node.fields.slug
             return (
               <article key={node.fields.slug}>
                 <header>
@@ -57,16 +57,16 @@ class BlogIndexTemplate extends React.Component {
                   dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }}
                 />
               </article>
-            );
+            )
           })}
         </main>
         <Footer />
       </Layout>
-    );
+    )
   }
 }
 
-export default BlogIndexTemplate;
+export default BlogIndexTemplate
 
 export const pageQuery = graphql`
   query {
@@ -93,4 +93,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

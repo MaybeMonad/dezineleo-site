@@ -1,4 +1,4 @@
-import { supportedLanguages } from './../../i18n';
+import { supportedLanguages } from './../../i18n'
 
 // This is kind of a mess for some languages.
 // Try to be as short as possible.
@@ -10,7 +10,7 @@ import { supportedLanguages } from './../../i18n';
 // https://discuss.httparchive.org/t/what-are-the-invalid-uses-of-the-lang-attribute/1022
 
 export const codeToLanguage = code =>
-  supportedLanguages[code].replace(/ /g, ' ' /* nbsp */);
+  supportedLanguages[code].replace(/ /g, ' ' /* nbsp */)
 
 export const loadFontsForCode = code => {
   switch (code) {
@@ -53,14 +53,14 @@ export const loadFontsForCode = code => {
     //   import('../fonts/fonts-post.persian.css');
     //   break;
     default:
-      break;
+      break
   }
-};
+}
 
 // TODO: the curried signature is weird.
 export const createLanguageLink = (slug, lang) => {
-  const rawSlug = slug.replace(`${lang}/`, '');
+  const rawSlug = slug.replace(`${lang}/`, '')
 
   return targetLang =>
-    targetLang === 'en' ? rawSlug : `${targetLang}${rawSlug}`;
-};
+    targetLang === 'en' ? rawSlug : `${targetLang}${rawSlug}`
+}
