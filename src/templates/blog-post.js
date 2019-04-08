@@ -6,7 +6,7 @@ import '../fonts/fonts-post.css'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import Signup from '../components/Signup'
+// import Signup from '../components/Signup'
 import Panel from '../components/Panel'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
 import { rhythm, scale } from '../utils/typography'
@@ -16,15 +16,15 @@ import {
   loadFontsForCode,
 } from '../utils/i18n'
 
-const GITHUB_USERNAME = 'gaearon'
-const GITHUB_REPO_NAME = 'overreacted.io'
-const systemFont = `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+// const GITHUB_USERNAME = 'dezineleo'
+// const GITHUB_REPO_NAME = 'dezineleo-blog'
+const systemFont = `robotoregular, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif`
 
 class Translations extends React.Component {
   render() {
-    let { translations, lang, languageLink, editUrl } = this.props
+    let { translations, lang, languageLink } = this.props
 
     let readerTranslations = translations.filter(lang => lang !== 'ru')
     let hasRussianTranslation = translations.indexOf('ru') !== -1
@@ -54,7 +54,7 @@ class Translations extends React.Component {
                   <br />
                 </span>
               )}
-              <span>Translated by readers into: </span>
+              <span>Translation: </span>
               {readerTranslations.map((l, i) => (
                 <React.Fragment key={l}>
                   {l === lang ? (
@@ -72,10 +72,6 @@ class Translations extends React.Component {
               <br />
               <br />
               <Link to={languageLink('en')}>Read the original</Link>
-              {' • '}
-              <a href={editUrl} target="_blank" rel="noopener noreferrer">
-                Improve this translation
-              </a>
               {' • '}
               <Link to={`/${lang}`}>View all translated posts</Link>{' '}
             </>
@@ -119,16 +115,7 @@ class BlogPostTemplate extends React.Component {
     })
 
     loadFontsForCode(lang)
-    // TODO: this curried function is annoying
     const languageLink = createLanguageLink(slug, lang)
-    const enSlug = languageLink('en')
-    const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/pages/${enSlug.slice(
-      1,
-      enSlug.length - 1
-    )}/index${lang === 'en' ? '' : '.' + lang}.md`
-    const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
-      `https://overreacted.io${enSlug}`
-    )}`
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -150,6 +137,7 @@ class BlogPostTemplate extends React.Component {
                   display: 'block',
                   marginBottom: rhythm(1),
                   marginTop: rhythm(-4 / 5),
+                  fontFamily: `ubuntu_lightregular, ${systemFont}`,
                 }}
               >
                 {formatPostDate(post.frontmatter.date, lang)}
@@ -158,52 +146,16 @@ class BlogPostTemplate extends React.Component {
               {translations.length > 0 && (
                 <Translations
                   translations={translations}
-                  editUrl={editUrl}
+                  // editUrl={editUrl}
                   languageLink={languageLink}
                   lang={lang}
                 />
               )}
             </header>
             <div dangerouslySetInnerHTML={{ __html: html }} />
-            <footer>
-              <p>
-                <a href={discussUrl} target="_blank" rel="noopener noreferrer">
-                  Discuss on Twitter
-                </a>
-                {` • `}
-                <a href={editUrl} target="_blank" rel="noopener noreferrer">
-                  Edit on GitHub
-                </a>
-              </p>
-            </footer>
           </article>
         </main>
         <aside>
-          {/* <div
-            style={{
-              margin: '90px 0 40px 0',
-              fontFamily: systemFont,
-            }}
-          >
-            <Signup />
-          </div> */}
-          <h3
-            style={{
-              fontFamily: 'Montserrat, sans-serif',
-              marginTop: rhythm(0.25),
-            }}
-          >
-            <Link
-              style={{
-                boxShadow: 'none',
-                textDecoration: 'none',
-                color: 'var(--pink)',
-              }}
-              to={'/'}
-            >
-              Overreacted
-            </Link>
-          </h3>
           <Bio />
           <nav>
             <ul

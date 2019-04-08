@@ -9,6 +9,7 @@ import Footer from '../components/Footer'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
 import { rhythm } from '../utils/typography'
 import Panel from '../components/Panel'
+import systemFont from '../utils/typography'
 
 class BlogIndexTemplate extends React.Component {
   render() {
@@ -25,6 +26,9 @@ class BlogIndexTemplate extends React.Component {
         <aside>
           <Bio />
         </aside>
+        <h3>Projects</h3>
+
+        <h3>Posts</h3>
         <main>
           {langKey !== 'en' && <Panel>仔细看，这不是翻译，也许有彩蛋。</Panel>}
 
@@ -35,8 +39,8 @@ class BlogIndexTemplate extends React.Component {
                 <header>
                   <h3
                     style={{
-                      fontFamily: 'Montserrat, sans-serif',
-                      fontSize: rhythm(1),
+                      fontFamily: `ubuntu_lightregular, ${systemFont}`,
+                      fontSize: rhythm(0.85),
                       marginBottom: rhythm(1 / 4),
                     }}
                   >
@@ -48,7 +52,13 @@ class BlogIndexTemplate extends React.Component {
                       {title}
                     </Link>
                   </h3>
-                  <small>
+                  <small
+                    style={{
+                      fontFamily: `ubuntu_lightregular, ${systemFont}`,
+                      marginBottom: rhythm(1 / 4),
+                      color: '#83858E',
+                    }}
+                  >
                     {formatPostDate(node.frontmatter.date, 'en')}
                     {` • ${formatReadingTime(node.timeToRead)}`}
                   </small>

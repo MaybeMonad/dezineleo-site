@@ -1,6 +1,9 @@
+// export function formatReadingTime(minutes) {
+//   let cups = Math.round(minutes / 5)
+//   return `${new Array(cups || 1).fill('☕️').join('')} ${minutes} min read`
+// }
 export function formatReadingTime(minutes) {
-  let cups = Math.round(minutes / 5)
-  return `${new Array(cups || 1).fill('☕️').join('')} ${minutes} min read`
+  return `${minutes} min read`
 }
 
 // `lang` is optional and will default to the current user agent locale

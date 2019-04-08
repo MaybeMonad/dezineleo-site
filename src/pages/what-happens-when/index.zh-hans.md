@@ -1,104 +1,23 @@
 ---
-title: What happens when you type an URL in the browser and press enter?
+title: 深入理解从输入 URL 开始到页面加载的整个过程
 date: '2018-07-29'
-spoiler: We talk about an age-old interview question.
+spoiler: 老掉牙的问题？关键是你理解透了么？
 ---
 
-This post will mainly focus on the stuff between client and server, if you're interested in the physical layer, please checkout [what happens when](https://github.com/alex/what-happens-when).
+看了[从输入URL到页面加载的过程？如何由一道题完善自己的前端知识体系！](https://zhuanlan.zhihu.com/p/34453198?group_id=957277540147056640)，最大的感受是我该怎么构建自己的知识体系？尤其像我这种纯靠自学野蛮生长的野路子开发人员，往往从业务着手，边开发边补充基础，这样固然是最快的上手方式，但弊端也很明显，一个极端就是成为老外经常调侃的 Stackoverflow-type Programmer，究其根本，还是基础知识掌握不牢固，没有透彻理解原理。
 
-Here is a quick preview of the topics.
-- [Parse URL](#parse-url)
-- [DNS lookup](#dns-lookup)
-- [TCP handshake](#tcp-handshake)
-- [HTTP process](#http-process)
-- [Rendering the page](#rendering-the-page)
-- [Conclusion](#conclusion)
-- [Resources](#resources)
+看到这里，如果想知道文题的答案，自行百度即可，或者参看本文的[英文版](/what-happens-when)。
 
-## Parse URL
+我分享几点平时应用的学习技巧。
 
-If we type `dezineleo.com` into Chrome's address bar. Chrome will parse the URL. Actually the Chrome might immediately invoke the auto-complete function once you press the key *d*. As mentioned before, I'll not cover all the stuff.
+1. 在基础阶段尽量选择权威、系统的书籍资料进行学习，比如《JavaScript 高级程序设计》、《Eloquent JavaScript》、《You Don't Know JS》等。
+2. 在进入具体学习前先将知识大纲通过脑图的形式梳理，可以有助于记忆、形成知识结构。
+3. 在具体学习过程中，我会就知识点进行四个维度的拆解，分别是 What to learn、Why it matters、Where to find 和 How to apply。
+4. 接着是大量练习实践，通过发表博文来总结并产出自己的实践成果。
 
-The Chrome will identify the application layer protocols like HTTP/HTTPS and the resource location. In this example, the protocal is `HTTP`, and the resouce location is `"/"`. Which also can explain what the **Uniform Resource Locator** means.
-
-## DNS lookup
-
-Before making a request to the [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) server, the Chrome might check the [HSTS](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) list firstly.
-
-**1. Browser cache**
-
-Then Chrome is going to check if the `dezineleo.com` is in its cache. Go to `chrome://net-internals/#dns` to checkout your DNS cache.
-
-**2. OS cache**
-
-If not found, Chrome will call your OS to checkout `hosts` file which contains host name configurations.
-
-**3. Router cache**
-
-Still not found, then it's router's turn to check its cache.
-
-**4. ISP cache**
-
-All failed? Then your OS will make a request to DNS server until the IP address we need is found. And during this lookup, the DNS server might follow [ARP](https://en.wikipedia.org/wiki/Address_Resolution_Protocol) to find the target IP's MAC address.
-
-If the local/ISP DNS server does not have it, then a recursive search is requested as the search will continue repeatedly from DNS server to DNS server until it either finds the IP address we need or returns an error response saying it is unable to find it.
-
-## TCP handshake
-
-> Before transfering data packets between your computer(client) and the server, a TCP connection shoule be established firstly. And the process called the TCP/IP three-way handshake.
-
-Once we get the IP address, the Chrome will take that and the given port number from the URL (the HTTP protocol default port is 80, and HTTPS is 443) to call `socket` function in order to request a TCP connection stream. There are a number of different internet protocols out there but TCP is the most common protocol used for HTTP requests.
-
-If the server is ready to be conneted which means it's listening the port, then things happen like the below.
-
-1. Client chooses an initial sequence number (ISN) and sends a packet with `SYN=1` to the server.
-2. Here I assume the client ISN is *x* and the server receives the request correctly. Then, Server responds with `ACK=1`, `ack=x+1` and `SYN=1` which indicates the server is acknowledging receipt of the first packet. Also, the server will choose an ISN. Here we assume it is *y*.
-3. Client sends the server with a new packet with `ACK=1`, `ack=y+1` and `SYN=1` to confirm this connection.
-
-Note: *ack* means acknowledge number.
-
-What if you want to close this connection? I'll go through this briefly. If you want to know more about that, checkout [TCP - 4 way handshake](https://stackoverflow.com/questions/46212623/why-tcp-connect-termination-need-4-way-handshake)
-
-To close the connection, client sends a packet with `FIN=1` to the server. Then server responds with ACK and its own FIN. Finally, client sends ACK to confirm the disconnection.
-
-P.S. [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) might be a trending topic.
-
-## HTTP process
-
-[HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol), well, here the protocol version I'm going to talk about is `HTTP/1.1`.
-
-Now it's time to transfer the data. Since our URL is `dezineleo.com`, Chrome will send a `GET` request asking for web page. And then the server handles the request and sends back a reponse. The server response contains the web page you requested as well as the status code, compression type (Content-Encoding), how to cache the page (Cache-Control), any cookies to set, privacy information, etc.
-
-Here is a list of the **status code**.
-
-* 1xx indicates an informational message only
-
-* 2xx indicates success of some kind
-
-* 3xx redirects the client to another URL
-
-* 4xx indicates an error on the client’s part
-
-* 5xx indicates an error on the server’s part
-
-## Rendering the page
-
-Woo, finally, we're going to see the page.
-
-First, the rendering engine is going to parse the HTML markup into a parse tree, a.k.a DOM tree. Then it will check the HTML tags and sends out GET requests for additional elements on the web page, such as images, CSS stylesheets, JavaScript files etc. 
-
-Secondly, it starts to parse the CSS files, `<style>` tag contents, and style attribute values.
-
-Finally, through sophisticated calculations by CPU/GPU, my site is right on your screen.
-
-## Conclusion
-
-Although it only takes a few seconds to render a web page, the behind scenes is not that simple. Thanks to the Internet, we're always connected. Now can you answer the question “What happens when you type an URL in the browser and press enter?”.
+如果你有更好的建议，欢迎加我微信 heixiaoka，对于爱学习的童鞋，我一向是热烈欢迎的。🤩
 
 ## Resources
-1. [What happens when...](https://github.com/alex/what-happens-when)
-2. [TCP - 4 way handshake](https://stackoverflow.com/questions/46212623/why-tcp-connect-termination-need-4-way-handshake)
-3. [What happens when you type an URL in the browser and press enter](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a)
-4. [How browsers work](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
-5. [Computer Network](https://github.com/CyC2018/Interview-Notebook/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md)
+1. [从输入URL到页面加载的过程？如何由一道题完善自己的前端知识体系！](https://zhuanlan.zhihu.com/p/34453198?group_id=957277540147056640)
+2. [从输入 URL 到页面加载完成的过程中都发生了什么事情？](http://fex.baidu.com/blog/2014/05/what-happen/)
 

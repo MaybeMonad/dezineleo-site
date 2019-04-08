@@ -1,181 +1,21 @@
 ---
 title: Markdown 新手教程
 date: '2018-07-22'
-spoiler: We talk about how to use Markdown to skyrocket your content producing.
+spoiler: 这应该不需要我多说什么了吧？
 ---
 
-Dude, it's 2018! Please markdown your f**kin coding life.
+本文的[英文版](/markdown-starter-tutorial)已经列了个大概，中文版里也不多赘述，只谈谈我的使用感受。
 
-Look, I'm using markdown to write my blog right now. It's an incredible powerful and lightweight way to write rich content. Websites like [GitHub](https://github.com) and [Reddit](https://reddit.com) are using Markdown to style their comments.
+我平时使用熊掌记（Bear App）记笔记，它是支持兼容 Markdown 格式，最大的感受就是排版很容易，因为手不需要离开键盘。而且熊掌记支持苹果生态内随时同步，这就极大方便了我的记录，我也不需要将时间花在选择不同平台间的应用上而为同步烦恼。
 
-It seems a little daunting at the beginning, but you might be suprised how fast and efficient it is to content creation.
+和其他应用比起来，熊掌记能做到轻便快捷，但我会选择用 OneNote 来构建知识体系，虽然不支持 Markdown，但它更像手账，可以无视呆板的书写格式，自由组合内容，这比起熊掌记只能支持外链图片强了太多。
 
-Here is a quick preview of the topics.
-- [What is Markdown?](#what-is-markdown)
-- [Markdown syntax](#markdown-syntax)
-  - [Headers](#headers)
-  - [List](#list)
-  - [Emphasis](#emphasis)
-  - [Images](#images)
-  - [Links](#links)
-  - [Blockquotes](#blockquotes)
-  - [Inline code](#inline-code)
-  - [Syntax highlighting](#syntax-highlighting)
-  - [Task Lists](#task-lists)
-  - [Tables](#tables)
-  - [Strikethrough](#strikethrough)
-  - [Emojis](#emojis)
-  - [Others](#others)
-- [Markdown App Recommendations](#markdown-app-recommendations)
-- [Conclusion](#conclusion)
-- [Resources](#resources)
+有道云笔记和印象笔记我也都用过，但都是过去式了，谈不上有明显的劣势，可能就是不适合我吧。
 
-## What is Markdown?
+其实说到底，用不用 Markdown 也是你的自由，他也只是个效率工具，真正产生价值的还是你的内容，如果你还没有用过 Markdown，要不尝试用着输出一波？？？
 
-**Markdown** is a plain text formatting syntax for writers. Not like plain text, it allows you to quickly write structured content for the web like formatting words as bold or italic. You can also add images and create lists.
-
-## Markdown syntax
-
-Here’s an overview of Markdown syntax.
-
-### Headers
-
-```markdown
-  # Header 1
-  ## Header 2
-  ### Header 3
-  #### Header 4
-  ##### Header 5
-  ###### Header 6
-```
-
-### List
-
-Unordered
-
-```markdown
-* Item 1
-* Item 2
-  * Item 2a
-  * Item 2b
-```
-
-Ordered
-
-```markdown
-1. Item 1
-2. Item 2
-3. Item 3
-  1. Item 3.1
-  2. Item 3.2
-```
-
-### Emphasis
-
-```markdown
-*Italic*
-_Italic_
-
-**Bold**
-__Bold__
-```
-
-However, at dezineleo.com, I modified the italic style to be somthing like *Italic*, because I always need to point out the code stuff.
-
-### Images
-
-```markdown
-![Dezineleo Logo](/dezineleo.logo.jpg)
-```
-
-### Links
-
-```markdown
-https://dezineleo.com
-[Dezineleo](https://dezineleo.com)
-```
-
-### Blockquotes
-
-```markdown
-> Dezineleo is a Design &
-> Dev blog.
-```
-
-### Inline code
-
-```markdown
-Dezineleo is a Design & `Dev` blog.
-```
-
-### Syntax highlighting
-
-Currently, I'm using [prismjs](https://prismjs.com/) to highlight my codes.
-
-```javascript
-// ```javscript
-// ...
-// ```
-function hello() {
-  console.log('world')
-}
-```
-
-### Task Lists
-
-```markdown
-- [x] Task 1 completed
-- [ ] Task 2
-```
-
-### Tables
-
-```markdown
-Hello | World
------ | -----
-Content 1 | Content 2
-Content 3 | Content 4
-```
-
-Table Preview.
-
-Hello | World
------ | -----
-Content 1 | Content 2
-Content 3 | Content 4
-
-### Strikethrough
-
-```markdown
-~~Strikethrough~~
-```
-
-### Emojis
-
-Yeah, this is my favourite feature. 😆
-
-```markdown
-😆
-```
-
-More emojis: [Complete list of github markdown emoji markup](https://gist.github.com/rxaviers/7360908)
-
-### Others
-
-You can also use back slash to escape markdown characters. You can even write plain HTML in your markdown document.
-
-## Markdown App Recommendations
-
-Currently, I'm mainly using **Bear App** to make cross-platform markdown documents. You can also use [VS code](https://code.visualstudio.com/) editor to write markdown files. You may install [Markdown - All in one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one#review-details) plugin firstly.
-
-## Conclusion
-
-First of all, start to write your first markdown document. After just a couple of posts, I can assure you that your fingers will fly across your keyboard when you create your content.
+最后，推荐一款跨平台的免费编辑器，[Typora](https://typora.io/)。
 
 ## Resources
-1. [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-2. [Markdown Tutorial](https://www.markdowntutorial.com/)
-3. [The Ultimate Guide to Markdown](https://blog.ghost.org/markdown/)
-4. [Bear App](http://www.bear-writer.com/)
-5. [Markdown - All in one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one#review-details)
-6. [Markdown Project](https://daringfireball.net/projects/markdown/)
+1. [Typora](https://typora.io/)
+2. [Bear App](http://www.bear-writer.com/)

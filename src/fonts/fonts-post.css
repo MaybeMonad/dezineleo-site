@@ -1,35 +1,87 @@
-/* Fonts are copy pasted from Google styles, + font-display: swap; */
-
-/* merriweather-400italic - latin */
 @font-face {
-  font-display: swap;
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 400;
-  src: url(./files/merriweather-400-i-l.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
-}
-/* merriweather-700normal - latin */
-@font-face {
-  font-display: swap;
-  font-family: 'Merriweather';
+  font-family: 'robotobold';
+  src: url('./files/roboto-bold-webfont.woff2') format('woff2'),
+    url('./files/roboto-bold-webfont.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 700;
-  src: url(./files/merriweather-700-l.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
 }
-/* merriweather-700italic - latin */
+
 @font-face {
-  font-display: swap;
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 700;
-  src: url(./files/merriweather-700-i-l.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
+  font-family: 'robotomedium';
+  src: url('./files/roboto-medium-webfont.woff2') format('woff2'),
+    url('./files/roboto-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'robotoregular';
+  src: url('./files/roboto-regular-webfont.woff2') format('woff2'),
+    url('./files/roboto-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'robotolight';
+  src: url('./files/roboto-light-webfont.woff2') format('woff2'),
+    url('./files/roboto-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source_code_prolight';
+  src: url('./files/sourcecodepro-light-webfont.woff2') format('woff2'),
+    url('./files/sourcecodepro-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'roboto_monoregular';
+  src: url('./files/robotomono-regular-webfont.woff2') format('woff2'),
+    url('./files/robotomono-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'roboto_monolight';
+  src: url('./files/robotomono-light-webfont.woff2') format('woff2'),
+    url('./files/robotomono-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ubuntubold';
+  src: url('./files/ubuntu-bold-webfont.woff2') format('woff2'),
+    url('./files/ubuntu-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ubuntu_lightregular';
+  src: url('./files/ubuntu-light-webfont.woff2') format('woff2'),
+    url('./files/ubuntu-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ubuntu_mediumregular';
+  src: url('./files/ubuntu-medium-webfont.woff2') format('woff2'),
+    url('./files/ubuntu-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ubunturegular';
+  src: url('./files/ubuntu-regular-webfont.woff2') format('woff2'),
+    url('./files/ubuntu-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }

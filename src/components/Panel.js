@@ -5,10 +5,10 @@ function Panel({ children, style = {} }) {
     <p
       style={{
         fontSize: '0.9em',
-        border: '1px solid var(--hr)',
-        borderRadius: '0.75em',
+        border: 'var(--border)',
+        borderRadius: '5px',
         padding: '0.75em',
-        background: 'var(--inlineCode-bg)',
+        background: 'white',
         wordBreak: 'keep-all',
         ...style,
       }}

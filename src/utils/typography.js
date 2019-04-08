@@ -4,7 +4,17 @@ import './global.css'
 import Typography from 'typography'
 import Wordpress2016 from 'typography-theme-wordpress-2016'
 
+export const systemFont = `PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, WenQuanYi Micro Hei, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif`
+
 Wordpress2016.overrideThemeStyles = () => ({
+  html: {
+    font: `100%/1.75 robotoregular,${systemFont}`,
+  },
+  body: {
+    fontFamily: `ubuntu_lightregular, ${systemFont}`,
+  },
   a: {
     color: 'var(--textLink)',
   },
@@ -34,10 +44,20 @@ Wordpress2016.overrideThemeStyles = () => ({
   blockquote: {
     color: 'inherit',
     borderLeftColor: 'inherit',
-    opacity: '0.8',
+    // opacity: '0.8',
   },
   'blockquote.translation': {
     fontSize: '1em',
+  },
+  'h1, h2, h3, h4, h5, h6': {
+    fontFamily: `ubunturegular, ${systemFont}`,
+    fontWeight: 400,
+  },
+  h1: {
+    fontSize: '1.75rem',
+  },
+  h2: {
+    fontSize: '1.48rem',
   },
 })
 
