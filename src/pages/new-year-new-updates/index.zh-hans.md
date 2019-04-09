@@ -4,22 +4,10 @@ date: '2019-02-13'
 spoiler: 都 2019 年了，是不是该整点像样的了？！
 ---
 
-去年用 [GatsbyJS](https://www.gatsbyjs.org/) 搭了这个博客，[开博头篇文章](https://dezineleo.com/posts/2018/07/site-is-alive)也做了简单介绍，今天趁着升级版本再次安利一波。
-
-GatsbyJS 一直自称 blazing fast，虽然我也不知道具体快在哪里，但可以从侧面体会下。
-
-+ 一些著名厂商的页面基于 GatsbyJS 搭建，包括 [React 官网](https://reactjs.org/)。
-+ 根据 [StaticGen](https://www.staticgen.com/) 统计，GatsbyJS 在过去 279 天内增加 9978 颗 Star，新增数第一，远超老牌 Jekyll、Hexo 等。
-
-当然，官方也列举了这次的更新亮点。
-
-+ 构建时间减少高达 75%。
-+ 客户端的 JS 运行时瘦身 31%。
-+ 支持 Webpack 4，Babel 7，React 16.5（我自己升级到了 16.8.1，毕竟安排上了 Hooks 😳）。
-
-总之，就是快，对吧！？
+去年用 [GatsbyJS](https://www.gatsbyjs.org/) 搭了这个博客，[开博头篇文章](/site-is-alive)也做了简单介绍，今天趁着升级 2.0 版本再次安利一波。
 
 ## 开始升级
+
 参照官方的[升级指南](https://www.gatsbyjs.org/docs/migrating-from-v1-to-v2/)，我简要列举下更新内容。
 
 + 升级 Gatsby 及关联的包；升级 React；单独升级插件的依赖包。
@@ -40,23 +28,21 @@ GatsbyJS 一直自称 blazing fast，虽然我也不知道具体快在哪里，�
 废话列了那么多，so，都改完得花不少时间吧？嗯，确实，我足足思想斗争了两分钟才放弃这样的升级方案。😆
 
 ## 真实升级方案
-像我这样的懒癌患者，当然是直接 fork [@dan_abramov](https://mobile.twitter.com/dan_abramov) 大佬的博客，然后魔改一番，哈哈哈哈哈…
 
-另外，Dan 的 Overreacted.io 还是值得一读。
-
-## 深入 GatsbyJS 内核
-趁着这次的升级，我也仔细了解了下 Gatsby 的实现原理，原文见 [Behind the Scenes](https://www.gatsbyjs.org/docs/behind-the-scenes/)。看是看完了，但可能超纲了，我……我还是等下次更新后再来看吧。😅
+像我这样的懒癌患者，当然是直接 fork [@dan_abramov](https://mobile.twitter.com/dan_abramov) 大佬的[博客](https://overreacted.io)，然后魔改一番，哈哈哈哈哈…
 
 ## 2018 - 2019
-更新算是告一段落，接下来聊聊总结和规划。面对今年的互联网寒冬，你们过冬都是用什么姿势？
 
-2017 年末正式入坑前端，以前是英语老师，跨度可能有点大，其实我在大学期间就一直在捣鼓网站建设，反而接触过「远古前端」，当然，那会儿还没有前端的概念。可能一直是围绕「实现业务」而在搞开发，在团队协作中就会有些不适应，所以这一年来也是努力夯实自己的基础，结果发现，前端这个坑不仅大，还多。🤣
+关于“互联网寒冬”，我一直认为做好自己该做的事，脚踏实地先提高自己的技术水平才是王道，起码互联网行业还饿不死人吧？
 
-当初写这个博客也是想要总结一些自己的学习成果，给自己定下的目标是每周更新一篇文章，同步更新中英双语，但两个版本不是纯翻译关系，内容不一定完全一致。
+我是在 2017 年末正式入坑前端，以前算是英语老师，但在大学期间一直在捣鼓网站建设，也算接触过「远古前端」，当然，那会儿还没听说过前端的概念。现在正儿八经弄前端，才发现自己的优势也仅是建立在对业务场景的认识和积累，对编程还真是相当于零基础，好在靠着一直以来的兴趣自学着，虽磕盼了些，也算入了门。🤣
+
+接下来会朝深入理解 JS、React 以及 NodeJS 进阶。
 
 未完待续……
 
 ## Resources
+
 1. [Migrating from v1 to v2 | GatsbyJS](https://www.gatsbyjs.org/docs/migrating-from-v1-to-v2/)
 2. [GitHub - gaearon/overreacted.io](https://github.com/gaearon/overreacted.io)
 3. [Start your blazing fast static site based on GatsbyJS](/site-is-alive)

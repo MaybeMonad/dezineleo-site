@@ -5,18 +5,18 @@ import { rhythm, scale } from '../utils/typography'
 import styled from 'styled-components'
 import logo from '../assets/logo.svg'
 
-const Menu = styled.ul`
-  display: flex;
-  justify-content: between;
-  align-items: center;
-  list-style: none;
-  margin: 0;
+// const Menu = styled.ul`
+//   display: flex;
+//   justify-content: between;
+//   align-items: center;
+//   list-style: none;
+//   margin: 0;
 
-  li {
-    margin: 0 28px;
-    font-size: 14px;
-  }
-`
+//   li {
+//     margin: 0 28px;
+//     font-size: 14px;
+//   }
+// `
 
 export default props => {
   const { children } = props
@@ -47,7 +47,7 @@ export default props => {
         style={{
           marginLeft: 'auto',
           marginRight: 'auto',
-          maxWidth: rhythm(24),
+          maxWidth: rhythm(25),
           padding: `2.625rem ${rhythm(3 / 4)}`,
         }}
       >
@@ -77,7 +77,10 @@ export default props => {
               <img style={{ margin: 0 }} src={logo} alt="dezineleo" />
             </Link>
           </h1>
-          <Menu>
+          <a style={{ fontSize: 13 }} href="mailto:dezineleo@gmail.com">
+            Get Hands Dirty.
+          </a>
+          {/* <Menu>
             <li>
               <a href="/about">About</a>
             </li>
@@ -87,7 +90,7 @@ export default props => {
             <li>
               <a href="/contact">Contact</a>
             </li>
-          </Menu>
+          </Menu> */}
         </header>
         {children}
       </div>

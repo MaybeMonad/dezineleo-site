@@ -4,9 +4,7 @@ date: '2019-03-24'
 spoiler: 看，是闭包...
 ---
 
-本文的[英文版](/javascript-closures)做了一些基本概念的解释，接下来我们就看几道闭包的面试题。
-
-先来看一道简单的。
+在[英文版](/javascript-closures)中有对闭包基本概念的讲述，以下参考几道闭包的面试题。
 
 ```js
 var name = 'global';

@@ -4,9 +4,9 @@ date: '2018-07-15'
 spoiler: 正则题库，内容更新中...
 ---
 
-如果你是初学者，看完本文的[英文版](/regular-expression-in-javascript)就应该能有点感觉了，如果没有就自行谷歌学习。另外，推荐一个很棒的正则学习网站，[Regular Expression 101](https://regex101.com/)。
+如若初学者，可参照着[本文](/regular-expression-in-javascript)找些许感觉，若无感可自行谷歌拓展学习，另推荐正则学习网站 - [Regular Expression 101](https://regex101.com/)。
 
-下面是我搜集的几道正则面试题。
+以下列几道正则面试题。
 
 ```js
 var someText="web2.0 .net2.0";

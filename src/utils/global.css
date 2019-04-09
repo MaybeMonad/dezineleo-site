@@ -1,6 +1,7 @@
 body {
   --pink: rgb(255, 167, 196);
   --black: #1a1d2d;
+  --font-grey: #83858e;
   --border-grey: #e8e8e8;
   --border: 1px solid var(--border-grey);
   background-color: var(--bg);
