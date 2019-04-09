@@ -1,122 +1,216 @@
-const path = require('path');
-const _ = require('lodash');
-const createPaginatedPages = require('gatsby-paginate');
+const _ = require('lodash')
+const Promise = require('bluebird')
+const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
+const { supportedLanguages } = require('./i18n')
 
-exports.createPages = ({
-  boundActionCreators,
-  graphql
-}) => {
-  const {
-    createPage
-  } = boundActionCreators;
-  const postTemplate = path.resolve('src/templates/blogTemplate.js');
-  const projectTemplate = path.resolve('src/templates/projectTemplate.js');
-  const tagTemplate = path.resolve('src/templates/tagTemplate.js');
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage, createRedirect } = actions
 
-  return graphql(`
-  {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 2000
-      filter: {
-        frontmatter: {
-          published: { eq: true }
-        }
-      }
-    ) {
-      edges {
-        node {
-          html
-          timeToRead
-          frontmatter {
-            path
-            title
-            date(formatString: "MMMM DD, YYYY")
-            author
-            excerpt
-            type
-            thumbnail {
-              childImageSharp {
-                sizes(maxWidth: 400, maxHeight: 240) {
-                  tracedSVG
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
+  // Oops
+  createRedirect({
+    fromPath: '/hello-dribbble-dezineleo',
+    toPath: '/hello-dribbble',
+    isPermanent: true,
+    redirectInBrowser: true,
+  })
+
+  // // Oops
+  // createRedirect({
+  //   fromPath: '/zh_TW/things-i-dont-know-as-of-2018/',
+  //   toPath: '/zh-hant/things-i-dont-know-as-of-2018/',
+  //   isPermanent: true,
+  //   redirectInBrowser: true,
+  // });
+  // // Oops 2
+  // createRedirect({
+  //   fromPath: '/not-everything-should-be-a-hook/',
+  //   toPath: '/why-isnt-x-a-hook/',
+  //   isPermanent: true,
+  //   redirectInBrowser: true,
+  // });
+  // // Oops 3
+  // createRedirect({
+  //   fromPath: '/making-setinterval-play-well-with-react-hooks/',
+  //   toPath: '/making-setinterval-declarative-with-react-hooks/',
+  //   isPermanent: true,
+  //   redirectInBrowser: true,
+  // });
+
+  return new Promise((resolve, reject) => {
+    const blogPost = path.resolve('./src/templates/blog-post.js')
+
+    // Create index pages for all supported languages
+    Object.keys(supportedLanguages).forEach(langKey => {
+      createPage({
+        path: langKey === 'en' ? '/' : `/${langKey}/`,
+        component: path.resolve('./src/templates/blog-index.js'),
+        context: {
+          langKey,
+        },
+      })
+    })
+
+    resolve(
+      graphql(
+        `
+          {
+            allMarkdownRemark(
+              sort: { fields: [frontmatter___date], order: DESC }
+              limit: 1000
+            ) {
+              edges {
+                node {
+                  fields {
+                    slug
+                    langKey
+                    directoryName
+                    maybeAbsoluteLinks
+                  }
+                  frontmatter {
+                    title
+                  }
                 }
               }
             }
-            categories
-            tags
           }
+        `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors)
+          reject(result.errors)
+          return
         }
-      }
+
+        // Create blog posts pages.
+        const posts = result.data.allMarkdownRemark.edges
+        const allSlugs = _.reduce(
+          posts,
+          (result, post) => {
+            result.add(post.node.fields.slug)
+            return result
+          },
+          new Set()
+        )
+
+        const translationsByDirectory = _.reduce(
+          posts,
+          (result, post) => {
+            const directoryName = _.get(post, 'node.fields.directoryName')
+            const langKey = _.get(post, 'node.fields.langKey')
+
+            if (directoryName && langKey && langKey !== 'en') {
+              ;(result[directoryName] || (result[directoryName] = [])).push(
+                langKey
+              )
+            }
+
+            return result
+          },
+          {}
+        )
+
+        const defaultLangPosts = posts.filter(
+          ({ node }) => node.fields.langKey === 'en'
+        )
+        _.each(defaultLangPosts, (post, index) => {
+          const previous =
+            index === defaultLangPosts.length - 1
+              ? null
+              : defaultLangPosts[index + 1].node
+          const next = index === 0 ? null : defaultLangPosts[index - 1].node
+
+          const translations =
+            translationsByDirectory[_.get(post, 'node.fields.directoryName')] ||
+            []
+
+          createPage({
+            path: post.node.fields.slug,
+            component: blogPost,
+            context: {
+              slug: post.node.fields.slug,
+              previous,
+              next,
+              translations,
+              translatedLinks: [],
+            },
+          })
+
+          const otherLangPosts = posts.filter(
+            ({ node }) => node.fields.langKey !== 'en'
+          )
+          _.each(otherLangPosts, post => {
+            const translations =
+              translationsByDirectory[_.get(post, 'node.fields.directoryName')]
+
+            // Record which links to internal posts have translated versions
+            // into this language. We'll replace them before rendering HTML.
+            let translatedLinks = []
+            const { langKey, maybeAbsoluteLinks } = post.node.fields
+            maybeAbsoluteLinks.forEach(link => {
+              if (allSlugs.has(link)) {
+                if (allSlugs.has('/' + langKey + link)) {
+                  // This is legit an internal post link,
+                  // and it has been already translated.
+                  translatedLinks.push(link)
+                } else if (link.startsWith('/' + langKey + '/')) {
+                  console.log('-----------------')
+                  console.error(
+                    `It looks like "${langKey}" translation of "${
+                      post.node.frontmatter.title
+                    }" ` +
+                      `is linking to a translated link: ${link}. Don't do this. Use the original link. ` +
+                      `The blog post renderer will automatically use a translation if it is available.`
+                  )
+                  console.log('-----------------')
+                }
+              }
+            })
+
+            createPage({
+              path: post.node.fields.slug,
+              component: blogPost,
+              context: {
+                slug: post.node.fields.slug,
+                translations,
+                translatedLinks,
+              },
+            })
+          })
+        })
+      })
+    )
+  })
+}
+
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions
+
+  if (_.get(node, 'internal.type') === `MarkdownRemark`) {
+    createNodeField({
+      node,
+      name: 'directoryName',
+      value: path.basename(path.dirname(_.get(node, 'fileAbsolutePath'))),
+    })
+
+    // Capture a list of what looks to be absolute internal links.
+    // We'll later remember which of them have translations,
+    // and use that to render localized internal links when available.
+
+    // TODO: check against links with no trailing slashes
+    // or that already link to translations.
+    const markdown = node.internal.content
+    let maybeAbsoluteLinks = []
+    let linkRe = /\]\((\/[^\)]+\/)\)/g
+    let match = linkRe.exec(markdown)
+    while (match != null) {
+      maybeAbsoluteLinks.push(match[1])
+      match = linkRe.exec(markdown)
     }
-  }`
-).then(res => {
-    if (res.errors) {
-      return Promise.reject(res.errors);
-    }
-
-    const allPosts = res.data.allMarkdownRemark.edges;
-    const blogPosts = [];
-    const projectPosts = [];
-
-    allPosts.map(post => {
-      if (post.node.frontmatter.type === 'post') {
-        blogPosts.push(post);
-      } else {
-        projectPosts.push(post);
-      }
-    });
-
-    // Create post detail pages
-    blogPosts.forEach(({ node }) => {
-      createPaginatedPages({
-        edges: blogPosts,
-        createPage: createPage,
-        pageTemplate: "src/templates/blog.js",
-        pageLength: 6, // This is optional and defaults to 10 if not used
-        pathPrefix: "blog", // This is optional and defaults to an empty string if not used
-        context: {} // This is optional and defaults to an empty object if not used
-      });
-
-      createPage({
-        path: node.frontmatter.path,
-        component: postTemplate,
-      });
-    });
-
-    // Create project detail page
-    projectPosts.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: projectTemplate,
-      });
-    });
-
-    // Tag pages:
-    let tags = [];
-    // Iterate through each post, putting all found tags into `tags`
-    _.each(allPosts, edge => {
-      if (_.get(edge, "node.frontmatter.tags")) {
-        tags = tags.concat(edge.node.frontmatter.tags);
-      }
-    });
-    // Eliminate duplicate tags
-    tags = _.uniq(tags);
-
-    // Make tag pages
-    tags.forEach(tag => {
-      createPage({
-        path: `/tags/${_.kebabCase(tag)}/`,
-        component: tagTemplate,
-        context: {
-          tag,
-        },
-      });
-    });
-  });
+    createNodeField({
+      node,
+      name: 'maybeAbsoluteLinks',
+      value: _.uniq(maybeAbsoluteLinks),
+    })
+  }
 }

@@ -1,6 +1,6 @@
 # Dezineleo's Blog
 
-This is leo's personal blog, which mainly focuses on **Web Design** and **Web Development**.
+This is [Yang Jin](https://mobile.twitter.com/dezineleo)'s personal blog, which mainly focuses on **Web Design** and **Web Development**.
 
 ## Articles
 
@@ -13,4 +13,3 @@ This is leo's personal blog, which mainly focuses on **Web Design** and **Web De
 ## Based on GatsbyJS
 
 [GatsbyJS](https://www.gatsbyjs.org/)
-
