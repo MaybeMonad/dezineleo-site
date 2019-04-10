@@ -7,7 +7,6 @@ import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import styled from 'styled-components'
-import Lang from '../components/Lang'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
 import { rhythm, scale } from '../utils/typography'
 import { codeToLanguage, createLanguageLink } from '../utils/i18n'
@@ -31,6 +30,25 @@ export default props => {
   })
 
   const languageLink = createLanguageLink(slug, lang)
+
+  const Lang = styled.ul`
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    li {
+      margin: 0 0 0 8px;
+      font-size: 13px;
+      padding: 3px 6px;
+      &.active {
+        background: var(--black);
+        a {
+          color: white;
+        }
+      }
+    }
+  `
 
   const StyledLang = styled(Lang)`
     border: var(--border);
