@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import { rhythm, scale } from '../utils/typography'
-import styled from 'styled-components'
-import logo from '../assets/logo.svg'
+// import styled from 'styled-components'
+// import logo from '../assets/logo.svg'
 
 // const Menu = styled.ul`
 //   display: flex;
@@ -71,10 +71,13 @@ export default props => {
                 boxShadow: 'none',
                 textDecoration: 'none',
                 color: 'var(--textTitle)',
+                fontSize: 20,
+                fontFamily: 'ubuntubold',
               }}
               to={'/'}
             >
-              <img style={{ margin: 0 }} src={logo} alt="dezineleo" />
+              {/* <img style={{ margin: 0 }} src={logo} alt="dezineleo" /> */}
+              dezineleo
             </Link>
           </h1>
           <a style={{ fontSize: 13 }} href="mailto:dezineleo@gmail.com">
