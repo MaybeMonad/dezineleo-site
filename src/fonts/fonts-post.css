@@ -1,39 +1,34 @@
 @font-face {
   font-family: 'source_code_prolight';
-  src: url('./files/sourcecodepro-light-webfont.woff2') format('woff2'),
-    url('./files/sourcecodepro-light-webfont.woff') format('woff');
+  src: url(./files/sourcecodepro-light-webfont.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'fonts-post';
-  src: url('./files/ubuntu-bold-webfont.woff2') format('woff2'),
-    url('./files/ubuntu-bold-webfont.woff') format('woff');
+  font-family: 'ubuntubold';
+  src: url(./files/ubuntu-bold-webfont.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'ubuntu_lightregular';
-  src: url('./files/ubuntu-light-webfont.woff2') format('woff2'),
-    url('./files/ubuntu-light-webfont.woff') format('woff');
+  src: url(./files/ubuntu-light-webfont.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'ubuntu_mediumregular';
-  src: url('./files/ubuntu-medium-webfont.woff2') format('woff2'),
-    url('./files/ubuntu-medium-webfont.woff') format('woff');
+  src: url(./files/ubuntu-medium-webfont.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'ubunturegular';
-  src: url('./files/ubuntu-regular-webfont.woff2') format('woff2'),
-    url('./files/ubuntu-regular-webfont.woff') format('woff');
+  src: url(./files/ubuntu-regular-webfont.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
 }

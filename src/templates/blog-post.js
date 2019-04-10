@@ -9,7 +9,6 @@ import SEO from '../components/SEO'
 import styled from 'styled-components'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
 import { rhythm, scale } from '../utils/typography'
-import { codeToLanguage, createLanguageLink } from '../utils/i18n'
 
 const systemFont = `ubuntu_lightregular, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
@@ -24,10 +23,12 @@ export default props => {
   // Replace original links with translated when available.
   let html = post.html
 
-  translations = translations.slice()
-  translations.sort((a, b) => {
-    return codeToLanguage(a) < codeToLanguage(b) ? -1 : 1
-  })
+  const createLanguageLink = (slug, lang) => {
+    const rawSlug = slug.replace(`${lang}/`, '')
+
+    return targetLang =>
+      targetLang === 'en' ? rawSlug : `${targetLang}${rawSlug}`
+  }
 
   const languageLink = createLanguageLink(slug, lang)
 
