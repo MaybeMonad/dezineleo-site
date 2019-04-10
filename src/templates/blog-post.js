@@ -12,7 +12,7 @@ import { formatPostDate, formatReadingTime } from '../utils/helpers'
 import { rhythm, scale } from '../utils/typography'
 import { codeToLanguage, createLanguageLink } from '../utils/i18n'
 
-const systemFont = `robotoregular, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+const systemFont = `ubuntu_lightregular, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif`
 
@@ -61,7 +61,7 @@ export default props => {
                 display: 'block',
                 marginBottom: rhythm(1),
                 marginTop: rhythm(-4 / 5),
-                fontFamily: `ubuntu_lightregular, ${systemFont}`,
+                fontFamily: systemFont,
               }}
             >
               {formatPostDate(post.frontmatter.date, lang)}

@@ -4,16 +4,16 @@ import './global.css'
 import Typography from 'typography'
 import Wordpress2016 from 'typography-theme-wordpress-2016'
 
-export const systemFont = `PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, WenQuanYi Micro Hei, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+export const systemFont = `ubuntu_lightregular, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, WenQuanYi Micro Hei, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif`
 
 Wordpress2016.overrideThemeStyles = () => ({
   html: {
-    font: `100%/1.75 robotoregular,${systemFont}`,
+    font: `100%/1.75 ${systemFont}`,
   },
   body: {
-    fontFamily: `ubuntu_lightregular, ${systemFont}`,
+    fontFamily: systemFont,
   },
   a: {
     color: 'var(--textLink)',

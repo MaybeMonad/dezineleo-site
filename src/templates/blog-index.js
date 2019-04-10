@@ -163,7 +163,7 @@ export default props => {
                 <header>
                   <h3
                     style={{
-                      fontFamily: `ubuntu_lightregular, ${systemFont}`,
+                      fontFamily: systemFont,
                       fontSize: rhythm(0.85),
                       marginBottom: rhythm(1 / 4),
                       marginTop: index === 0 ? 0 : '3.5rem',
@@ -179,7 +179,7 @@ export default props => {
                   </h3>
                   <small
                     style={{
-                      fontFamily: `ubuntu_lightregular, ${systemFont}`,
+                      fontFamily: systemFont,
                       marginBottom: rhythm(1 / 4),
                       color: '#83858E',
                     }}
