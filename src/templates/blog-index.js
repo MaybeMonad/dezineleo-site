@@ -20,12 +20,29 @@ const projects = [
   {
     title: 'De Components',
     description: 'Curated React UI Components.',
-    link: 'https://github.com/DezineLeo/de-design',
+    // link: 'https://github.com/DezineLeo/de-design',
+    link: '/de-components',
   },
   {
     title: 'De HTML Starter',
     description: 'A stater HTML Template using Pug, Sass, Webpack, Gulp.',
-    link: 'https://github.com/DezineLeo/DeHTML',
+    // link: 'https://github.com/DezineLeo/DeHTML',
+    link: '/de-html',
+  },
+  {
+    title: 'Books',
+    description: `Books that I've read.`,
+    link: '/books',
+  },
+  {
+    title: 'Learn React',
+    description: 'How I learn React.',
+    link: '/learn-react',
+  },
+  {
+    title: 'Learn JavaScript',
+    description: 'How I learn JavaScript.',
+    link: '/learn-javascript',
   },
 ]
 
@@ -35,25 +52,26 @@ const Projects = props => {
   return (
     <div className={className}>
       {data.map(p => (
-        <a href={p.link} target="_blank" key={p.title}>
+        <Link to={p.link} key={p.title}>
           <h4>{p.title}</h4>
           <p>{p.description}</p>
-        </a>
+        </Link>
       ))}
     </div>
   )
 }
 
 const StyledProjects = styled(Projects)`
-  display: flex;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  width: calc(100% - 24px);
+  grid-gap: 12px;
   a {
     border: var(--border);
     border-radius: 4px;
     padding: 16px 20px;
     display: inline-block;
-    width: calc(33.33% - 8px);
     box-shadow: none;
-    margin-left: 12px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     :first-child {
       margin-left: 0;
@@ -75,11 +93,8 @@ const StyledProjects = styled(Projects)`
     }
   }
   @media (max-width: 672px) {
-    flex-direction: column;
-    a {
-      width: calc(100% - 40px);
-      margin: 0 0 12px 0;
-    }
+    grid-template-columns: 100%;
+    width: 100%;
   }
 `
 

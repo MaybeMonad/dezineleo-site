@@ -5,6 +5,7 @@ body {
   --black: #1a1d2d;
   --font-grey: #83858e;
   --border-grey: #e8e8e8;
+  --bg-grey: #fafafa;
   --border: 1px solid var(--border-grey);
   --font-family: 'ubuntu_lightregular', PingFang SC, Microsoft YaHei,
     Noto Sans CJK SC, WenQuanYi Micro Hei, system-ui, -apple-system, sans-serif;
