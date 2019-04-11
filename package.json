@@ -40,9 +40,11 @@
     "typography-theme-wordpress-2016": "^0.15.10"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.0",
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-react-hooks": "^1.6.0",
+    "gatsby-plugin-styled-components": "^3.0.7",
     "gh-pages": "^1.2.0",
     "prettier": "^1.14.2",
     "styled-components": "^4.2.0"

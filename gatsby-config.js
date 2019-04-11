@@ -146,12 +146,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    // {
-    //   resolve: 'gatsby-plugin-typography',
-    //   options: {
-    //     pathToConfigModule: 'src/utils/typography',
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-i18n',
       options: {
@@ -160,5 +154,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-catch-links`,
+    `gatsby-plugin-styled-components`,
   ],
 }
