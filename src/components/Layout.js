@@ -1,23 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
+import '../fonts/fonts-post.css'
 import '../utils/global.css'
-// import { rhythm, scale } from '../utils/typography'
-// import styled from 'styled-components'
-// import logo from '../assets/logo.svg'
-
-// const Menu = styled.ul`
-//   display: flex;
-//   justify-content: between;
-//   align-items: center;
-//   list-style: none;
-//   margin: 0;
-
-//   li {
-//     margin: 0 28px;
-//     font-size: 14px;
-//   }
-// `
 
 export default props => {
   const { children } = props
@@ -84,17 +69,6 @@ export default props => {
           <a style={{ fontSize: 13 }} href="mailto:dezineleo@gmail.com">
             Get Hands Dirty.
           </a>
-          {/* <Menu>
-            <li>
-              <a href="/about">About</a>
-            </li>
-            <li>
-              <a href="/work">Work</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
-            </li>
-          </Menu> */}
         </header>
         {children}
       </div>

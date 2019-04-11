@@ -9,9 +9,7 @@ import SEO from '../components/SEO'
 import Footer from '../components/Footer'
 import Lang from '../components/Lang'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
-// import { rhythm } from '../utils/typography'
 import Panel from '../components/Panel'
-import systemFont from '../utils/typography'
 
 const projects = [
   {
@@ -164,7 +162,7 @@ export default props => {
                 <header>
                   <h3
                     style={{
-                      fontFamily: systemFont,
+                      // fontFamily: systemFont,
                       fontSize: '1.36rem',
                       marginBottom: 0,
                       marginTop: index === 0 ? 0 : '3.5rem',
