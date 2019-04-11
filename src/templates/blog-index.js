@@ -66,7 +66,7 @@ const StyledProjects = styled(Projects)`
       text-transform: none;
       letter-spacing: 0;
       margin: 0 0 8px 0;
-      font-family: 'ubuntu_lightregular';
+      font-family: 'ubunturegular';
     }
     p {
       margin: 0;
@@ -162,7 +162,7 @@ export default props => {
                 <header>
                   <h3
                     style={{
-                      // fontFamily: systemFont,
+                      fontFamily: 'ubunturegular',
                       fontSize: '1.36rem',
                       marginBottom: 0,
                       marginTop: index === 0 ? 0 : '3.5rem',

@@ -1,5 +1,7 @@
 // gatsby-browser.js
 import React from 'react'
+import './src/fonts/fonts-post.css'
+import './src/utils/global.css'
 
 // Forked Gatsby default to not remount on switches between
 // translated versions of the same page.

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
-import '../fonts/fonts-post.css'
-import '../utils/global.css'
 
 export default props => {
   const { children } = props
