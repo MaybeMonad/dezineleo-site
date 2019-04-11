@@ -1,10 +1,15 @@
+@import '../fonts/fonts-post.css';
+
 body {
   --pink: rgb(255, 167, 196);
   --black: #1a1d2d;
   --font-grey: #83858e;
   --border-grey: #e8e8e8;
   --border: 1px solid var(--border-grey);
+  --font-family: 'ubuntu_lightregular', PingFang SC, Microsoft YaHei,
+    Noto Sans CJK SC, WenQuanYi Micro Hei, system-ui, -apple-system, sans-serif;
   background-color: var(--bg);
+  font: 100%/1.75 var(--font-family);
 }
 
 body.light {
@@ -42,7 +47,7 @@ pre[class*='language-'] {
   color: white;
   background: none;
   font-family: 'source_code_prolight', Consolas, Menlo, Monaco, source-code-pro,
-    Courier New, monospace;
+    'Courier New', monospace;
   font-feature-settings: normal;
   text-align: left;
   white-space: pre;
@@ -202,6 +207,53 @@ strong {
 
 a {
   transition: box-shadow 0.2s ease-in-out;
+  text-decoration: none;
+  color: var(--textLink);
+  box-shadow: 0 1px 0 0 currentColor;
+}
+
+a:hover,
+a:active {
+  box-shadow: none;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin-bottom: 1.75rem;
+}
+
+li {
+  margin-bottom: calc(1.75rem / 2);
+}
+
+p {
+  margin-bottom: 1.75rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'ubuntubold';
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.anchor {
+  box-shadow: none;
+}
+
+blockquote {
+  border-left: 0.32rem solid var(--black);
+  padding-left: 1.2rem;
+  margin: 0;
+  font-style: italic;
 }
 
 @media (max-width: 672px) {

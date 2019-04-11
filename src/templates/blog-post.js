@@ -8,11 +8,8 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import styled from 'styled-components'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
-import { rhythm, scale } from '../utils/typography'
-
-const systemFont = `ubuntu_lightregular, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif`
+// import { rhythm, scale } from '../utils/typography'
+// import systemFont from '../utils/typography'
 
 export default props => {
   const post = props.data.markdownRemark
@@ -71,16 +68,17 @@ export default props => {
       <main>
         <article>
           <header>
-            <h1 style={{ color: 'var(--textTitle)' }}>
+            <h1 style={{ color: 'var(--textTitle)', marginBottom: '0.42rem' }}>
               {post.frontmatter.title}
             </h1>
             <p
               style={{
-                ...scale(-1 / 5),
+                // ...scale(-1 / 5),
                 display: 'block',
-                marginBottom: rhythm(1),
-                marginTop: rhythm(-4 / 5),
-                fontFamily: systemFont,
+                // marginBottom: '0.2rem',
+                marginTop: '0.3rem',
+                fontSize: 14,
+                // fontFamily: systemFont,
               }}
             >
               {formatPostDate(post.frontmatter.date, lang)}

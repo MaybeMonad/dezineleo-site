@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
-import { rhythm, scale } from '../utils/typography'
+import '../utils/global.css'
+// import { rhythm, scale } from '../utils/typography'
 // import styled from 'styled-components'
 // import logo from '../assets/logo.svg'
 
@@ -47,8 +48,8 @@ export default props => {
         style={{
           marginLeft: 'auto',
           marginRight: 'auto',
-          maxWidth: rhythm(25),
-          padding: `2.625rem ${rhythm(3 / 4)}`,
+          maxWidth: '42rem',
+          padding: `2.6rem 1.3rem`,
         }}
       >
         <header
@@ -61,7 +62,7 @@ export default props => {
         >
           <h1
             style={{
-              ...scale(0.75),
+              // ...scale(0.75),
               marginBottom: 0,
               marginTop: 0,
             }}

@@ -9,7 +9,7 @@ import SEO from '../components/SEO'
 import Footer from '../components/Footer'
 import Lang from '../components/Lang'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
-import { rhythm } from '../utils/typography'
+// import { rhythm } from '../utils/typography'
 import Panel from '../components/Panel'
 import systemFont from '../utils/typography'
 
@@ -68,6 +68,7 @@ const StyledProjects = styled(Projects)`
       text-transform: none;
       letter-spacing: 0;
       margin: 0 0 8px 0;
+      font-family: 'ubuntu_lightregular';
     }
     p {
       margin: 0;
@@ -78,7 +79,7 @@ const StyledProjects = styled(Projects)`
   @media (max-width: 672px) {
     flex-direction: column;
     a {
-      width: 100%;
+      width: calc(100% - 40px);
       margin: 0 0 12px 0;
     }
   }
@@ -164,8 +165,8 @@ export default props => {
                   <h3
                     style={{
                       fontFamily: systemFont,
-                      fontSize: rhythm(0.85),
-                      marginBottom: rhythm(1 / 4),
+                      fontSize: '1.36rem',
+                      marginBottom: 0,
                       marginTop: index === 0 ? 0 : '3.5rem',
                     }}
                   >
@@ -179,8 +180,8 @@ export default props => {
                   </h3>
                   <small
                     style={{
-                      fontFamily: systemFont,
-                      marginBottom: rhythm(1 / 4),
+                      // fontFamily: systemFont,
+                      // marginBottom: rhythm(1 / 4),
                       color: '#83858E',
                     }}
                   >
