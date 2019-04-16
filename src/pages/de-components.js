@@ -10,11 +10,8 @@ const StepBlock = props => {
   const { className, title, date, des } = props
   const [expand, setExpand] = useState(false)
   return (
-    <div
-      className={classNames(className, { expanded: expand })}
-      onClick={() => setExpand(!expand)}
-    >
-      <h4>
+    <div className={classNames(className, { expanded: expand })}>
+      <h4 onClick={() => setExpand(!expand)}>
         {title}
         <span>{date}</span>
       </h4>
@@ -27,7 +24,6 @@ const StyledStepBlock = styled(StepBlock)`
   border: var(--border);
   border-radius: 5px;
   padding: 0 20px;
-  cursor: pointer;
   transition: background-color 0.3s ease-in-out;
   margin-bottom: 36px;
   position: relative;
@@ -47,6 +43,7 @@ const StyledStepBlock = styled(StepBlock)`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
     span {
       font-size: 13px;
       color: var(--font-grey);

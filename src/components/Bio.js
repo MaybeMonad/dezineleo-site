@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import profilePic from '../assets/profile-pic.jpg'
 // import { rhythm } from '../utils/typography'
 
@@ -24,12 +25,12 @@ class Bio extends React.Component {
             width: 56,
             height: 56,
             borderRadius: '50%',
+            display: 'inline-block',
           }}
         />
         <p style={{ maxWidth: 310, margin: 0 }}>
-          Personal blog by{' '}
-          <a href="https://mobile.twitter.com/dezineleo">Yang Jin</a>. I am
-          enthusing about learning and creating.
+          Personal blog by <Link to="/about">Yang Jin</Link>. I am enthusing
+          about learning and creating.
         </p>
       </div>
     )

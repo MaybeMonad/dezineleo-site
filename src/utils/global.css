@@ -11,6 +11,10 @@ body {
     Noto Sans CJK SC, WenQuanYi Micro Hei, system-ui, -apple-system, sans-serif;
   background-color: var(--bg);
   font: 100%/1.75 var(--font-family);
+  --font-light: 'ubuntu_lightregular';
+  --font-regular: 'ubunturegular';
+  --font-medium: 'ubuntu_mediumregular';
+  --font-bold: 'ubuntubold';
 }
 
 body.light {
@@ -66,6 +70,7 @@ pre[class*='language-'] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  font-size: 0.85rem;
 }
 
 code[class*='language-text'] {
