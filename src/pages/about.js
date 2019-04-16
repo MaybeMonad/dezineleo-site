@@ -76,12 +76,19 @@ export default props => {
   return (
     <Layout location={location} title="About Leo - Dezineleo">
       <h3>About Leo</h3>
-      <p>
+      <p style={{ marginBottom: 14 }}>
         Hi, my name is Yang Jin. Ever since I was a child, I have always been
         passionate about illustrating and computer-like stuff. However, I chose
         to study English instead of CS to become a self-taught web developer.
         Back in the day, I was working as a WordPress theme developer. In 2017,
         I came to Hangzhou to become a full-time web developer and UI designer.
+      </p>
+      <p style={{ fontSize: 13, marginBottom: 36 }}>
+        自幼喜好涂鸦、捣鼓计算机，2010 年开始接触 Discuz 论坛模板开发，经历了
+        1.X、2.X 的高峰时期。2013 年转战 ThemeForest 开启 WordPress
+        模板开发之旅，于当时个位可数的 Page Builder 市场里占有一席之地，直至
+        2017
+        年末正式接触前端开发。但多年的实践经验更多偏向视觉、交互，现正恶补编程思想及编码技能。
       </p>
       <StyledSection
         title={
