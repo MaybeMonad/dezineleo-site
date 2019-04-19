@@ -170,44 +170,48 @@ export default props => {
         <main>
           {langKey !== 'en' && <Panel>仔细看，这不是翻译，也许有彩蛋。</Panel>}
 
-          {posts.map(({ node }, index) => {
-            const title = get(node, 'frontmatter.title') || node.fields.slug
-            return (
-              <article key={node.fields.slug}>
-                <header>
-                  <h3
-                    style={{
-                      fontFamily: 'ubunturegular',
-                      fontSize: '1.36rem',
-                      marginBottom: 0,
-                      marginTop: index === 0 ? 0 : '3.5rem',
-                    }}
-                  >
-                    <Link
-                      style={{ boxShadow: 'none' }}
-                      to={node.fields.slug}
-                      rel="bookmark"
+          {posts
+            .filter(({ node }) => !get(node, 'frontmatter.draft'))
+            .map(({ node }, index) => {
+              const title = get(node, 'frontmatter.title') || node.fields.slug
+              return (
+                <article key={node.fields.slug}>
+                  <header>
+                    <h3
+                      style={{
+                        fontFamily: 'ubunturegular',
+                        fontSize: '1.36rem',
+                        marginBottom: 0,
+                        marginTop: index === 0 ? 0 : '3.5rem',
+                      }}
                     >
-                      {title}
-                    </Link>
-                  </h3>
-                  <small
-                    style={{
-                      // fontFamily: systemFont,
-                      // marginBottom: rhythm(1 / 4),
-                      color: '#83858E',
+                      <Link
+                        style={{ boxShadow: 'none' }}
+                        to={node.fields.slug}
+                        rel="bookmark"
+                      >
+                        {title}
+                      </Link>
+                    </h3>
+                    <small
+                      style={{
+                        // fontFamily: systemFont,
+                        // marginBottom: rhythm(1 / 4),
+                        color: '#83858E',
+                      }}
+                    >
+                      {formatPostDate(node.frontmatter.date, 'en')}
+                      {` • ${formatReadingTime(node.timeToRead)}`}
+                    </small>
+                  </header>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.spoiler,
                     }}
-                  >
-                    {formatPostDate(node.frontmatter.date, 'en')}
-                    {` • ${formatReadingTime(node.timeToRead)}`}
-                  </small>
-                </header>
-                <p
-                  dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }}
-                />
-              </article>
-            )
-          })}
+                  />
+                </article>
+              )
+            })}
         </main>
       </StyledSection>
       <Footer />
@@ -235,6 +239,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             spoiler
+            draft
           }
         }
       }

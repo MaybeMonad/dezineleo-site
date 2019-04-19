@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import Bio from '../components/Bio'
+import React from 'react'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
@@ -75,6 +74,7 @@ export default props => {
   const { location } = props
   return (
     <Layout location={location} title="About Leo - Dezineleo">
+      <SEO title="About Leo" />
       <h3>About Leo</h3>
       <p style={{ marginBottom: 14 }}>
         Hi, my name is Yang Jin. Ever since I was a child, I have always been
@@ -102,7 +102,6 @@ export default props => {
           Currently, I'm working as React developer on a SaaS platform aiming
           for online marketing. I'm also in charge of VI in this company.
         </p>
-        {/* <p>目前供职于<a href="https://www.gnlab.com" rel="noopener noreferrer" target="_blank">光年实验室</a>，主要负责建设在线营销 SaaS 平台，同时负责视觉设计。</p> */}
         <p>目前供职于光年实验室，负责建设在线营销 SaaS 平台，兼任视觉设计。</p>
       </StyledSection>
       <div
@@ -159,10 +158,6 @@ export default props => {
           <p>Expecting...</p>
         </StyledSection>
       </div>
-      {/* <aside>
-        <Bio />
-      </aside> */}
-
       <Footer />
     </Layout>
   )
