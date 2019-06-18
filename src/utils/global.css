@@ -208,7 +208,8 @@ pre[data-line] {
 }
 
 strong {
-  font-family: ubunturegular;
+  font-family: var(--font-regular);
+  font-weight: 400;
 }
 
 a {
@@ -234,7 +235,8 @@ li {
 }
 
 p {
-  margin-bottom: 1.75rem;
+  /* margin-bottom: 1.75rem; */
+  margin-bottom: 12px;
 }
 
 h1,

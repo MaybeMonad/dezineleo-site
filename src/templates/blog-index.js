@@ -161,15 +161,13 @@ export default props => {
             <li className={langKey === 'en' ? 'active' : ''}>
               <a href="/">En</a>
             </li>
-            <li className={langKey !== 'en' ? 'active' : ''}>
+            <li className={langKey === 'zh-hans' ? 'active' : ''}>
               <a href="/zh-hans">Zh</a>
             </li>
           </Lang>
         }
       >
         <main>
-          {langKey !== 'en' && <Panel>仔细看，这不是翻译，也许有彩蛋。</Panel>}
-
           {posts
             .filter(({ node }) => !get(node, 'frontmatter.draft'))
             .map(({ node }, index) => {
@@ -239,7 +237,6 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             spoiler
-            draft
           }
         }
       }

@@ -174,8 +174,6 @@ Function.__proto__.__proto__ === Object.prototype
 Function.prototype.__proto__ === Object.prototype
 ```
 
-![summary](./summary.jpg)
-
 ## Resources
 1. [JavaScript Prototype in Plain Language](http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/)
 2. [Object.prototype | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)

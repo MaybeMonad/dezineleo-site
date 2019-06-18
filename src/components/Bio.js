@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import profilePic from '../assets/profile-pic.jpg'
+import profilePic from '../assets/profile-pic.png'
 // import { rhythm } from '../utils/typography'
 
 class Bio extends React.Component {
