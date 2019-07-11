@@ -264,6 +264,22 @@ blockquote {
   font-style: italic;
 }
 
+.gatsby-resp-image-link {
+  border: 0;
+  box-shadow: none;
+  padding: 40px;
+  background-color: #efefef;
+  border-radius: 10px;
+  margin-left: -1.3125rem;
+  margin-right: -1.3125rem;
+  margin-bottom: 24px;
+}
+
+.gatsby-resp-image-link .gatsby-resp-image-image {
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04) !important;
+  border-radius: 4px;
+}
+
 @media (max-width: 672px) {
   .gatsby-highlight {
     border-radius: 0;

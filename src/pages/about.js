@@ -49,6 +49,12 @@ const StyledSection = styled(Section)`
   .content {
     border-left: var(--border);
     padding: 32px 42px;
+    .project {
+      margin-bottom: 16px;
+      h5 {
+        margin: 0;
+      }
+    }
     p {
       margin-bottom: 14px;
       &:last-child {
@@ -87,8 +93,8 @@ export default props => {
         自幼喜好涂鸦、捣鼓计算机，2010 年开始接触 Discuz 论坛模板开发，经历了
         1.X、2.X 的高峰时期。2013 年转战 ThemeForest 开启 WordPress
         模板开发之旅，于当时个位可数的 Page Builder 市场里占有一席之地，直至
-        2017
-        年末正式接触前端开发。但多年的实践经验更多偏向视觉、交互，现正恶补编程思想及编码技能。
+        2017 年末来到杭州开始全职前端开发，而多年自学设计和开发的初衷是想做 Cool
+        Stuff。
       </p>
       <StyledSection
         title={
@@ -99,10 +105,10 @@ export default props => {
         mode="row"
       >
         <p>
-          Currently, I'm working as React developer on a SaaS platform aiming
-          for online marketing. I'm also in charge of VI in this company.
+          Currently, I'm working as a front developer and UI designer mainly
+          focusing on <b>Augmented Reality</b>.
         </p>
-        <p>目前供职于光年实验室，负责建设在线营销 SaaS 平台，兼任视觉设计。</p>
+        <p>目前供职于光素科技，研究 AR 技术的实际应用。</p>
       </StyledSection>
       <div
         style={{
@@ -119,9 +125,17 @@ export default props => {
           mode="column"
         >
           <p>
-            <b>2018.8 - Today</b>
+            <b>2019.4 - Today</b>
             <br />
             Fontend Developer & UI Designer
+            <br />
+            <span>GSTech, Hangzhou</span>
+          </p>
+          <p>
+            <b>2018.8 - 2019.4</b>
+            <br />
+            Worked as a <b>ReactJS developer & UI designer</b> on a SaaS
+            platform aiming for online marketing.
             <br />
             <span>GnLab, Hangzhou</span>
           </p>
@@ -133,14 +147,7 @@ export default props => {
             <span>Youte, Hangzhou</span>
           </p>
           <p>
-            <b>2016.12 - 2017.9</b>
-            <br />
-            Graphic Designer & Website Developer
-            <br />
-            <span>Aoxiang, Yiwu</span>
-          </p>
-          <p>
-            <b>2013 - 2016</b>
+            <b>2013 - 2017</b>
             <br />
             WordPress Theme Designer & Developer
             <br />
@@ -155,7 +162,18 @@ export default props => {
           }
           mode="column"
         >
-          <p>Expecting...</p>
+          <div className="project">
+            <h5>JavaScript Hub</h5>
+            <p>
+              <a>Intro</a> | <a>Github</a>
+            </p>
+          </div>
+          <div className="project">
+            <h5>DeHTML</h5>
+            <p>
+              <a>Intro</a> | <a>Github</a>
+            </p>
+          </div>
         </StyledSection>
       </div>
       <Footer />

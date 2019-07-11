@@ -13,21 +13,26 @@ import Panel from '../components/Panel'
 
 const projects = [
   {
+    title: 'JavaScript Hub',
+    description: 'Another free JavaScript learning application.',
+    link: '/javascript-hub',
+  },
+  {
+    title: 'DeHTML',
+    description: 'A stater HTML Template using Pug, Sass, Webpack, Gulp.',
+    // link: 'https://github.com/DezineLeo/DeHTML',
+    link: '/dehtml',
+  },
+  {
     title: 'De Design',
     description: 'Minimalist design system',
     link: '/de-design-system',
   },
   {
-    title: 'De Components',
-    description: 'Curated React UI Components.',
+    title: 'DeIcons',
+    description: 'A simply delightful icon system.',
     // link: 'https://github.com/DezineLeo/de-design',
-    link: '/de-components',
-  },
-  {
-    title: 'De HTML Starter',
-    description: 'A stater HTML Template using Pug, Sass, Webpack, Gulp.',
-    // link: 'https://github.com/DezineLeo/DeHTML',
-    link: '/de-html',
+    link: '/deicons',
   },
   {
     title: 'Books',
@@ -35,14 +40,9 @@ const projects = [
     link: '/books',
   },
   {
-    title: 'Learn React',
-    description: 'How I learn React.',
-    link: '/learn-react',
-  },
-  {
-    title: 'Learn JavaScript',
-    description: 'How I learn JavaScript.',
-    link: '/learn-javascript',
+    title: 'DeWeekly',
+    description: 'Weekly updates.',
+    link: '/deweekly',
   },
 ]
 

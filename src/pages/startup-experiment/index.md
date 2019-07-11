@@ -33,7 +33,10 @@ Inspired by a guy called [timqian](https://github.com/timqian) who throws out a 
 
 ## In progress
 
-+ JavaScript Hub
++ JavaScript Hub (In progress)
++ DeWeekly
++ DeIcons
++ DeLogo
 
 ## Links
 
