@@ -165,13 +165,30 @@ export default props => {
           <div className="project">
             <h5>JavaScript Hub</h5>
             <p>
-              <a>Intro</a> | <a>Github</a>
+              <a href="/i-build-a-free-JS-learning-app-called-javascript-hub/">
+                Intro
+              </a>{' '}
+              |{' '}
+              <a
+                href="https://github.com/DezineLeo/javascript-hub"
+                target="_blank"
+                rel="noopener"
+              >
+                Github
+              </a>
             </p>
           </div>
           <div className="project">
             <h5>DeHTML</h5>
             <p>
-              <a>Intro</a> | <a>Github</a>
+              <a>Intro</a> |{' '}
+              <a
+                href="https://github.com/DezineLeo/DeHTML"
+                target="_blank"
+                rel="noopener"
+              >
+                Github
+              </a>
             </p>
           </div>
         </StyledSection>

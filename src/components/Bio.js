@@ -23,6 +23,7 @@ class Bio extends React.Component {
             marginRight: 20,
             marginBottom: 0,
             width: 56,
+            minWidth: 56,
             height: 56,
             borderRadius: '50%',
             display: 'inline-block',

@@ -18,7 +18,7 @@ A picture is worth a thousand words.
 
 **JavaScript Hub** is built upon a small framework called [Sapper](https://sapper.svelte.de), which is based on [Svelte](https://svelte.dev/). If you haven't heard of **Svelte**, I recommend you to have a glance at [Rich Harris - Rethinking reactivity](https://www.youtube.com/watch?v=AdNJ3fydeao).
 
-The main idea is to establish a **true-or-false** selection panel with statistics, explanation and header. For the codes, you can find the whole project on [GitHub](https://github.com/DezineLeo/javascript-hub). Here is a list of prerequisites to get you started.
+The main idea is to establish a **true-or-false** selection panel with statistics, explanation and data storage. For the codes, you can find the whole project on [GitHub](https://github.com/DezineLeo/javascript-hub). Here is a list of prerequisites to get you started.
 
 + HTML, CSS and JS, as always.
 + [Svelte](https://svelte.dev/) for the syntax.
