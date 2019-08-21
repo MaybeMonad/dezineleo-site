@@ -32,7 +32,7 @@ export default props => {
           marginLeft: 'auto',
           marginRight: 'auto',
           maxWidth: '42rem',
-          padding: `2.6rem 1.3rem`,
+          padding: `2rem 1.3rem`,
         }}
       >
         <header

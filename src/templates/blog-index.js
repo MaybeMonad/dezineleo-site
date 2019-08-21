@@ -15,7 +15,7 @@ const projects = [
   {
     title: 'JavaScript Hub',
     description: 'Another free JavaScript learning application.',
-    link: '/javascript-hub',
+    link: '/i-build-a-free-JS-learning-app-called-javascript-hub',
   },
   {
     title: 'DeHTML',

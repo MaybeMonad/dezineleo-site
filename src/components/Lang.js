@@ -13,6 +13,7 @@ const Lang = styled.ul`
     padding: 3px 6px;
     &.active {
       background: var(--black);
+      border-radius: 2px;
       a {
         color: white;
       }

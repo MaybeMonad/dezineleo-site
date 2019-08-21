@@ -93,7 +93,7 @@ export default props => {
         自幼喜好涂鸦、捣鼓计算机，2010 年开始接触 Discuz 论坛模板开发，经历了
         1.X、2.X 的高峰时期。2013 年转战 ThemeForest 开启 WordPress
         模板开发之旅，于当时个位可数的 Page Builder 市场里占有一席之地，直至
-        2017 年末来到杭州开始全职前端开发，而多年自学设计和开发的初衷是想做 Cool
+        2017 年末来到杭州开始全职前端开发，而多年自学设计和编程的初衷是想做 Cool
         Stuff。
       </p>
       <StyledSection
