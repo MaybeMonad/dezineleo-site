@@ -33,9 +33,9 @@ Inspired by a guy called [timqian](https://github.com/timqian) who throws out a 
 
 ## In progress
 
-+ JavaScript Hub (In progress)
++ JavaScript Hub (Live), go check [JavaScript Hub](https://javascript-hub.dezineleo.com)
 + DeWeekly
-+ DeIcons
++ Dezine Icons(In progress)
 + DeLogo
 
 ## Links

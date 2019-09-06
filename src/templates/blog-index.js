@@ -13,9 +13,20 @@ import Panel from '../components/Panel'
 
 const projects = [
   {
+    title: 'Programming Challenge',
+    description: `Learn a new programming language / technique to build something.`,
+    link: '/programming-challenge',
+  },
+  {
     title: 'JavaScript Hub',
     description: 'Another free JavaScript learning application.',
     link: '/i-build-a-free-JS-learning-app-called-javascript-hub',
+  },
+  {
+    title: 'Dezine Icons',
+    description: 'A simple delightful icon system.',
+    // link: 'https://github.com/DezineLeo/de-design',
+    link: '/deicons',
   },
   {
     title: 'DeHTML',
@@ -24,20 +35,14 @@ const projects = [
     link: '/dehtml',
   },
   {
-    title: 'De Design',
-    description: 'Minimalist design system',
+    title: 'Poetry',
+    description: 'Chinese poetry web application',
     link: '/de-design-system',
   },
   {
-    title: 'DeIcons',
-    description: 'A simply delightful icon system.',
-    // link: 'https://github.com/DezineLeo/de-design',
-    link: '/deicons',
-  },
-  {
-    title: 'Books',
-    description: `Books that I've read.`,
-    link: '/books',
+    title: 'One',
+    description: 'Free site templates.',
+    link: '/one',
   },
   {
     title: 'DeWeekly',
@@ -237,6 +242,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             spoiler
+            draft
           }
         }
       }
