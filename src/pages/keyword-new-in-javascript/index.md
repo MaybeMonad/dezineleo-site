@@ -2,6 +2,7 @@
 title: Keyword "new" in JavaScript
 date: '2018-08-10'
 spoiler: We talk about what does the new keyword do.
+type: 'topic'
 ---
 
 In the [previous article](https://dezineleo.com/posts/2018/08/prototype-in-javascript), we've used keyword `new` to create new functions when we talked about the **prototype** in JavaScript. Today I gonna show you what's inside of keyword `new`.

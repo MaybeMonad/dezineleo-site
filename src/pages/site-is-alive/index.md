@@ -2,6 +2,7 @@
 title: Site is alive
 date: '2018-07-01'
 spoiler: Start your blazing fast static site based on GatsbyJS
+type: 'record'
 ---
 
 Yo! What's up everybody?! Today is the big day for [Dezineleo.com](https://dezineleo.com). It's alive! Also, I wanna introduce you the coolest site generator I've ever used, Gatsby!

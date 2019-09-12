@@ -1,8 +1,8 @@
 ---
 title: Programming challenge
 date: '2019-09-06'
-spoiler: Learn a new programming language / technique to build something.
-draft: true
+spoiler: Learn a new programming language / technique to build something real world.
+type: 'project'
 ---
 
 # Challenge List
@@ -42,5 +42,8 @@ draft: true
 + WebRTC
 + Nim
 + ErLang
++ NativeScript
++ Stencil
++ Imba
 
 
