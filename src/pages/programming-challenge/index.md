@@ -1,8 +1,8 @@
 ---
 title: Programming challenge
 date: '2019-09-06'
-spoiler: Learn a new programming language / technique to build something.
-draft: true
+spoiler: Learn a new programming language / technique to build something real world.
+type: 'project'
 ---
 
 # Challenge List
@@ -42,6 +42,15 @@ draft: true
 + WebRTC
 + Nim
 + ErLang
+<<<<<<< HEAD
 + NativeScript
+=======
+<<<<<<< HEAD
++ NativeScript
++ Stencil
++ Imba
+=======
+>>>>>>> 9231976f3a0fac489c54a87ea14bede13e77ef44
+>>>>>>> 208b1ee23be0a6dda034847be986e4ed587e0508
 
 

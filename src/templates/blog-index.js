@@ -11,10 +11,18 @@ import Lang from '../components/Lang'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
 import Panel from '../components/Panel'
 
+const playground = [
+  {
+    title: 'Puppeteer',
+    description: `Records for scraping`,
+    link: '/puppeteer',
+  },
+]
+
 const projects = [
   {
     title: 'Programming Challenge',
-    description: `Learn a new programming language / technique to build something.`,
+    description: `Learn a new programming language / technique to build something real world.`,
     link: '/programming-challenge',
   },
   {
@@ -57,10 +65,18 @@ const Projects = props => {
   return (
     <div className={className}>
       {data.map(p => (
-        <Link to={p.link} key={p.title}>
-          <h4>{p.title}</h4>
-          <p>{p.description}</p>
-        </Link>
+        <div className="project-card" key={p.title}>
+          <div className="project-content">
+            <h4>{p.title}</h4>
+            <p className="project-description">{p.description}</p>
+          </div>
+          <div className="project-links">
+            <Link to={p.link} key={p.title}>
+              Intro
+            </Link>
+            {p.github && <a href={p.github || ''}>GitHub</a>}
+          </div>
+        </div>
       ))}
     </div>
   )
@@ -71,19 +87,26 @@ const StyledProjects = styled(Projects)`
   grid-template-columns: 33.33% 33.33% 33.33%;
   width: calc(100% - 24px);
   grid-gap: 12px;
-  a {
+  .project-card {
     border: var(--border);
     border-radius: 4px;
     padding: 16px 20px;
     display: inline-block;
     box-shadow: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     :first-child {
       margin-left: 0;
     }
     :hover {
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
       border-color: var(--black);
+      cursor: pointer;
+      .project-links {
+        border-color: var(--black);
+      }
     }
     h4 {
       text-transform: none;
@@ -95,6 +118,17 @@ const StyledProjects = styled(Projects)`
       margin: 0;
       color: var(--font-grey);
       font-size: 13px;
+    }
+    .project-links {
+      border-top: var(--border);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      margin: 16px 0 0 -20px;
+      padding: 8px 20px 0 20px;
+      a {
+        margin-right: 12px;
+        font-size: 13px;
+      }
     }
   }
   @media (max-width: 672px) {
@@ -152,15 +186,38 @@ export default props => {
       <StyledSection
         title="Projects"
         external={
-          <a href="" style={{ fontSize: 13 }}>
+          <a href="/projects" style={{ fontSize: 13 }}>
             All Projects
           </a>
         }
       >
-        <StyledProjects data={projects} />
+        {/* <StyledProjects data={projects} /> */}
+        <StyledProjects
+          data={posts
+            .filter(({ node }) => get(node, 'frontmatter.type') === 'project')
+            .map(({ node }, index) => {
+              const title = get(node, 'frontmatter.title') || node.fields.slug
+              return {
+                title,
+                description: node.frontmatter.spoiler,
+                link: node.fields.slug,
+                github: node.frontmatter.github,
+              }
+            })}
+        />
       </StyledSection>
       <StyledSection
-        title="Posts"
+        title="Playground"
+        external={
+          <a href="" style={{ fontSize: 13 }}>
+            All Experiments
+          </a>
+        }
+      >
+        <StyledProjects data={playground} />
+      </StyledSection>
+      <StyledSection
+        title="Topics"
         external={
           <Lang>
             <li className={langKey === 'en' ? 'active' : ''}>
@@ -174,7 +231,7 @@ export default props => {
       >
         <main>
           {posts
-            .filter(({ node }) => !get(node, 'frontmatter.draft'))
+            .filter(({ node }) => get(node, 'frontmatter.type') === 'topic')
             .map(({ node }, index) => {
               const title = get(node, 'frontmatter.title') || node.fields.slug
               return (

@@ -2,6 +2,7 @@
 title: Markdown tutorial for novice starters
 date: '2018-07-22'
 spoiler: We talk about how to use Markdown to skyrocket your content producing.
+type: 'topic'
 ---
 
 Dude, it's 2018! Please markdown your f**kin coding life.

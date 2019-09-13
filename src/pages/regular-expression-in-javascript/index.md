@@ -2,6 +2,7 @@
 title: new RegExp(/^[a-zA-Z]+$/, 'g')
 date: '2018-07-15'
 spoiler: We talk about regular expression in JavaScript.
+type: 'topic'
 ---
 
 ```javascript

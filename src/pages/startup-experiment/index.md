@@ -2,6 +2,7 @@
 title: Startup experiment
 date: '2019-06-18'
 spoiler: I know it's not that easy, but come on, let's get the sh*t done.
+type: 'topic'
 ---
 
 Inspired by a guy called [timqian](https://github.com/timqian) who throws out a good idea about freelancing which reminds me of another guy called [Pat Flynn](https://twitter.com/patflynn) who is famous of [Monthly Income Reports](https://www.smartpassiveincome.com/income-reports/), I decided to start my own startup experiment. As a seasoned website designer and developer, I wanna test out what kind of profit I can make in my spare time.
