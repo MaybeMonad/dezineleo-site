@@ -176,6 +176,12 @@ export default props => {
   const posts = get(props, 'data.allMarkdownRemark.edges').filter(
     ({ node }) => node.fields.langKey === langKey
   )
+  const projects = get(props, 'data.allMarkdownRemark.edges').filter(
+    ({ node }) => get(node, 'frontmatter.type') === 'project'
+  )
+  const experiments = get(props, 'data.allMarkdownRemark.edges').filter(
+    ({ node }) => get(node, 'frontmatter.type') === 'experiment'
+  )
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -193,17 +199,15 @@ export default props => {
       >
         {/* <StyledProjects data={projects} /> */}
         <StyledProjects
-          data={posts
-            .filter(({ node }) => get(node, 'frontmatter.type') === 'project')
-            .map(({ node }, index) => {
-              const title = get(node, 'frontmatter.title') || node.fields.slug
-              return {
-                title,
-                description: node.frontmatter.spoiler,
-                link: node.fields.slug,
-                github: node.frontmatter.github,
-              }
-            })}
+          data={projects.map(({ node }, index) => {
+            const title = get(node, 'frontmatter.title') || node.fields.slug
+            return {
+              title,
+              description: node.frontmatter.spoiler,
+              link: node.fields.slug,
+              github: node.frontmatter.github,
+            }
+          })}
         />
       </StyledSection>
       <StyledSection
@@ -214,7 +218,17 @@ export default props => {
           </a>
         }
       >
-        <StyledProjects data={playground} />
+        <StyledProjects
+          data={experiments.map(({ node }, index) => {
+            const title = get(node, 'frontmatter.title') || node.fields.slug
+            return {
+              title,
+              description: node.frontmatter.spoiler,
+              link: node.fields.slug,
+              github: node.frontmatter.github,
+            }
+          })}
+        />
       </StyledSection>
       <StyledSection
         title="Topics"
@@ -300,6 +314,8 @@ export const pageQuery = graphql`
             title
             spoiler
             draft
+            type
+            github
           }
         }
       }

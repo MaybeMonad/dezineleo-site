@@ -1,16 +1,13 @@
 ---
 title: Programming challenge
 date: '2019-09-06'
-<<<<<<< HEAD
 spoiler: Learn a new programming language / technique to build something real world.
 type: 'project'
-=======
-spoiler: Learn a new programming language / technique to build something.
-draft: true
->>>>>>> 9231976f3a0fac489c54a87ea14bede13e77ef44
 ---
 
-# Challenge List
+![What I cannot create, I do not understand.](./feynman.png)
+
+## Challenge List
 
 + ✅ Svelte - **[JavaScript Hub](https://javascript-hub.dezineleo.com)** | [Source Code](https://github.com/DezineLeo/javascript-hub)
 + WebGL
@@ -47,11 +44,10 @@ draft: true
 + WebRTC
 + Nim
 + ErLang
-<<<<<<< HEAD
 + NativeScript
 + Stencil
 + Imba
-=======
->>>>>>> 9231976f3a0fac489c54a87ea14bede13e77ef44
 
+## Links
+[Build your own x](https://github.com/danistefanovic/build-your-own-x)
 

@@ -208,7 +208,7 @@ pre[data-line] {
 }
 
 strong {
-  font-family: var(--font-regular);
+  font-family: var(--font-medium);
   font-weight: 400;
 }
 
@@ -273,6 +273,11 @@ blockquote {
   margin-left: -1.3125rem;
   margin-right: -1.3125rem;
   margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.gatsby-resp-image-background-image {
+  border-radius: 4px;
 }
 
 .gatsby-resp-image-link .gatsby-resp-image-image {
