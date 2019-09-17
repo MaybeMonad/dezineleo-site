@@ -1,7 +1,7 @@
 ---
-title: Puppeteer
+title: Scraping
 date: '2019-09-10'
-spoiler: Here's how I use puppeteer to do something quite normal.
+spoiler: Life is short, automate it.
 type: 'experiment'
 ---
 
