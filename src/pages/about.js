@@ -165,10 +165,7 @@ export default props => {
           <div className="project">
             <h5>JavaScript Hub</h5>
             <p>
-              <a href="/i-build-a-free-JS-learning-app-called-javascript-hub/">
-                Intro
-              </a>{' '}
-              |{' '}
+              <a href="/javascript-hub/">Intro</a> |{' '}
               <a
                 href="https://github.com/DezineLeo/javascript-hub"
                 target="_blank"
@@ -181,7 +178,7 @@ export default props => {
           <div className="project">
             <h5>DeHTML</h5>
             <p>
-              <a>Intro</a> |{' '}
+              <a href="/de-html/">Intro</a> |{' '}
               <a
                 href="https://github.com/DezineLeo/DeHTML"
                 target="_blank"
