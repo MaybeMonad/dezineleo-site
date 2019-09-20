@@ -320,9 +320,31 @@ tbody tr:hover {
   background-color: var(--inlineCode-bg);
 }
 
+.header-top-right span {
+  color: var(--font-grey);
+  font-family: var(--font-regular);
+}
+
+.btn {
+  background-color: var(--black);
+  color: white;
+  font-family: var(--font-medium);
+  padding: 7px 16px;
+  border-radius: 25px;
+  transition: opacity 0.3s ease;
+  font-size: 12px;
+}
+
+.btn:hover {
+  opacity: 0.88;
+}
+
 @media (max-width: 672px) {
   .gatsby-highlight {
     border-radius: 0;
+  }
+  .header-top-right span {
+    display: none;
   }
 }
 
