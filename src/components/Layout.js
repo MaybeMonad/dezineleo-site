@@ -64,9 +64,16 @@ export default props => {
               dezineleo
             </Link>
           </h1>
-          <a style={{ fontSize: 13 }} href="mailto:dezineleo@gmail.com">
-            Get Hands Dirty.
-          </a>
+          <div className="header-top-right" style={{ fontSize: 13 }}>
+            <span>Stay focus, make impact.</span>
+            <a
+              style={{ marginLeft: 16 }}
+              className="btn btn-medium"
+              href="mailto:dezineleo@gmail.com"
+            >
+              Hire Me
+            </a>
+          </div>
         </header>
         {children}
       </div>

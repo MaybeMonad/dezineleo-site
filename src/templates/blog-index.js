@@ -11,54 +11,6 @@ import Lang from '../components/Lang'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
 import Panel from '../components/Panel'
 
-const playground = [
-  {
-    title: 'Puppeteer',
-    description: `Records for scraping`,
-    link: '/puppeteer',
-  },
-]
-
-const projects = [
-  {
-    title: 'Programming Challenge',
-    description: `Learn a new programming language / technique to build something real world.`,
-    link: '/programming-challenge',
-  },
-  {
-    title: 'JavaScript Hub',
-    description: 'Another free JavaScript learning application.',
-    link: '/i-build-a-free-JS-learning-app-called-javascript-hub',
-  },
-  {
-    title: 'Dezine Icons',
-    description: 'A simple delightful icon system.',
-    // link: 'https://github.com/DezineLeo/de-design',
-    link: '/deicons',
-  },
-  {
-    title: 'DeHTML',
-    description: 'A stater HTML Template using Pug, Sass, Webpack, Gulp.',
-    // link: 'https://github.com/DezineLeo/DeHTML',
-    link: '/dehtml',
-  },
-  {
-    title: 'Poetry',
-    description: 'Chinese poetry web application',
-    link: '/de-design-system',
-  },
-  {
-    title: 'One',
-    description: 'Free site templates.',
-    link: '/one',
-  },
-  {
-    title: 'DeWeekly',
-    description: 'Weekly updates.',
-    link: '/deweekly',
-  },
-]
-
 const Projects = props => {
   const { className, data } = props
 
@@ -75,6 +27,7 @@ const Projects = props => {
               Intro
             </Link>
             {p.github && <a href={p.github || ''}>GitHub</a>}
+            {/* {p.version && <span className="project-version">{p.version}</span>} */}
           </div>
         </div>
       ))}
@@ -89,6 +42,7 @@ const StyledProjects = styled(Projects)`
   grid-gap: 12px;
   .project-card {
     border: var(--border);
+    background-color: white;
     border-radius: 4px;
     padding: 16px 20px;
     display: inline-block;
@@ -113,6 +67,14 @@ const StyledProjects = styled(Projects)`
       letter-spacing: 0;
       margin: 0 0 8px 0;
       font-family: 'ubunturegular';
+    }
+    .project-version {
+      font-size: 12px;
+      color: white;
+      font-family: var(--font-light);
+      background-color: var(--black);
+      border-radius: 10px;
+      padding: 1px 5px;
     }
     p {
       margin: 0;
@@ -176,6 +138,12 @@ export default props => {
   const posts = get(props, 'data.allMarkdownRemark.edges').filter(
     ({ node }) => node.fields.langKey === langKey
   )
+  const projects = get(props, 'data.allMarkdownRemark.edges').filter(
+    ({ node }) => get(node, 'frontmatter.type') === 'project'
+  )
+  const experiments = get(props, 'data.allMarkdownRemark.edges').filter(
+    ({ node }) => get(node, 'frontmatter.type') === 'experiment'
+  )
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -193,17 +161,16 @@ export default props => {
       >
         {/* <StyledProjects data={projects} /> */}
         <StyledProjects
-          data={posts
-            .filter(({ node }) => get(node, 'frontmatter.type') === 'project')
-            .map(({ node }, index) => {
-              const title = get(node, 'frontmatter.title') || node.fields.slug
-              return {
-                title,
-                description: node.frontmatter.spoiler,
-                link: node.fields.slug,
-                github: node.frontmatter.github,
-              }
-            })}
+          data={projects.map(({ node }, index) => {
+            const title = get(node, 'frontmatter.title') || node.fields.slug
+            return {
+              title,
+              description: node.frontmatter.spoiler,
+              link: node.fields.slug,
+              github: node.frontmatter.github,
+              version: node.frontmatter.version,
+            }
+          })}
         />
       </StyledSection>
       <StyledSection
@@ -214,7 +181,17 @@ export default props => {
           </a>
         }
       >
-        <StyledProjects data={playground} />
+        <StyledProjects
+          data={experiments.map(({ node }, index) => {
+            const title = get(node, 'frontmatter.title') || node.fields.slug
+            return {
+              title,
+              description: node.frontmatter.spoiler,
+              link: node.fields.slug,
+              github: node.frontmatter.github,
+            }
+          })}
+        />
       </StyledSection>
       <StyledSection
         title="Topics"
@@ -299,7 +276,9 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             spoiler
-            draft
+            type
+            github
+            version
           }
         }
       }
