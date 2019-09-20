@@ -9,11 +9,11 @@ version: v1.0.0
 ![What I cannot create, I do not understand.](./feynman.png)
 
 ## Challenge List
-| Language/Technique | Project | Intro | Source | Status |
+| Language/Technique | Project | Doc | Source | Status |
 |:-------------------|:--------|:------|:-------|:------:|
-| [Svelte](https://svelte.dev/) | **[JavaScript Hub](https://javascript-hub.dezineleo.com)** | [Intro](/javascript-hub/) | [GitHub](https://github.com/DezineLeo/javascript-hub) | ✅ |
-| [Pug](https://pugjs.org/api/getting-started.html) | **[DeHTML](https://github.com/DezineLeo/DeHTML)** | [Intro](/de-html/) | [GitHub](https://github.com/DezineLeo/DeHTML) | ✅ |
-| [Elm](https://elm-lang.org/) | **[Dezine Icons]()** | [Intro](/dezine-icons/) | [GitHub]() | 👨🏻‍💻 |
+| [Svelte](https://svelte.dev/) | **[JavaScript Hub](https://javascript-hub.dezineleo.com)** | [v1.0.0](/javascript-hub/) | [GitHub](https://github.com/DezineLeo/javascript-hub) | ✅ |
+| [Pug](https://pugjs.org/api/getting-started.html) | **[DeHTML](https://github.com/DezineLeo/DeHTML)** | [v1.0.1](/de-html/) | [GitHub](https://github.com/DezineLeo/DeHTML) | ✅ |
+| [Elm](https://elm-lang.org/) | **[Dezine Icons]()** | [v1.0.0](/dezine-icons/) | [GitHub]() | 👨🏻‍💻 |
 | [TypeScript](https://www.typescriptlang.org/) | **[]()** | []() | []() | 🚧 |
 | [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) | **[]()** | []() | []() | 🚧 |
 | [Go](https://golang.org/) | **[]()** | []() | []() | 🚧 |
@@ -50,6 +50,9 @@ version: v1.0.0
 | [NativeScript](https://www.nativescript.org/) | **[]()** | []() | []() | 🚧 |
 | [Stencil](https://stenciljs.com/) | **[]()** | []() | []() | 🚧 |
 | [Imba](http://imba.io/) | **[]()** | []() | []() | 🚧 |
+| [PureScript](http://www.purescript.org/) | **[]()** | []() | []() | 🚧 |
+| [Preact](https://preactjs.com/) | **[]()** | []() | []() | 🚧 |
+| [Riot](https://riot.js.org/) | **[]()** | []() | []() | 🚧 |
 
 ## Links
 [Build your own x](https://github.com/danistefanovic/build-your-own-x)
