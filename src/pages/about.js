@@ -81,13 +81,14 @@ export default props => {
   return (
     <Layout location={location} title="About Leo - Dezineleo">
       <SEO title="About Leo" />
-      <h3>About Leo</h3>
+      <h1 style={{ marginBottom: 8 }}>Hello. 👋</h1>
+      <h3 style={{ marginTop: 0 }}>I'm a designer && maker.</h3>
       <p style={{ marginBottom: 14 }}>
-        Hi, my name is Yang Jin. Ever since I was a child, I have always been
-        passionate about illustrating and computer-like stuff. However, I chose
-        to study English instead of CS to become a self-taught web developer.
-        Back in the day, I was working as a WordPress theme developer. In 2017,
-        I came to Hangzhou to become a full-time web developer and UI designer.
+        Ever since I was a child, I have always been passionate about
+        illustrating and computer-like stuff. However, I chose to study English
+        instead of CS to become a self-taught web developer. Back in the day, I
+        was working as a WordPress theme developer. In 2017, I came to Hangzhou
+        to become a full-time web developer and UI designer.
       </p>
       <p style={{ fontSize: 13, marginBottom: 36 }}>
         自幼喜好涂鸦、捣鼓计算机，2010 年开始接触 Discuz 论坛模板开发，经历了
