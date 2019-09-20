@@ -18,8 +18,8 @@ body {
 }
 
 body.light {
-  --bg: #ffffff;
-  /* --bg: #fefffa; */
+  /* --bg: #ffffff; */
+  --bg: #f6f8fa;
   --header: var(--black);
   --textNormal: var(--black);
   --textTitle: var(--black);
@@ -268,12 +268,13 @@ blockquote {
   border: 0;
   box-shadow: none;
   padding: 40px;
-  background-color: #efefef;
+  background-color: #fff;
   border-radius: 10px;
   margin-left: -1.3125rem;
   margin-right: -1.3125rem;
   margin-bottom: 24px;
   overflow: hidden;
+  border: var(--border);
 }
 
 .gatsby-resp-image-background-image {
@@ -290,6 +291,8 @@ table {
   padding: 20px;
   border-radius: 4px;
   border-spacing: 0;
+  background-color: white;
+  width: 100%;
 }
 
 th {

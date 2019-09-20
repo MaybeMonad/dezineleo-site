@@ -42,6 +42,7 @@ const StyledProjects = styled(Projects)`
   grid-gap: 12px;
   .project-card {
     border: var(--border);
+    background-color: white;
     border-radius: 4px;
     padding: 16px 20px;
     display: inline-block;
