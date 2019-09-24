@@ -43,7 +43,7 @@ const StyledProjects = styled(Projects)`
   .project-card {
     border: var(--border);
     background-color: white;
-    border-radius: 4px;
+    border-radius: 6px;
     padding: 16px 20px;
     display: inline-block;
     box-shadow: none;

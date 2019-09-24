@@ -8,53 +8,6 @@ version: v1.0.0
 
 ![What I cannot create, I do not understand.](./feynman.png)
 
-<<<<<<< HEAD
-+ ✅ Svelte - **[JavaScript Hub](https://javascript-hub.dezineleo.com)** | [Source Code](https://github.com/DezineLeo/javascript-hub)
-+ WebGL
-+ Go
-+ TypeScript
-+ Elm
-+ Ember
-+ Ramda
-+ RxJS
-+ React
-+ Vue
-+ Angular
-+ Node.js
-+ Python
-+ Flutter
-+ WebAssembly
-+ Scala
-+ Reason
-+ C/C++
-+ Clojure
-+ Haskell
-+ Swift
-+ Kotlin
-+ Rust
-+ Ruby
-+ Redis
-+ GraphQL
-+ Jest
-+ Shell
-+ Electron
-+ PHP
-+ PWA
-+ Service Workers
-+ WebRTC
-+ Nim
-+ ErLang
-<<<<<<< HEAD
-+ NativeScript
-=======
-<<<<<<< HEAD
-+ NativeScript
-+ Stencil
-+ Imba
-=======
->>>>>>> 9231976f3a0fac489c54a87ea14bede13e77ef44
->>>>>>> 208b1ee23be0a6dda034847be986e4ed587e0508
-=======
 ## Challenge List
 | Language/Technique | Project | Doc | Source | Status |
 |:-------------------|:--------|:------|:-------|:------:|
@@ -100,7 +53,6 @@ version: v1.0.0
 | [PureScript](http://www.purescript.org/) | **[]()** | []() | []() | 🚧 |
 | [Preact](https://preactjs.com/) | **[]()** | []() | []() | 🚧 |
 | [Riot](https://riot.js.org/) | **[]()** | []() | []() | 🚧 |
->>>>>>> f018791833a938a305951e1ad5b3073fa1af2d48
 
 ## Links
 [Build your own x](https://github.com/danistefanovic/build-your-own-x)
