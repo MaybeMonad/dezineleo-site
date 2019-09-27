@@ -76,12 +76,53 @@ const StyledSection = styled(Section)`
   }
 `
 
+// const hand = props => {
+//   const { className, title, mode, children, style } = props
+//   return (
+//     <span className="hand">👋</span>
+//   )
+// }
+
+const StyledHand = styled.span`
+  animation-name: wavingHand;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+
+  @keyframes wavingHand {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(-10deg);
+    }
+    20% {
+      transform: rotate(12deg);
+    }
+    30% {
+      transform: rotate(-10deg);
+    }
+    40% {
+      transform: rotate(9deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+`
+
 export default props => {
   const { location } = props
   return (
     <Layout location={location} title="About Leo - Dezineleo">
       <SEO title="About Leo" />
-      <h1 style={{ marginBottom: 8 }}>Hello. 👋</h1>
+      <h1 style={{ marginBottom: 8 }}>
+        Hello. <StyledHand>👋</StyledHand>
+      </h1>
       <h3 style={{ marginTop: 0 }}>I'm a designer && maker.</h3>
       <p style={{ marginBottom: 14 }}>
         Ever since I was a child, I have always been passionate about
@@ -109,7 +150,7 @@ export default props => {
           Currently, I'm working as a front developer and UI designer mainly
           focusing on <b>Augmented Reality</b>.
         </p>
-        <p>目前供职于光素科技，研究 AR 技术的实际应用。</p>
+        <p>目前在杭州小作坊摸鱼，主要研究 AR 技术的实际应用。</p>
       </StyledSection>
       <div
         style={{
@@ -169,6 +210,19 @@ export default props => {
               <a href="/javascript-hub/">Intro</a> |{' '}
               <a
                 href="https://github.com/DezineLeo/javascript-hub"
+                target="_blank"
+                rel="noopener"
+              >
+                Github
+              </a>
+            </p>
+          </div>
+          <div className="project">
+            <h5>Elm 中文文档</h5>
+            <p>
+              <a href="/elm-lang-doc-zh/">Intro</a> |{' '}
+              <a
+                href="https://github.com/DezineLeo/elm-lang-docs-zh"
                 target="_blank"
                 rel="noopener"
               >
