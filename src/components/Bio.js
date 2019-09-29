@@ -11,9 +11,10 @@ class Bio extends React.Component {
           display: 'flex',
           marginBottom: 24,
           background: 'white',
-          borderRadius: '6px',
+          borderRadius: '3px',
           padding: '32px 24px',
-          border: 'var(--border)',
+          // border: 'var(--border)',
+          boxShadow: 'var(--box-shadow)',
         }}
       >
         <img

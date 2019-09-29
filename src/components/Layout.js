@@ -31,7 +31,7 @@ export default props => {
         style={{
           marginLeft: 'auto',
           marginRight: 'auto',
-          maxWidth: '42rem',
+          maxWidth: '45rem',
           padding: `2rem 1.3rem`,
         }}
       >
@@ -68,7 +68,7 @@ export default props => {
             <span>Stay focus, make impact.</span>
             <a
               style={{ marginLeft: 16 }}
-              className="btn btn-medium"
+              className="btn btn-primary"
               href="mailto:dezineleo@gmail.com"
             >
               Hire Me

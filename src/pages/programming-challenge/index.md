@@ -4,6 +4,7 @@ date: '2019-09-18'
 spoiler: Learn a new programming language / technique to build something real world.
 type: project
 version: v1.0.0
+github: https://github.com/DezineLeo/programming-challenge
 ---
 
 ![What I cannot create, I do not understand.](./feynman.png)
@@ -14,6 +15,7 @@ version: v1.0.0
 | [Svelte](https://svelte.dev/) | **[JavaScript Hub](https://javascript-hub.dezineleo.com)** | [v1.0.0](/javascript-hub/) | [GitHub](https://github.com/DezineLeo/javascript-hub) | ✅ |
 | [Pug](https://pugjs.org/api/getting-started.html) | **[DeHTML](https://github.com/DezineLeo/DeHTML)** | [v1.0.1](/de-html/) | [GitHub](https://github.com/DezineLeo/DeHTML) | ✅ |
 | [Elm](https://elm-lang.org/) | **[Dezine Icons]()** | [v1.0.0](/dezine-icons/) | [GitHub]() | 👨🏻‍💻 |
+| [Vue](https://vuejs.org/) | **[Elm 中文文档]()** | [v0.0.1](/elm-lang-doc-zh/) | [GitHub](https://github.com/DezineLeo/elm-lang-docs-zh) | 👨🏻‍💻 |
 | [TypeScript](https://www.typescriptlang.org/) | **[]()** | []() | []() | 🚧 |
 | [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) | **[]()** | []() | []() | 🚧 |
 | [Go](https://golang.org/) | **[]()** | []() | []() | 🚧 |
@@ -21,7 +23,6 @@ version: v1.0.0
 | [Ramda](https://ramdajs.com/) | **[]()** | []() | []() | 🚧 |
 | [RxJS](https://rxjs-dev.firebaseapp.com/) | **[]()** | []() | []() | 🚧 |
 | [React](https://reactjs.org/) | **[]()** | []() | []() | 🚧 |
-| [Vue](https://vuejs.org/) | **[]()** | []() | []() | 🚧 |
 | [Angular](https://angular.io/) | **[]()** | []() | []() | 🚧 |
 | [Node.js](https://nodejs.org/en/) | **[]()** | []() | []() | 🚧 |
 | [Flutter](https://flutter.dev/) | **[]()** | []() | []() | 🚧 |
@@ -53,6 +54,8 @@ version: v1.0.0
 | [PureScript](http://www.purescript.org/) | **[]()** | []() | []() | 🚧 |
 | [Preact](https://preactjs.com/) | **[]()** | []() | []() | 🚧 |
 | [Riot](https://riot.js.org/) | **[]()** | []() | []() | 🚧 |
+| [F#](https://fsharp.org/) | **[]()** | []() | []() | 🚧 |
+| [Choo](https://choo.io/) | **[]()** | []() | []() | 🚧 |
 
 ## Links
 [Build your own x](https://github.com/danistefanovic/build-your-own-x)

@@ -1,4 +1,4 @@
-# Dezineleo's Blog
+# Dezineleo
 
 This is [Yang Jin](https://mobile.twitter.com/dezineleo)'s personal website, which mainly focuses on **Web Design** and **Web Development**.
 
@@ -8,6 +8,7 @@ This is [Yang Jin](https://mobile.twitter.com/dezineleo)'s personal website, whi
 2. [JavaScript Hub](https://dezineleo.com/javascript-hub/) - Another free JavaScript learning application.
 3. [DeHTML](https://dezineleo.com/de-html/) - A starter HTML Template using Pug, Sass, Webpack, Gulp.
 4. [Dezine Icons](https://dezineleo.com/dezine-icons/) - Another free icon system for better design experience.
+5. [Dezine](https://dezineleo.com/dezine-design-system/) - A less but better design system.
 
 ## Playground
 

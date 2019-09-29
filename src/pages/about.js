@@ -76,13 +76,6 @@ const StyledSection = styled(Section)`
   }
 `
 
-// const hand = props => {
-//   const { className, title, mode, children, style } = props
-//   return (
-//     <span className="hand">👋</span>
-//   )
-// }
-
 const StyledHand = styled.span`
   animation-name: wavingHand;
   animation-duration: 2.5s;
@@ -120,131 +113,133 @@ export default props => {
   return (
     <Layout location={location} title="About Leo - Dezineleo">
       <SEO title="About Leo" />
-      <h1 style={{ marginBottom: 8 }}>
-        Hello. <StyledHand>👋</StyledHand>
-      </h1>
-      <h3 style={{ marginTop: 0 }}>I'm a designer && maker.</h3>
-      <p style={{ marginBottom: 14 }}>
-        Ever since I was a child, I have always been passionate about
-        illustrating and computer-like stuff. However, I chose to study English
-        instead of CS to become a self-taught web developer. Back in the day, I
-        was working as a WordPress theme developer. In 2017, I came to Hangzhou
-        to become a full-time web developer and UI designer.
-      </p>
-      <p style={{ fontSize: 13, marginBottom: 36 }}>
-        自幼喜好涂鸦、捣鼓计算机，2010 年开始接触 Discuz 论坛模板开发，经历了
-        1.X、2.X 的高峰时期。2013 年转战 ThemeForest 开启 WordPress
-        模板开发之旅，于当时个位可数的 Page Builder 市场里占有一席之地，直至
-        2017 年末来到杭州开始全职前端开发，而多年自学设计和编程的初衷是想做 Cool
-        Stuff。
-      </p>
-      <StyledSection
-        title={
-          <>
-            <span>01.</span>In progress
-          </>
-        }
-        mode="row"
-      >
-        <p>
-          Currently, I'm working as a front developer and UI designer mainly
-          focusing on <b>Augmented Reality</b>.
+      <main>
+        <h1 style={{ marginBottom: 8 }}>
+          Hello. <StyledHand>👋</StyledHand>
+        </h1>
+        <h3 style={{ marginTop: 0 }}>I'm a designer && maker.</h3>
+        <p style={{ marginBottom: 14 }}>
+          Ever since I was a child, I have always been passionate about
+          illustrating and computer-like stuff. However, I chose to study
+          English instead of CS to become a self-taught web developer. Back in
+          the day, I was working as a WordPress theme developer. In 2017, I came
+          to Hangzhou to become a full-time web developer and UI designer.
         </p>
-        <p>目前在杭州小作坊摸鱼，主要研究 AR 技术的实际应用。</p>
-      </StyledSection>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'flex-start',
-        }}
-      >
+        <p style={{ fontSize: 13, marginBottom: 36 }}>
+          自幼喜好涂鸦、捣鼓计算机，2010 年开始接触 Discuz 论坛模板开发，经历了
+          1.X、2.X 的高峰时期。2013 年转战 ThemeForest 开启 WordPress
+          模板开发之旅，于当时个位可数的 Page Builder 市场里占有一席之地，直至
+          2017 年末来到杭州开始全职前端开发，而多年自学设计和编程的初衷是想做
+          Cool Stuff。
+        </p>
         <StyledSection
           title={
             <>
-              <span>02.</span>Experiences
+              <span>01.</span>In progress
             </>
           }
-          mode="column"
+          mode="row"
         >
           <p>
-            <b>2019.4 - Today</b>
-            <br />
-            Fontend Developer & UI Designer
-            <br />
-            <span>GSTech, Hangzhou</span>
+            Currently, I'm working as a front developer and UI designer mainly
+            focusing on <b>Augmented Reality</b>.
           </p>
-          <p>
-            <b>2018.8 - 2019.4</b>
-            <br />
-            Worked as a <b>ReactJS developer & UI designer</b> on a SaaS
-            platform aiming for online marketing.
-            <br />
-            <span>GnLab, Hangzhou</span>
-          </p>
-          <p>
-            <b>2017.9 - 2018.8</b>
-            <br />
-            Fontend Developer & UI Designer
-            <br />
-            <span>Youte, Hangzhou</span>
-          </p>
-          <p>
-            <b>2013 - 2017</b>
-            <br />
-            WordPress Theme Designer & Developer
-            <br />
-            <span>Themeforest</span>
-          </p>
+          <p>目前在杭州摸鱼，主要研究 AR 技术的实际应用，欢迎介绍新坑位。</p>
         </StyledSection>
-        <StyledSection
-          title={
-            <>
-              <span>03.</span>Projects
-            </>
-          }
-          mode="column"
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+          }}
         >
-          <div className="project">
-            <h5>JavaScript Hub</h5>
+          <StyledSection
+            title={
+              <>
+                <span>02.</span>Experiences
+              </>
+            }
+            mode="column"
+          >
             <p>
-              <a href="/javascript-hub/">Intro</a> |{' '}
-              <a
-                href="https://github.com/DezineLeo/javascript-hub"
-                target="_blank"
-                rel="noopener"
-              >
-                Github
-              </a>
+              <b>2019.4 - Today</b>
+              <br />
+              Fontend Developer & UI Designer & <b>Mobile APP developer</b>
+              <br />
+              <span>GSTech, Hangzhou</span>
             </p>
-          </div>
-          <div className="project">
-            <h5>Elm 中文文档</h5>
             <p>
-              <a href="/elm-lang-doc-zh/">Intro</a> |{' '}
-              <a
-                href="https://github.com/DezineLeo/elm-lang-docs-zh"
-                target="_blank"
-                rel="noopener"
-              >
-                Github
-              </a>
+              <b>2018.8 - 2019.4</b>
+              <br />
+              Worked as a <b>ReactJS developer & UI designer</b> on a SaaS
+              platform aiming for online marketing.
+              <br />
+              <span>GnLab, Hangzhou</span>
             </p>
-          </div>
-          <div className="project">
-            <h5>DeHTML</h5>
             <p>
-              <a href="/de-html/">Intro</a> |{' '}
-              <a
-                href="https://github.com/DezineLeo/DeHTML"
-                target="_blank"
-                rel="noopener"
-              >
-                Github
-              </a>
+              <b>2017.9 - 2018.8</b>
+              <br />
+              Fontend Developer & UI Designer
+              <br />
+              <span>Youte, Hangzhou</span>
             </p>
-          </div>
-        </StyledSection>
-      </div>
+            <p>
+              <b>2013 - 2017</b>
+              <br />
+              WordPress Theme Designer & Developer
+              <br />
+              <span>Themeforest</span>
+            </p>
+          </StyledSection>
+          <StyledSection
+            title={
+              <>
+                <span>03.</span>Projects
+              </>
+            }
+            mode="column"
+          >
+            <div className="project">
+              <h5>JavaScript Hub</h5>
+              <p>
+                <a href="/javascript-hub/">Intro</a> |{' '}
+                <a
+                  href="https://github.com/DezineLeo/javascript-hub"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Github
+                </a>
+              </p>
+            </div>
+            <div className="project">
+              <h5>Elm 中文文档</h5>
+              <p>
+                <a href="/elm-lang-doc-zh/">Intro</a> |{' '}
+                <a
+                  href="https://github.com/DezineLeo/elm-lang-docs-zh"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Github
+                </a>
+              </p>
+            </div>
+            <div className="project">
+              <h5>DeHTML</h5>
+              <p>
+                <a href="/de-html/">Intro</a> |{' '}
+                <a
+                  href="https://github.com/DezineLeo/DeHTML"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Github
+                </a>
+              </p>
+            </div>
+          </StyledSection>
+        </div>
+      </main>
       <Footer />
     </Layout>
   )

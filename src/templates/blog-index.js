@@ -41,12 +41,12 @@ const StyledProjects = styled(Projects)`
   width: calc(100% - 24px);
   grid-gap: 12px;
   .project-card {
-    border: var(--border);
+    // border: var(--border);
     background-color: white;
-    border-radius: 6px;
+    border-radius: 3px;
     padding: 16px 20px;
     display: inline-block;
-    box-shadow: none;
+    box-shadow: var(--box-shadow);
     transition: border-color 0.3s ease, box-shadow 0.4s ease;
     display: flex;
     flex-direction: column;
@@ -55,12 +55,12 @@ const StyledProjects = styled(Projects)`
       margin-left: 0;
     }
     :hover {
-      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
-      border-color: var(--black);
+      box-shadow: 0 3px 6px rgba(26, 26, 26, 0.15);
+      // border-color: var(--black);
       cursor: pointer;
-      .project-links {
-        border-color: var(--black);
-      }
+      // .project-links {
+      //   border-color: var(--black);
+      // }
     }
     h4 {
       text-transform: none;
@@ -121,10 +121,24 @@ const StyledSection = styled(Section)`
     align-items: center;
     margin: 28px 0 16px 0;
     width: 100%;
-    // border-bottom: var(--border);
     padding: 0 0 16px 0;
     h3 {
       margin: 0;
+    }
+  }
+`
+
+const ArticleList = styled.main`
+  padding: 12px;
+  article {
+    padding: 20px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: var(--bg-grey);
+    }
+    h3 {
+      margin-top: 0;
     }
   }
 `
@@ -154,7 +168,11 @@ export default props => {
       <StyledSection
         title="Projects"
         external={
-          <a href="/projects" style={{ fontSize: 13 }}>
+          <a
+            class="btn btn-secondary"
+            href="/projects"
+            style={{ fontSize: 13 }}
+          >
             All Projects
           </a>
         }
@@ -176,7 +194,7 @@ export default props => {
       <StyledSection
         title="Playground"
         external={
-          <a href="" style={{ fontSize: 13 }}>
+          <a class="btn btn-secondary" href="" style={{ fontSize: 13 }}>
             All Experiments
           </a>
         }
@@ -206,7 +224,7 @@ export default props => {
           </Lang>
         }
       >
-        <main>
+        <ArticleList>
           {posts
             .filter(({ node }) => get(node, 'frontmatter.type') === 'topic')
             .map(({ node }, index) => {
@@ -219,7 +237,7 @@ export default props => {
                         fontFamily: 'ubunturegular',
                         fontSize: '1.36rem',
                         marginBottom: 0,
-                        marginTop: index === 0 ? 0 : '3.5rem',
+                        // marginTop: index === 0 ? 0 : '3.5rem',
                       }}
                     >
                       <Link
@@ -249,7 +267,7 @@ export default props => {
                 </article>
               )
             })}
-        </main>
+        </ArticleList>
       </StyledSection>
       <Footer />
     </Layout>

@@ -32,12 +32,14 @@ export default props => {
     align-items: center;
     list-style: none;
     margin: 0;
+    color: var(--font-grey);
     li {
       margin: 0 0 0 8px;
       font-size: 13px;
       padding: 3px 6px;
+      border-radius: 3px;
       &.active {
-        background: var(--black);
+        background: var(--primary);
         a {
           color: white;
         }
@@ -49,7 +51,6 @@ export default props => {
     border: var(--border);
     border-radius: 3px;
     padding: 12px 16px;
-    margin: 0 0 28px 0;
     display: inline-flex;
     font-size: 14px;
   `
@@ -64,23 +65,32 @@ export default props => {
       />
       <main>
         <article>
-          <header>
-            <h1 style={{ color: 'var(--textTitle)', marginBottom: '0.42rem' }}>
-              {post.frontmatter.title}
-            </h1>
-            <p
-              style={{
-                // ...scale(-1 / 5),
-                display: 'block',
-                // marginBottom: '0.2rem',
-                marginTop: '0.3rem',
-                fontSize: 14,
-                // fontFamily: systemFont,
-              }}
-            >
-              {formatPostDate(post.frontmatter.date, lang)}
-              {` • ${formatReadingTime(post.timeToRead)}`}
-            </p>
+          <header
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <div>
+              <h1
+                style={{ color: 'var(--textTitle)', marginBottom: '0.42rem' }}
+              >
+                {post.frontmatter.title}
+              </h1>
+              <p
+                style={{
+                  display: 'block',
+                  marginTop: '0.3rem',
+                  fontSize: 14,
+                  color: 'var(--font-grey)',
+                  fontWeight: 'normal',
+                }}
+              >
+                {formatPostDate(post.frontmatter.date, lang)}
+                {` • ${formatReadingTime(post.timeToRead)}`}
+              </p>
+            </div>
             {translations.length > 0 && (
               <StyledLang>
                 Change Lang:
@@ -96,7 +106,7 @@ export default props => {
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </article>
       </main>
-      <aside>
+      <aside style={{ marginTop: 24 }}>
         <Bio />
         <nav>
           <ul
