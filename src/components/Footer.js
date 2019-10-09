@@ -3,13 +3,9 @@ import styled from 'styled-components'
 
 export default () => {
   const Link = styled.a`
-    color: var(--font-grey);
-    font-family: var(--font-light);
-    margin-right: 12px;
+    font-family: var(--font-regular);
+    margin-right: 13px;
     // transition: text-decoration 0.32s ease;
-    &:hover {
-      text-decoration: underline;
-    }
   `
 
   return (

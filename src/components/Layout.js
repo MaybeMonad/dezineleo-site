@@ -10,6 +10,8 @@ export default props => {
     window.__onThemeChange = () => setTheme(window.__theme)
   }, [])
 
+  const pageMaxWidth = '48rem'
+
   return (
     <div
       style={{
@@ -31,8 +33,8 @@ export default props => {
         style={{
           marginLeft: 'auto',
           marginRight: 'auto',
-          maxWidth: '45rem',
-          padding: `2rem 1.3rem`,
+          maxWidth: pageMaxWidth,
+          padding: `4.8rem 1.3rem 2rem 1.3rem`,
         }}
       >
         <header
@@ -40,7 +42,12 @@ export default props => {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            marginBottom: '2.625rem',
+            zIndex: 9999,
+            backgroundColor: 'var(--black)',
+            position: 'fixed',
+            top: 0,
+            width: 'calc(100% - 58px)',
+            maxWidth: pageMaxWidth,
           }}
         >
           <h1
@@ -54,9 +61,11 @@ export default props => {
               style={{
                 boxShadow: 'none',
                 textDecoration: 'none',
-                color: 'var(--textTitle)',
+                // color: 'var(--textTitle)',
+                color: 'white',
+                marginLeft: 20,
                 fontSize: 20,
-                fontFamily: 'ubuntubold',
+                fontFamily: 'var(--font-bold)',
               }}
               to={'/'}
             >
@@ -67,7 +76,13 @@ export default props => {
           <div className="header-top-right" style={{ fontSize: 13 }}>
             <span>Stay focus, make impact.</span>
             <a
-              style={{ marginLeft: 16 }}
+              style={{
+                marginLeft: 16,
+                padding: '14px 20px',
+                display: 'inline-block',
+                boxShadow: 'none',
+                color: 'var(--black)',
+              }}
               className="btn btn-primary"
               href="mailto:dezineleo@gmail.com"
             >

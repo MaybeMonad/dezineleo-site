@@ -11,22 +11,19 @@ const Lang = styled.ul`
     margin: 0 0 0 8px;
     font-size: 13px;
     padding: 3px 6px;
-    background-color: var(--secondary);
+    background-color: var(--bg-grey);
     transition: background-color 0.3s ease;
     &:hover {
-      background-color: var(--secondary-hover);
+      background-color: var(--primary);
     }
     a {
-      color: var(--primary);
-      font-family: var(--font-medium);
+      color: var(--black);
+      box-shadow: none;
     }
     &.active {
-      background-color: var(--primary);
-      border-radius: 3px;
-      &:hover {
-        background-color: var(--secondary-hover);
-      }
+      background-color: var(--black);
       a {
+        font-family: var(--font-bold);
         color: white;
       }
     }

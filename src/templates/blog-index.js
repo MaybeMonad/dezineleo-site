@@ -38,16 +38,14 @@ const Projects = props => {
 const StyledProjects = styled(Projects)`
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
-  width: calc(100% - 24px);
-  grid-gap: 12px;
+  width: calc(100% - 40px);
+  grid-gap: 20px;
   .project-card {
-    // border: var(--border);
-    background-color: white;
-    border-radius: 3px;
+    border: var(--border);
     padding: 16px 20px;
     display: inline-block;
-    box-shadow: var(--box-shadow);
-    transition: border-color 0.3s ease, box-shadow 0.4s ease;
+    box-shadow: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -55,18 +53,15 @@ const StyledProjects = styled(Projects)`
       margin-left: 0;
     }
     :hover {
-      box-shadow: 0 3px 6px rgba(26, 26, 26, 0.15);
-      // border-color: var(--black);
+      box-shadow: 0 0 0 3px var(--black);
+      border-color: var(--black);
       cursor: pointer;
-      // .project-links {
-      //   border-color: var(--black);
-      // }
     }
     h4 {
       text-transform: none;
       letter-spacing: 0;
       margin: 0 0 8px 0;
-      font-family: 'ubunturegular';
+      font-size: 18px;
     }
     .project-version {
       font-size: 12px;
@@ -79,7 +74,7 @@ const StyledProjects = styled(Projects)`
     p {
       margin: 0;
       color: var(--font-grey);
-      font-size: 13px;
+      font-size: 14px;
     }
     .project-links {
       border-top: var(--border);
@@ -132,7 +127,6 @@ const ArticleList = styled.main`
   padding: 12px;
   article {
     padding: 20px;
-    border-radius: 3px;
     transition: background-color 0.3s ease;
     &:hover {
       background-color: var(--bg-grey);
@@ -168,11 +162,7 @@ export default props => {
       <StyledSection
         title="Projects"
         external={
-          <a
-            class="btn btn-secondary"
-            href="/projects"
-            style={{ fontSize: 13 }}
-          >
+          <a class="btn" href="/projects" style={{ fontSize: 13 }}>
             All Projects
           </a>
         }
@@ -194,7 +184,7 @@ export default props => {
       <StyledSection
         title="Playground"
         external={
-          <a class="btn btn-secondary" href="" style={{ fontSize: 13 }}>
+          <a class="btn" href="" style={{ fontSize: 13 }}>
             All Experiments
           </a>
         }
@@ -234,14 +224,17 @@ export default props => {
                   <header>
                     <h3
                       style={{
-                        fontFamily: 'ubunturegular',
                         fontSize: '1.36rem',
                         marginBottom: 0,
                         // marginTop: index === 0 ? 0 : '3.5rem',
                       }}
                     >
                       <Link
-                        style={{ boxShadow: 'none' }}
+                        style={{
+                          boxShadow: 'none',
+                          color: 'var(--black)',
+                          fontFamily: 'var(--font-bold)',
+                        }}
                         to={node.fields.slug}
                         rel="bookmark"
                       >

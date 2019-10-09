@@ -38,11 +38,12 @@ const StyledSection = styled(Section)`
     width: 28%;
     margin-top: 0;
     padding-right: 32px;
+    font-size: 18px;
     span {
       display: inline-block;
       width: 100%;
-      font-size: 13px;
-      font-family: var(--font-light);
+      font-size: 14px;
+      font-family: var(--font-regular);
       font-weight: normal;
     }
   }
@@ -61,12 +62,12 @@ const StyledSection = styled(Section)`
         margin: 0;
       }
       b {
-        font-family: var(--font-medium);
-        font-size: 12px;
+        font-family: var(--font-regular);
+        // font-size: 12px;
       }
       span {
         color: var(--font-grey);
-        font-size: 12px;
+        // font-size: 12px;
       }
     }
   }
@@ -140,7 +141,7 @@ export default props => {
           }
           mode="row"
         >
-          <p>
+          <p style={{ marginBottom: 8 }}>
             Currently, I'm working as a front developer and UI designer mainly
             focusing on <b>Augmented Reality</b>.
           </p>

@@ -32,3 +32,38 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'futura_book';
+  src: url(./files/FuturaPTCond-Book.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'futura_heavy';
+  src: url(./files/FuturaPTCond-Heavy.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'futura_bold';
+  src: url(./files/FuturaPTCond-Bold.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'futura_medium';
+  src: url(./files/FuturaPTCond-Medium.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'futura_light';
+  src: url(./files/FuturaPTCond-Light.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
