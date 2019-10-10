@@ -37,9 +37,8 @@ export default props => {
       margin: 0 0 0 8px;
       font-size: 13px;
       padding: 3px 6px;
-      border-radius: 3px;
       &.active {
-        background: var(--primary);
+        background: var(--black);
         a {
           color: white;
         }
@@ -49,7 +48,6 @@ export default props => {
 
   const StyledLang = styled(Lang)`
     border: var(--border);
-    border-radius: 3px;
     padding: 12px 16px;
     display: inline-flex;
     font-size: 14px;

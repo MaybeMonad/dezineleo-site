@@ -19,7 +19,10 @@ const Projects = props => {
       {data.map(p => (
         <div className="project-card" key={p.title}>
           <div className="project-content">
-            <h4>{p.title}</h4>
+            <h4>
+              {p.title}
+              {p.version && <sup>{p.version}</sup>}
+            </h4>
             <p className="project-description">{p.description}</p>
           </div>
           <div className="project-links">
@@ -62,6 +65,12 @@ const StyledProjects = styled(Projects)`
       letter-spacing: 0;
       margin: 0 0 8px 0;
       font-size: 18px;
+      sup {
+        margin-left: 4px;
+        font-size: 12px;
+        font-style: normal;
+        font-family: var(--font-light);
+      }
     }
     .project-version {
       font-size: 12px;
