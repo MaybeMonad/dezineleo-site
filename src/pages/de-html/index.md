@@ -7,7 +7,7 @@ github: https://github.com/DezineLeo/DeHTML
 version: v1.0.1
 ---
 
-# DeHTML - A starter HTML Template using Pug, Sass, Webpack, Gulp.
+## A starter HTML Template using Pug, Sass, Webpack, Gulp.
 
 Start to build your next web page without extra configuration.
 

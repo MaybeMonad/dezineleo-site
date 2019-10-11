@@ -273,9 +273,13 @@ blockquote {
 
 .gatsby-resp-image-link {
   border: 0;
-  box-shadow: none;
+  box-shadow: 0 0 0 2px var(--black);
   margin-bottom: 24px;
   overflow: hidden;
+}
+
+.gatsby-resp-image-link:hover {
+  box-shadow: 0 0 0 5px var(--black);
 }
 
 .gatsby-resp-image-background-image {

@@ -31,10 +31,13 @@ class Bio extends React.Component {
             display: 'inline-block',
           }}
         />
-        <p style={{ maxWidth: 310, margin: 0 }}>
-          Personal blog by <Link to="/about">Yang Jin</Link>. I am enthusing
-          about learning and creating.
-        </p>
+        <div>
+          <p style={{ margin: 0 }}>
+            Personal blog by <Link to="/about">Yang Jin</Link>. I am enthusing
+            about learning and creating.
+          </p>
+          <Link to="/what-i-use">#what-i-use</Link>
+        </div>
       </div>
     )
   }

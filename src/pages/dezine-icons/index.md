@@ -12,6 +12,8 @@ Live site: [Dezine Icons](https://dezine-icons.dezineleo.com)
 
 ## Design
 
+![Dezine Icons Preview](/dezine-icons-preview.png)
+
 ## Coding
 
 This is the first time I use [Elm](https://elm-lang.org/) to build a web application. If you haven't used or even never heard of it, I strongly recommend you to give it a try. Since the syntax of **Elm** is quite different from normal JavaScript's, you should follow the [Official Guide](https://guide.elm-lang.org/) step by step to boost up your development.
