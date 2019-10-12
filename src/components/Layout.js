@@ -66,11 +66,16 @@ export default props => {
                 marginLeft: 20,
                 fontSize: 20,
                 fontFamily: 'var(--font-bold)',
+                display: 'inherit',
               }}
               to={'/'}
             >
               {/* <img style={{ margin: 0 }} src={logo} alt="dezineleo" /> */}
-              dezineleo
+              <span style={{ fontFamily: 'var(--font-bold)' }}>de</span>
+              <span style={{ fontFamily: 'var(--font-heavy)' }}>zi</span>
+              <span style={{ fontFamily: 'var(--font-medium)' }}>ne</span>
+              <span style={{ fontFamily: 'var(--font-regular)' }}>le</span>
+              <span style={{ fontFamily: 'var(--font-light)' }}>o</span>
             </Link>
           </h1>
           <div className="header-top-right" style={{ fontSize: 13 }}>

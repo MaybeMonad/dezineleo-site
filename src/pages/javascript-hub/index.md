@@ -28,7 +28,6 @@ The main idea is to establish a **true-or-false** selection panel with statistic
 + [Svelte](https://svelte.dev/) for the syntax.
 + [Prism](https://prismjs.com/) for syntax hignlight.
 
-
 ## Features
 
 + Constantly updates.
@@ -42,7 +41,6 @@ The main idea is to establish a **true-or-false** selection panel with statistic
 + [Daily Interview Question](https://github.com/Advanced-Frontend/Daily-Interview-Question)
 + [List of (Advanced) JavaScript Questions](https://github.com/lydiahallie/javascript-questions)
 + [Post a new resource](https://github.com/DezineLeo/javascript-hub/issues)
-
 
 ## Links
 

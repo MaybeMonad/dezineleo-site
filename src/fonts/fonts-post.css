@@ -5,6 +5,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Source Code Pro';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  src: url('./files/SourceCodePro-Regular.ttf.woff2') format('woff2'),
+    url('./files/SourceCodePro-Regular.otf.woff') format('woff'),
+    url('./files/SourceCodePro-Regular.otf') format('opentype'),
+    url('./files/SourceCodePro-Regular.ttf') format('truetype');
+}
+
 /* @font-face {
   font-family: 'ubuntubold';
   src: url(./files/ubuntu-bold-webfont.woff2) format('woff2');

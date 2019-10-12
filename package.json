@@ -1,11 +1,11 @@
 {
-  "name": "Dezineleo",
+  "name": "dezineleo",
   "private": true,
-  "description": "Another design and develop blog by Dezineleo",
-  "version": "1.0.0",
+  "description": "A personal website by @dezineleo mainly focus on design and development",
+  "version": "2.0.0",
   "author": "Yang Jin <dezineleo@gmail.com>",
   "bugs": {
-    "url": "https://github.com/DezineLeo/dezineleo-blog/issues"
+    "url": "https://github.com/DezineLeo/dezineleo-site/issues"
   },
   "dependencies": {
     "gatsby": "^2.0.76",

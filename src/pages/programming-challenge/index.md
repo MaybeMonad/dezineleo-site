@@ -15,8 +15,9 @@ github: https://github.com/DezineLeo/programming-challenge
 | [Svelte](https://svelte.dev/) | **[JavaScript Hub](https://javascript-hub.dezineleo.com)** | [v1.0.0](/javascript-hub/) | [GitHub](https://github.com/DezineLeo/javascript-hub) | ✅ |
 | [Pug](https://pugjs.org/api/getting-started.html) | **[DeHTML](https://github.com/DezineLeo/DeHTML)** | [v1.0.1](/de-html/) | [GitHub](https://github.com/DezineLeo/DeHTML) | ✅ |
 | [Elm](https://elm-lang.org/) | **[Dezine Icons]()** | [v1.0.0](/dezine-icons/) | [GitHub]() | 👨🏻‍💻 |
-| [Vue](https://vuejs.org/) | **[Elm 中文文档]()** | [v0.0.1](/elm-lang-doc-zh/) | [GitHub](https://github.com/DezineLeo/elm-lang-docs-zh) | 👨🏻‍💻 |
+| [VuePress](https://vuepress.vuejs.org/) | **[Elm 中文文档]()** | [v0.0.1](/elm-lang-doc-zh/) | [GitHub](https://github.com/DezineLeo/elm-lang-docs-zh) | 👨🏻‍💻50% |
 | [TypeScript](https://www.typescriptlang.org/) | **[]()** | []() | []() | 🚧 |
+| [Vue](https://vuejs.org/) | **[]()** | []() | []() | 🚧 |
 | [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) | **[]()** | []() | []() | 🚧 |
 | [Go](https://golang.org/) | **[]()** | []() | []() | 🚧 |
 | [Ember](https://emberjs.com/) | **[]()** | []() | []() | 🚧 |

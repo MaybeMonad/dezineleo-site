@@ -143,6 +143,9 @@ const ArticleList = styled.main`
     h3 {
       margin-top: 0;
     }
+    p {
+      margin-bottom: 0;
+    }
   }
 `
 
