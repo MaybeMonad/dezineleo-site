@@ -1,10 +1,10 @@
 ---
 title: JavaScript Hub
-date: '2019-07-12'
+date: 2019-07-12
 spoiler: A sweet and free JavaScript learning application for JavaScript lovers.
-type: 'project'
-github: 'https://github.com/DezineLeo/javascript-hub'
-site: 'https://javascript-hub.dezineleo.com/'
+type: project
+github: https://github.com/DezineLeo/javascript-hub
+site: https://javascript-hub.dezineleo.com/
 version: v1.0.0
 ---
 

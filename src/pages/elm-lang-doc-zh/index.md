@@ -1,9 +1,10 @@
 ---
 title: Elm for Chinese
-date: '2019-09-26'
+date: 2019-09-26
 spoiler: A Chinese version of Elm docs.
-type: 'project'
-github: 'https://github.com/DezineLeo/elm-lang-docs-zh'
+type: project
+github: https://github.com/DezineLeo/elm-lang-docs-zh
+site: https://elm.dezineleo.com/
 ---
 
 ## Elm 中文使用手册

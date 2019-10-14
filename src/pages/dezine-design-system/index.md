@@ -1,9 +1,9 @@
 ---
 title: Dezine
-date: '2019-09-26'
+date: 2019-09-26
 spoiler: A less but better design system.
-type: 'project'
-github: ''
+type: project
+github: https://github.com/DezineLeo/dezine
 ---
 
 Stay tuned...

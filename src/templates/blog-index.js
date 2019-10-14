@@ -20,14 +20,16 @@ const Projects = props => {
         <div className="project-card" key={p.title}>
           <div className="project-content">
             <h4>
-              {p.title}
+              <Link to={p.link} key={p.title}>
+                {p.title}
+              </Link>
               {p.version && <sup>{p.version}</sup>}
             </h4>
             <p className="project-description">{p.description}</p>
           </div>
           <div className="project-links">
-            <Link to={p.link} key={p.title}>
-              Intro
+            <Link to={p.site || p.link} key={p.title}>
+              Live
             </Link>
             {p.github && <a href={p.github || ''}>GitHub</a>}
             {/* {p.version && <span className="project-version">{p.version}</span>} */}
@@ -58,13 +60,17 @@ const StyledProjects = styled(Projects)`
     :hover {
       box-shadow: 0 0 0 3px var(--black);
       border-color: var(--black);
-      cursor: pointer;
+      // cursor: pointer;
     }
     h4 {
       text-transform: none;
       letter-spacing: 0;
       margin: 0 0 8px 0;
       font-size: 18px;
+      a {
+        font-family: var(--font-bold);
+        box-shadow: none;
+      }
       sup {
         margin-left: 4px;
         font-size: 12px;
@@ -174,7 +180,7 @@ export default props => {
       <StyledSection
         title="Projects"
         external={
-          <a class="btn" href="/projects" style={{ fontSize: 13 }}>
+          <a className="btn" href="/projects" style={{ fontSize: 13 }}>
             All Projects
           </a>
         }
@@ -196,7 +202,7 @@ export default props => {
       <StyledSection
         title="Playground"
         external={
-          <a class="btn" href="" style={{ fontSize: 13 }}>
+          <a className="btn" href="" style={{ fontSize: 13 }}>
             All Experiments
           </a>
         }
@@ -302,6 +308,7 @@ export const pageQuery = graphql`
             type
             github
             version
+            site
           }
         }
       }
