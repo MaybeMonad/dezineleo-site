@@ -83,7 +83,9 @@ export default props => {
             <a
               style={{
                 marginLeft: 16,
-                padding: '14px 20px',
+                padding: '0 20px',
+                height: 48,
+                lineHeight: '48px',
                 display: 'inline-block',
                 boxShadow: 'none',
                 color: 'var(--black)',

@@ -33,7 +33,7 @@ class Bio extends React.Component {
         />
         <div>
           <p style={{ margin: 0 }}>
-            Personal blog by <Link to="/about">Yang Jin</Link>. I am enthusing
+            Personal site by <Link to="/about">Yang Jin</Link>. I am enthusing
             about learning and creating.
           </p>
           <Link to="/what-i-use">#what-i-use</Link>

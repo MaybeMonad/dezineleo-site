@@ -28,9 +28,11 @@ const Projects = props => {
             <p className="project-description">{p.description}</p>
           </div>
           <div className="project-links">
-            <Link to={p.site || p.link} key={p.title}>
-              Live
-            </Link>
+            {p.site ? (
+              <a href={p.site}>Live</a>
+            ) : (
+              <Link to={p.link}>Intro</Link>
+            )}
             {p.github && <a href={p.github || ''}>GitHub</a>}
             {/* {p.version && <span className="project-version">{p.version}</span>} */}
           </div>
@@ -129,7 +131,7 @@ const StyledSection = styled(Section)`
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
-    margin: 28px 0 16px 0;
+    margin: 24px 0 16px 0;
     width: 100%;
     padding: 0 0 16px 0;
     h3 {
@@ -195,6 +197,7 @@ export default props => {
               link: node.fields.slug,
               github: node.frontmatter.github,
               version: node.frontmatter.version,
+              site: node.frontmatter.site,
             }
           })}
         />
