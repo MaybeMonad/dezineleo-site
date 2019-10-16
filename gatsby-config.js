@@ -3,7 +3,7 @@ module.exports = {
     title: 'Dezineleo',
     author: 'Yang Jin',
     description:
-      'Personal blog by Yang Jin. I am enthusing about learning and creating.',
+      'Personal site by Yang Jin. I am enthusing about learning and creating.',
     siteUrl: 'https://dezineleo.com',
     social: {
       twitter: '@dezineleo',

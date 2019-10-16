@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
+import Img from 'gatsby-image'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -70,25 +71,82 @@ export default props => {
               alignItems: 'center',
             }}
           >
-            <div>
-              <h1
-                style={{ color: 'var(--textTitle)', marginBottom: '0.42rem' }}
-              >
-                {post.frontmatter.title}
-              </h1>
-              <p
-                style={{
-                  display: 'block',
-                  marginTop: '0.3rem',
-                  fontSize: 14,
-                  color: 'var(--font-grey)',
-                  fontWeight: 'normal',
-                }}
-              >
-                {formatPostDate(post.frontmatter.date, lang)}
-                {` • ${formatReadingTime(post.timeToRead)}`}
-              </p>
-            </div>
+            {post.frontmatter.type === 'project' ? (
+              <div style={{ width: '100%' }}>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    width: '100%',
+                    // borderBottom: '1px solid var(--black)',
+                    borderBottom: 'var(--border)',
+                    padding: '24px 0 16px 0',
+                    marginBottom: 48,
+                  }}
+                >
+                  {post.frontmatter.logo ? (
+                    <Img
+                      style={{ width: '156px' }}
+                      fluid={post.frontmatter.logo.childImageSharp.fluid}
+                    />
+                  ) : (
+                    <h3 style={{ margin: 0 }}>{post.frontmatter.title}</h3>
+                  )}
+                  <div>
+                    {post.frontmatter.site && (
+                      <a
+                        className="btn btn-primary"
+                        href={post.frontmatter.site}
+                        target="_blank"
+                      >
+                        Live
+                      </a>
+                    )}
+                    {post.frontmatter.github && (
+                      <a
+                        className="btn"
+                        href={post.frontmatter.github}
+                        target="_blank"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <div>
+                  <h1
+                    style={{
+                      color: 'var(--textTitle)',
+                      marginBottom: '0.42rem',
+                    }}
+                  >
+                    {post.frontmatter.title}
+                  </h1>
+                  <p>{post.frontmatter.spoiler}</p>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <h1
+                  style={{ color: 'var(--textTitle)', marginBottom: '0.42rem' }}
+                >
+                  {post.frontmatter.title}
+                </h1>
+                <p
+                  style={{
+                    display: 'block',
+                    marginTop: '0.3rem',
+                    fontSize: 14,
+                    color: 'var(--font-grey)',
+                    fontWeight: 'normal',
+                  }}
+                >
+                  {formatPostDate(post.frontmatter.date, lang)}
+                  {` • ${formatReadingTime(post.timeToRead)}`}
+                </p>
+              </div>
+            )}
             {translations.length > 0 && (
               <StyledLang>
                 Change Lang:
@@ -156,6 +214,13 @@ export const pageQuery = graphql`
         type
         github
         site
+        logo {
+          childImageSharp {
+            fluid(maxWidth: 200) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       fields {
         slug

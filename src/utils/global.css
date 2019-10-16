@@ -338,14 +338,16 @@ tbody tr:hover {
   /* border-radius: 3px; */
   transition: background-color 0.32s ease;
   font-size: 12px;
+  box-shadow: none;
 }
 
 .btn:hover {
-  background-color: var(--primary);
+  background-color: #444;
 }
 
 .btn-primary {
   background-color: var(--primary);
+  color: var(--black);
 }
 
 .btn-primary:hover {

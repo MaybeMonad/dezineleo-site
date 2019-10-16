@@ -3,7 +3,6 @@ title: Programming challenge
 date: '2019-09-18'
 spoiler: Learn a new programming language / technique to build something real world.
 type: project
-version: v1.0.0
 github: https://github.com/DezineLeo/programming-challenge
 ---
 
@@ -57,6 +56,7 @@ github: https://github.com/DezineLeo/programming-challenge
 | [Riot](https://riot.js.org/) | **[]()** | []() | []() | 🚧 |
 | [F#](https://fsharp.org/) | **[]()** | []() | []() | 🚧 |
 | [Choo](https://choo.io/) | **[]()** | []() | []() | 🚧 |
+| [Vlang](https://vlang.io/) | **[]()** | []() | []() | 🚧 |
 
 ## Links
 [Build your own x](https://github.com/danistefanovic/build-your-own-x)

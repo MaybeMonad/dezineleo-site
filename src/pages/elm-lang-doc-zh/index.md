@@ -5,7 +5,11 @@ spoiler: A Chinese version of Elm docs.
 type: project
 github: https://github.com/DezineLeo/elm-lang-docs-zh
 site: https://elm.dezineleo.com/
+thumbnail: ./elm_for_chinese_thumbnail.png
+logo: ./logo.png
 ---
+
+![Featured Image](./featured.png)
 
 ## Elm 中文使用手册
 
@@ -19,7 +23,7 @@ site: https://elm.dezineleo.com/
 | The Elm Architecture | ✅ | [Elm 架构](https://elm.dezineleo.com/guide/the-elm-architecture.html) | 2019.09.28 |
 | Types | ✅ | [类型](https://elm.dezineleo.com/guide/types.html) | 2019.10.10 |
 | Error Handling | ✅ | [错误处理](https://elm.dezineleo.com/guide/error-handling.md) | 2019.10.12 |
-| Commands and Subscriptions | 👨🏻‍💻 |  |  |
+| Commands and Subscriptions | ✅ | [命令和订阅](https://elm.dezineleo.com/guide/effects.md) | 2019.10.16 |
 | JavaScript Interop | 👨🏻‍💻 |  |  |
 | Web Apps | 👨🏻‍💻 |  |  |
 | Optimization | 👨🏻‍💻 |  |  |

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -9,7 +10,7 @@ import SEO from '../components/SEO'
 import Footer from '../components/Footer'
 import Lang from '../components/Lang'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
-import Panel from '../components/Panel'
+// import Panel from '../components/Panel'
 
 const Projects = props => {
   const { className, data } = props
@@ -26,14 +27,26 @@ const Projects = props => {
               {p.version && <sup>{p.version}</sup>}
             </h4>
             <p className="project-description">{p.description}</p>
+            {p.thumbnail && (
+              <Img
+                style={{ margin: '20px 0 10px 0' }}
+                fluid={p.thumbnail.childImageSharp.fluid}
+              />
+            )}
           </div>
           <div className="project-links">
             {p.site ? (
-              <a href={p.site}>Live</a>
+              <a href={p.site} target="_blank">
+                Live
+              </a>
             ) : (
               <Link to={p.link}>Intro</Link>
             )}
-            {p.github && <a href={p.github || ''}>GitHub</a>}
+            {p.github && (
+              <a href={p.github || ''} target="_blank">
+                GitHub
+              </a>
+            )}
             {/* {p.version && <span className="project-version">{p.version}</span>} */}
           </div>
         </div>
@@ -67,7 +80,7 @@ const StyledProjects = styled(Projects)`
     h4 {
       text-transform: none;
       letter-spacing: 0;
-      margin: 0 0 8px 0;
+      margin: 0 0 2px 0;
       font-size: 18px;
       a {
         font-family: var(--font-bold);
@@ -198,6 +211,7 @@ export default props => {
               github: node.frontmatter.github,
               version: node.frontmatter.version,
               site: node.frontmatter.site,
+              thumbnail: node.frontmatter.thumbnail,
             }
           })}
         />
@@ -312,6 +326,13 @@ export const pageQuery = graphql`
             github
             version
             site
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
