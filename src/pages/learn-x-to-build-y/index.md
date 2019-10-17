@@ -1,9 +1,11 @@
 ---
-title: Programming challenge
+title: Learn X to build Y
 date: '2019-09-18'
 spoiler: Learn a new programming language / technique to build something real world.
 type: project
 github: https://github.com/DezineLeo/programming-challenge
+thumbnail: ./thumbnail.png
+logo: ./logo.png
 ---
 
 ![What I cannot create, I do not understand.](./feynman.png)

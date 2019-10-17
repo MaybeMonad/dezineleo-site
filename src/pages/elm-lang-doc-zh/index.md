@@ -1,15 +1,15 @@
 ---
-title: Elm for Chinese
+title: Break Elm
 date: 2019-09-26
 spoiler: A Chinese version of Elm docs.
 type: project
 github: https://github.com/DezineLeo/elm-lang-docs-zh
 site: https://elm.dezineleo.com/
-thumbnail: ./elm_for_chinese_thumbnail.png
+thumbnail: ./thumbnail.png
 logo: ./logo.png
 ---
 
-![Featured Image](./featured.png)
+![Break Elm](./featured.png)
 
 ## Elm 中文使用手册
 

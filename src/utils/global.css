@@ -382,6 +382,11 @@ main {
     flex-direction: column;
     align-items: flex-start !important;
   }
+
+  table {
+    overflow-x: auto;
+    display: block;
+  }
 }
 
 .gatsby-highlight pre[class*='language-'] {

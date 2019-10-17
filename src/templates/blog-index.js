@@ -105,6 +105,9 @@ const StyledProjects = styled(Projects)`
       margin: 0;
       color: var(--font-grey);
       font-size: 14px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
     .project-links {
       border-top: var(--border);

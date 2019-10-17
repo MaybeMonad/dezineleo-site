@@ -263,4 +263,5 @@ Regular expression is not that big thing, just keep in mind, **no rules, no RegE
 6. [RegExp | Eloquent JavaScript](https://eloquentjavascript.net/09_regexp.html)
 7. [RegExr](https://regexr.com)
 8. [Regular Expression the last guide](https://medium.com/tech-tajawal/regular-expressions-the-last-guide-6800283ac034)
+9. [Regex Cross­word](https://regexcrossword.com/)
 

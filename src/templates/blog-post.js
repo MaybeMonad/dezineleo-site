@@ -79,7 +79,6 @@ export default props => {
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     width: '100%',
-                    // borderBottom: '1px solid var(--black)',
                     borderBottom: 'var(--border)',
                     padding: '24px 0 16px 0',
                     marginBottom: 48,
