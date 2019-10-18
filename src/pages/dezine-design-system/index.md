@@ -4,7 +4,7 @@ date: 2019-09-26
 spoiler: A less but better design system.
 type: project
 github: https://github.com/DezineLeo/dezine
-thumbnail: ./thumbnail.png
+thumbnail: ./thumbnail.svg
 logo: ./logo.png
 ---
 

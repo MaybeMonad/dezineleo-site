@@ -1,9 +1,10 @@
 ---
-title: Dezine Icons
+title: Decon
 date: '2019-09-06'
 spoiler: Another free icon system for better design experience.
 type: 'project'
 github: ''
+thumbnail: ./thumbnail.svg
 ---
 
 It's a little annoying and time-consuming when I searching for icons as the style of the icons can be different and can cost you quite a lot of time to tweak. Actually, there's a good and open-sourced icon system out there called [Remix Icon](https://remixicon.com/). So why I created another one? Only god knows.

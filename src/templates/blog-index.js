@@ -28,9 +28,9 @@ const Projects = props => {
             </h4>
             <p className="project-description">{p.description}</p>
             {p.thumbnail && (
-              <Img
-                style={{ margin: '20px 0 10px 0' }}
-                fluid={p.thumbnail.childImageSharp.fluid}
+              <img
+                style={{ margin: '20px 0 10px 0', maxWidth: '100%' }}
+                src={p.thumbnail.publicURL}
               />
             )}
           </div>
@@ -330,11 +330,8 @@ export const pageQuery = graphql`
             version
             site
             thumbnail {
-              childImageSharp {
-                fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+              publicURL
+              name
             }
           }
         }

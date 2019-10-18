@@ -5,7 +5,7 @@ spoiler: A Chinese version of Elm docs.
 type: project
 github: https://github.com/DezineLeo/elm-lang-docs-zh
 site: https://elm.dezineleo.com/
-thumbnail: ./thumbnail.png
+thumbnail: ./thumbnail.svg
 logo: ./logo.png
 ---
 
