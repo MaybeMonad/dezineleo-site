@@ -241,6 +241,16 @@ li {
   margin-bottom: calc(1.75rem / 2);
 }
 
+article li {
+  padding-left: 1rem;
+  text-indent: -0.7rem;
+  list-style: none;
+}
+
+article li::before {
+  content: '👉🏻 ';
+}
+
 p {
   /* margin-bottom: 1.75rem; */
   margin-bottom: 12px;

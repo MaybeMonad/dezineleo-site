@@ -29,7 +29,11 @@ const Projects = props => {
             <p className="project-description">{p.description}</p>
             {p.thumbnail && (
               <img
-                style={{ margin: '20px 0 10px 0', maxWidth: '100%' }}
+                style={{
+                  margin: '20px 0 10px 0',
+                  maxWidth: '100%',
+                  width: '100%',
+                }}
                 src={p.thumbnail.publicURL}
               />
             )}
