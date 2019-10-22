@@ -59,6 +59,7 @@ logo: ./logo.png
 | [F#](https://fsharp.org/) | **[]()** | []() | []() | 🚧 |
 | [Choo](https://choo.io/) | **[]()** | []() | []() | 🚧 |
 | [Vlang](https://vlang.io/) | **[]()** | []() | []() | 🚧 |
+| [11ty](https://www.11ty.io) | **[]()** | []() | []() | 🚧 |
 
 ## Links
 [Build your own x](https://github.com/danistefanovic/build-your-own-x)
