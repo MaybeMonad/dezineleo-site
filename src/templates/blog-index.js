@@ -2,14 +2,19 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 
-import Bio from '../components/Bio'
+import MiniBio from '../components/MiniBio'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
 import Lang from '../components/Lang'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
+import LogoDecon from '../../static/logo_decon.svg'
+import LogoY from '../../static/logo_y.svg'
+import LogoD from '../../static/logo_d.svg'
+import LogoA from '../../static/logo_a.svg'
+import LogoN from '../../static/logo_n.svg'
 // import Panel from '../components/Panel'
 
 const Projects = props => {
@@ -177,6 +182,38 @@ const ArticleList = styled.main`
   }
 `
 
+const StyledHand = styled.span`
+  animation-name: wavingHand;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+
+  @keyframes wavingHand {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(-10deg);
+    }
+    20% {
+      transform: rotate(12deg);
+    }
+    30% {
+      transform: rotate(-10deg);
+    }
+    40% {
+      transform: rotate(9deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+`
+
 export default props => {
   const {
     pageContext: { langKey },
@@ -193,12 +230,53 @@ export default props => {
     ({ node }) => get(node, 'frontmatter.type') === 'experiment'
   )
 
+  const Links = styled.div`
+    a {
+      margin-right: 20px;
+      font-size: 14px;
+    }
+  `
+
+  const Logos = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 0;
+  `
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO />
-      <aside>
-        <Bio />
+      <aside
+        className="d-flex justify-between align-items-center"
+        style={{ padding: '24px 0' }}
+      >
+        <div style={{ marginRight: 48, maxWidth: 442 }}>
+          <h1 style={{ margin: '0 0 8px 0' }}>
+            Hello. <StyledHand>👋</StyledHand>
+          </h1>
+          <h3 style={{ margin: 0, fontFamily: 'var(--font-medium)' }}>
+            I'm a designer && maker.
+          </h3>
+          <p style={{ marginBottom: 14, fontSize: 14, lineHeight: '22px' }}>
+            Back in the day, I was working as a WordPress theme developer. In
+            2017, I came to Hangzhou to become a full-time web developer and UI
+            designer.
+          </p>
+          <Links>
+            <Link to="/about">#resume</Link>
+            <Link to="/what-i-use">#what-i-use</Link>
+          </Links>
+        </div>
+        <MiniBio />
       </aside>
+      <Logos>
+        <img src={LogoDecon} alt="Decon" />
+        <img src={LogoY} alt="Y" />
+        <img src={LogoD} alt="D" />
+        <img src={LogoA} alt="A" />
+        <img src={LogoN} alt="N" />
+      </Logos>
       <StyledSection
         title="Projects"
         external={
