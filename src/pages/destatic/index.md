@@ -1,9 +1,9 @@
 ---
-title: DeHTML
+title: DeStatic
 date: '2019-09-06'
 spoiler: A starter HTML Template using Pug, Sass, Webpack, Gulp.
 type: project
-github: https://github.com/DezineLeo/DeHTML
+github: https://github.com/DezineLeo/DeStatic
 version: v1.0.1
 thumbnail: ./thumbnail.svg
 ---

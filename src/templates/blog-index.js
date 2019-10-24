@@ -15,126 +15,10 @@ import LogoY from '../../static/logo_y.svg'
 import LogoD from '../../static/logo_d.svg'
 import LogoA from '../../static/logo_a.svg'
 import LogoN from '../../static/logo_n.svg'
+import JSHubLogo from '../../static/featured_projects/js_hub.svg'
+import DeStaticRocket from '../../static/featured_projects/destatic.svg'
+import MoreProjects from '../../static/featured_projects/more.svg'
 // import Panel from '../components/Panel'
-
-const Projects = props => {
-  const { className, data } = props
-
-  return (
-    <div className={className}>
-      {data.map(p => (
-        <div className="project-card" key={p.title}>
-          <div className="project-content">
-            <h4>
-              <Link to={p.link} key={p.title}>
-                {p.title}
-              </Link>
-              {p.version && <sup>{p.version}</sup>}
-            </h4>
-            <p className="project-description">{p.description}</p>
-            {p.thumbnail && (
-              <img
-                style={{
-                  margin: '20px 0 10px 0',
-                  maxWidth: '100%',
-                  width: '100%',
-                }}
-                src={p.thumbnail.publicURL}
-              />
-            )}
-          </div>
-          <div className="project-links">
-            {p.site ? (
-              <a href={p.site} target="_blank">
-                Live
-              </a>
-            ) : (
-              <Link to={p.link}>Intro</Link>
-            )}
-            {p.github && (
-              <a href={p.github || ''} target="_blank">
-                GitHub
-              </a>
-            )}
-            {/* {p.version && <span className="project-version">{p.version}</span>} */}
-          </div>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-const StyledProjects = styled(Projects)`
-  display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
-  width: calc(100% - 40px);
-  grid-gap: 20px;
-  .project-card {
-    border: var(--border);
-    padding: 16px 20px;
-    display: inline-block;
-    box-shadow: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    :first-child {
-      margin-left: 0;
-    }
-    :hover {
-      box-shadow: 0 0 0 3px var(--black);
-      border-color: var(--black);
-      // cursor: pointer;
-    }
-    h4 {
-      text-transform: none;
-      letter-spacing: 0;
-      margin: 0 0 2px 0;
-      font-size: 18px;
-      a {
-        font-family: var(--font-bold);
-        box-shadow: none;
-      }
-      sup {
-        margin-left: 4px;
-        font-size: 12px;
-        font-style: normal;
-        font-family: var(--font-light);
-      }
-    }
-    .project-version {
-      font-size: 12px;
-      color: white;
-      font-family: var(--font-light);
-      background-color: var(--black);
-      border-radius: 10px;
-      padding: 1px 5px;
-    }
-    p {
-      margin: 0;
-      color: var(--font-grey);
-      font-size: 14px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    .project-links {
-      border-top: var(--border);
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      width: 100%;
-      margin: 16px 0 0 -20px;
-      padding: 8px 20px 0 20px;
-      a {
-        margin-right: 12px;
-        font-size: 13px;
-      }
-    }
-  }
-  @media (max-width: 672px) {
-    grid-template-columns: 100%;
-    width: 100%;
-  }
-`
 
 const Section = props => {
   const { className, children, title, external } = props
@@ -223,9 +107,9 @@ export default props => {
   const posts = get(props, 'data.allMarkdownRemark.edges').filter(
     ({ node }) => node.fields.langKey === langKey
   )
-  const projects = get(props, 'data.allMarkdownRemark.edges').filter(
-    ({ node }) => get(node, 'frontmatter.type') === 'project'
-  )
+  // const projects = get(props, 'data.allMarkdownRemark.edges').filter(
+  //   ({ node }) => get(node, 'frontmatter.type') === 'project'
+  // )
   const experiments = get(props, 'data.allMarkdownRemark.edges').filter(
     ({ node }) => get(node, 'frontmatter.type') === 'experiment'
   )
@@ -242,6 +126,118 @@ export default props => {
     justify-content: space-between;
     align-items: center;
     padding: 48px 0;
+  `
+
+  const FeaturedProjects = styled.div`
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 20px;
+    margin: 24px 0;
+    // justify-content: space-around;
+    // align-items: flex-start;
+    a {
+      box-shadow: none;
+      display: flex;
+    }
+    .project-card {
+      border-radius: 5px;
+      padding: 32px 20px;
+      background-color: var(--bg-grey);
+      transition: background-color 0.3s ease;
+      font-family: var(--font-regular);
+      :hover {
+        background-color: var(--border-grey);
+      }
+      h2 {
+        font-size: 18px;
+        line-height: 24px;
+        text-transform: uppercase;
+        i {
+          position: relative;
+          z-index: 2;
+          &::before {
+            content: '';
+            position: absolute;
+            background-color: var(--primary);
+            width: 100%;
+            display: inline-block;
+            height: 12px;
+            bottom: 0px;
+            z-index: -1;
+            left: 0;
+          }
+        }
+      }
+      .progress-bar {
+        background-color: var(--black);
+        padding: 2px;
+        width: 100%;
+        .current-progress {
+          background-color: var(--primary);
+          height: 2px;
+        }
+      }
+      p {
+        font-size: 13px;
+      }
+      &.javascript-hub {
+        max-width: 108px;
+        h2 {
+          font-size: 17px;
+          margin: 12px 0;
+        }
+        p {
+          margin: 0;
+        }
+      }
+      &.break-elm {
+        min-width: 156px;
+        h2 {
+          font-size: 20px;
+          margin: 0 0 6px 0;
+        }
+        h1 {
+          font-size: 32px;
+          margin: 36px 0 12px 0;
+          font-family: var(--font-medium);
+          sup {
+            font-family: var(--font-light);
+            font-size: 14px;
+          }
+        }
+        p {
+          margin: 0 0 12px 0;
+          line-height: 18px;
+        }
+      }
+      &.destatic {
+        h2 {
+          margin: 12px 0;
+          font-size: 19px;
+        }
+        h3 {
+          margin: 0;
+          font-size: 14px;
+        }
+        p {
+          margin: 0;
+          position: relative;
+          z-index: 2;
+          font-weight: bold;
+          &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            background-color: var(--primary);
+            width: 28px;
+            height: 20px;
+            z-index: -1;
+            bottom: 0;
+            left: 12px;
+          }
+        }
+      }
+    }
   `
 
   return (
@@ -277,7 +273,59 @@ export default props => {
         <img src={LogoA} alt="A" />
         <img src={LogoN} alt="N" />
       </Logos>
-      <StyledSection
+      <FeaturedProjects>
+        <Link to="/javascript-hub">
+          <div className="project-card javascript-hub">
+            <img src={JSHubLogo} alt="JavaScript Hub" />
+            <h2>
+              Free <i>JavaScript</i> Learning Application
+            </h2>
+            <p>v1.0.0</p>
+          </div>
+        </Link>
+        <Link to="/break-elm">
+          <div className="project-card break-elm">
+            <h2>Break Elm</h2>
+            <p>Based on official docs, I’ve created 3 real world demos.</p>
+            <div className="project-progress">
+              <div className="d-flex justify-between align-items-bottom">
+                <h1>
+                  60<sup>%</sup>
+                </h1>
+                <p style={{ fontSize: '13px' }}>In progress</p>
+              </div>
+              <div className="progress-bar">
+                <div
+                  className="current-progress"
+                  style={{ width: '60%' }}
+                ></div>
+              </div>
+            </div>
+          </div>
+        </Link>
+        <Link to="/destatic">
+          <div className="project-card destatic">
+            <h3>#DESTATIC</h3>
+            <h2>Skyrocket your project</h2>
+            <p>v1.0.1</p>
+            <img
+              src={DeStaticRocket}
+              alt="DeStatic"
+              style={{
+                marginTop: '-20px',
+                marginRight: '12px',
+                float: 'right',
+              }}
+            />
+          </div>
+        </Link>
+        <Link to="/projects">
+          <div className="project-card more d-flex align-items-center">
+            <img src={MoreProjects} alt="More Projects" />
+          </div>
+        </Link>
+      </FeaturedProjects>
+      {/* <StyledSection
         title="Projects"
         external={
           <a className="btn" href="/projects" style={{ fontSize: 13 }}>
@@ -285,7 +333,6 @@ export default props => {
           </a>
         }
       >
-        {/* <StyledProjects data={projects} /> */}
         <StyledProjects
           data={projects.map(({ node }, index) => {
             const title = get(node, 'frontmatter.title') || node.fields.slug
@@ -300,8 +347,8 @@ export default props => {
             }
           })}
         />
-      </StyledSection>
-      <StyledSection
+      </StyledSection> */}
+      {/* <StyledSection
         title="Playground"
         external={
           <a className="btn" href="" style={{ fontSize: 13 }}>
@@ -320,7 +367,7 @@ export default props => {
             }
           })}
         />
-      </StyledSection>
+      </StyledSection> */}
       <StyledSection
         title="Topics"
         external={

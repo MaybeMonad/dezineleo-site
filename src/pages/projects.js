@@ -7,9 +7,9 @@ import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
-import Lang from '../components/Lang'
-import { formatPostDate, formatReadingTime } from '../utils/helpers'
-import Panel from '../components/Panel'
+// import Lang from '../components/Lang'
+// import { formatPostDate, formatReadingTime } from '../utils/helpers'
+// import Panel from '../components/Panel'
 
 const Projects = props => {
   const { className, data } = props
@@ -17,10 +17,42 @@ const Projects = props => {
   return (
     <div className={className}>
       {data.map(p => (
-        <Link to={p.link} key={p.title}>
-          <h4>{p.title}</h4>
-          <p>{p.description}</p>
-        </Link>
+        <div className="project-card" key={p.title}>
+          <div className="project-content">
+            <h4>
+              <Link to={p.link} key={p.title}>
+                {p.title}
+              </Link>
+              {p.version && <sup>{p.version}</sup>}
+            </h4>
+            <p className="project-description">{p.description}</p>
+            {p.thumbnail && (
+              <img
+                style={{
+                  margin: '20px 0 10px 0',
+                  maxWidth: '100%',
+                  width: '100%',
+                }}
+                src={p.thumbnail.publicURL}
+              />
+            )}
+          </div>
+          <div className="project-links">
+            {p.site ? (
+              <a href={p.site} target="_blank">
+                Live
+              </a>
+            ) : (
+              <Link to={p.link}>Intro</Link>
+            )}
+            {p.github && (
+              <a href={p.github || ''} target="_blank">
+                GitHub
+              </a>
+            )}
+            {/* {p.version && <span className="project-version">{p.version}</span>} */}
+          </div>
+        </div>
       ))}
     </div>
   )
@@ -29,32 +61,67 @@ const Projects = props => {
 const StyledProjects = styled(Projects)`
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
-  width: calc(100% - 24px);
-  grid-gap: 12px;
-  a {
+  width: calc(100% - 40px);
+  grid-gap: 20px;
+  .project-card {
     border: var(--border);
-    border-radius: 4px;
     padding: 16px 20px;
     display: inline-block;
     box-shadow: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     :first-child {
       margin-left: 0;
     }
     :hover {
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 3px var(--black);
       border-color: var(--black);
+      // cursor: pointer;
     }
     h4 {
       text-transform: none;
       letter-spacing: 0;
-      margin: 0 0 8px 0;
-      font-family: 'ubunturegular';
+      margin: 0 0 2px 0;
+      font-size: 18px;
+      a {
+        font-family: var(--font-bold);
+        box-shadow: none;
+      }
+      sup {
+        margin-left: 4px;
+        font-size: 12px;
+        font-style: normal;
+        font-family: var(--font-light);
+      }
+    }
+    .project-version {
+      font-size: 12px;
+      color: white;
+      font-family: var(--font-light);
+      background-color: var(--black);
+      border-radius: 10px;
+      padding: 1px 5px;
     }
     p {
       margin: 0;
       color: var(--font-grey);
-      font-size: 13px;
+      font-size: 14px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .project-links {
+      border-top: var(--border);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      margin: 16px 0 0 -20px;
+      padding: 8px 20px 0 20px;
+      a {
+        margin-right: 12px;
+        font-size: 13px;
+      }
     }
   }
   @media (max-width: 672px) {
@@ -99,43 +166,38 @@ export default props => {
     location,
   } = props
   const siteTitle = get(props, 'props.data.site.siteMetadata.title')
-  const posts = get(props, 'data.allMarkdownRemark.edges').filter(
-    ({ node }) => node.fields.langKey === langKey
+  const projects = get(props, 'data.allMarkdownRemark.edges').filter(
+    ({ node }) => get(node, 'frontmatter.type') === 'project'
   )
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO />
-      <aside>
+      {/* <aside>
         <Bio />
-      </aside>
+      </aside> */}
       <StyledSection
         title="All Projects"
         // external={
-        //   <Lang>
-        //     <li className={langKey === 'en' ? 'active' : ''}>
-        //       <a href="/">En</a>
-        //     </li>
-        //     <li className={langKey === 'zh-hans' ? 'active' : ''}>
-        //       <a href="/zh-hans">Zh</a>
-        //     </li>
-        //   </Lang>
+        //   <a className="btn" href="/projects" style={{ fontSize: 13 }}>
+        //     All Projects
+        //   </a>
         // }
       >
-        <main>
-          <StyledProjects
-            data={posts
-              .filter(({ node }) => get(node, 'frontmatter.type') === 'project')
-              .map(({ node }, index) => {
-                const title = get(node, 'frontmatter.title') || node.fields.slug
-                return {
-                  title,
-                  description: node.frontmatter.spoiler,
-                  link: node.fields.slug,
-                }
-              })}
-          />
-        </main>
+        <StyledProjects
+          data={projects.map(({ node }, index) => {
+            const title = get(node, 'frontmatter.title') || node.fields.slug
+            return {
+              title,
+              description: node.frontmatter.spoiler,
+              link: node.fields.slug,
+              github: node.frontmatter.github,
+              version: node.frontmatter.version,
+              site: node.frontmatter.site,
+              thumbnail: node.frontmatter.thumbnail,
+            }
+          })}
+        />
       </StyledSection>
       <Footer />
     </Layout>
@@ -163,6 +225,13 @@ export const pageQuery = graphql`
             title
             spoiler
             type
+            github
+            version
+            site
+            thumbnail {
+              publicURL
+              name
+            }
           }
         }
       }

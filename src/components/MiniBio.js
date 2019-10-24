@@ -22,7 +22,7 @@ const StyledGradientBox = styled(GradientBox)`
   padding: 2px;
 
   .gradient-box {
-    background: var(--bg-grey);
+    background: var(--black);
     width: 52px;
     height: 52px;
     border-radius: 100%;
@@ -42,7 +42,8 @@ const MiniBio = props => {
 }
 
 const StyledMiniBio = styled(MiniBio)`
-  background-color: var(--bg-grey);
+  background-color: var(--black);
+  color: white;
   padding: 24px;
   display: inline-block;
   border-radius: 5px;
@@ -57,20 +58,22 @@ const StyledMiniBio = styled(MiniBio)`
       span {
         font-size: 12px;
         font-family: var(--font-light);
+        font-weight: normal;
         color: var(--font-grey);
         padding-left: 4px;
       }
     }
     .links {
       a {
-        background-color: var(--black);
-        color: white;
+        background-color: var(--primary);
+        color: var(--black);
         font-size: 12px;
         padding: 4px 24px;
         border-radius: 25px;
       }
       .btn-follow {
         margin-right: 4px;
+        // font-family: var(--font-bold);
       }
       .btn-more {
         padding: 4px 8px;
@@ -120,7 +123,13 @@ const Bio = () => {
         >
           Hangzhou, China{' '}
         </p>
-        <p style={{ lineHeight: '18px' }}>
+        <p
+          style={{
+            lineHeight: '18px',
+            color: 'var(--font-grey)',
+            fontFamily: 'var(--font-light)',
+          }}
+        >
           Working as a web developer && UI designer.
         </p>
       </div>
