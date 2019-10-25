@@ -335,12 +335,6 @@ tbody tr:hover {
   background-color: var(--bg-grey);
 }
 
-.header-top-right span {
-  /* color: var(--font-grey); */
-  color: rgba(255, 255, 255, 1);
-  font-family: var(--font-regular);
-}
-
 .btn {
   background-color: var(--black);
   color: white;
@@ -378,6 +372,7 @@ main {
   background-color: #fff;
   border: var(--border);
   padding: 16px 42px;
+  border-radius: 5px;
 }
 
 .d-flex {

@@ -13,6 +13,7 @@ const Lang = styled.ul`
     padding: 3px 6px;
     background-color: var(--bg-grey);
     transition: background-color 0.3s ease;
+    border-radius: 2px;
     &:hover {
       background-color: var(--primary);
     }

@@ -49,6 +49,9 @@ const StyledMiniBio = styled(MiniBio)`
   border-radius: 5px;
   max-width: 188px;
   width: 100%;
+  @media (max-width: 672px) {
+    max-width: calc(100% - 48px);
+  }
   .profile {
     margin-left: 16px;
     h3 {

@@ -12,8 +12,8 @@ class Bio extends React.Component {
           marginBottom: 24,
           background: 'white',
           // background: '#d8ece8',
-          // borderRadius: '3px',
-          padding: '32px 24px',
+          borderRadius: '5px',
+          padding: '32px 42px',
           border: 'var(--border)',
           // boxShadow: 'var(--box-shadow)',
         }}
@@ -22,7 +22,7 @@ class Bio extends React.Component {
           src={profilePic}
           alt={`Yang Jin`}
           style={{
-            marginRight: 20,
+            marginRight: 24,
             marginBottom: 0,
             width: 56,
             minWidth: 56,

@@ -17,7 +17,8 @@ import LogoA from '../../static/logo_a.svg'
 import LogoN from '../../static/logo_n.svg'
 import JSHubLogo from '../../static/featured_projects/js_hub.svg'
 import DeStaticRocket from '../../static/featured_projects/destatic.svg'
-import MoreProjects from '../../static/featured_projects/more.svg'
+import MoreProjects01 from '../../static/featured_projects/more_01.svg'
+import MoreProjects02 from '../../static/featured_projects/more_02.svg'
 // import Panel from '../components/Panel'
 
 const Section = props => {
@@ -126,6 +127,15 @@ export default props => {
     justify-content: space-between;
     align-items: center;
     padding: 48px 0;
+    @media (max-width: 672px) {
+      img {
+        width: 20px;
+      }
+      // display: grid;
+      // grid-template-columns: auto auto auto auto auto;
+      // grid-column-gap: 20px;
+      // grid-row-gap: 20px;
+    }
   `
 
   const FeaturedProjects = styled.div`
@@ -135,6 +145,17 @@ export default props => {
     margin: 24px 0;
     // justify-content: space-around;
     // align-items: flex-start;
+    @media (max-width: 672px) {
+      grid-template-columns: 100%;
+      grid-row-gap: 20px;
+      .project-card {
+        width: 100%;
+        max-width: 100% !important;
+        &.more {
+          flex-direction: row !important;
+        }
+      }
+    }
     a {
       box-shadow: none;
       display: flex;
@@ -213,7 +234,7 @@ export default props => {
       &.destatic {
         h2 {
           margin: 12px 0;
-          font-size: 19px;
+          line-height: 21px;
         }
         h3 {
           margin: 0;
@@ -237,17 +258,37 @@ export default props => {
           }
         }
       }
+      &.more {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        img {
+          margin: 10px 0;
+        }
+      }
+    }
+  `
+
+  const Aside = styled.aside`
+    padding: 24px 0;
+    .hello {
+      margin-right: 48px;
+      max-width: 442px;
+    }
+    @media (max-width: 672px) {
+      flex-direction: column;
+      align-items: flex-start;
+      .hello {
+        margin: 0 0 32px 0;
+      }
     }
   `
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO />
-      <aside
-        className="d-flex justify-between align-items-center"
-        style={{ padding: '24px 0' }}
-      >
-        <div style={{ marginRight: 48, maxWidth: 442 }}>
+      <Aside className="d-flex justify-between align-items-center">
+        <div className="hello">
           <h1 style={{ margin: '0 0 8px 0' }}>
             Hello. <StyledHand>👋</StyledHand>
           </h1>
@@ -265,9 +306,9 @@ export default props => {
           </Links>
         </div>
         <MiniBio />
-      </aside>
+      </Aside>
       <Logos>
-        <img src={LogoDecon} alt="Decon" />
+        <img src={LogoDecon} alt="Decon" style={{ minWidth: 42 }} />
         <img src={LogoY} alt="Y" />
         <img src={LogoD} alt="D" />
         <img src={LogoA} alt="A" />
@@ -312,7 +353,7 @@ export default props => {
               src={DeStaticRocket}
               alt="DeStatic"
               style={{
-                marginTop: '-20px',
+                marginTop: '-10px',
                 marginRight: '12px',
                 float: 'right',
               }}
@@ -321,7 +362,8 @@ export default props => {
         </Link>
         <Link to="/projects">
           <div className="project-card more d-flex align-items-center">
-            <img src={MoreProjects} alt="More Projects" />
+            <img src={MoreProjects01} alt="More Projects" />
+            <img src={MoreProjects02} alt="More Projects" />
           </div>
         </Link>
       </FeaturedProjects>
