@@ -24,7 +24,7 @@ export default props => {
     )
   }, [])
 
-  const pageMaxWidth = '56rem'
+  const pageMaxWidth = '52rem'
 
   const TopNav = props => {
     const { className, style, children } = props
