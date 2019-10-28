@@ -141,13 +141,13 @@ export default props => {
   const FeaturedProjects = styled.div`
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-column-gap: 20px;
+    grid-column-gap: 24px;
     margin: 24px 0;
     // justify-content: space-around;
     // align-items: flex-start;
     @media (max-width: 672px) {
       grid-template-columns: 100%;
-      grid-row-gap: 20px;
+      grid-row-gap: 24px;
       .project-card {
         width: 100%;
         max-width: 100% !important;
@@ -244,18 +244,6 @@ export default props => {
           margin: 0;
           position: relative;
           z-index: 2;
-          font-weight: bold;
-          &::before {
-            content: '';
-            display: inline-block;
-            position: absolute;
-            background-color: var(--primary);
-            width: 28px;
-            height: 20px;
-            z-index: -1;
-            bottom: 0;
-            left: 12px;
-          }
         }
       }
       &.more {
@@ -263,7 +251,7 @@ export default props => {
         flex-direction: column;
         justify-content: space-between;
         img {
-          margin: 10px 0;
+          // margin: 10px 0;
         }
       }
     }
@@ -292,9 +280,7 @@ export default props => {
           <h1 style={{ margin: '0 0 8px 0' }}>
             Hello. <StyledHand>👋</StyledHand>
           </h1>
-          <h3 style={{ margin: 0, fontFamily: 'var(--font-medium)' }}>
-            I'm a designer && maker.
-          </h3>
+          <h3 style={{ margin: 0 }}>I'm a designer && maker.</h3>
           <p style={{ marginBottom: 14, fontSize: 14, lineHeight: '22px' }}>
             Back in the day, I was working as a WordPress theme developer. In
             2017, I came to Hangzhou to become a full-time web developer and UI

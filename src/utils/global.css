@@ -29,11 +29,11 @@ body {
   --box-shadow: 0 1px 3px rgba(26, 26, 26, 0.08);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
+  margin: 0;
 }
 
 body.light {
   --bg: #ffffff;
-  /* --bg: rgb(245, 248, 250); */
   --header: var(--black);
   --textNormal: var(--black);
   --textTitle: var(--black);
@@ -261,6 +261,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-bold);
+  font-weight: normal;
 }
 
 h1 {

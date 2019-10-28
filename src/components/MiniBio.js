@@ -55,7 +55,8 @@ const StyledMiniBio = styled(MiniBio)`
   .profile {
     margin-left: 16px;
     h3 {
-      font-size: 16px;
+      font-size: 18px;
+      line-height: 20px;
       font-family: var(--font-medium);
       margin: 0;
       span {
