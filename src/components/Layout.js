@@ -13,14 +13,7 @@ export default props => {
     window.__onThemeChange = () => setTheme(window.__theme)
     window.addEventListener(
       'scroll',
-      debounce(() => {
-        // console.log(window.pageYOffset);
-        if (window.pageYOffset < 56) {
-          setActive(false)
-        } else {
-          setActive(true)
-        }
-      }, 150)
+      debounce(() => setActive(window.pageYOffset > 56), 150)
     )
   }, [])
 

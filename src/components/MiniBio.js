@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import profilePic from '../assets/profile-pic.png'
+import miniBioBG from '../../static/mini_bio_bg.svg'
 // import { rhythm } from '../utils/typography'
 
 const GradientBox = props => {
@@ -44,11 +45,13 @@ const MiniBio = props => {
 const StyledMiniBio = styled(MiniBio)`
   background-color: var(--black);
   color: white;
-  padding: 24px;
+  padding: 32px;
   display: inline-block;
   border-radius: 5px;
   max-width: 188px;
   width: 100%;
+  position: relative;
+  z-index: 2;
   @media (max-width: 672px) {
     max-width: calc(100% - 48px);
   }
@@ -94,50 +97,73 @@ const StyledMiniBio = styled(MiniBio)`
   }
 `
 
+const MiniBioWrapper = styled.div`
+  position: relative;
+  .mini-bio-after {
+    position: absolute;
+    top: -52px;
+    left: -26px;
+    z-index: 1;
+    width: 120%;
+  }
+  @media (max-width: 672px) {
+    width: 100%;
+    .mini-bio-after {
+      width: 100%;
+      top: -84px;
+      left: 0px;
+      display: none;
+    }
+  }
+`
+
 const Bio = () => {
   return (
-    <StyledMiniBio>
-      <div className="d-flex justify-start align-items-center">
-        <StyledGradientBox>
-          <img src={profilePic} alt={`Yang Jin`} />
-        </StyledGradientBox>
-        <div className="profile">
-          <h3>
-            Leo<span>@dezineleo</span>
-          </h3>
-          <div className="links">
-            <a
-              href="https://twitter.com/dezineleo"
-              target="_blank"
-              className="btn-follow"
-            >
-              Follow
-            </a>
-            <a className="btn-more">···</a>
+    <MiniBioWrapper>
+      <img className="mini-bio-after" src={miniBioBG} alt="" />
+      <StyledMiniBio>
+        <div className="d-flex justify-start align-items-center">
+          <StyledGradientBox>
+            <img src={profilePic} alt={`Yang Jin`} />
+          </StyledGradientBox>
+          <div className="profile">
+            <h3>
+              Leo<span>@dezineleo</span>
+            </h3>
+            <div className="links">
+              <a
+                href="https://twitter.com/dezineleo"
+                target="_blank"
+                className="btn-follow"
+              >
+                Follow
+              </a>
+              <a className="btn-more">···</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="brief-intro">
-        <p
-          style={{
-            fontFamily: 'var(--font-medium)',
-            fontSize: 14,
-            marginBottom: 4,
-          }}
-        >
-          Hangzhou, China{' '}
-        </p>
-        <p
-          style={{
-            lineHeight: '18px',
-            color: 'var(--font-grey)',
-            fontFamily: 'var(--font-light)',
-          }}
-        >
-          Working as a web developer && UI designer.
-        </p>
-      </div>
-    </StyledMiniBio>
+        <div className="brief-intro">
+          <p
+            style={{
+              fontFamily: 'var(--font-medium)',
+              fontSize: 14,
+              marginBottom: 4,
+            }}
+          >
+            Hangzhou, China{' '}
+          </p>
+          <p
+            style={{
+              lineHeight: '18px',
+              color: 'var(--font-grey)',
+              fontFamily: 'var(--font-light)',
+            }}
+          >
+            Working as a web developer && UI designer.
+          </p>
+        </div>
+      </StyledMiniBio>
+    </MiniBioWrapper>
   )
 }
 

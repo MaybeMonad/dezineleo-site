@@ -131,10 +131,7 @@ export default props => {
       img {
         width: 20px;
       }
-      // display: grid;
-      // grid-template-columns: auto auto auto auto auto;
-      // grid-column-gap: 20px;
-      // grid-row-gap: 20px;
+      padding: 28px 0;
     }
   `
 
@@ -258,14 +255,17 @@ export default props => {
   `
 
   const Aside = styled.aside`
-    padding: 24px 0;
+    padding: 48px 0;
     .hello {
       margin-right: 48px;
       max-width: 442px;
+      z-index: 2;
+      position: relative;
     }
     @media (max-width: 672px) {
       flex-direction: column;
       align-items: flex-start;
+      padding: 24px 0;
       .hello {
         margin: 0 0 32px 0;
       }
