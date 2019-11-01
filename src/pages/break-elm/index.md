@@ -11,7 +11,7 @@ logo: ./logo.png
 
 ![Break Elm](./featured.png)
 
-## Elm 中文使用手册
+## Elm 中文指南
 
 作为函数式编程范式的拥趸，在学习 Elm 的过程中，发现了诸多乐趣，为了更好的学习，制作了这一中文版，目前还在逐章翻译，如有错误，欢迎提 [Issue](https://github.com/DezineLeo/elm-lang-docs-zh/issues)。
 
@@ -22,9 +22,9 @@ logo: ./logo.png
 | Core Language | ✅ | [语言核心](https://elm.dezineleo.com/guide/core-language.html) | 2019.09.26 |
 | The Elm Architecture | ✅ | [Elm 架构](https://elm.dezineleo.com/guide/the-elm-architecture.html) | 2019.09.28 |
 | Types | ✅ | [类型](https://elm.dezineleo.com/guide/types.html) | 2019.10.10 |
-| Error Handling | ✅ | [错误处理](https://elm.dezineleo.com/guide/error-handling.md) | 2019.10.12 |
-| Commands and Subscriptions | ✅ | [命令和订阅](https://elm.dezineleo.com/guide/effects.md) | 2019.10.16 |
-| JavaScript Interop | 👨🏻‍💻 |  |  |
+| Error Handling | ✅ | [错误处理](https://elm.dezineleo.com/guide/error-handling.html) | 2019.10.12 |
+| Commands and Subscriptions | ✅ | [命令和订阅](https://elm.dezineleo.com/guide/effects.html) | 2019.10.16 |
+| JavaScript Interop | ✅ | [JavaScript 交互](https://elm.dezineleo.com/guide/interop.html) | 2019.10.30 |
 | Web Apps | 👨🏻‍💻 |  |  |
 | Optimization | 👨🏻‍💻 |  |  |
 | Next Steps | 👨🏻‍💻 |  |  |

@@ -47,7 +47,7 @@ const StyledMiniBio = styled(MiniBio)`
   color: white;
   padding: 32px;
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 12px;
   max-width: 188px;
   width: 100%;
   position: relative;
