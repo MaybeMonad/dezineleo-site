@@ -282,9 +282,11 @@ export default props => {
           </h1>
           <h3 style={{ margin: 0 }}>I'm a designer && maker.</h3>
           <p style={{ marginBottom: 14, fontSize: 14, lineHeight: '22px' }}>
-            Back in the day, I was working as a WordPress theme developer. In
-            2017, I came to Hangzhou to become a full-time web developer and UI
-            designer.
+            As an open source advocate, I do <b>a lot of stuff</b>. If you want
+            to know more about my projects, checkout my{' '}
+            <Link to="/about">portfolio</Link>. I'm also available for UI design
+            and web development. Feel free to contact me through{' '}
+            <a href="@dezineleo@gmail.com">dezineleo@gmail.com</a>.
           </p>
           <Links>
             <Link to="/about">#resume</Link>

@@ -62,8 +62,8 @@ code[class*='language-'],
 pre[class*='language-'] {
   color: white;
   background: none;
-  font-family: 'Source Code Pro', Consolas, Menlo, Monaco, source-code-pro,
-    'Courier New', monospace;
+  font-family: Menlo, Consolas, Monaco, source-code-pro, 'Courier New',
+    monospace;
   font-feature-settings: normal;
   text-align: left;
   white-space: pre;
@@ -78,7 +78,7 @@ pre[class*='language-'] {
 }
 
 code[class*='language-text'] {
-  font-family: var(--font-regular), Consolas, Menlo, Monaco, source-code-pro,
+  font-family: var(--font-regular), Consolas, Menlo, Monaco, 'source-code-pro',
     Courier New, monospace;
 }
 

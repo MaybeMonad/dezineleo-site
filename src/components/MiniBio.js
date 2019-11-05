@@ -53,7 +53,7 @@ const StyledMiniBio = styled(MiniBio)`
   position: relative;
   z-index: 2;
   @media (max-width: 672px) {
-    max-width: calc(100% - 48px);
+    max-width: calc(100% - 64px);
   }
   .profile {
     margin-left: 16px;

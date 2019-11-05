@@ -1,19 +1,16 @@
-@font-face {
+/* @font-face {
   font-family: 'source_code_prolight';
   src: url(./files/sourcecodepro-light-webfont.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 @font-face {
   font-family: 'Source Code Pro';
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
-  src: url('./files/SourceCodePro-Regular.ttf.woff2') format('woff2'),
-    url('./files/SourceCodePro-Regular.otf.woff') format('woff'),
-    url('./files/SourceCodePro-Regular.otf') format('opentype'),
-    url('./files/SourceCodePro-Regular.ttf') format('truetype');
+  src: url('./files/SourceCodePro-Regular.ttf.woff2') format('woff2');
 }
 
 /* @font-face {
