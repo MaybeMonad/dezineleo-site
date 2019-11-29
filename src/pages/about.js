@@ -1,9 +1,20 @@
 import React from 'react'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
 import styled from 'styled-components'
 import classNames from 'classnames'
+import MiniBio from '../components/MiniBio'
+import JSHubLogo from '../../static/featured_projects/js_hub.svg'
+import DeStaticRocket from '../../static/featured_projects/destatic.svg'
+import MoreProjects01 from '../../static/featured_projects/more_01.svg'
+import MoreProjects02 from '../../static/featured_projects/more_02.svg'
+import LogoDecon from '../../static/logo_decon.svg'
+import LogoY from '../../static/logo_y.svg'
+import LogoD from '../../static/logo_d.svg'
+import LogoA from '../../static/logo_a.svg'
+import LogoN from '../../static/logo_n.svg'
 
 const Section = props => {
   const { className, title, mode, children, style } = props
@@ -109,16 +120,249 @@ const StyledHand = styled.span`
   }
 `
 
+const Aside = styled.aside`
+  padding: 48px 0;
+  .hello {
+    margin-right: 48px;
+    max-width: 442px;
+    z-index: 2;
+    position: relative;
+  }
+  @media (max-width: 672px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 0;
+    .hello {
+      margin: 0 0 32px 0;
+    }
+  }
+`
+
+const Links = styled.div`
+  a {
+    margin-right: 20px;
+    font-size: 14px;
+  }
+`
+
+const Logos = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 0;
+  @media (max-width: 672px) {
+    img {
+      width: 20px;
+    }
+    padding: 28px 0;
+  }
+`
+
+const FeaturedProjects = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 24px;
+  margin: 24px 0;
+  // justify-content: space-around;
+  // align-items: flex-start;
+  @media (max-width: 672px) {
+    grid-template-columns: 100%;
+    grid-row-gap: 24px;
+    .project-card {
+      width: 100%;
+      max-width: 100% !important;
+      &.more {
+        flex-direction: row !important;
+      }
+    }
+  }
+  a {
+    box-shadow: none;
+    display: flex;
+  }
+  .project-card {
+    border-radius: 5px;
+    padding: 32px 20px;
+    background-color: var(--bg-grey);
+    transition: background-color 0.3s ease;
+    font-family: var(--font-regular);
+    :hover {
+      background-color: var(--border-grey);
+    }
+    h2 {
+      font-size: 18px;
+      line-height: 24px;
+      text-transform: uppercase;
+      i {
+        position: relative;
+        z-index: 2;
+        &::before {
+          content: '';
+          position: absolute;
+          background-color: var(--primary);
+          width: 100%;
+          display: inline-block;
+          height: 12px;
+          bottom: 0px;
+          z-index: -1;
+          left: 0;
+        }
+      }
+    }
+    .progress-bar {
+      background-color: var(--black);
+      padding: 2px;
+      width: 100%;
+      .current-progress {
+        background-color: var(--primary);
+        height: 2px;
+      }
+    }
+    p {
+      font-size: 13px;
+    }
+    &.javascript-hub {
+      max-width: 108px;
+      h2 {
+        font-size: 17px;
+        margin: 12px 0;
+      }
+      p {
+        margin: 0;
+      }
+    }
+    &.break-elm {
+      min-width: 156px;
+      h2 {
+        font-size: 20px;
+        margin: 0 0 6px 0;
+      }
+      h1 {
+        font-size: 32px;
+        margin: 36px 0 12px 0;
+        font-family: var(--font-medium);
+        sup {
+          font-family: var(--font-light);
+          font-size: 14px;
+        }
+      }
+      p {
+        margin: 0 0 12px 0;
+        line-height: 18px;
+      }
+    }
+    &.destatic {
+      h2 {
+        margin: 12px 0;
+        line-height: 21px;
+      }
+      h3 {
+        margin: 0;
+        font-size: 14px;
+      }
+      p {
+        margin: 0;
+        position: relative;
+        z-index: 2;
+      }
+    }
+    &.more {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      img {
+        // margin: 10px 0;
+      }
+    }
+  }
+`
+
 export default props => {
   const { location } = props
   return (
     <Layout location={location} title="About Leo - Dezineleo">
       <SEO title="About Leo" />
       <main>
-        <h1 style={{ marginBottom: 8 }}>
-          Hello. <StyledHand>👋</StyledHand>
-        </h1>
-        <h3 style={{ marginTop: 0 }}>I'm a designer && maker.</h3>
+        <Aside className="d-flex justify-between align-items-center">
+          <div className="hello">
+            <h1 style={{ margin: '0 0 8px 0' }}>
+              Hello. <StyledHand>👋</StyledHand>
+            </h1>
+            <h3 style={{ margin: 0 }}>I'm a designer && maker.</h3>
+            <p style={{ marginBottom: 14, fontSize: 14, lineHeight: '22px' }}>
+              As an open source advocate, I do <b>a lot of stuff</b>. If you
+              want to know more about my projects, checkout my{' '}
+              <Link to="/about">portfolio</Link>. I'm also available for UI
+              design and web development. Feel free to contact me through{' '}
+              <a href="@dezineleo@gmail.com">dezineleo@gmail.com</a>.
+            </p>
+            <Links>
+              {/* <Link to="/about">#resume</Link> */}
+              <Link to="/what-i-use">#what-i-use</Link>
+            </Links>
+          </div>
+          <MiniBio />
+        </Aside>
+        <Logos>
+          <img src={LogoDecon} alt="Decon" style={{ minWidth: 42 }} />
+          <img src={LogoY} alt="Y" />
+          <img src={LogoD} alt="D" />
+          <img src={LogoA} alt="A" />
+          <img src={LogoN} alt="N" />
+        </Logos>
+        <FeaturedProjects>
+          <Link to="/javascript-hub">
+            <div className="project-card javascript-hub">
+              <img src={JSHubLogo} alt="JavaScript Hub" />
+              <h2>
+                Free <i>JavaScript</i> Learning Application
+              </h2>
+              <p>v1.0.0</p>
+            </div>
+          </Link>
+          <Link to="/break-elm">
+            <div className="project-card break-elm">
+              <h2>Break Elm</h2>
+              <p>Based on official docs, I’ve created 3 real world demos.</p>
+              <div className="project-progress">
+                <div className="d-flex justify-between align-items-bottom">
+                  <h1>
+                    60<sup>%</sup>
+                  </h1>
+                  <p style={{ fontSize: '13px' }}>In progress</p>
+                </div>
+                <div className="progress-bar">
+                  <div
+                    className="current-progress"
+                    style={{ width: '60%' }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link to="/destatic">
+            <div className="project-card destatic">
+              <h3>#DESTATIC</h3>
+              <h2>Skyrocket your project</h2>
+              <p>v1.0.1</p>
+              <img
+                src={DeStaticRocket}
+                alt="DeStatic"
+                style={{
+                  marginTop: '-10px',
+                  marginRight: '12px',
+                  float: 'right',
+                }}
+              />
+            </div>
+          </Link>
+          <Link to="/projects">
+            <div className="project-card more d-flex align-items-center">
+              <img src={MoreProjects01} alt="More Projects" />
+              <img src={MoreProjects02} alt="More Projects" />
+            </div>
+          </Link>
+        </FeaturedProjects>
         <p style={{ marginBottom: 14 }}>
           Ever since I was a child, I have always been passionate about
           illustrating and computer-like stuff. However, I chose to study

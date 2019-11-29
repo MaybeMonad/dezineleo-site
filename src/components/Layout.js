@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { debounce } from 'lodash'
+import FullWidthWrapper from '../components/FullWidthWrapper'
 
 export default props => {
   const { children } = props
@@ -11,10 +12,10 @@ export default props => {
   useEffect(() => {
     setTheme(window.__theme)
     window.__onThemeChange = () => setTheme(window.__theme)
-    window.addEventListener(
-      'scroll',
-      debounce(() => setActive(window.pageYOffset > 56), 150)
-    )
+    // window.addEventListener(
+    //   'scroll',
+    //   debounce(() => setActive(window.pageYOffset > 56), 150)
+    // )
   }, [])
 
   const pageMaxWidth = '52rem'
@@ -95,8 +96,10 @@ export default props => {
     align-items: center;
     height: 56px;
     padding: 0;
-    margin-bottom: 1.2rem;
     transition: all 0.24s ease;
+    max-width: 52rem;
+    padding: 0rem 1.3rem;
+    margin: 0 auto;
     h1 {
       margin: 0;
       a {
@@ -124,8 +127,7 @@ export default props => {
     @media (max-width: 672px) {
       padding: 0 1.3rem;
       left: 0;
-      margin: 0 -1.3rem 1.2rem;
-      width: 100%;
+      width: calc(100% - 2.6rem);
       background-color: var(--black);
       h1 {
         a {
@@ -166,29 +168,31 @@ export default props => {
           padding: `0rem 1.3rem 2rem 1.3rem`,
         }}
       >
-        <Header>
-          <h1>
-            <Link to={'/'}>
-              <span style={{ fontFamily: 'var(--font-bold)' }}>de</span>
-              <span style={{ fontFamily: 'var(--font-heavy)' }}>zi</span>
-              <span style={{ fontFamily: 'var(--font-medium)' }}>ne</span>
-              <span style={{ fontFamily: 'var(--font-regular)' }}>le</span>
-              <span style={{ fontFamily: 'var(--font-light)' }}>o</span>
-            </Link>
-          </h1>
-          <div className="header-top-right" style={{ fontSize: 13 }}>
-            <span>Stay focus, make impact.</span>
-            <a
-              style={{
-                marginLeft: 20,
-                display: 'inline-block',
-              }}
-              href="mailto:dezineleo@gmail.com"
-            >
-              Hire Me
-            </a>
-          </div>
-        </Header>
+        <FullWidthWrapper>
+          <Header>
+            <h1>
+              <Link to={'/'}>
+                <span style={{ fontFamily: 'var(--font-bold)' }}>de</span>
+                <span style={{ fontFamily: 'var(--font-heavy)' }}>zi</span>
+                <span style={{ fontFamily: 'var(--font-medium)' }}>ne</span>
+                <span style={{ fontFamily: 'var(--font-regular)' }}>le</span>
+                <span style={{ fontFamily: 'var(--font-light)' }}>o</span>
+              </Link>
+            </h1>
+            <div className="header-top-right" style={{ fontSize: 13 }}>
+              <span>Stay focus, make impact.</span>
+              <a
+                style={{
+                  marginLeft: 20,
+                  display: 'inline-block',
+                }}
+                href="mailto:dezineleo@gmail.com"
+              >
+                Hire Me
+              </a>
+            </div>
+          </Header>
+        </FullWidthWrapper>
         {children}
       </div>
     </div>

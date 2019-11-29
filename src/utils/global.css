@@ -5,7 +5,7 @@ body {
   --black: #191919;
   --font-grey: #a3a3a3;
   --border-grey: #e8e8e8;
-  --bg-grey: #efefef;
+  --bg-grey: #fbfbfb;
   --border: 1px solid var(--border-grey);
   --font-family: var(--font-regular), PingFang SC, Microsoft YaHei,
     Noto Sans CJK SC, WenQuanYi Micro Hei, system-ui, -apple-system, sans-serif;
@@ -22,11 +22,12 @@ body {
   --font-bold: 'futura_bold';
   --font-heavy: 'futura_heavy';
   --brand: #003cff;
-  --primary: #62e6ac;
+  --primary: #0099ff;
   --primary-hover: #51da9e;
   --secondary: rgba(29, 161, 242, 0.1);
   --secondary-hover: rgba(29, 161, 242, 0.2);
-  --box-shadow: 0 1px 3px rgba(26, 26, 26, 0.08);
+  --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  --hover-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   margin: 0;
@@ -206,8 +207,8 @@ pre[data-line] {
 }
 
 ::selection {
-  color: var(--black);
-  background: var(--primary);
+  color: white;
+  background: var(--brand);
 }
 
 strong {
@@ -371,6 +372,7 @@ main {
   border: var(--border);
   padding: 16px 42px;
   border-radius: 5px;
+  margin-top: 24px;
 }
 
 .d-flex {
