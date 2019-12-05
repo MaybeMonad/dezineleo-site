@@ -2,20 +2,18 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-import { debounce } from 'lodash'
+// import { debounce } from 'lodash'
 import FullWidthWrapper from '../components/FullWidthWrapper'
 
 export default props => {
   const { children } = props
   const [theme, setTheme] = useState(null)
   const [active, setActive] = useState(false)
+  const [pathname, setPathname] = useState(null)
   useEffect(() => {
     setTheme(window.__theme)
     window.__onThemeChange = () => setTheme(window.__theme)
-    // window.addEventListener(
-    //   'scroll',
-    //   debounce(() => setActive(window.pageYOffset > 56), 150)
-    // )
+    setPathname(location.pathname.split('/')[1])
   }, [])
 
   const pageMaxWidth = '52rem'
@@ -90,7 +88,6 @@ export default props => {
   `
 
   const Header = styled.header`
-    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -114,7 +111,6 @@ export default props => {
     }
     .header-top-right {
       span {
-        // color: var(--font-grey);
         font-family: var(--font-regular);
         color: var(--black);
       }
@@ -144,14 +140,7 @@ export default props => {
   `
 
   return (
-    <div
-      style={{
-        color: 'var(--textNormal)',
-        background: 'var(--bg)',
-        transition: 'color 0.2s ease-out, background 0.2s ease-out',
-        minHeight: '100vh',
-      }}
-    >
+    <div className={`page ${pathname}`}>
       <Helmet
         meta={[
           {
@@ -168,7 +157,7 @@ export default props => {
           padding: `0rem 1.3rem 2rem 1.3rem`,
         }}
       >
-        <FullWidthWrapper>
+        <FullWidthWrapper className={`fullwidth-${pathname}`}>
           <Header>
             <h1>
               <Link to={'/'}>

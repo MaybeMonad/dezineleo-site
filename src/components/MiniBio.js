@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 import styled from 'styled-components'
 import profilePic from '../assets/profile-pic.png'
-import miniBioBG from '../../static/mini_bio_bg.svg'
+// import miniBioBG from '../../static/mini_bio_bg.svg'
+import circle1 from '../../static/about/circle_01.svg'
+import circle2 from '../../static/about/circle_02.svg'
 // import { rhythm } from '../utils/typography'
 
 const GradientBox = props => {
@@ -15,7 +17,7 @@ const GradientBox = props => {
 }
 
 const StyledGradientBox = styled(GradientBox)`
-  background: linear-gradient(-217deg, var(--primary), var(--brand));
+  background: linear-gradient(-217deg, var(--secondary), var(--primary));
   position: relative;
   width: 56px;
   height: 56px;
@@ -43,7 +45,9 @@ const MiniBio = props => {
 }
 
 const StyledMiniBio = styled(MiniBio)`
-  background-color: var(--black);
+  // background: linear-gradient(#080808 0%, #1f1f1f 100%);
+  background: linear-gradient(-217deg, #1f1f1f, #080808);
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.6));
   color: white;
   padding: 32px;
   display: inline-block;
@@ -64,23 +68,24 @@ const StyledMiniBio = styled(MiniBio)`
       margin: 0;
       span {
         font-size: 12px;
-        font-family: var(--font-light);
         font-weight: normal;
         color: var(--font-grey);
         padding-left: 4px;
       }
     }
     .links {
+      margin-top: 5px;
       a {
-        background-color: var(--primary);
-        color: var(--black);
+        background-color: var(--secondary);
+        color: white;
         font-size: 12px;
-        padding: 4px 24px;
+        padding: 4px 16px;
         border-radius: 25px;
+        font-family: var(--font-bold);
+        box-shadow: none;
       }
       .btn-follow {
         margin-right: 4px;
-        // font-family: var(--font-bold);
       }
       .btn-more {
         padding: 4px 8px;
@@ -101,18 +106,27 @@ const MiniBioWrapper = styled.div`
   position: relative;
   .mini-bio-after {
     position: absolute;
-    top: -52px;
-    left: -26px;
     z-index: 1;
-    width: 120%;
+    &.circle1 {
+      bottom: -12px;
+      right: 0;
+    }
+    &.circle2 {
+      top: -24px;
+      left: -8px;
+    }
   }
   @media (max-width: 672px) {
     width: 100%;
     .mini-bio-after {
-      width: 100%;
-      top: -84px;
-      left: 0px;
-      display: none;
+      &.circle1 {
+        bottom: -12px;
+        right: 0;
+      }
+      &.circle2 {
+        top: -24px;
+        left: -8px;
+      }
     }
   }
 `
@@ -120,7 +134,8 @@ const MiniBioWrapper = styled.div`
 const Bio = () => {
   return (
     <MiniBioWrapper>
-      <img className="mini-bio-after" src={miniBioBG} alt="" />
+      <img className="mini-bio-after circle1" src={circle1} alt="" />
+      <img className="mini-bio-after circle2" src={circle2} alt="" />
       <StyledMiniBio>
         <div className="d-flex justify-start align-items-center">
           <StyledGradientBox>
@@ -138,11 +153,10 @@ const Bio = () => {
               >
                 Follow
               </a>
-              <a className="btn-more">···</a>
             </div>
           </div>
         </div>
-        <div className="brief-intro">
+        <div className="brief-intro" style={{ paddingLeft: 4, marginTop: 14 }}>
           <p
             style={{
               fontFamily: 'var(--font-medium)',
@@ -156,10 +170,9 @@ const Bio = () => {
             style={{
               lineHeight: '18px',
               color: 'var(--font-grey)',
-              fontFamily: 'var(--font-light)',
             }}
           >
-            Working as a web developer && UI designer.
+            Try to be a web developer && UI designer since 2010.
           </p>
         </div>
       </StyledMiniBio>

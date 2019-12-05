@@ -1,92 +1,27 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import Footer from '../components/Footer'
+// import Footer from '../components/Footer'
 import styled from 'styled-components'
-import classNames from 'classnames'
+// import classNames from 'classnames'
 import MiniBio from '../components/MiniBio'
-import JSHubLogo from '../../static/featured_projects/js_hub.svg'
+import FullWidthWrapper from '../components/FullWidthWrapper'
+import JSHubLogo from '../../static/about/jshub.svg'
 import DeStaticRocket from '../../static/featured_projects/destatic.svg'
-import MoreProjects01 from '../../static/featured_projects/more_01.svg'
-import MoreProjects02 from '../../static/featured_projects/more_02.svg'
-import LogoDecon from '../../static/logo_decon.svg'
-import LogoY from '../../static/logo_y.svg'
-import LogoD from '../../static/logo_d.svg'
-import LogoA from '../../static/logo_a.svg'
-import LogoN from '../../static/logo_n.svg'
-
-const Section = props => {
-  const { className, title, mode, children, style } = props
-  return (
-    <div className={classNames(className, { [mode]: true })} style={style}>
-      <h4>{title}</h4>
-      <div className="content">{children}</div>
-    </div>
-  )
-}
-
-const StyledSection = styled(Section)`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  border-top: var(--border);
-  width: 100%;
-  &.column {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 36px 42px;
-    &:first-child {
-      border-right: var(--border);
-      padding-left: 0;
-    }
-    .content {
-      border: 0;
-      padding: 0;
-    }
-  }
-  h4 {
-    width: 28%;
-    margin-top: 0;
-    padding-right: 32px;
-    font-size: 18px;
-    span {
-      display: inline-block;
-      width: 100%;
-      font-size: 14px;
-      font-family: var(--font-regular);
-      font-weight: normal;
-    }
-  }
-  .content {
-    border-left: var(--border);
-    padding: 32px 42px;
-    .project {
-      margin-bottom: 16px;
-      h5 {
-        margin: 0;
-      }
-    }
-    p {
-      margin-bottom: 14px;
-      &:last-child {
-        margin: 0;
-      }
-      b {
-        font-family: var(--font-regular);
-        // font-size: 12px;
-      }
-      span {
-        color: var(--font-grey);
-        // font-size: 12px;
-      }
-    }
-  }
-  p {
-    margin-top: 0;
-    font-size: 13px;
-  }
-`
+import MoreProjects01 from '../../static/about/more_01.svg'
+import MoreProjects02 from '../../static/about/more_02.svg'
+import iconDownload from '../../static/about/download.svg'
+import iconLink from '../../static/about/link.svg'
+import iconCircle from '../../static/about/circle.svg'
+import iconTriangle from '../../static/about/triangle.svg'
+import iconSquare from '../../static/about/square.svg'
+import twitter from '../../static/about/twitter.svg'
+import dribbble from '../../static/about/dribbble.svg'
+import github from '../../static/about/github.svg'
+import behance from '../../static/about/behance.svg'
+import wechat from '../../static/about/wechat.svg'
+import email from '../../static/about/email.svg'
 
 const StyledHand = styled.span`
   animation-name: wavingHand;
@@ -121,17 +56,25 @@ const StyledHand = styled.span`
 `
 
 const Aside = styled.aside`
-  padding: 48px 0;
+  padding: 116px 0;
   .hello {
     margin-right: 48px;
     max-width: 442px;
     z-index: 2;
     position: relative;
+    h1 {
+      font-size: 48px;
+      line-height: 66px;
+      span {
+        width: 36px;
+        display: inline-block;
+      }
+    }
   }
   @media (max-width: 672px) {
     flex-direction: column;
     align-items: flex-start;
-    padding: 24px 0;
+    padding: 48px 24px 56px 24px;
     .hello {
       margin: 0 0 32px 0;
     }
@@ -139,32 +82,22 @@ const Aside = styled.aside`
 `
 
 const Links = styled.div`
+  margin: 24px 0;
   a {
     margin-right: 20px;
     font-size: 14px;
-  }
-`
-
-const Logos = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 48px 0;
-  @media (max-width: 672px) {
-    img {
-      width: 20px;
-    }
-    padding: 28px 0;
+    color: var(--primary);
+    box-shadow: none;
+    font-size: 16px;
+    font-family: var(--font-bold);
   }
 `
 
 const FeaturedProjects = styled.div`
   display: grid;
   grid-template-columns: auto auto auto auto;
-  grid-column-gap: 24px;
+  grid-column-gap: 42px;
   margin: 24px 0;
-  // justify-content: space-around;
-  // align-items: flex-start;
   @media (max-width: 672px) {
     grid-template-columns: 100%;
     grid-row-gap: 24px;
@@ -181,25 +114,28 @@ const FeaturedProjects = styled.div`
     display: flex;
   }
   .project-card {
-    border-radius: 5px;
+    border-radius: 12px;
     padding: 32px 20px;
-    background-color: var(--bg-grey);
-    transition: background-color 0.3s ease;
+    background-color: transparent;
+    transition: border 0.3s ease;
     font-family: var(--font-regular);
+    border: var(--dark-border);
+    color: var(--font-grey);
     :hover {
-      background-color: var(--border-grey);
+      border: 1px solid var(--secondary);
     }
     h2 {
       font-size: 18px;
       line-height: 24px;
       text-transform: uppercase;
+      color: white;
       i {
         position: relative;
         z-index: 2;
         &::before {
           content: '';
           position: absolute;
-          background-color: var(--primary);
+          background-color: var(--secondary);
           width: 100%;
           display: inline-block;
           height: 12px;
@@ -211,10 +147,12 @@ const FeaturedProjects = styled.div`
     }
     .progress-bar {
       background-color: var(--black);
+      border-radius: 25px;
       padding: 2px;
       width: 100%;
       .current-progress {
-        background-color: var(--primary);
+        border-radius: 25px;
+        background-color: var(--secondary);
         height: 2px;
       }
     }
@@ -241,6 +179,7 @@ const FeaturedProjects = styled.div`
         font-size: 32px;
         margin: 36px 0 12px 0;
         font-family: var(--font-medium);
+        color: white;
         sup {
           font-family: var(--font-light);
           font-size: 14px;
@@ -277,215 +216,366 @@ const FeaturedProjects = styled.div`
   }
 `
 
+const Profile = styled.div`
+  padding: 96px 0;
+  @media (max-width: 672px) {
+    padding: 48px 24px;
+  }
+`
+
+const TitleWithDes = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 32px;
+  margin-bottom: 56px;
+  h2 {
+    font-size: 28px;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    img {
+      position: absolute;
+      right: -16px;
+      top: 0px;
+      z-index: -1;
+    }
+  }
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--font-grey);
+  }
+  .social {
+    a {
+      box-shadow: none;
+      line-height: 0;
+    }
+  }
+  @media (max-width: 672px) {
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+    margin-bottom: 56px;
+  }
+`
+
+const SideProjects = styled.div`
+  padding: 96px 0px;
+  @media (max-width: 672px) {
+    padding: 48px 24px;
+  }
+`
+
+const FindMe = styled.div`
+  padding: 72px 0 calc(72px - 2rem) 0;
+  @media (max-width: 672px) {
+    padding: 48px 24px;
+    .social {
+      margin-top: 12px;
+    }
+  }
+`
+
+const Experience = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 32px;
+  .highlight {
+    h3 {
+      font-size: 56px;
+      font-family: var(--font-medium);
+      color: white;
+      margin: 0;
+      line-height: 1;
+      sup {
+        font-size: 42px;
+      }
+    }
+    p {
+      color: var(--font-grey);
+      max-width: 88px;
+      margin: 0 0 0 16px;
+      line-height: 24px;
+    }
+  }
+  .experience {
+    color: var(--font-grey);
+    font-size: 15px;
+    line-height: 24px;
+    b {
+      color: white;
+      font-size: 18px;
+      font-family: var(--font-medium);
+    }
+    span {
+      color: #707070;
+      font-size: 13px;
+    }
+  }
+  .highlights {
+    grid-template-columns: 1fr;
+  }
+  .experiences {
+    grid-template-columns: 1fr 1fr;
+  }
+  .highlights,
+  .experiences {
+    display: grid;
+    grid-gap: 32px;
+    align-items: flex-start;
+  }
+  .hire-me {
+    color: var(--secondary);
+  }
+  @media (max-width: 672px) {
+    grid-template-columns: 1fr;
+    // grid-gap: 0px;
+    .highlight {
+      h3 {
+        font-size: 42px;
+      }
+      p {
+        font-size: 13px;
+        line-height: 18px;
+      }
+    }
+    .highlights {
+      grid-template-columns: 1fr 1fr;
+    }
+    .experiences {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+`
+
 export default props => {
   const { location } = props
   return (
     <Layout location={location} title="About Leo - Dezineleo">
       <SEO title="About Leo" />
-      <main>
-        <Aside className="d-flex justify-between align-items-center">
+      <FullWidthWrapper
+        style={{ backgroundColor: '#000', borderBottom: 'var(--dark-border)' }}
+      >
+        <Aside className="section d-flex justify-between align-items-center">
           <div className="hello">
             <h1 style={{ margin: '0 0 8px 0' }}>
-              Hello. <StyledHand>👋</StyledHand>
+              Hey, Hi, <StyledHand>👋</StyledHand>
+              <br />
+              <span></span> and Hello.
             </h1>
-            <h3 style={{ margin: 0 }}>I'm a designer && maker.</h3>
-            <p style={{ marginBottom: 14, fontSize: 14, lineHeight: '22px' }}>
-              As an open source advocate, I do <b>a lot of stuff</b>. If you
-              want to know more about my projects, checkout my{' '}
-              <Link to="/about">portfolio</Link>. I'm also available for UI
-              design and web development. Feel free to contact me through{' '}
-              <a href="@dezineleo@gmail.com">dezineleo@gmail.com</a>.
-            </p>
             <Links>
-              {/* <Link to="/about">#resume</Link> */}
-              <Link to="/what-i-use">#what-i-use</Link>
+              <Link to="/leo_resume.pdf" className="d-flex align-items-center">
+                <img
+                  src={iconDownload}
+                  alt="Download"
+                  style={{ marginRight: 12 }}
+                />
+                Down My Resume
+              </Link>
             </Links>
           </div>
           <MiniBio />
         </Aside>
-        <Logos>
-          <img src={LogoDecon} alt="Decon" style={{ minWidth: 42 }} />
-          <img src={LogoY} alt="Y" />
-          <img src={LogoD} alt="D" />
-          <img src={LogoA} alt="A" />
-          <img src={LogoN} alt="N" />
-        </Logos>
-        <FeaturedProjects>
-          <Link to="/javascript-hub">
-            <div className="project-card javascript-hub">
-              <img src={JSHubLogo} alt="JavaScript Hub" />
+      </FullWidthWrapper>
+      <FullWidthWrapper
+        style={{ backgroundColor: '#111', borderBottom: 'var(--dark-border)' }}
+      >
+        <Profile className="section">
+          <TitleWithDes>
+            <div>
               <h2>
-                Free <i>JavaScript</i> Learning Application
+                Profile
+                <img src={iconCircle} alt="Circle" />
               </h2>
-              <p>v1.0.0</p>
             </div>
-          </Link>
-          <Link to="/break-elm">
-            <div className="project-card break-elm">
-              <h2>Break Elm</h2>
-              <p>Based on official docs, I’ve created 3 real world demos.</p>
-              <div className="project-progress">
-                <div className="d-flex justify-between align-items-bottom">
-                  <h1>
-                    60<sup>%</sup>
-                  </h1>
-                  <p style={{ fontSize: '13px' }}>In progress</p>
-                </div>
-                <div className="progress-bar">
-                  <div
-                    className="current-progress"
-                    style={{ width: '60%' }}
-                  ></div>
+            <p>
+              Ever since I was a child, I have always been passionate about
+              illustrating and computer-like stuff. However, I chose to study
+              English instead of CS to become a self-taught web developer.
+            </p>
+          </TitleWithDes>
+          <Experience>
+            <div className="highlights">
+              <div className="highlight d-flex align-items-center">
+                <h3>
+                  5<sup>+</sup>
+                </h3>
+                <p>Years as a web worker</p>
+              </div>
+              <div className="highlight d-flex align-items-center">
+                <h3>
+                  20<sup>+</sup>
+                </h3>
+                <p>Projects in last 5 years</p>
+              </div>
+              <div></div>
+            </div>
+            <div className="experiences">
+              <div className="experience">
+                <b>2019.4 - Today</b>
+                <br />
+                Fontend Developer & UI Designer
+                <br />
+                <span>GSTech, Hangzhou</span>
+              </div>
+              <div className="experience">
+                <b>2018.8 - 2019.4</b>
+                <br />
+                Worked as a ReactJS developer & UI designer on a SaaS platform
+                aiming for online marketing.
+                <br />
+                <span>GnLab, Hangzhou</span>
+              </div>
+              <div className="experience">
+                <b>2017.9 - 2018.8</b>
+                <br />
+                Fontend Developer & UI Designer
+                <br />
+                <span>Youte, Hangzhou</span>
+              </div>
+              <div className="experience">
+                <b>2013 - 2017</b>
+                <br />
+                WordPress Theme Designer & Developer
+                <br />
+                <span>Themeforest</span>
+              </div>
+              <Links>
+                <a
+                  href="mailto:dezineleo@gmail.com"
+                  className="d-flex align-items-center hire-me"
+                >
+                  <img
+                    src={iconLink}
+                    alt="Hire Me"
+                    style={{ marginRight: 12 }}
+                  />
+                  Hire Me
+                </a>
+              </Links>
+            </div>
+          </Experience>
+        </Profile>
+      </FullWidthWrapper>
+      <FullWidthWrapper
+        style={{ backgroundColor: '#000', borderBottom: 'var(--dark-border)' }}
+      >
+        <SideProjects className="section">
+          <TitleWithDes>
+            <div>
+              <h2>
+                Side Projects
+                <img src={iconTriangle} alt="Triangle" />
+              </h2>
+            </div>
+            <p style={{ marginBottom: 14 }}>
+              As an open source advocate, I do <b>a lot of stuff</b>. If you
+              want to know more about my projects, checkout my{' '}
+              <Link style={{ color: 'white' }} to="/about">
+                portfolio
+              </Link>
+              . I'm also available for UI design and web development. Feel free
+              to contact me through{' '}
+              <a href="mailto:dezineleo@gmail.com" style={{ color: 'white' }}>
+                dezineleo@gmail.com
+              </a>
+              .
+            </p>
+          </TitleWithDes>
+          <FeaturedProjects>
+            <Link to="/javascript-hub">
+              <div className="project-card javascript-hub">
+                <img src={JSHubLogo} alt="JavaScript Hub" />
+                <h2>
+                  Free <i>JavaScript</i> Learning Application
+                </h2>
+                <p>v1.0.0</p>
+              </div>
+            </Link>
+            <Link to="/break-elm">
+              <div className="project-card break-elm">
+                <h2>Break Elm</h2>
+                <p>Based on official docs, I’ve created 3 real world demos.</p>
+                <div className="project-progress">
+                  <div className="d-flex justify-between align-items-bottom">
+                    <h1>
+                      80<sup>%</sup>
+                    </h1>
+                    <p style={{ fontSize: '13px' }}>In progress</p>
+                  </div>
+                  <div className="progress-bar">
+                    <div
+                      className="current-progress"
+                      style={{ width: '80%' }}
+                    ></div>
+                  </div>
                 </div>
               </div>
+            </Link>
+            <Link to="/destatic">
+              <div className="project-card destatic">
+                <h3>#DESTATIC</h3>
+                <h2>Skyrocket your project</h2>
+                <p>v1.0.1</p>
+                <img
+                  src={DeStaticRocket}
+                  alt="DeStatic"
+                  style={{
+                    marginTop: '-10px',
+                    marginRight: '12px',
+                    float: 'right',
+                  }}
+                />
+              </div>
+            </Link>
+            <Link to="/projects">
+              <div className="project-card more d-flex align-items-center">
+                <img src={MoreProjects01} alt="More Projects" />
+                <img src={MoreProjects02} alt="More Projects" />
+              </div>
+            </Link>
+          </FeaturedProjects>
+        </SideProjects>
+      </FullWidthWrapper>
+      {/* <p style={{ fontSize: 13, marginBottom: 36 }}>
+        自幼喜好涂鸦、捣鼓计算机，2010 年开始接触 Discuz 论坛模板开发，经历了
+        1.X、2.X 的高峰时期。2013 年转战 ThemeForest 开启 WordPress
+        模板开发之旅，于当时个位可数的 Page Builder 市场里占有一席之地，直至
+        2017 年末来到杭州开始全职前端开发，而多年自学设计和编程的初衷是想做
+        Cool Stuff。
+      </p> */}
+      <FullWidthWrapper style={{ backgroundColor: '#111', borderBottom: '0' }}>
+        <FindMe className="section">
+          <TitleWithDes style={{ margin: 0 }}>
+            <div>
+              <h2>
+                Find Me
+                <img src={iconSquare} alt="Square" />
+              </h2>
             </div>
-          </Link>
-          <Link to="/destatic">
-            <div className="project-card destatic">
-              <h3>#DESTATIC</h3>
-              <h2>Skyrocket your project</h2>
-              <p>v1.0.1</p>
-              <img
-                src={DeStaticRocket}
-                alt="DeStatic"
-                style={{
-                  marginTop: '-10px',
-                  marginRight: '12px',
-                  float: 'right',
-                }}
-              />
+            <div className="d-flex justify-between align-items-center social">
+              <a href="https://twitter.com/dezineleo" target="_blank">
+                <img src={twitter} alt="Twitter" />
+              </a>
+              <a href="https://dribbble.com/dezineleo" target="_blank">
+                <img src={dribbble} alt="Dribbble" />
+              </a>
+              <a href="https://github.com/dezineleo" target="_blank">
+                <img src={github} alt="GitHub" />
+              </a>
+              <a href="https://behance.net/dezineleo" target="_blank">
+                <img src={behance} alt="Behance" />
+              </a>
+              <a href="" target="_blank">
+                <img src={wechat} alt="WeChat" />
+              </a>
+              <a href="mailto:dezineleo@gmail.com" target="_blank">
+                <img src={email} alt="E-Mail" />
+              </a>
             </div>
-          </Link>
-          <Link to="/projects">
-            <div className="project-card more d-flex align-items-center">
-              <img src={MoreProjects01} alt="More Projects" />
-              <img src={MoreProjects02} alt="More Projects" />
-            </div>
-          </Link>
-        </FeaturedProjects>
-        <p style={{ marginBottom: 14 }}>
-          Ever since I was a child, I have always been passionate about
-          illustrating and computer-like stuff. However, I chose to study
-          English instead of CS to become a self-taught web developer. Back in
-          the day, I was working as a WordPress theme developer. In 2017, I came
-          to Hangzhou to become a full-time web developer and UI designer.
-        </p>
-        <p style={{ fontSize: 13, marginBottom: 36 }}>
-          自幼喜好涂鸦、捣鼓计算机，2010 年开始接触 Discuz 论坛模板开发，经历了
-          1.X、2.X 的高峰时期。2013 年转战 ThemeForest 开启 WordPress
-          模板开发之旅，于当时个位可数的 Page Builder 市场里占有一席之地，直至
-          2017 年末来到杭州开始全职前端开发，而多年自学设计和编程的初衷是想做
-          Cool Stuff。
-        </p>
-        <StyledSection
-          title={
-            <>
-              <span>01.</span>In progress
-            </>
-          }
-          mode="row"
-        >
-          <p style={{ marginBottom: 8 }}>
-            Currently, I'm working as a front developer and UI designer mainly
-            focusing on <b>Augmented Reality</b>.
-          </p>
-          <p>目前在杭州摸鱼，主要研究 AR 技术的实际应用，欢迎介绍新坑位。</p>
-        </StyledSection>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'flex-start',
-          }}
-        >
-          <StyledSection
-            title={
-              <>
-                <span>02.</span>Experiences
-              </>
-            }
-            mode="column"
-          >
-            <p>
-              <b>2019.4 - Today</b>
-              <br />
-              Fontend Developer & UI Designer & <b>Mobile APP developer</b>
-              <br />
-              <span>GSTech, Hangzhou</span>
-            </p>
-            <p>
-              <b>2018.8 - 2019.4</b>
-              <br />
-              Worked as a <b>ReactJS developer & UI designer</b> on a SaaS
-              platform aiming for online marketing.
-              <br />
-              <span>GnLab, Hangzhou</span>
-            </p>
-            <p>
-              <b>2017.9 - 2018.8</b>
-              <br />
-              Fontend Developer & UI Designer
-              <br />
-              <span>Youte, Hangzhou</span>
-            </p>
-            <p>
-              <b>2013 - 2017</b>
-              <br />
-              WordPress Theme Designer & Developer
-              <br />
-              <span>Themeforest</span>
-            </p>
-          </StyledSection>
-          <StyledSection
-            title={
-              <>
-                <span>03.</span>Projects
-              </>
-            }
-            mode="column"
-          >
-            <div className="project">
-              <h5>JavaScript Hub</h5>
-              <p>
-                <a href="/javascript-hub/">Intro</a> |{' '}
-                <a
-                  href="https://github.com/DezineLeo/javascript-hub"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Github
-                </a>
-              </p>
-            </div>
-            <div className="project">
-              <h5>Elm 中文文档</h5>
-              <p>
-                <a href="/elm-lang-doc-zh/">Intro</a> |{' '}
-                <a
-                  href="https://github.com/DezineLeo/elm-lang-docs-zh"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Github
-                </a>
-              </p>
-            </div>
-            <div className="project">
-              <h5>DeHTML</h5>
-              <p>
-                <a href="/de-html/">Intro</a> |{' '}
-                <a
-                  href="https://github.com/DezineLeo/DeHTML"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Github
-                </a>
-              </p>
-            </div>
-          </StyledSection>
-        </div>
-      </main>
-      <Footer />
+          </TitleWithDes>
+        </FindMe>
+      </FullWidthWrapper>
+      {/* <Footer /> */}
     </Layout>
   )
 }

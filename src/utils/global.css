@@ -5,8 +5,10 @@ body {
   --black: #191919;
   --font-grey: #a3a3a3;
   --border-grey: #e8e8e8;
+  --dark-border-grey: #313131;
   --bg-grey: #fbfbfb;
   --border: 1px solid var(--border-grey);
+  --dark-border: 1px solid var(--dark-border-grey);
   --font-family: var(--font-regular), PingFang SC, Microsoft YaHei,
     Noto Sans CJK SC, WenQuanYi Micro Hei, system-ui, -apple-system, sans-serif;
   background-color: var(--bg);
@@ -23,9 +25,9 @@ body {
   --font-heavy: 'futura_heavy';
   --brand: #003cff;
   --primary: #0099ff;
-  --primary-hover: #51da9e;
-  --secondary: rgba(29, 161, 242, 0.1);
-  --secondary-hover: rgba(29, 161, 242, 0.2);
+  /* --primary-hover: #51da9e; */
+  --secondary: #fd18fe;
+  /* --secondary-hover: rgba(29, 161, 242, 0.2); */
   --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
   --hover-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05);
   -webkit-font-smoothing: antialiased;
@@ -393,6 +395,36 @@ main {
 
 .align-items-bottom {
   align-items: flex-end;
+}
+
+.section {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+/* Page styles */
+
+.page {
+  color: var(--textNormal);
+  background-color: var(--bg);
+  /* transition: color 0.2s ease-out, background-color 0.2s ease-out; */
+  min-height: 100vh;
+}
+
+.about {
+  background-color: #111;
+  color: white;
+}
+
+.about header,
+.about header h1 a,
+.about header .header-top-right a,
+.about header .header-top-right span {
+  color: white;
+}
+
+.about .fullwidth-about {
+  border-bottom: var(--dark-border);
 }
 
 @media (max-width: 672px) {

@@ -332,7 +332,7 @@ export default props => {
             <h3
               style={{ margin: '0 0 8px 0', fontFamily: 'var(--font-regular)' }}
             >
-              A designer && maker based on Hangzhou, China.
+              A designer && maker based in Hangzhou, China.
             </h3>
             <Links>
               <Link to="/about" style={{ color: 'var(--brand)' }}>
