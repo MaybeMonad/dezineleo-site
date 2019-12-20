@@ -13,7 +13,7 @@ import FullWidthWrapper from '../components/FullWidthWrapper'
 import JSHub from '../../static/featured_projects/jshub.png'
 import DeStatic from '../../static/featured_projects/destatic.png'
 import BreakElm from '../../static/featured_projects/break-elm.png'
-import Decon from '../../static/featured_projects/decon.png'
+import HYG from '../../static/featured_projects/hyg.png'
 import DownloadIcon from '../../static/icon_download.svg'
 import InspireIcon from '../../static/icon_inspire.svg'
 import Avatar from '../../static/home/avatar.png'
@@ -402,12 +402,12 @@ export default props => {
             version="v1.0.1"
           />
           <StyledSideProject
-            logo={Decon}
-            link="/decon"
-            title="Decon"
-            des="Another free icon system for better design."
-            github="DezineLeo/Decon"
-            version=""
+            logo={HYG}
+            link="/hyg"
+            title="HYG"
+            des="A non-profit social platform for blind dating."
+            github="DezineLeo/HYG"
+            version="v2.0"
           />
         </SideProjects>
       </StyledSection>

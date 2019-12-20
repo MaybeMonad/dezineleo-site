@@ -86,7 +86,11 @@ export default props => {
                 >
                   {post.frontmatter.logo ? (
                     <Img
-                      style={{ width: '156px' }}
+                      style={{
+                        width: 56,
+                        maxWidth: '156px',
+                        maxHeight: '56px',
+                      }}
                       fluid={post.frontmatter.logo.childImageSharp.fluid}
                     />
                   ) : (
