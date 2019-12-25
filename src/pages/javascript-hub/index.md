@@ -28,7 +28,7 @@ The main idea is to establish a **true-or-false** selection panel with statistic
 
 + HTML, CSS and JS, as always.
 + [Svelte](https://svelte.dev/) for the syntax.
-+ [Prism](https://prismjs.com/) for syntax hignlight.
++ [Prism](https://prismjs.com/) for syntax highlight.
 
 ## Features
 
