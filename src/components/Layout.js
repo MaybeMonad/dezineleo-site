@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 // import { debounce } from 'lodash'
+import { pageMaxWidth } from '../utils/constants'
 import FullWidthWrapper from '../components/FullWidthWrapper'
 
 export default props => {
@@ -15,8 +16,6 @@ export default props => {
     window.__onThemeChange = () => setTheme(window.__theme)
     setPathname(location.pathname.split('/')[1])
   }, [])
-
-  const pageMaxWidth = '52rem'
 
   const TopNav = props => {
     const { className, style, children } = props

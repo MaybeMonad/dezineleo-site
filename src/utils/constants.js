@@ -322,15 +322,17 @@ export const keys = {
   toolCategories,
 }
 
-export const fontFamily = `'IBM Plex Mono', monospace`
+export const pageMaxWidth = '52rem'
 
-export const emailOctopusUrl =
-  'https://emailoctopus.com/lists/463dc2a9-b2ff-11e8-a3c9-06b79b628af2/members/embedded/1.3/add'
+export const StylesOf2019 = {
+  dark: '#222429',
+  grey: '#4D4F4F',
+  light: '#E1E1E1',
+  primary: '#41C7C7',
+  secondary: '#FE6A6A',
+}
 
-export const emailOctopusSiteKey = '6LdYsmsUAAAAAPXVTt-ovRsPIJ_IVhvYBBhGvRV6'
-
-export const emailOctopusCode = 'hp463dc2a9-b2ff-11e8-a3c9-06b79b628af2'
-
-export const totalCount = 21717
-
-export const websiteTitle = 'The State of JavaScript 2019'
+export const fontFamily = `var(--font-regular), PingFang SC, Microsoft YaHei,
+Noto Sans CJK SC, WenQuanYi Micro Hei, system-ui, -apple-system, sans-serif;
+background-color: var(--bg);
+font: 100%/1.75 var(--font-family);`

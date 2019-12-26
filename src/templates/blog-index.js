@@ -397,7 +397,7 @@ export default props => {
             logo={DeStatic}
             link="/destatic"
             title="DeStatic"
-            des="Another free JavaScript learning application."
+            des="Skyrocket your project without extra configuration."
             github="DezineLeo/DeStatic"
             version="v1.0.1"
           />

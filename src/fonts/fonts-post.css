@@ -75,3 +75,24 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'futura_cond_book';
+  src: url(./files/FuturaPTCond-Book.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'futura_cond_medium';
+  src: url(./files/FuturaPTCond-Medium.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'futura_cond_bold';
+  src: url(./files/FuturaPTCond-Bold.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -23,6 +23,9 @@ body {
   --font-medium: 'futura_medium';
   --font-bold: 'futura_bold';
   --font-heavy: 'futura_heavy';
+  --font-cond-regular: 'futura_cond_book';
+  --font-cond-medium: 'futura_cond_medium';
+  --font-cond-bold: 'futura_cond_bold';
   --brand: #003cff;
   --primary: #0099ff;
   /* --primary-hover: #51da9e; */
@@ -450,4 +453,11 @@ main {
 .gatsby-highlight pre[class*='language-'] {
   float: left;
   /* min-width: 100%; */
+}
+
+.divider {
+  /* display: inline-block; */
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-grey);
 }
