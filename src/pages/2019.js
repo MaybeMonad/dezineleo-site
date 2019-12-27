@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import { ResponsiveBump } from '@nivo/bump'
 import { colors, distinctColors } from '../utils/constants'
@@ -12,6 +12,7 @@ import Divider from '../components/Divider'
 import Logo from '../../static/2019/logo_stateof2019.svg'
 import LogoDezineleo from '../../static/2019/logo_dezineleo.svg'
 import TopCover from '../../static/2019/state_2019.svg'
+import TopCoverMobile from '../../static/2019/state_2019_mobile.svg'
 import linkArrowPrimary from '../../static/2019/link_arrow_primary.svg'
 import linkArrowSecondary from '../../static/2019/link_arrow_secondary.svg'
 import steveJobs from '../../static/2019/steve_jobs.svg'
@@ -52,6 +53,23 @@ const StateOf2019 = styled.div`
     }
     a {
       box-shadow: none;
+    }
+  }
+  .intro {
+    text-align: center;
+    img {
+      margin: 72px auto 96px auto;
+    }
+  }
+  @media (max-width: 672px) {
+    .header {
+      padding: 0 24px;
+    }
+    .intro {
+      padding: 0 24px;
+      img {
+        margin: 56px auto 72px auto;
+      }
     }
   }
 `
@@ -163,6 +181,20 @@ const Main = styled.div`
       color: ${StylesOf2019.secondary};
     }
   }
+  @media (max-width: 672px) {
+    flex-direction: column;
+    padding: 0 24px;
+    .content {
+      padding: 0px;
+    }
+    .dev,
+    .design {
+      flex-direction: column-reverse;
+    }
+    .side {
+      width: 100%;
+    }
+  }
 `
 
 const Row = styled.div`
@@ -217,7 +249,9 @@ const ProjectCard = props => {
         <a href={github} target="_blank">
           <img src={logoGitHub} alt="GitHub" />
         </a>
-        <a href={`https://${preview}`}>{preview}</a>
+        <a href={`https://${preview}`} target="_blank">
+          {preview}
+        </a>
       </div>
     </div>
   )
@@ -299,6 +333,9 @@ const JSHubLists = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  @media (max-width: 672px) {
+    flex-direction: column;
+  }
 `
 
 const SideProject = props => {
@@ -355,7 +392,8 @@ const StyledSideProject = styled(SideProject)`
     font-size: 18px;
     margin-bottom: 0;
     font-family: var(--font-cond-bold);
-    color: ${StylesOf2019.light} sup {
+    color: ${StylesOf2019.light};
+    sup {
       color: ${StylesOf2019.secondary};
       font-family: var(--font-regular);
       font-size: 10px;
@@ -398,6 +436,15 @@ const Awards = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 32px 0 56px 0;
+  @media (max-width: 672px) {
+    flex-direction: column;
+    img {
+      margin-bottom: 42px;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
 `
 
 export default () => {
@@ -694,6 +741,12 @@ export default () => {
     )
   }
 
+  const [IntroImg, setIntroImg] = useState(TopCover)
+
+  useEffect(() => {
+    setIntroImg(window.innerWidth < 672 ? TopCoverMobile : TopCover)
+  }, [])
+
   return (
     <StateOf2019>
       <Row>
@@ -710,12 +763,8 @@ export default () => {
       </Row>
       <Divider style={{ backgroundColor: StylesOf2019.grey, opacity: 0.5 }} />
       <SEO title="State of 2019 - Yearly State Report by Leo" />
-      <Row>
-        <img
-          style={{ margin: '72px 0 96px 0' }}
-          src={TopCover}
-          alt="State of 2019"
-        />
+      <Row className="intro">
+        <img src={IntroImg} alt="State of 2019" />
       </Row>
       <Divider style={{ backgroundColor: StylesOf2019.grey, opacity: 0.5 }} />
       <Row>
@@ -923,7 +972,7 @@ export default () => {
                 version="v3.0"
                 github="https://github.com/DezineLeo"
                 link="/hyg"
-                preview="lovestory.top"
+                preview="lovestoryhz.top"
               >
                 <p>
                   I took over this Vue based project around two years ago. Since
@@ -936,7 +985,7 @@ export default () => {
                 <img
                   style={{ margin: '16px 0 24px 0' }}
                   src={HYGPreview}
-                  alt="Process of Break Elm"
+                  alt="HYG v3 Preview"
                 />
               </StyledProjectCard>
               <OtherProjects id="others">

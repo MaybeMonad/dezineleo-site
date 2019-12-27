@@ -213,7 +213,7 @@ pre[data-line] {
 
 ::selection {
   color: white;
-  background: var(--brand);
+  background: var(--primary);
 }
 
 strong {
