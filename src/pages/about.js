@@ -369,7 +369,7 @@ export default props => {
                   alt="Download"
                   style={{ marginRight: 12 }}
                 />
-                Down My Resume
+                Download My Resume
               </Link>
             </Links>
           </div>
