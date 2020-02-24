@@ -141,12 +141,12 @@ export default props => {
                     display: 'block',
                     marginTop: '0.3rem',
                     fontSize: 14,
-                    color: 'var(--font-grey)',
+                    color: 'rgba(0,0,0,.6)',
                     fontWeight: 'normal',
                   }}
                 >
                   {formatPostDate(post.frontmatter.date, lang)}
-                  {` • ${formatReadingTime(post.timeToRead)}`}
+                  {` / ${formatReadingTime(post.timeToRead)}`}
                 </p>
               </div>
             )}

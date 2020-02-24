@@ -16,7 +16,7 @@ Start to build your next web page without extra configuration.
 
 ## Quick Start
 
-```bash
+```terminal
 # copy to your local environment
 git clone https://github.com/DezineLeo/DeHTML.git
 

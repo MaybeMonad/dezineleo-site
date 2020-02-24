@@ -2,12 +2,12 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import styled from 'styled-components'
-// import Img from 'gatsby-image'
+// import moment from 'moment'
+import dayjs from 'dayjs'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
-// import Lang from '../components/Lang'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
 import FullWidthWrapper from '../components/FullWidthWrapper'
 import JSHub from '../../static/featured_projects/jshub.png'
@@ -22,7 +22,6 @@ import Illustrating from '../../static/home/illustrating.png'
 import Dot from '../../static/dot.png'
 import IconLink from '../../static/icon_link.svg'
 import IconCode from '../../static/icon_code.svg'
-// import Panel from '../components/Panel'
 
 const Section = props => {
   const { className, children, title, external, style } = props
@@ -60,20 +59,30 @@ const StyledSection = styled(Section)`
 `
 
 const ArticleList = styled.main`
-  border-radius: 12px;
-  padding: 18px;
-  border: var(--border);
-  box-shadow: var(--box-shadow);
   margin: 0;
   article {
-    padding: 20px;
+    padding: 18px 24px;
     transition: background-color 0.3s ease;
     border-radius: 8px;
+    margin: 0 -24px;
     &:hover {
-      background-color: var(--bg-grey);
+      background-color: #f2f2f2;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     h3 {
       margin-top: 0;
+      display: flex;
+      align-items: center;
+      // font-family: var(--font-cond-medium);
+      img {
+        width: 36px;
+        height: 36px;
+        margin-right: 12px;
+      }
     }
     p {
       margin-bottom: 0;
@@ -264,11 +273,11 @@ export default props => {
     return (
       <Link to={link} className={className} style={style}>
         <img src={img} alt={title} />
-        <div>
+        {/* <div>
           <h3>{title}</h3>
           <p className="date">{date}</p>
           <p>{des}</p>
-        </div>
+        </div> */}
       </Link>
     )
   }
@@ -282,7 +291,7 @@ export default props => {
     align-items: flex-start;
     img {
       max-width: 72px;
-      margin-right: 12px;
+      // margin-right: 12px;
     }
     h3 {
       font-size: 16px;
@@ -302,8 +311,8 @@ export default props => {
 
   const MainContent = styled.div`
     display: grid;
-    grid-template-columns: 60% calc(40% - 42px);
-    grid-gap: 42px;
+    grid-template-columns: 1fr;
+    // grid-gap: 42px;
     @media (max-width: 672px) {
       grid-template-columns: 100%;
       grid-gap: 0;
@@ -412,62 +421,48 @@ export default props => {
         </SideProjects>
       </StyledSection>
       <MainContent>
-        <StyledSection
-          title="Topics"
-          // external={
-          //   <Lang>
-          //     <li className={langKey === 'en' ? 'active' : ''}>
-          //       <a href="/">En</a>
-          //     </li>
-          //     <li className={langKey === 'zh-hans' ? 'active' : ''}>
-          //       <a href="/zh-hans">Zh</a>
-          //     </li>
-          //   </Lang>
-          // }
-        >
-          <ArticleList style={{ padding: 18 }}>
+        <StyledSection title="Topics">
+          <ArticleList>
             {posts
               .filter(({ node }) => get(node, 'frontmatter.type') === 'topic')
               .map(({ node }, index) => {
                 const title = get(node, 'frontmatter.title') || node.fields.slug
+                const newest =
+                  dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
                 return (
-                  <article key={node.fields.slug}>
-                    <header>
-                      <h3
-                        style={{
-                          fontSize: '1.36rem',
-                          marginBottom: 0,
-                        }}
-                      >
-                        <Link
+                  <Link
+                    style={{
+                      boxShadow: 'none',
+                      color: 'var(--black)',
+                      fontFamily: 'var(--font-bold)',
+                    }}
+                    to={node.fields.slug}
+                    rel="bookmark"
+                  >
+                    <article key={node.fields.slug}>
+                      <header>
+                        <h3
                           style={{
-                            boxShadow: 'none',
-                            color: 'var(--black)',
-                            fontFamily: 'var(--font-bold)',
+                            fontSize: '1.36rem',
+                            marginBottom: 0,
                           }}
-                          to={node.fields.slug}
-                          rel="bookmark"
                         >
+                          {node.frontmatter.thumbnail && (
+                            <img
+                              src={node.frontmatter.thumbnail.publicURL}
+                              alt={title}
+                            />
+                          )}
                           {title}
-                        </Link>
-                      </h3>
-                      <small
-                        style={{
-                          // fontFamily: systemFont,
-                          // marginBottom: rhythm(1 / 4),
-                          color: '#83858E',
-                        }}
-                      >
-                        {formatPostDate(node.frontmatter.date, 'en')}
-                        {` • ${formatReadingTime(node.timeToRead)}`}
-                      </small>
-                    </header>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: node.frontmatter.spoiler,
-                      }}
-                    />
-                  </article>
+                        </h3>
+                        {newest && (
+                          <div className="alert">
+                            <div className="new">New!</div>
+                          </div>
+                        )}
+                      </header>
+                    </article>
+                  </Link>
                 )
               })}
           </ArticleList>

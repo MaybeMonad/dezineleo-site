@@ -1,8 +1,9 @@
 ---
 title: Web security
-date: 2019-10-23
+date: 2020-02-23
 spoiler: To become a web expert, you need to know this.
 type: topic
+thumbnail: ./js.png
 ---
 
 Stay tuned...
