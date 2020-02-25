@@ -342,15 +342,25 @@ li {
   margin-bottom: calc(1.75rem / 2);
 }
 
+hr {
+  background-color: var(--border-grey);
+  border: 0;
+  height: 1px;
+}
+
 article li {
-  padding-left: 1rem;
+  padding-left: 8px;
   text-indent: -0.7rem;
   list-style: none;
 }
 
-article li::before {
-  content: '👉🏻 ';
+article li input {
+  margin-right: 8px;
 }
+
+/* article li::before {
+  content: '👉🏻 ';
+} */
 
 p {
   /* margin-bottom: 1.75rem; */

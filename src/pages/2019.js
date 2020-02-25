@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
-import { ResponsiveBump } from '@nivo/bump'
+// import { ResponsiveBump } from '@nivo/bump'
 import { colors, distinctColors } from '../utils/constants'
 import theme from '../utils/theme'
 import styled from 'styled-components'
