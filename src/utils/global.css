@@ -18,11 +18,11 @@ body {
   --font-medium: 'ubuntu_mediumregular';
   --font-bold: 'ubuntubold'; */
   /* Futura PT */
-  --font-light: 'futura_light';
-  --font-regular: 'futura_book';
-  --font-medium: 'futura_medium';
-  --font-bold: 'futura_bold';
-  --font-heavy: 'futura_heavy';
+  --font-light: 'rubiklight';
+  --font-regular: 'rubikregular';
+  --font-medium: 'rubikmedium';
+  --font-bold: 'rubikbold';
+  --font-heavy: 'rubikblack';
   --font-cond-regular: 'futura_cond_book';
   --font-cond-medium: 'futura_cond_medium';
   --font-cond-bold: 'futura_cond_bold';
@@ -349,9 +349,9 @@ hr {
 }
 
 article li {
-  padding-left: 8px;
-  text-indent: -0.7rem;
-  list-style: none;
+  /* padding-left: 8px; */
+  /* text-indent: -0.7rem; */
+  /* list-style: none; */
 }
 
 article li input {
@@ -566,6 +566,69 @@ main {
   border-bottom: var(--dark-border);
 }
 
+.hl-1,
+.hl-2,
+.hl-3,
+.hl-4,
+.hl-5 {
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.hl-1 {
+  background-color: #fcd3e6;
+}
+.hl-2 {
+  background-color: #fbeed5;
+}
+.hl-3 {
+  background-color: #d3e4f9;
+}
+.hl-4 {
+  background-color: #fedfd2;
+}
+.hl-5 {
+  background-color: #d4e8e2;
+}
+
+article .list-box {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 24px 32px 4px 32px;
+  background-color: #eef8ff;
+  margin-bottom: 24px;
+}
+
+article .list-box ul {
+  padding: 0;
+  margin: 0;
+}
+
+article .box-title {
+  background-color: var(--primary);
+  padding: 6px 24px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-bottom: -8px;
+  color: white;
+  font-family: var(--font-medium);
+  font-size: 16px;
+  position: relative;
+  z-index: 9;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.col-m-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.gap-m-32 {
+  grid-gap: 32px;
+}
+
 @media (max-width: 672px) {
   .gatsby-highlight {
     border-radius: 0;
@@ -578,6 +641,14 @@ main {
   article header {
     flex-direction: column;
     align-items: flex-start !important;
+  }
+
+  .col-s-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .gap-s-16 {
+    grid-gap: 16px;
   }
 
   table {

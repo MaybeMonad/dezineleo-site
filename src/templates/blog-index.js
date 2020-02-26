@@ -142,12 +142,12 @@ export default props => {
     padding: 48px 0;
     .hello {
       z-index: 2;
-      max-width: 442px;
+      max-width: 480px;
       position: relative;
       text-align: center;
       margin: 0 auto;
       h3 {
-        font-size: 22px;
+        font-size: 20px;
       }
       h1 {
         font-size: 32px;
@@ -273,11 +273,11 @@ export default props => {
     return (
       <Link to={link} className={className} style={style}>
         <img src={img} alt={title} />
-        {/* <div>
+        <div>
           <h3>{title}</h3>
           <p className="date">{date}</p>
-          <p>{des}</p>
-        </div> */}
+          {/* <p>{des}</p> */}
+        </div>
       </Link>
     )
   }
@@ -291,7 +291,7 @@ export default props => {
     align-items: flex-start;
     img {
       max-width: 72px;
-      // margin-right: 12px;
+      margin-right: 12px;
     }
     h3 {
       font-size: 16px;
@@ -311,8 +311,8 @@ export default props => {
 
   const MainContent = styled.div`
     display: grid;
-    grid-template-columns: 1fr;
-    // grid-gap: 42px;
+    grid-template-columns: calc(72% - 42px) 28%;
+    grid-gap: 42px;
     @media (max-width: 672px) {
       grid-template-columns: 100%;
       grid-gap: 0;

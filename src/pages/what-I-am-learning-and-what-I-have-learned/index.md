@@ -5,6 +5,27 @@ spoiler: Here's the list of what I wanted to learn as well as the stuff that I l
 type: topic
 thumbnail: ./js.png
 ---
+<style>
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 56px;
+  }
+
+  /* header p {
+    display: none!important;
+  } */
+
+  @media(max-width: 568px) {
+    .list {
+      grid-template-columns: 1fr;
+      grid-gap: 16px;
+    }
+  }
+</style>
+
+<div class="list">
+  <div class="column">
 
 ## What I'm learning
 ---
@@ -38,6 +59,9 @@ thumbnail: ./js.png
 - [ ] Floats
 - [ ] Box-sizing
 
+  </div>
+  <div class="column">
+  
 ## What I've learned
 ---
 
@@ -63,4 +87,11 @@ thumbnail: ./js.png
 ### Databases/APIs
 
 - [ ] GraphQL
+
+  </div>
+</div>
+
+
+
+
 

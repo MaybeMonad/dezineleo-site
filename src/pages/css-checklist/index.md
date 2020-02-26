@@ -5,11 +5,32 @@ spoiler: CSS is undersung.
 type: topic
 thumbnail: ./js.png
 ---
-
 <style>
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 56px;
+  }
+
+  /* header p {
+    display: none!important;
+  } */
+
+  @media(max-width: 568px) {
+    .list {
+      grid-template-columns: 1fr;
+      grid-gap: 16px;
+    }
+  }
 </style>
 
+<div class="list">
+<div class="column">
+<div class="list-title">
+
 ## Pseudo-class
+
+</div>
 
 ### ::after
 ### ::before
@@ -59,7 +80,13 @@ thumbnail: ./js.png
 ### :visited
 ### :content
 
+</div>
+<div class="column">
+<div class="list-title">
+
 ## Property
+
+</div>
 
 ### all
 ### animation
@@ -261,7 +288,13 @@ thumbnail: ./js.png
 ### writing-mode
 ### z-index
 
+</div>
+<div class="column">
+<div class="list-title">
+
 ## Function
+
+</div>
 
 ### attr()
 ### calc()
@@ -298,7 +331,13 @@ thumbnail: ./js.png
 ### translateY()
 ### translateZ()
 
+</div>
+<div class="column">
+<div class="list-title">
+
 ## Data Type
+
+</div>
 
 ### <angle>
 ### <basic-shape>
@@ -324,7 +363,13 @@ thumbnail: ./js.png
 ### <revert>
 ### <unset>
 
+</div>
+<div class="column">
+<div class="list-title">
+
 ## Concept
+
+</div>
 
 ### Attribute Selectors
 ### Combinators
@@ -335,7 +380,13 @@ thumbnail: ./js.png
 ### Media Queries
 ### Subgrid
 
+</div>
+<div class="column">
+<div class="list-title">
+
 ## @rule
+
+</div>
 
 ### @charset
 ### @document
@@ -346,6 +397,9 @@ thumbnail: ./js.png
 ### @namespace
 ### @page
 ### @supports
+
+</div>
+</div>
 
 ## Links
 - [CSS Reference](https://tympanus.net/codrops/css_reference/)

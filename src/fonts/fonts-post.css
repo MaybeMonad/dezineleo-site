@@ -5,13 +5,13 @@
   font-style: normal;
 } */
 
-@font-face {
+/* @font-face {
   font-family: 'Source Code Pro';
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
   src: url('./files/SourceCodePro-Regular.ttf.woff2') format('woff2');
-}
+} */
 
 /* @font-face {
   font-family: 'ubuntubold';
@@ -41,7 +41,7 @@
   font-style: normal;
 } */
 
-@font-face {
+/* @font-face {
   font-family: 'futura_book';
   src: url(./files/FuturaPT-Book.woff2) format('woff2');
   font-weight: normal;
@@ -74,7 +74,7 @@
   src: url(./files/FuturaPT-Light.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 @font-face {
   font-family: 'futura_cond_book';
@@ -93,6 +93,46 @@
 @font-face {
   font-family: 'futura_cond_bold';
   src: url(./files/FuturaPTCond-Bold.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'rubikblack';
+  src: url('./files/rubik-black-webfont.woff2') format('woff2'),
+    url('./files/rubik-black-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'rubikbold';
+  src: url('./files/rubik-bold-webfont.woff2') format('woff2'),
+    url('./files/rubik-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'rubiklight';
+  src: url('./files/rubik-light-webfont.woff2') format('woff2'),
+    url('./files/rubik-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'rubikmedium';
+  src: url('./files/rubik-medium-webfont.woff2') format('woff2'),
+    url('./files/rubik-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'rubikregular';
+  src: url('./files/rubik-regular-webfont.woff2') format('woff2'),
+    url('./files/rubik-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

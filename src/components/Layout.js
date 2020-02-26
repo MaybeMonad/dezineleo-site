@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { pageMaxWidth } from '../utils/constants'
 import FullWidthWrapper from '../components/FullWidthWrapper'
 
-import Logo from '../assets/logo.svg'
+import Logo from '../assets/logo_avatar.svg'
 
 export default props => {
   const { children } = props
@@ -162,12 +162,12 @@ export default props => {
           <Header>
             <h1>
               <Link to={'/'}>
-                {/* <img src={Logo} alt="Dezineleo" /> */}
-                <span style={{ fontFamily: 'var(--font-bold)' }}>de</span>
-                <span style={{ fontFamily: 'var(--font-heavy)' }}>zi</span>
+                <img src={Logo} alt="Dezineleo" style={{ width: 36 }} />
+                {/* <span style={{ fontFamily: 'var(--font-heavy)' }}>de</span>
+                <span style={{ fontFamily: 'var(--font-bold)' }}>zi</span>
                 <span style={{ fontFamily: 'var(--font-medium)' }}>ne</span>
                 <span style={{ fontFamily: 'var(--font-regular)' }}>le</span>
-                <span style={{ fontFamily: 'var(--font-light)' }}>o</span>
+                <span style={{ fontFamily: 'var(--font-light)' }}>o</span> */}
               </Link>
             </h1>
             <div className="header-top-right" style={{ fontSize: 13 }}>
