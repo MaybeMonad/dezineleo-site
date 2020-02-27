@@ -14,7 +14,7 @@ thumbnail: ./css_box_model.png
 
   + The width is decided by the **parent container** while the height is according to the **content inside**.
   + It will break onto **a new line**.
-  + `<h1>` and `<p>` are block-level elements, while `<em>` and `<strong>` are inline elements.
+  + `<h1>` and `<p>` are block-level elements.
 
   </div>
 </div>
@@ -34,11 +34,16 @@ thumbnail: ./css_box_model.png
 
 From the outside to inside = <span class="hl-1">Margin</span> > <span class="hl-2">Border</span> > <span class="hl-3">Padding</span> > <span class="hl-4">Content</span>
 
+### Margin
+
++ **Margin Collapsing** - When two elements with positive margins touch each other, it will combine to the larger margin of the two. *You can put another invisible element in between the two elments to prevent the margin collapsing.*
++ **Marigns on inline elements** - Inline boxes will completely ignore the top and bottom margins of an element.
+
 ## Content Boxes vs Border Boxes
 
-By default, the `box-sizing` is set to `content-box`, which is a little counterintuitive as you should not forget the border size. Fortunately, you can change the value of the `box-sizing` to `border-box` which can switch to the [alternative box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#The_alternative_CSS_box_model).
+By default, the `box-sizing` is set to `content-box`, which is a little counterintuitive as you have to add up the **border** and **padding** to get the real size of the box. Fortunately, you can use the [alternative CSS box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#The_alternative_CSS_box_model) to get the visible width by assigning `border-box` to `box-sizing`.
 
-Below is a best practice to use the `box-sizing`, you can go to checkout [the CSS Tricks article on box-sizing](https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/).
+Below is a best practice to use the `box-sizing` which is referenced from [the CSS Tricks article on box-sizing](https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/).
 
 ```css
 html {

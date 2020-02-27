@@ -64,6 +64,13 @@ export default props => {
       />
       <main>
         <article>
+          {post.frontmatter.thumbnail && (
+            <img
+              src={post.frontmatter.thumbnail.publicURL}
+              alt=""
+              style={{ width: 72 }}
+            />
+          )}
           <header
             style={{
               display: 'flex',
@@ -217,6 +224,10 @@ export const pageQuery = graphql`
         type
         github
         site
+        thumbnail {
+          publicURL
+          name
+        }
         logo {
           childImageSharp {
             fluid(maxWidth: 200) {

@@ -26,3 +26,7 @@ type: 'topic'
 + **XMind**
 + **Visual Studio Code**
 + **Eagle**
+
+## Web Dev
+
++ [CSS Reset](https://meyerweb.com/eric/tools/css/reset/)

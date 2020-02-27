@@ -330,7 +330,7 @@ export default props => {
     <Layout location={location} title={siteTitle}>
       <SEO />
       <FullWidthWrapper
-        style={{ paddingBottom: 200, backgroundColor: 'var(--bg-grey)' }}
+        style={{ paddingBottom: 200, backgroundColor: '#f7f9fc' }}
       >
         <Aside className="d-flex justify-between align-items-center">
           <div className="hello">
