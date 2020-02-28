@@ -3,7 +3,7 @@ title: Where I learn new things
 date: 2020-02-27
 spoiler: Here is a collective of resources to learn new things without a dime.
 type: topic
-thumbnail: ./computer.png
+thumbnail: ./resources.svg
 ---
 
 ## HTML & CSS

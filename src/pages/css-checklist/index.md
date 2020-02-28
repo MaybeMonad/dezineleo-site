@@ -3,7 +3,7 @@ title: CSS Checklist
 date: 2020-02-25
 spoiler: CSS is undersung.
 type: topic
-thumbnail: ./css.png
+thumbnail: ./css.svg
 ---
 <style>
   .list {

@@ -6,7 +6,7 @@ body {
   --font-grey: #a3a3a3;
   --border-grey: #e8e8e8;
   --dark-border-grey: #313131;
-  --bg-grey: #fbfbfb;
+  --bg-grey: #f2f2f2;
   --border: 1px solid var(--border-grey);
   --dark-border: 1px solid var(--dark-border-grey);
   --font-family: var(--font-regular), PingFang SC, Microsoft YaHei,
@@ -94,7 +94,7 @@ pre.language-terminal code.language-terminal::before {
   line-height: 0;
   padding: 14px 0;
   text-indent: 4px;
-  letter-spacing: -15px;
+  letter-spacing: -18px;
 }
 
 code[class*='language-'],
@@ -458,18 +458,25 @@ tbody tr:hover {
 }
 
 .btn {
+  border-radius: 6px;
   background-color: var(--black);
   color: white;
+  padding: 10px 24px;
   font-family: var(--font-bold);
-  padding: 8px 10px;
-  /* border-radius: 3px; */
-  transition: background-color 0.32s ease;
-  font-size: 12px;
+  transition: background-color 0.32s ease, color 0.2s ease;
+  font-size: 14px;
   box-shadow: none;
+  border: none;
 }
 
 .btn:hover {
-  background-color: #444;
+  background-color: #333;
+  color: white;
+}
+
+.btn-grey {
+  background-color: var(--bg-grey);
+  color: var(--black);
 }
 
 .btn-primary {
@@ -508,7 +515,7 @@ main {
 .alert .new {
   font-size: 14px;
   padding: 5px 12px;
-  background: #fff5da;
+  background: #fff5d9;
   color: #f7b801;
   display: inline-block;
   border-radius: 4px;

@@ -2,8 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Dezineleo',
     author: 'Yang Jin',
-    description:
-      'Personal site by Yang Jin. I am enthusing about learning and creating.',
+    description: 'Personal site by Yang Jin.',
     siteUrl: 'https://dezineleo.com',
     social: {
       twitter: '@dezineleo',

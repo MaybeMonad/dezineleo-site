@@ -10,16 +10,12 @@ import SEO from '../components/SEO'
 import Footer from '../components/Footer'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
 import FullWidthWrapper from '../components/FullWidthWrapper'
-import JSHub from '../../static/featured_projects/jshub.png'
-import DeStatic from '../../static/featured_projects/destatic.png'
-import BreakElm from '../../static/featured_projects/break-elm.png'
-import HYG from '../../static/featured_projects/hyg.png'
-import DownloadIcon from '../../static/icon_download.svg'
-import InspireIcon from '../../static/icon_inspire.svg'
-import Avatar from '../../static/home/avatar.png'
-import Coding from '../../static/home/coding.png'
-import Illustrating from '../../static/home/illustrating.png'
-import Dot from '../../static/dot.png'
+import JSHub from '../../static/home/logo_js_hub.svg'
+import DeStatic from '../../static/home/logo_destatic.svg'
+import BreakElm from '../../static/home/logo_break_elm.svg'
+import Decon from '../../static/home/logo_decon.svg'
+// import HYG from '../../static/home/hyg.png'
+import Intro from '../../static/home/intro.png'
 import IconLink from '../../static/icon_link.svg'
 import IconCode from '../../static/icon_code.svg'
 
@@ -65,15 +61,38 @@ const ArticleList = styled.main`
     transition: background-color 0.3s ease;
     border-radius: 8px;
     margin: 0 -24px;
-    &:hover {
-      background-color: #f2f2f2;
+    position: relative;
+    z-index: 1;
+    ::before {
+      content: '';
+      transition: all 0.32s ease;
+      background-color: var(--bg-grey);
+      border-radius: 8px;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      z-index: 0;
     }
+    :hover::before {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+    // &:hover {
+    //   background-color: #f2f2f2;
+    // }
     header {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     h3 {
+      position: relative;
       margin-top: 0;
       display: flex;
       align-items: center;
@@ -85,6 +104,7 @@ const ArticleList = styled.main`
       }
     }
     p {
+      position: relative;
       margin-bottom: 0;
     }
   }
@@ -134,9 +154,9 @@ export default props => {
   // const projects = get(props, 'data.allMarkdownRemark.edges').filter(
   //   ({ node }) => get(node, 'frontmatter.type') === 'project'
   // )
-  const experiments = get(props, 'data.allMarkdownRemark.edges').filter(
-    ({ node }) => get(node, 'frontmatter.type') === 'experiment'
-  )
+  // const experiments = get(props, 'data.allMarkdownRemark.edges').filter(
+  //   ({ node }) => get(node, 'frontmatter.type') === 'experiment'
+  // )
 
   const Aside = styled.aside`
     padding: 48px 0;
@@ -144,33 +164,53 @@ export default props => {
       z-index: 2;
       max-width: 480px;
       position: relative;
-      text-align: center;
-      margin: 0 auto;
+      text-align: left;
+      .notification {
+        background-color: #fff5d9;
+        padding: 10px 12px;
+        border-radius: 3px;
+        font-size: 12px;
+        line-height: 12px;
+        // font-family: var(--font-medium);
+        display: inline-block;
+        margin-bottom: 20px;
+      }
       h3 {
-        font-size: 20px;
+        font-size: 18px;
+        margin: 0 0 20px 0;
       }
       h1 {
         font-size: 32px;
       }
     }
+    img.intro {
+      max-width: 418px;
+      margin-right: -20px;
+      padding-top: 30px;
+    }
     @media (max-width: 672px) {
       flex-direction: column;
       align-items: flex-start;
-      padding: 36px 1.3rem;
+      padding: 36px 0;
       .hello {
         h1 {
           font-size: 28px;
         }
         h3 {
-          font-size: 18px;
+          font-size: 16px;
         }
+      }
+      img.intro {
+        max-width: 100%;
+        margin-right: 0px;
+        margin-left: -30px;
       }
     }
   `
 
   const Links = styled.div`
     a {
-      margin-right: 20px;
+      margin-right: 16px;
       font-size: 16px;
       font-family: var(--font-bold);
       box-shadow: none;
@@ -180,13 +220,11 @@ export default props => {
         margin-right: 6px;
       }
     }
-  `
-
-  const Box = styled.div`
-    border-radius: 12px;
-    padding: 42px 36px;
-    border: var(--border);
-    box-shadow: var(--box-shadow);
+    @media (max-width: 672px) {
+      a {
+        margin-right: 12px;
+      }
+    }
   `
 
   const SideProject = props => {
@@ -194,45 +232,55 @@ export default props => {
 
     return (
       <Link className={className} style={style} to={link}>
-        <div className="d-flex justify-between align-items-center">
-          <img src={logo} alt={title} />
-          <img src={IconLink} alt={title} />
+        <img src={logo} alt={title} />
+        <div className="project-intro">
+          <h2>
+            {title}
+            {/* {version && <sup>{version}</sup>} */}
+          </h2>
+          <p>{des}</p>
         </div>
-        <div
-          style={{
-            height: 1,
-            backgroundColor: 'var(--border-grey)',
-            width: 'calc(100% + 36px)',
-            display: 'block',
-            margin: '18px -18px 0 -18px',
-          }}
-        ></div>
-        <h2>
-          {title}
-          {version && <sup>{version}</sup>}
-        </h2>
-        <p>{des}</p>
-        <div className="github">{github}</div>
       </Link>
     )
   }
 
   const StyledSideProject = styled(SideProject)`
-    border-radius: 12px;
-    padding: 18px;
-    border: var(--border);
-    box-shadow: var(--box-shadow);
+    box-shadow: none;
     transition: box-shadow 0.3s ease 0s;
-    :hover {
-      box-shadow: var(--hover-box-shadow);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    ::before {
+      content: '';
+      transition: all 0.28s ease;
+      background-color: var(--bg-grey);
+      border-radius: 8px;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      z-index: 0;
+    }
+    :hover::before {
+      width: calc(100% + 40px);
+      height: calc(100% + 40px);
+      left: -20px;
+      top: -20px;
     }
     img {
-      max-width: 30px;
-      max-height: 24px;
+      max-width: 48px;
+      margin-right: 14px;
+      position: relative;
     }
     h2 {
+      position: relative;
       font-size: 18px;
-      margin-bottom: 0;
+      margin: 0;
+      text-transform: uppercase;
       sup {
         color: var(--brand);
         font-family: var(--font-regular);
@@ -241,29 +289,27 @@ export default props => {
       }
     }
     p {
+      position: relative;
       font-size: 13px;
       color: var(--font-grey);
-      margin: 0 0 24px 0;
+      margin: 0;
       line-height: 16px;
-      font-family: var(--font-regular);
-    }
-    .github {
-      font-size: 12px;
       font-family: var(--font-regular);
     }
   `
 
   const SideProjects = styled.div`
-    display: grid;
-    grid-template-columns: calc(25% - 24px) calc(25% - 24px) calc(25% - 24px) calc(
-        25% - 24px
-      );
-    grid-gap: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 48px 0;
     @media (max-width: 672px) {
+      display: grid;
       grid-template-columns: calc(50% - 12px) calc(50% - 12px);
       grid-gap: 24px;
     }
     @media (max-width: 376px) {
+      display: grid;
       grid-template-columns: 100%;
     }
   `
@@ -319,107 +365,62 @@ export default props => {
     }
   `
 
-  const AvatarImg = styled.img`
-    max-width: 20%;
-    @media (max-width: 672px) {
-      max-width: 36%;
-    }
-  `
-
   return (
     <Layout location={location} title={siteTitle}>
       <SEO />
-      <FullWidthWrapper
-        style={{ paddingBottom: 200, backgroundColor: '#f7f9fc' }}
-      >
-        <Aside className="d-flex justify-between align-items-center">
-          <div className="hello">
-            <h1 style={{ margin: '0 0 8px 0' }}>
-              <span style={{ fontFamily: 'var(--font-medium)' }}>Hi, I'm</span>{' '}
-              Yang Jin <StyledHand>👋</StyledHand>
-            </h1>
-            <h3
-              style={{ margin: '0 0 8px 0', fontFamily: 'var(--font-regular)' }}
-            >
-              A designer && maker based in Hangzhou, China.
-            </h3>
-            <Links>
-              <Link to="/about" style={{ color: 'var(--brand)' }}>
-                <img src={DownloadIcon} alt="Download" />
-                My Resume
-              </Link>
-              <Link to="/what-i-use" style={{ color: 'var(--primary)' }}>
-                <img src={InspireIcon} alt="Inspire" /> What I Use
-              </Link>
-            </Links>
+      <Aside className="d-flex justify-between align-items-center">
+        <div className="hello">
+          <div className="notification">
+            <span style={{ fontSize: 16 }}>🎯</span> Hunting for new job!
           </div>
-        </Aside>
-      </FullWidthWrapper>
-      <Box
-        className="d-flex justify-between align-items-center"
-        style={{
-          marginTop: '-200px',
-          backgroundColor: 'white',
-          backgroundImage: `url(${Dot})`,
-          backgroundSize: 'cover',
-          backgroundPosition: '0 4px',
-        }}
-      >
-        <img
-          style={{ maxWidth: '32%' }}
-          src={Illustrating}
-          alt="Illustrating"
+          <h1 style={{ margin: '0 0 8px 0' }}>
+            <span style={{ fontFamily: 'var(--font-medium)' }}>Hi, I'm</span>{' '}
+            Yang Jin <StyledHand>👋</StyledHand>
+          </h1>
+          <h3 style={{ fontFamily: 'var(--font-regular)' }}>
+            A designer && maker based in Hangzhou, China.
+          </h3>
+          <Links>
+            <Link to="/about">
+              <button className="btn">My Resume</button>
+            </Link>
+            <Link to="/2019">
+              <button className="btn btn-grey">2019 Report</button>
+            </Link>
+          </Links>
+        </div>
+        <img className="intro" src={Intro} alt="About Yang Jin" />
+      </Aside>
+      <SideProjects>
+        <StyledSideProject
+          logo={BreakElm}
+          link="/break-elm"
+          title="Break Elm"
+          des="Elm doc for Chinese"
+          version=""
         />
-        <AvatarImg src={Avatar} alt="Avatar" />
-        <img style={{ maxWidth: '32%' }} src={Coding} alt="Coding" />
-      </Box>
-      <div style={{ textAlign: 'center', padding: '24px 0 0 0', fontSize: 14 }}>
-        I’m available for UI design and web development. Feel free to contact me
-        through{' '}
-        <a href="mailto:dezineleo@gmail.com" style={{ color: 'var(--brand)' }}>
-          dezineleo@gmail.com
-        </a>
-        .
-      </div>
-      <StyledSection
-        title="Side Projects"
-        external={<Link to="/projects">Browse All</Link>}
-      >
-        <SideProjects>
-          <StyledSideProject
-            logo={BreakElm}
-            link="/break-elm"
-            title="Break Elm"
-            des="Based on official docs, I’ve created 3 real world demos."
-            github="DezineLeo/Break-Elm"
-            version=""
-          />
-          <StyledSideProject
-            logo={JSHub}
-            link="/javascript-hub"
-            title="JS Hub"
-            des="Another free JavaScript learning application."
-            github="DezineLeo/JavaScript-Hub"
-            version="v1.0.0"
-          />
-          <StyledSideProject
-            logo={DeStatic}
-            link="/destatic"
-            title="DeStatic"
-            des="Skyrocket your project without extra configuration."
-            github="DezineLeo/DeStatic"
-            version="v1.0.1"
-          />
-          <StyledSideProject
-            logo={HYG}
-            link="/hyg"
-            title="HYG"
-            des="A non-profit social platform for blind dating."
-            github="DezineLeo/HYG"
-            version="v2.0"
-          />
-        </SideProjects>
-      </StyledSection>
+        <StyledSideProject
+          logo={JSHub}
+          link="/javascript-hub"
+          title="JS Hub"
+          des="Learn JavaScript"
+          version="v1.0.0"
+        />
+        <StyledSideProject
+          logo={DeStatic}
+          link="/destatic"
+          title="DeStatic"
+          des="Pug-based starter"
+          version="v1.0.1"
+        />
+        <StyledSideProject
+          logo={Decon}
+          link="/decon"
+          title="Decon"
+          des="Design system"
+          version="v1.0"
+        />
+      </SideProjects>
       <MainContent>
         <StyledSection title="Topics">
           <ArticleList>
@@ -467,7 +468,7 @@ export default props => {
               })}
           </ArticleList>
         </StyledSection>
-        <StyledSection title="Weekly Collectives">
+        <StyledSection title="News">
           {posts
             .filter(
               ({ node }) => get(node, 'frontmatter.type') === 'collective'

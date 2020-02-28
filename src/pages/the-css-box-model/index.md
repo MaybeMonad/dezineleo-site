@@ -3,7 +3,7 @@ title: The CSS Box Model
 date: 2020-02-25
 spoiler: Every elemnt in web design is a rectangular box.
 type: topic
-thumbnail: ./css_box_model.png
+thumbnail: ./css_box_model.svg
 ---
 
 ## Block Boxes vs Inline Boxes
@@ -53,7 +53,6 @@ html {
   box-sizing: inherit;
 }
 ```
-
 
 ## Links
 
