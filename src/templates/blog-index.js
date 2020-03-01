@@ -8,16 +8,17 @@ import dayjs from 'dayjs'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
-import { formatPostDate, formatReadingTime } from '../utils/helpers'
-import FullWidthWrapper from '../components/FullWidthWrapper'
+// import { formatPostDate, formatReadingTime } from '../utils/helpers'
+// import FullWidthWrapper from '../components/FullWidthWrapper'
 import JSHub from '../../static/home/logo_js_hub.svg'
 import DeStatic from '../../static/home/logo_destatic.svg'
 import BreakElm from '../../static/home/logo_break_elm.svg'
 import Decon from '../../static/home/logo_decon.svg'
 // import HYG from '../../static/home/hyg.png'
 import Intro from '../../static/home/intro.png'
-import IconLink from '../../static/icon_link.svg'
+// import IconLink from '../../static/icon_link.svg'
 import IconCode from '../../static/icon_code.svg'
+import NewsArrow from '../../static/news_arrow.svg'
 
 const Section = props => {
   const { className, children, title, external, style } = props
@@ -44,7 +45,7 @@ const StyledSection = styled(Section)`
     align-items: center;
     margin: 24px 0 16px 0;
     width: 100%;
-    padding: 0 0 16px 0;
+    padding: 0 0 8px 0;
     h3 {
       margin: 0;
       img {
@@ -82,9 +83,6 @@ const ArticleList = styled.main`
       left: 0;
       top: 0;
     }
-    // &:hover {
-    //   background-color: #f2f2f2;
-    // }
     header {
       position: relative;
       display: flex;
@@ -315,14 +313,18 @@ export default props => {
   `
 
   const Collective = props => {
-    const { className, style, img, title, link, date, des } = props
+    const { className, style, img, title, link, date } = props
     return (
       <Link to={link} className={className} style={style}>
+        <div className="news_header">
+          <h3>
+            Issue <span>{title}</span>
+          </h3>
+          <img src={NewsArrow} alt="" />
+        </div>
         <img src={img} alt={title} />
-        <div>
-          <h3>{title}</h3>
-          <p className="date">{date}</p>
-          {/* <p>{des}</p> */}
+        <div className="news_footer">
+          <span className="news_date">{date}</span>
         </div>
       </Link>
     )
@@ -330,35 +332,48 @@ export default props => {
 
   const StyledCollective = styled(Collective)`
     border-radius: 12px;
-    padding: 18px;
-    border: var(--border);
-    box-shadow: var(--box-shadow);
-    display: flex;
-    align-items: flex-start;
+    padding: 5px 12px 10px 12px;
+    background-color: var(--black);
+    color: white;
+    display: block;
+    .news_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h3 {
+        font-size: 16px;
+        margin: 0 0 5px 0;
+        span {
+          color: #ffe293;
+        }
+      }
+      img {
+        width: 10px;
+        margin: 0 0 5px 0;
+      }
+    }
     img {
-      max-width: 72px;
-      margin-right: 12px;
+      max-width: 100%;
+      width: 100%;
     }
-    h3 {
-      font-size: 16px;
-      margin: 0;
-    }
-    p {
-      font-size: 12px;
-      line-height: 16px;
-      margin: 0;
-      font-family: var(--font-regular);
-      &.date {
+    .news_footer {
+      span {
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0;
+        font-family: var(--font-medium);
+        border-radius: 4px;
         color: var(--font-grey);
-        line-height: 14px;
+        background-color: #4a4a4a;
+        padding: 3px 6px;
       }
     }
   `
 
   const MainContent = styled.div`
     display: grid;
-    grid-template-columns: calc(72% - 42px) 28%;
-    grid-gap: 42px;
+    grid-template-columns: calc(75% - 56px) 25%;
+    grid-gap: 56px;
     @media (max-width: 672px) {
       grid-template-columns: 100%;
       grid-gap: 0;
@@ -470,18 +485,15 @@ export default props => {
         </StyledSection>
         <StyledSection title="News">
           {posts
-            .filter(
-              ({ node }) => get(node, 'frontmatter.type') === 'collective'
-            )
+            .filter(({ node }) => get(node, 'frontmatter.type') === 'news')
             .map(({ node }, index) => {
-              const { title, thumbnail, date, spoiler } = node.frontmatter
+              const { title, thumbnail, date } = node.frontmatter
               return (
                 <StyledCollective
                   link={node.fields.slug}
                   img={thumbnail.publicURL}
                   title={title}
                   date={date}
-                  des={spoiler}
                 />
               )
             })}

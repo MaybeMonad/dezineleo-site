@@ -6,8 +6,6 @@ import styled from 'styled-components'
 import { pageMaxWidth } from '../utils/constants'
 import FullWidthWrapper from '../components/FullWidthWrapper'
 
-import Logo from '../assets/logo_avatar.svg'
-
 export default props => {
   const { children } = props
   const [theme, setTheme] = useState(null)
@@ -27,66 +25,6 @@ export default props => {
       </header>
     )
   }
-
-  const StyledTopNav = styled(TopNav)`
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 999;
-    position: fixed;
-    top: 0;
-    width: calc(100% - 58px);
-    max-width: ${pageMaxWidth};
-    height: 56px;
-    padding: 0;
-    transition: all 0.24s ease;
-    &.active {
-      background-color: var(--black);
-      max-width: calc(${pageMaxWidth} - 40px);
-      padding: 0 20px;
-      h1 {
-        a {
-          color: white;
-        }
-      }
-      .header-top-right {
-        span,
-        a {
-          color: white;
-        }
-      }
-    }
-    @media (max-width: 672px) {
-      padding: 0 24px;
-      left: 0;
-      width: calc(100% - 48px);
-    }
-    h1 {
-      margin: 0;
-      a {
-        box-shadow: none;
-        text-decoration: none;
-        color: var(--black);
-        display: inherit;
-        font-size: 20px;
-        margin-right: 20px;
-        tansition: color 0.2s ease;
-      }
-    }
-    .header-top-right {
-      span {
-        // color: var(--font-grey);
-        font-family: var(--font-regular);
-        color: var(--black);
-      }
-      a {
-        font-size: 12px;
-        font-family: var(--font-bold);
-        color: var(--black);
-      }
-    }
-  `
 
   const Header = styled.header`
     display: flex;
@@ -109,6 +47,17 @@ export default props => {
         margin-right: 20px;
         tansition: color 0.2s ease;
       }
+    }
+    .version {
+      background-color: var(--primary);
+      border-radius: 4px;
+      border-bottom-left-radius: 0;
+      padding: 1px 4px;
+      font-size: 12px;
+      color: white;
+      position: absolute;
+      right: -38px;
+      top: 0;
     }
     .header-top-right {
       span {
@@ -161,7 +110,7 @@ export default props => {
         <FullWidthWrapper className={`fullwidth-${pathname}`}>
           <Header>
             <h1>
-              <Link to={'/'}>
+              <Link to={'/'} style={{ position: 'relative' }}>
                 {/* <img src={Logo} alt="Dezineleo" style={{ width: 36 }} /> */}
                 {/* <span style={{ fontFamily: 'var(--font-heavy)' }}>de</span> */}
                 {/* <span style={{ fontFamily: 'var(--font-bold)' }}>zi</span>
@@ -170,6 +119,7 @@ export default props => {
                 <span style={{ fontFamily: 'var(--font-light)' }}>o</span> */}
 
                 <span style={{ fontFamily: 'var(--font-bold)' }}>Dezine</span>
+                <span className="version">v2.3</span>
               </Link>
             </h1>
             <div className="header-top-right" style={{ fontSize: 13 }}>

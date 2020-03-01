@@ -1,9 +1,8 @@
 ---
-title: 'Collective #001'
-date: 2019-11-29
-spoiler: Hi there, this is the weekly collectives from Dezineleo.com.
+title: '#001'
+date: 2020-02-22
 thumbnail: ./thumbnail.png
-type: collective
+type: news
 ---
 
-## Collective #001
+## News #001
