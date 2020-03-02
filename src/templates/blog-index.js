@@ -312,8 +312,8 @@ export default props => {
     }
   `
 
-  const Collective = props => {
-    const { className, style, img, title, link, date } = props
+  const News = props => {
+    const { className, style, img, title, link, date, totalLinks } = props
     return (
       <Link to={link} className={className} style={style}>
         <div className="news_header">
@@ -324,13 +324,14 @@ export default props => {
         </div>
         <img src={img} alt={title} />
         <div className="news_footer">
-          <span className="news_date">{date}</span>
+          <span className="news_date">{dayjs(date).format('MMM D, YYYY')}</span>
+          <span className="links">{totalLinks} Links</span>
         </div>
       </Link>
     )
   }
 
-  const StyledCollective = styled(Collective)`
+  const StyledNews = styled(News)`
     border-radius: 12px;
     padding: 5px 12px 10px 12px;
     background-color: var(--black);
@@ -360,7 +361,7 @@ export default props => {
       span {
         font-size: 12px;
         line-height: 16px;
-        margin: 0;
+        margin: 0 10px 0 0;
         font-family: var(--font-medium);
         border-radius: 4px;
         color: var(--font-grey);
@@ -392,7 +393,9 @@ export default props => {
             <span style={{ fontFamily: 'var(--font-medium)' }}>Hi, I'm</span>{' '}
             Yang Jin <StyledHand>👋</StyledHand>
           </h1>
-          <h3 style={{ fontFamily: 'var(--font-regular)' }}>
+          <h3
+            style={{ fontFamily: 'var(--font-regular)', fontWeight: 'normal' }}
+          >
             A designer && maker based in Hangzhou, China.
           </h3>
           <Links>
@@ -487,13 +490,14 @@ export default props => {
           {posts
             .filter(({ node }) => get(node, 'frontmatter.type') === 'news')
             .map(({ node }, index) => {
-              const { title, thumbnail, date } = node.frontmatter
+              const { title, thumbnail, date, totalLinks } = node.frontmatter
               return (
-                <StyledCollective
+                <StyledNews
                   link={node.fields.slug}
                   img={thumbnail.publicURL}
                   title={title}
                   date={date}
+                  totalLinks={totalLinks}
                 />
               )
             })}
@@ -528,6 +532,7 @@ export const pageQuery = graphql`
             github
             version
             site
+            totalLinks
             thumbnail {
               publicURL
               name

@@ -5,11 +5,11 @@ spoiler: A Chinese version of Elm docs.
 type: project
 github: https://github.com/DezineLeo/elm-lang-docs-zh
 site: https://elm.dezineleo.com/
-thumbnail: ./thumbnail.svg
-logo: ./logo.png
+thumbnail: ./logo_break_elm.svg
+logo: ./logo_break_elm.svg
 ---
 
-![Break Elm](./featured.png)
+<!-- ![Break Elm](./featured.png) -->
 
 ## Elm 中文指南
 

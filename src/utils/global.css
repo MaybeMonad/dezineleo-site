@@ -374,7 +374,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-bold);
-  font-weight: normal;
+  font-weight: bold;
 }
 
 h1 {
@@ -421,7 +421,7 @@ blockquote p {
 }
 
 table {
-  border: 2px solid var(--black);
+  /* border: 2px solid var(--black); */
   border-spacing: 0;
   background-color: white;
   width: 100%;
@@ -429,9 +429,14 @@ table {
 }
 
 thead {
-  background-color: var(--black);
+  background-color: var(--primary);
   color: white;
   font-weight: 700;
+}
+
+thead,
+tbody {
+  border-radius: 6px;
 }
 
 th {
@@ -439,9 +444,19 @@ th {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-td {
-  border: var(--border);
+th:first-child,
+td:first-child {
+  border-radius: 6px 0 0 6px;
 }
+
+th:last-child,
+td:last-child {
+  border-radius: 0 6px 6px 0;
+}
+
+/* td {
+  border: var(--border);
+} */
 
 td,
 th {
@@ -467,6 +482,7 @@ tbody tr:hover {
   font-size: 14px;
   box-shadow: none;
   border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -495,6 +511,11 @@ tbody tr:hover {
 
 .btn-secondary:hover {
   background-color: var(--secondary-hover);
+}
+
+.btn-small {
+  font-size: 13px;
+  padding: 8px 16px;
 }
 
 main {
@@ -596,6 +617,10 @@ main {
 }
 .hl-5 {
   background-color: #d4e8e2;
+}
+
+article {
+  max-width: 46rem;
 }
 
 article .list-box {

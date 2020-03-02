@@ -54,6 +54,25 @@ export default props => {
     font-size: 14px;
   `
 
+  const ProjectHeader = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 40px);
+    padding: 15px 20px;
+    margin: 12px 0 32px 0;
+    background-color: #fff5d9;
+    border-radius: 8px;
+    @media (max-width: 672px) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      .left {
+        margin-bottom: 12px;
+      }
+    }
+  `
+
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO
@@ -64,7 +83,7 @@ export default props => {
       />
       <main>
         <article>
-          {post.frontmatter.thumbnail && (
+          {post.frontmatter.thumbnail && post.frontmatter.type === 'topic' && (
             <img
               src={post.frontmatter.thumbnail.publicURL}
               alt=""
@@ -80,50 +99,32 @@ export default props => {
           >
             {post.frontmatter.type === 'project' ? (
               <div style={{ width: '100%' }}>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    width: '100%',
-                    borderBottom: 'var(--border)',
-                    padding: '24px 0 16px 0',
-                    marginBottom: 48,
-                  }}
-                >
-                  {post.frontmatter.logo ? (
-                    <Img
-                      style={{
-                        width: 56,
-                        maxWidth: '156px',
-                        maxHeight: '56px',
-                      }}
-                      fluid={post.frontmatter.logo.childImageSharp.fluid}
+                <ProjectHeader>
+                  <div className="d-flex justify-start align-items-center left">
+                    <img
+                      style={{ maxWidth: 36, marginRight: 10 }}
+                      src={post.frontmatter.logo.publicURL}
+                      alt={post.frontmatter.title}
                     />
-                  ) : (
                     <h3 style={{ margin: 0 }}>{post.frontmatter.title}</h3>
-                  )}
+                  </div>
                   <div>
                     {post.frontmatter.site && (
                       <a
-                        className="btn btn-primary"
                         href={post.frontmatter.site}
                         target="_blank"
+                        style={{ marginRight: 10 }}
                       >
-                        Live
+                        <button className="btn btn-small">View</button>
                       </a>
                     )}
                     {post.frontmatter.github && (
-                      <a
-                        className="btn"
-                        href={post.frontmatter.github}
-                        target="_blank"
-                      >
-                        GitHub
+                      <a href={post.frontmatter.github} target="_blank">
+                        <button className="btn btn-small">GitHub</button>
                       </a>
                     )}
                   </div>
-                </div>
+                </ProjectHeader>
                 <div>
                   <h1
                     style={{
@@ -229,11 +230,8 @@ export const pageQuery = graphql`
           name
         }
         logo {
-          childImageSharp {
-            fluid(maxWidth: 200) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+          publicURL
+          name
         }
       }
       fields {

@@ -339,29 +339,29 @@ thumbnail: ./css.svg
 
 </div>
 
-### <angle>
-### <basic-shape>
-### <blend-mode>
-### <color>
-### <frequency>
-### <gradient>
-### <image>
-### <integer>
-### <length>
-### <number>
-### <percentage>
-### <position>
-### <ratio>
-### <resolution>
-### <string>
-### <time>
-### <timing-function>
-### <url>
-### <user-indent>
-### <inherit>
-### <initial>
-### <revert>
-### <unset>
+### \<angle\>
+### \<basic-shape\>
+### \<blend-mode\>
+### \<color\>
+### \<frequency\>
+### \<gradient\>
+### \<image\>
+### \<integer\>
+### \<length\>
+### \<number\>
+### \<percentage\>
+### \<position\>
+### \<ratio\>
+### \<resolution\>
+### \<string\>
+### \<time\>
+### \<timing-function\>
+### \<url\>
+### \<user-indent\>
+### \<inherit\>
+### \<initial\>
+### \<revert\>
+### \<unset\>
 
 </div>
 <div class="column">

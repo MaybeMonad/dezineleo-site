@@ -6,6 +6,7 @@ type: project
 github: https://github.com/DezineLeo/DeStatic
 version: v1.0.1
 thumbnail: ./thumbnail.svg
+logo: ./logo_destatic.svg
 ---
 
 ## A starter HTML Template using Pug, Sass, Webpack, Gulp.
