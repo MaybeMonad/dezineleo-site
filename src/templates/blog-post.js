@@ -103,7 +103,7 @@ export default props => {
                   <div className="d-flex justify-start align-items-center left">
                     <img
                       style={{ maxWidth: 36, marginRight: 10 }}
-                      src={post.frontmatter.logo.publicURL}
+                      src={post.frontmatter.logo?.publicURL}
                       alt={post.frontmatter.title}
                     />
                     <h3 style={{ margin: 0 }}>{post.frontmatter.title}</h3>
