@@ -61,9 +61,10 @@ export default props => {
     width: calc(100% - 40px);
     padding: 15px 20px;
     margin: 12px 0 32px 0;
-    background-color: var(--primary-light);
+    ${'' /* background-color: var(--primary-light); */}
+    background-color: #fff5d9;
     border-radius: 8px;
-    color: var(--primary);
+    ${'' /* color: var(--primary); */}
     @media (max-width: 672px) {
       flex-direction: column;
       align-items: flex-start;
@@ -116,16 +117,12 @@ export default props => {
                         target="_blank"
                         style={{ marginRight: 10 }}
                       >
-                        <button className="btn btn-primary btn-small">
-                          View
-                        </button>
+                        <button className="btn btn-small">View</button>
                       </a>
                     )}
                     {post.frontmatter.github && (
                       <a href={post.frontmatter.github} target="_blank">
-                        <button className="btn btn-primary btn-small">
-                          GitHub
-                        </button>
+                        <button className="btn btn-small">GitHub</button>
                       </a>
                     )}
                   </div>
@@ -178,7 +175,7 @@ export default props => {
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </article>
       </main>
-      <aside style={{ marginTop: 24 }}>
+      <aside style={{ margin: '24px auto 0 auto', maxWidth: '46rem' }}>
         <Bio />
       </aside>
     </Layout>

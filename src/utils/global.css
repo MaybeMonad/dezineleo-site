@@ -607,21 +607,26 @@ main {
 .hl-1 {
   background-color: #fcd3e6;
 }
+
 .hl-2 {
   background-color: #fbeed5;
 }
+
 .hl-3 {
   background-color: #d3e4f9;
 }
+
 .hl-4 {
   background-color: #fedfd2;
 }
+
 .hl-5 {
   background-color: #d4e8e2;
 }
 
 article {
   max-width: 46rem;
+  margin: 0 auto;
 }
 
 article .list-box {

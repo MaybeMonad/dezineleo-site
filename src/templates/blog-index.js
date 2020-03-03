@@ -183,7 +183,7 @@ export default props => {
       }
     }
     img.intro {
-      max-width: 418px;
+      max-width: 480px;
       margin-right: -20px;
       padding-top: 30px;
     }

@@ -353,7 +353,11 @@ export default props => {
     <Layout location={location} title="About Leo - Dezineleo">
       <SEO title="About Leo" />
       <FullWidthWrapper
-        style={{ backgroundColor: '#000', borderBottom: 'var(--dark-border)' }}
+        style={{
+          backgroundColor: '#000',
+          borderBottom: 'var(--dark-border)',
+          borderTop: 'var(--dark-border)',
+        }}
       >
         <Aside className="section d-flex justify-between align-items-center">
           <div className="hello">

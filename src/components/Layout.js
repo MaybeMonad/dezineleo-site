@@ -33,7 +33,7 @@ export default props => {
     height: 56px;
     padding: 0;
     transition: all 0.24s ease;
-    max-width: 52rem;
+    ${'' /* max-width: 52rem; */}
     padding: 0rem 1.3rem;
     margin: 0 auto;
     h1 {
@@ -107,7 +107,10 @@ export default props => {
           padding: `0rem 1.3rem 2rem 1.3rem`,
         }}
       >
-        <FullWidthWrapper className={`fullwidth-${pathname}`}>
+        <FullWidthWrapper
+          className={`fullwidth-${pathname}`}
+          style={{ borderBottom: 'none' }}
+        >
           <Header>
             <h1>
               <Link to={'/'} style={{ position: 'relative' }}>
