@@ -29,7 +29,8 @@ body {
   --brand: #003cff;
   /* --primary: #5183f5; */
   --primary: #1b95e0;
-  /* --primary-hover: #51da9e; */
+  --primary-light: #eff8ff;
+  --primary-hover: #0078c9;
   --secondary: #fd18fe;
   /* --secondary-hover: rgba(29, 161, 242, 0.2); */
   --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
@@ -74,7 +75,7 @@ pre.language-terminal code.language-terminal {
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
   border-radius: 6px;
   padding-top: 45px;
-  margin: 2rem 0;
+  margin: 0.2rem 0 2rem 0;
   font-size: 13px;
   background: white;
   color: #333;
@@ -326,15 +327,15 @@ article a {
 
 article a:hover,
 article a:active {
-  box-shadow: 0 2px 0 0 var(--brand);
-  color: var(--brand);
-  background: #f0f4fe;
+  box-shadow: 0 2px 0 0 var(--primary-hover);
+  color: var(--primary-hover);
+  background: var(--primary-light);
   /* border-bottom: 2px solid #2161f2; */
 }
 
 ul,
 ol {
-  padding: 0;
+  padding: 0 0 0 20px;
   margin-bottom: 1.75rem;
 }
 
@@ -497,7 +498,7 @@ tbody tr:hover {
 
 .btn-primary {
   background-color: var(--primary);
-  color: var(--black);
+  color: white;
 }
 
 .btn-primary:hover {
@@ -647,6 +648,23 @@ article .box-title {
   font-size: 16px;
   position: relative;
   z-index: 9;
+}
+
+article .link-box {
+  background-color: var(--primary-light);
+  padding: 12px 18px 12px 50px;
+  border-radius: 6px;
+  color: var(--primary);
+  background-image: url(../../static/article_link.svg);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: 18px 14px;
+}
+
+/* article .link-box */
+
+article .link-box p {
+  margin: 0;
 }
 
 .d-grid {

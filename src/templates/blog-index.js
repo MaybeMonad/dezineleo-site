@@ -97,6 +97,7 @@ const ArticleList = styled.main`
       // font-family: var(--font-cond-medium);
       img {
         width: 36px;
+        min-width: 36px;
         height: 36px;
         margin-right: 12px;
       }

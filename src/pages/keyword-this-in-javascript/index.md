@@ -3,6 +3,7 @@ title: Keyword "this" in JavaScript
 date: '2018-08-26'
 spoiler: We talk about what does the *this* keyword do.
 type: 'topic'
+thumbnail: ./js.svg
 ---
 
 Previously, we’ve talked about **prototype** and **new** in JavaScript, you may noticed we’ve encountered a lot of  `this`. So, today I’ll show you what  `this` is.

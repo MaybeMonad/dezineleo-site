@@ -3,6 +3,7 @@ title: What I use
 date: '2019-10-11'
 spoiler: Stuff that I use almost everyday.
 type: 'topic'
+thumbnail: ./tools.svg
 ---
 
 ## Hardware

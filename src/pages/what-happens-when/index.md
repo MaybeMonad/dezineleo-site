@@ -3,6 +3,7 @@ title: What happens when you type an URL in the browser and press enter?
 date: '2018-07-29'
 spoiler: We talk about an age-old interview question.
 type: 'topic'
+thumbnail: ./chrome.svg
 ---
 
 This post will mainly focus on the stuff between client and server, if you're interested in the physical layer, please checkout [what happens when](https://github.com/alex/what-happens-when).

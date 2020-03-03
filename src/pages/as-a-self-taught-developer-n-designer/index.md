@@ -3,6 +3,7 @@ title: As a self-taught developer and designer
 date: '2019-10-14'
 spoiler: I'm tring to be a real developer.
 type: 'topic'
+thumbnail: ./indie.svg
 ---
 
 Back in the day, I knew nothing about JS, not even HTML/CSS, I could just build a website using site generators like Weebly and WordPress. I spent countless hours to tweak the CSS. Then I went into jQuery which is the most popular library at that moment. By combing tons of jQuery plugins, I could achieve fancy stuff like infinite scrolling.

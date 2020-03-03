@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -61,8 +61,9 @@ export default props => {
     width: calc(100% - 40px);
     padding: 15px 20px;
     margin: 12px 0 32px 0;
-    background-color: #fff5d9;
+    background-color: var(--primary-light);
     border-radius: 8px;
+    color: var(--primary);
     @media (max-width: 672px) {
       flex-direction: column;
       align-items: flex-start;
@@ -115,12 +116,16 @@ export default props => {
                         target="_blank"
                         style={{ marginRight: 10 }}
                       >
-                        <button className="btn btn-small">View</button>
+                        <button className="btn btn-primary btn-small">
+                          View
+                        </button>
                       </a>
                     )}
                     {post.frontmatter.github && (
                       <a href={post.frontmatter.github} target="_blank">
-                        <button className="btn btn-small">GitHub</button>
+                        <button className="btn btn-primary btn-small">
+                          GitHub
+                        </button>
                       </a>
                     )}
                   </div>
@@ -175,32 +180,6 @@ export default props => {
       </main>
       <aside style={{ marginTop: 24 }}>
         <Bio />
-        <nav>
-          <ul
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-              listStyle: 'none',
-              padding: 0,
-            }}
-          >
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
       </aside>
     </Layout>
   )

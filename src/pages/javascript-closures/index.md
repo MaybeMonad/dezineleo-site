@@ -3,6 +3,7 @@ title: JavaScript Closures
 date: '2018-09-06'
 spoiler: Yes, we talk about the closures.
 type: 'topic'
+thumbnail: ./js.svg
 ---
 
 The **closure** is another fundamental JavaScript concept that you should know inside-out. This post will be dedicated to the nuts and bolts of how and why closures work. Let’s get started!

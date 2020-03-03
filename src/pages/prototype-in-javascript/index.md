@@ -3,6 +3,7 @@ title: Prototype in JavaScript
 date: '2018-08-05'
 spoiler: Prototype is a fundamental concept that every JavaScript developer must understand.
 type: 'topic'
+thumbnail: ./js.svg
 ---
 
 **JavaScript Prototype** is …

@@ -3,6 +3,7 @@ title: JavaScript Basics
 date: '2018-07-08'
 spoiler: Yes, we talk about the basics.
 type: 'topic'
+thumbnail: ./js.svg
 ---
 
 I’ve learned React for a while and found out that if you wanna have a quick start for React, you need have a minimal knowledge about ES6 firstly.
