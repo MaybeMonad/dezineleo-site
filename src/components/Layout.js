@@ -30,10 +30,9 @@ export default props => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 56px;
+    height: 72px;
     padding: 0;
     transition: all 0.24s ease;
-    ${'' /* max-width: 52rem; */}
     padding: 0rem 1.3rem;
     margin: 0 auto;
     h1 {
@@ -70,6 +69,15 @@ export default props => {
         color: var(--black);
       }
     }
+    nav {
+      a {
+        padding: 8px 24px;
+        box-shadow: none;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-family: var(--font-bold);
+      }
+    }
     @media (max-width: 672px) {
       padding: 0 1.3rem;
       left: 0;
@@ -84,6 +92,16 @@ export default props => {
         span,
         a {
           color: white;
+        }
+      }
+      nav {
+        a {
+          color: white;
+          padding: 8px 0 8px 20px;
+          font-size: 14px;
+          &:first-child {
+            display: none;
+          }
         }
       }
     }
@@ -104,7 +122,7 @@ export default props => {
           marginLeft: 'auto',
           marginRight: 'auto',
           maxWidth: pageMaxWidth,
-          padding: `0rem 1.3rem 2rem 1.3rem`,
+          padding: `0rem 1.3rem`,
         }}
       >
         <FullWidthWrapper
@@ -114,18 +132,16 @@ export default props => {
           <Header>
             <h1>
               <Link to={'/'} style={{ position: 'relative' }}>
-                {/* <img src={Logo} alt="Dezineleo" style={{ width: 36 }} /> */}
-                {/* <span style={{ fontFamily: 'var(--font-heavy)' }}>de</span> */}
-                {/* <span style={{ fontFamily: 'var(--font-bold)' }}>zi</span>
-                <span style={{ fontFamily: 'var(--font-medium)' }}>ne</span>
-                <span style={{ fontFamily: 'var(--font-regular)' }}>le</span>
-                <span style={{ fontFamily: 'var(--font-light)' }}>o</span> */}
-
                 <span style={{ fontFamily: 'var(--font-bold)' }}>Dezine</span>
                 <span className="version">v2.3</span>
               </Link>
             </h1>
-            <div className="header-top-right" style={{ fontSize: 13 }}>
+            <nav>
+              <Link to={'/'}>Home</Link>
+              <Link to={'/archive'}>Archive</Link>
+              <Link to={'/about'}>About</Link>
+            </nav>
+            {/* <div className="header-top-right" style={{ fontSize: 13 }}>
               <span>Stay focus, make impact.</span>
               <a
                 style={{
@@ -136,7 +152,7 @@ export default props => {
               >
                 Hire Me
               </a>
-            </div>
+            </div> */}
           </Header>
         </FullWidthWrapper>
         {children}

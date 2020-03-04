@@ -3,6 +3,7 @@ title: JS 闭包
 date: '2019-03-24'
 spoiler: 看，是闭包...
 type: 'topic'
+thumbnail: ./js.svg
 ---
 
 在[英文版](/javascript-closures)中有对闭包基本概念的讲述，以下参考几道闭包的面试题。

@@ -5,7 +5,7 @@ spoiler: A non-profit social platform for blind dating.
 type: project
 github: https://github.com/DezineLeo/DeStatic
 version: v2.0
-thumbnail: ./thumbnail.svg
+thumbnail: ./hyg.svg
 logo: ./logo.png
 ---
 

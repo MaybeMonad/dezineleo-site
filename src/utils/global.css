@@ -112,12 +112,12 @@ pre code {
   word-break: normal;
   line-height: 1.7;
   font-weight: 400;
-  margin: 2rem 0;
+  margin: 0.4rem 0 1.5rem 0;
   tab-size: 2;
   hyphens: none;
   border-radius: 8px;
   -webkit-font-smoothing: antialiased;
-  margin: 20px 0;
+  /* margin: 20px 0; */
 }
 
 /* Code blocks */
@@ -304,7 +304,7 @@ a {
   color: var(--black);
   font-family: var(--font-medium);
   font-weight: 500;
-  box-shadow: 0 1px 0 0 currentColor;
+  /* box-shadow: 0 1px 0 0 currentColor; */
 }
 
 a:hover,
@@ -517,6 +517,7 @@ tbody tr:hover {
 .btn-small {
   font-size: 13px;
   padding: 8px 16px;
+  border-radius: 4px;
 }
 
 main {
@@ -557,6 +558,10 @@ main {
   justify-content: space-between;
 }
 
+.align-items-start {
+  align-items: flex-start;
+}
+
 .align-items-center {
   align-items: center;
 }
@@ -577,6 +582,7 @@ main {
   background-color: var(--bg);
   /* transition: color 0.2s ease-out, background-color 0.2s ease-out; */
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .about {
@@ -587,7 +593,8 @@ main {
 .about header,
 .about header h1 a,
 .about header .header-top-right a,
-.about header .header-top-right span {
+.about header .header-top-right span,
+.about header nav a {
   color: white;
 }
 
@@ -657,13 +664,13 @@ article .box-title {
 
 article .link-box {
   background-color: var(--primary-light);
-  padding: 12px 18px 12px 50px;
+  padding: 12px 18px 12px 48px;
   border-radius: 6px;
   color: var(--primary);
   background-image: url(../../static/article_link.svg);
   background-repeat: no-repeat;
   background-size: 24px 24px;
-  background-position: 18px 14px;
+  background-position: 15px 14px;
 }
 
 /* article .link-box */

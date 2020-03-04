@@ -5,7 +5,7 @@ spoiler: A starter HTML Template using Pug, Sass, Webpack, Gulp.
 type: project
 github: https://github.com/DezineLeo/DeStatic
 version: v1.0.1
-thumbnail: ./thumbnail.svg
+thumbnail: ./logo_destatic.svg
 logo: ./logo_destatic.svg
 ---
 

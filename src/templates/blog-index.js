@@ -94,7 +94,6 @@ const ArticleList = styled.main`
       margin-top: 0;
       display: flex;
       align-items: center;
-      // font-family: var(--font-cond-medium);
       img {
         width: 36px;
         min-width: 36px;
@@ -105,6 +104,13 @@ const ArticleList = styled.main`
     p {
       position: relative;
       margin-bottom: 0;
+    }
+  }
+  @media (max-width: 672px) {
+    article {
+      header {
+        flex-direction: row;
+      }
     }
   }
 `
@@ -158,7 +164,7 @@ export default props => {
   // )
 
   const Aside = styled.aside`
-    padding: 48px 0;
+    padding: 36px 0 48px 0;
     .hello {
       z-index: 2;
       max-width: 480px;
@@ -441,49 +447,60 @@ export default props => {
         />
       </SideProjects>
       <MainContent>
-        <StyledSection title="Topics">
+        <StyledSection
+          title="Latest"
+          external={
+            <Link to="/archive">
+              <button className="btn btn-small btn-grey">View All</button>
+            </Link>
+          }
+        >
           <ArticleList>
             {posts
-              .filter(({ node }) => get(node, 'frontmatter.type') === 'topic')
+              .filter(({ node }) => get(node, 'frontmatter.type') !== 'news')
               .map(({ node }, index) => {
-                const title = get(node, 'frontmatter.title') || node.fields.slug
-                const newest =
-                  dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
-                return (
-                  <Link
-                    style={{
-                      boxShadow: 'none',
-                      color: 'var(--black)',
-                      fontFamily: 'var(--font-bold)',
-                    }}
-                    to={node.fields.slug}
-                    rel="bookmark"
-                  >
-                    <article key={node.fields.slug}>
-                      <header>
-                        <h3
-                          style={{
-                            fontSize: '1.36rem',
-                            marginBottom: 0,
-                          }}
-                        >
-                          {node.frontmatter.thumbnail && (
-                            <img
-                              src={node.frontmatter.thumbnail.publicURL}
-                              alt={title}
-                            />
+                if (index < 7) {
+                  const title =
+                    get(node, 'frontmatter.title') || node.fields.slug
+                  const newest =
+                    dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
+                  return (
+                    <Link
+                      style={{
+                        boxShadow: 'none',
+                        color: 'var(--black)',
+                        fontFamily: 'var(--font-bold)',
+                      }}
+                      to={node.fields.slug}
+                      rel="bookmark"
+                    >
+                      <article key={node.fields.slug}>
+                        <header>
+                          <h3
+                            style={{
+                              fontSize: '1.36rem',
+                              marginBottom: 0,
+                              lineHeight: '1.67rem',
+                            }}
+                          >
+                            {node.frontmatter.thumbnail && (
+                              <img
+                                src={node.frontmatter.thumbnail.publicURL}
+                                alt={title}
+                              />
+                            )}
+                            {title}
+                          </h3>
+                          {newest && (
+                            <div className="alert">
+                              <div className="new">New!</div>
+                            </div>
                           )}
-                          {title}
-                        </h3>
-                        {newest && (
-                          <div className="alert">
-                            <div className="new">New!</div>
-                          </div>
-                        )}
-                      </header>
-                    </article>
-                  </Link>
-                )
+                        </header>
+                      </article>
+                    </Link>
+                  )
+                }
               })}
           </ArticleList>
         </StyledSection>

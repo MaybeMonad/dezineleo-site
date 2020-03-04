@@ -1,21 +1,69 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Twitter from '../../static/home/twitter.svg'
+import Dribbble from '../../static/home/dribbble.svg'
+import GitHub from '../../static/home/github.svg'
+
+const Footer = styled.footer`
+  padding: 36px 0;
+  border-top: 1px solid var(--border-grey);
+  .copyright {
+    font-family: var(--font-bold);
+    font-size: 16px;
+  }
+  .find-me {
+    .email {
+      font-family: var(--font-medium);
+      a {
+        color: var(--font-grey);
+        font-family: var(--font-regular);
+        padding: 1rem;
+      }
+    }
+  }
+`
+
 export default () => {
   const Link = styled.a`
     font-family: var(--font-regular);
-    margin-right: 13px;
-    // transition: text-decoration 0.32s ease;
+    margin-left: 14px;
+    img {
+      display: block;
+    }
   `
 
   return (
-    <footer
-      style={{
-        marginTop: '2.625rem',
-        fontSize: 14,
-      }}
-    >
-      <div style={{ float: 'right' }}>
+    <Footer className="d-flex justify-between align-items-center">
+      <div className="copyright">Dezine © 2020</div>
+      <div className="find-me d-flex justify-between align-items-center">
+        <div className="email">
+          Get in touch:{' '}
+          <a href="mailto:dezineleo@gmail.com">dezineleo@gmail.com</a>
+        </div>
+        <Link
+          href="https://mobile.twitter.com/dezineleo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={Twitter} alt="Twitter" />
+        </Link>
+        <Link
+          href="https://dribbble.com/dezineleo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={Dribbble} alt="Dribbble" />
+        </Link>
+        <Link
+          href="https://github.com/dezineleo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={GitHub} alt="GitHub" />
+        </Link>
+      </div>
+      {/* <div style={{ float: 'right' }}>
         <Link
           style={{ marginRight: 0 }}
           href="/rss.xml"
@@ -24,28 +72,7 @@ export default () => {
         >
           rss
         </Link>
-      </div>
-      <Link
-        href="https://mobile.twitter.com/dezineleo"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        twitter
-      </Link>
-      <Link
-        href="https://github.com/dezineleo"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        github
-      </Link>
-      <Link
-        href="https://dribbble.com/dezineleo"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        dribbble
-      </Link>
-    </footer>
+      </div> */}
+    </Footer>
   )
 }

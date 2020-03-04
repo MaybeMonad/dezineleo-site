@@ -266,7 +266,7 @@ const SideProjects = styled.div`
 `
 
 const FindMe = styled.div`
-  padding: 72px 0 calc(72px - 2rem) 0;
+  padding: 72px 0;
   @media (max-width: 672px) {
     padding: 48px 24px;
     .social {

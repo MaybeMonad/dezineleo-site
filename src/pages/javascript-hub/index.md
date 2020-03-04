@@ -7,7 +7,7 @@ github: https://github.com/DezineLeo/javascript-hub
 site: https://javascript-hub.dezineleo.com/
 live: https://javascript-hub.dezineleo.com/
 version: v1.0.0
-thumbnail: ./thumbnail.svg
+thumbnail: ./logo_js_hub.svg
 logo: ./logo_js_hub.svg
 ---
 

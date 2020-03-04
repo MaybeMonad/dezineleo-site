@@ -1,5 +1,5 @@
 ---
-title: Decon
+title: Dezine Icons
 date: '2019-09-06'
 spoiler: Another free icon system for better design experience.
 type: 'project'

@@ -3,6 +3,7 @@ title: 正则表达式在 JavaScript 中的应用
 date: '2018-07-15'
 spoiler: 正则题库，内容更新中...
 type: 'topic'
+thumbnail: ./js.svg
 ---
 
 如若初学者，可参照着[本文](/regular-expression-in-javascript)找些许感觉，若无感可自行谷歌拓展学习，另推荐正则学习网站 - [Regular Expression 101](https://regex101.com/)。
