@@ -312,6 +312,10 @@ a:active {
   box-shadow: none;
 }
 
+article h2 {
+  border-bottom: 1px solid var(--border-grey);
+}
+
 article p {
   font-size: 17px;
 }

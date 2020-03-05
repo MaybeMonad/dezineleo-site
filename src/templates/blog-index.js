@@ -147,6 +147,22 @@ const StyledHand = styled.span`
   }
 `
 
+const resolveFunc = val =>
+  new Promise(
+    (resolve, reject) =>
+      void setTimeout(() => {
+        console.log(val)
+        resolve()
+      }, 5000)
+  )
+
+resolveFunc('Start')
+  .then(() => resolveFunc('Continue'))
+  .then(() => {
+    return void resolveFunc('Oops!')
+  })
+  .then(() => resolveFunc('Done'))
+
 export default props => {
   const {
     pageContext: { langKey },
@@ -442,7 +458,7 @@ export default props => {
           logo={Decon}
           link="/decon"
           title="Decon"
-          des="Design system"
+          des="Icon System"
           version="v1.0"
         />
       </SideProjects>
@@ -473,6 +489,7 @@ export default props => {
                       }}
                       to={node.fields.slug}
                       rel="bookmark"
+                      key={title}
                     >
                       <article key={node.fields.slug}>
                         <header>
@@ -516,6 +533,7 @@ export default props => {
                   title={title}
                   date={date}
                   totalLinks={totalLinks}
+                  key={title}
                 />
               )
             })}

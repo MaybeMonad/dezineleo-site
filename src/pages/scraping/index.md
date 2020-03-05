@@ -3,6 +3,7 @@ title: Scraping
 date: '2019-09-10'
 spoiler: Life is short, automate it.
 type: 'experiment'
+thumbnail: ./js.svg
 ---
 
 ## What is Puppeteer

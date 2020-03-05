@@ -4,7 +4,7 @@ date: '2019-09-18'
 spoiler: Learn a new programming language / technique to build something real world.
 type: project
 github: https://github.com/DezineLeo/programming-challenge
-thumbnail: ./thumbnail.svg
+thumbnail: ./code.svg
 logo: ./logo.png
 ---
 
