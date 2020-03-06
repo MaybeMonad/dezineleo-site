@@ -34,15 +34,15 @@ thumbnail: ./js.svg
     }();
     // Output: "Executed"
    ```
-5. More readable and higher efficiency.
+5. More readable ??
    ```js
     const resolveFunc = val =>
-      Promise((resolve, reject) =>
+      new Promise((resolve, reject) =>
         void setTimeout(() => {
           resolve(() => console.log(val))
         }, 5000))
 
-    return resolveFunc('Start')
+    resolveFunc('Start')
       .then(() => resolveFunc('Continue'))
       .then(() => void resolveFunc('Oops!')) // run async, ignoring result
       .then(() => resolveFunc('Done'));

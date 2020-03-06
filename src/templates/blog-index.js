@@ -147,22 +147,6 @@ const StyledHand = styled.span`
   }
 `
 
-const resolveFunc = val =>
-  new Promise(
-    (resolve, reject) =>
-      void setTimeout(() => {
-        console.log(val)
-        resolve()
-      }, 5000)
-  )
-
-resolveFunc('Start')
-  .then(() => resolveFunc('Continue'))
-  .then(() => {
-    return void resolveFunc('Oops!')
-  })
-  .then(() => resolveFunc('Done'))
-
 export default props => {
   const {
     pageContext: { langKey },
