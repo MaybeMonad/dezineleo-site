@@ -6,21 +6,10 @@ type: 'topic'
 thumbnail: ./js.svg
 ---
 
+```toc
+```
+
 Previously, we’ve talked about **prototype** and **new** in JavaScript, you may noticed we’ve encountered a lot of  `this`. So, today I’ll show you what  `this` is.
-
-Here is a quick preview of the topics.
-
-- [What is “this” ?](#what-is-this)
-- [Global context vs. function context](#global-context-vs-function-context)
-- [Immediately invoked function expression (IIFE)](#immediately-invoked-function-expression-iife)
-- [Strict mode](#strict-mode)
-- [Keyword ’new’](#keyword-new)
-- [Bind vs. Apply vs. Call](#bind-vs-apply-vs-call)
-- [Arrow function](#arrow-function)
-- [setTimeout & setInterval](#settimeout--setinterval)
-- [Classes](#classes)
-- [Conclusion](#conclusion)
-- [Resources](#resources)
 
 ## What is “this” ?
 According to [W3School](https://www.w3schools.com/js/js_this.asp),  `this`  is the “owner” of a function when it  is in function context. Actually, in most cases, the value of `this` is determined by how a function is invoked.

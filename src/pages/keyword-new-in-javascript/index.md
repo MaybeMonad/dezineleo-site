@@ -5,17 +5,10 @@ spoiler: We talk about what does the new keyword do.
 type: 'topic'
 thumbnail: ./js.svg
 ---
+```toc
+```
 
 In the [previous article](https://dezineleo.com/posts/2018/08/prototype-in-javascript), we've used keyword `new` to create new functions when we talked about the **prototype** in JavaScript. Today I gonna show you what's inside of keyword `new`.
-
-Here is a quick preview of the topics.
-
-- [What is the keyword "new" in JavaScript?](#what-is-the-keyword-%22new%22-in-javascript)
-- [What does the "new" do?](#what-does-the-%22new%22-do)
-- [Normal function call vs. new keyword](#normal-function-call-vs-new-keyword)
-- [Beware of references](#beware-of-references)
-- [Conclusion](#conclusion)
-- [Resources](#resources)
 
 ## What is the keyword "new" in JavaScript?
 

@@ -107,6 +107,7 @@ const ArticleList = styled.main`
     }
   }
   @media (max-width: 672px) {
+    overflow: hidden;
     article {
       header {
         flex-direction: row;

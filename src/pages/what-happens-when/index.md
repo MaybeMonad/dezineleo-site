@@ -5,17 +5,10 @@ spoiler: We talk about an age-old interview question.
 type: 'topic'
 thumbnail: ./chrome.svg
 ---
+```toc
+```
 
 This post will mainly focus on the stuff between client and server, if you're interested in the physical layer, please checkout [what happens when](https://github.com/alex/what-happens-when).
-
-Here is a quick preview of the topics.
-- [Parse URL](#parse-url)
-- [DNS lookup](#dns-lookup)
-- [TCP handshake](#tcp-handshake)
-- [HTTP process](#http-process)
-- [Rendering the page](#rendering-the-page)
-- [Conclusion](#conclusion)
-- [Resources](#resources)
 
 ## Parse URL
 

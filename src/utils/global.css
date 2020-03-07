@@ -1,4 +1,7 @@
 /* @import '../fonts/fonts-post.css'; */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   --pink: rgb(255, 167, 196);
@@ -586,7 +589,7 @@ main {
   background-color: var(--bg);
   /* transition: color 0.2s ease-out, background-color 0.2s ease-out; */
   min-height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .about {
@@ -697,6 +700,76 @@ article .link-box p {
 
 .gap-m-32 {
   grid-gap: 32px;
+}
+
+.toc {
+  position: sticky;
+  top: 2rem;
+}
+
+.toc > ul {
+  position: absolute;
+  right: -224px;
+  top: -20px;
+  max-width: 156px;
+  overflow: hidden;
+}
+
+.toc ul {
+  list-style: none;
+  margin: 3px 0 0 0;
+}
+
+.toc ul li {
+  margin-bottom: 6px;
+}
+
+.toc ul li p {
+  padding: 0;
+  margin: 0;
+}
+
+.toc ul a {
+  font-size: 13px;
+  box-shadow: none;
+  color: var(--font-grey);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inherit;
+  font-family: var(--font-regular);
+}
+
+.toc ul a:hover {
+  color: var(--black);
+  background-color: transparent;
+}
+
+.toc > ul:before {
+  content: 'Table of Contents';
+  font-family: var(--font-bold);
+  border-bottom: 1px solid var(--border-grey);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+@media (max-width: 1280px) {
+  .toc {
+    position: relative;
+    top: 0;
+  }
+
+  .toc > ul {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-grey);
+    padding: 20px 28px;
+    border-radius: 6px;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 672px) {

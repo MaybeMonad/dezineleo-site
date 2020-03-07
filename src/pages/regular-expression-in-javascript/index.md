@@ -6,26 +6,19 @@ type: 'topic'
 thumbnail: ./js.svg
 ---
 
-```javascript
+```toc
+exclude: Table of Contents
+from-heading: 2
+to-heading: 6
+```
+
+```js
 // Match Email address
 
 /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/
 ```
 
 Have you ever seen this kind of expression before? When I first saw that, WTF is this cryptic syntax. I was scared and refused to touch it. However, When I finally decided to make the plunge and learn what **RegExp** was all about, I was surprised at how simple the basic concepts were to learn.
-
-Here is a quick preview of the topics.
-- [What are Regular Expressions?](#what-are-regular-expressions)
-- [Write your first RegExp](#write-your-first-regexp)
-- [Challenges](#challenges)
-  - [Challenge 01 - Characters only](#challenge-01---characters-only)
-  - [Challenge 02 - Numbers only](#challenge-02---numbers-only)
-  - [Challenge 03 - Six alphanumeric characters only](#challenge-03---six-alphanumeric-characters-only)
-  - [Challenge 04 - Match phone number](#challenge-04---match-phone-number)
-  - [Challenge 05 - Match Email address & date format](#challenge-05---match-email-address--date-format)
-  - [Challenge 06 - Test root URL & get URL parameters](#challenge-06---test-root-url--get-url-parameters)
-- [Conclusion](#conclusion)
-- [Resources](#resources)
 
 ## What are Regular Expressions?
 **Regular expressions** are patterns used to match character combinations **in strings**. Properly understanding regular expressions will make you a better coder.

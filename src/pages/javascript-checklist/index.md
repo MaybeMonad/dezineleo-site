@@ -5,17 +5,15 @@ spoiler: How much do you know about JavaScript?
 type: 'topic'
 thumbnail: ./js.svg
 ---
-<!-- omit in toc -->
-## Table of Contents
-
-1. [void operator](#void-operator)
-2. [undefined](#undefined)
+```toc
+from-heading: 2
+to-heading: 2
+```
 
 ## void operator
 
 > The [`void` operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void) evaluates the given `expression` and then returns `undefined`.
 
-<!-- omit in toc -->
 ### Use cases
 
 1. `<a href="javascript:void(0)">`
@@ -48,7 +46,6 @@ thumbnail: ./js.svg
       .then(() => resolveFunc('Done'));
    ```
    
-<!-- omit in toc -->
 ### Links
 
 1. [A case for using void in modern JavaScript](https://gist.github.com/slikts/dee3702357765dda3d484d8888d3029e)
@@ -60,7 +57,6 @@ thumbnail: ./js.svg
 
 In JavaScript, `undefined` is one of the **primitive values** while it is **not** a reserved keyword. 
 
-<!-- omit in toc -->
 ### Use cases
 
 1. It is not recommended to reassign values to `undefined`. 
@@ -76,7 +72,6 @@ In JavaScript, `undefined` is one of the **primitive values** while it is **not*
 
 A not-assigned variable is of type `undefined`. A function without a `return` statement, or a function with an empty return statement returns `undefined`.
 
-<!-- omit in toc -->
 ### Links
 
 1. [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)

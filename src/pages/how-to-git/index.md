@@ -5,6 +5,8 @@ spoiler: How to apply Git to your projects.
 type: topic
 thumbnail: ./git.svg
 ---
+```toc
+```
 
 ## What is Git?
 

@@ -5,15 +5,10 @@ spoiler: Yes, we talk about the closures.
 type: 'topic'
 thumbnail: ./js.svg
 ---
+```toc
+```
 
 The **closure** is another fundamental JavaScript concept that you should know inside-out. This post will be dedicated to the nuts and bolts of how and why closures work. Let’s get started!
-
-- [What is a closure ?](#what-is-a-closure)
-- [What is the Execution Context?](#what-is-the-execution-context)
-- [Closures are exposed nested functions](#closures-are-exposed-nested-functions)
-- [Closures in Loops](#closures-in-loops)
-- [Conclusion](#conclusion)
-- [Resources](#resources)
 
 ## What is a closure ?
 > A closure is the combination of a **function** and the **lexical environment** within which that function was declared. 

@@ -5,6 +5,8 @@ spoiler: Every elemnt in web design is a rectangular box.
 type: topic
 thumbnail: ./css_box_model.svg
 ---
+```toc
+```
 
 ## Block Boxes vs Inline Boxes
 <div class="d-grid col-s-1 col-m-2 gap-s-16 gap-m-32">

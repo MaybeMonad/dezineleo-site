@@ -5,23 +5,14 @@ spoiler: Prototype is a fundamental concept that every JavaScript developer must
 type: 'topic'
 thumbnail: ./js.svg
 ---
+```toc
+```
 
 **JavaScript Prototype** is …
 
 Yeah, I know it is not that easy to understand, but as a JavaScript coder, you cannot ignore it. So let’s get this sh*t done together.
 
 Here is a quick preview of the topics.
-
-- [What is JavaScript Prototype?](#what-is-javascript-prototype)
-- [[[Prototype]] & __proto__](#prototype--proto)
-- [Prototype](#prototype)
-- [Prototype Attribute vs Prototype Property](#prototype-attribute-vs-prototype-property)
-- [Constructor Function](#constructor-function)
-- [Prototype Inheritance & Prototype Chain](#prototype-inheritance--prototype-chain)
-- [Prototype vs Class](#prototype-vs-class)
-- [Function.__proto__ === Function.prototype](#functionproto--functionprototype)
-- [Conclusion](#conclusion)
-- [Resources](#resources)
 
 ## What is JavaScript Prototype?
 
