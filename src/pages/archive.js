@@ -46,15 +46,13 @@ const Posts = props => {
     posts: data.filter(d => dayjs(d.date).year() === y),
   }))
 
-  console.log(archive)
-
   return (
     <div className={className}>
       {archive.map(a => (
-        <Archive>
+        <Archive key={a.year}>
           <h2 className="year">{a.year}</h2>
           {a.posts.map(p => (
-            <Link to={p.link}>
+            <Link to={p.link} key={p.title}>
               <div className="post d-flex justify-start align-items-start">
                 <img src={p.thumbnail?.publicURL} alt={p.title} />
                 <div className="post-title">

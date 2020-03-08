@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 // import Img from 'gatsby-image'
@@ -14,6 +14,35 @@ export default props => {
   const siteTitle = get(props, 'data.site.siteMetadata.title')
   let { previous, next, slug, translations } = props.pageContext
   const lang = post.fields.langKey
+
+  useEffect(() => {
+    const selector = ['article h2', 'article h3']
+    const nodes = document.querySelectorAll(selector)
+    const config = {
+      threshold: 0,
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id')
+        const target = document.querySelector(`.toc li a[href="#${id}"]`)
+        if (target) {
+          if (entry.intersectionRatio > 0) {
+            target.classList.add('active')
+          } else {
+            target.classList.remove('active')
+          }
+        }
+      })
+    }, config)
+
+    nodes.forEach(section => {
+      observer.observe(section)
+    })
+
+    // return () => {
+    //   // cleanup
+    // };
+  }, [])
 
   // Replace original links with translated when available.
   let html = post.html
