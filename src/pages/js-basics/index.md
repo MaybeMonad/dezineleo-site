@@ -7,18 +7,11 @@ thumbnail: ./js.svg
 ---
 
 ```toc
-exclude: Table of Contents
-from-heading: 2
-to-heading: 6
 ```
 
 I’ve learned React for a while and found out that if you wanna have a quick start for React, you need have a minimal knowledge about ES6 firstly.
 
 I picked some of the most basic items from ES6 to help you skyrocket right now.
-
-Topics I gonna cover in this article.
-
-<!-- ## Table of Contents -->
 
 ## What is ES6?
 Before we jump in, I’d like to introduce you the [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript).

@@ -5,17 +5,12 @@ spoiler: Block Element Modifier is a methodology that helps you to create reusab
 type: 'topic'
 thumbnail: ./js.svg
 ---
-<!-- omit in toc -->
-## Table of Contents
-
-1. [What is BEM?](#what-is-bem)
-2. [Links](#links)
+```toc
+```
 
 ## What is BEM?
 
 
-
-
-## Links
+## Further Reading
 
 1. [BEM](http://getbem.com/)

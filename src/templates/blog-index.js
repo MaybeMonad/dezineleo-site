@@ -94,6 +94,9 @@ const ArticleList = styled.main`
       margin-top: 0;
       display: flex;
       align-items: center;
+      font-size: 1.36rem;
+      line-height: 1.67rem;
+      margin-bottom: 0;
       img {
         width: 36px;
         min-width: 36px;
@@ -111,6 +114,9 @@ const ArticleList = styled.main`
     article {
       header {
         flex-direction: row;
+        h3 {
+          font-size: 1.2rem;
+        }
       }
     }
   }
@@ -478,13 +484,7 @@ export default props => {
                     >
                       <article key={node.fields.slug}>
                         <header>
-                          <h3
-                            style={{
-                              fontSize: '1.36rem',
-                              marginBottom: 0,
-                              lineHeight: '1.67rem',
-                            }}
-                          >
+                          <h3>
                             {node.frontmatter.thumbnail && (
                               <img
                                 src={node.frontmatter.thumbnail.publicURL}

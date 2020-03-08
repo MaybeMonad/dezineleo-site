@@ -22,6 +22,18 @@ const Footer = styled.footer`
       }
     }
   }
+  @media (max-width: 672px) {
+    flex-direction: column;
+    align-items: flex-start;
+    .find-me {
+      ${'' /* align-items: flex-start; */}
+      .email {
+        a {
+          padding: 0;
+        }
+      }
+    }
+  }
 `
 
 export default () => {

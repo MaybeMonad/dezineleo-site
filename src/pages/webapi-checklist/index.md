@@ -12,66 +12,16 @@ to-heading: 2
 
 ## Intersection Observer API
 
-> The [`void` operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void) evaluates the given `expression` and then returns `undefined`.
+> The [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.
 
 ### Use cases
 
-1. `<a href="javascript:void(0)">`
-2. Using `void 0` to shorten `undefined`
-3. Using `void` to explicate non-value-returning(void) arrow functions and avoid memory leaking.
-   ```js
-   const log = x => void console.log(x);
-
-   // In React useEffect
-   useEffect(() => void setInterval(() => {}, 5000));
-   ```
-4. `void` can be used to force the function keyword to be treated as an expression instead of a declaration.
-   ```js
-    void function iife() {
-      console.log("Executed!");
-    }();
-    // Output: "Executed"
-   ```
-5. More readable ??
-   ```js
-    const resolveFunc = val =>
-      new Promise((resolve, reject) =>
-        void setTimeout(() => {
-          resolve(() => console.log(val))
-        }, 5000))
-
-    resolveFunc('Start')
-      .then(() => resolveFunc('Continue'))
-      .then(() => void resolveFunc('Oops!')) // run async, ignoring result
-      .then(() => resolveFunc('Done'));
-   ```
+1. Lazy-loading of images or other content as a page is scrolled.
+2. Implementing "infinite scrolling" web sites, where more and more content is loaded and rendered as you scroll, so that the user doesn't have to flip through pages.
+3. Reporting of visibility of advertisements in order to calculate ad revenues.
+4. Deciding whether or not to perform tasks or animation processes based on whether or not the user will see the result.
    
-### Links
+### Further reading
 
-1. [A case for using void in modern JavaScript](https://gist.github.com/slikts/dee3702357765dda3d484d8888d3029e)
-2. [void operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void)
-
-## undefined
-
-> [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) is a property of the global object. That is, it is a variable in global scope. The initial value of `undefined` is the primitive value `undefined`.
-
-In JavaScript, `undefined` is one of the **primitive values** while it is **not** a reserved keyword. 
-
-### Use cases
-
-1. It is not recommended to reassign values to `undefined`. 
-
-```js
-(() => {
-  const undefined = true
-  return console.log(undefined, typeof undefined)
-})()
-
-// output -> true, "boolean"
-```
-
-A not-assigned variable is of type `undefined`. A function without a `return` statement, or a function with an empty return statement returns `undefined`.
-
-### Links
-
-1. [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
+1. [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+2. [Now You See Me: How To Defer, Lazy-Load And Act With IntersectionObserver](https://www.smashingmagazine.com/2018/01/deferring-lazy-loading-intersection-observer-api/)
