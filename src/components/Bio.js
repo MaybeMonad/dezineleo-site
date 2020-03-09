@@ -19,14 +19,14 @@ const Bio = styled.div`
     border-radius: 50%;
     display: inline-block;
   }
-  h3,
-  p {
+  h3 {
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.3;
   }
   p {
     font-size: 14px;
-    margin-top: 8px;
+    line-height: 1.4;
+    margin: 8px 0 0 0;
   }
   a {
     &.twitter_me {
@@ -58,6 +58,9 @@ const Bio = styled.div`
   }
   @media (max-width: 672px) {
     flex-direction: column;
+    h3 {
+      margin-top: 12px;
+    }
     .reach_me {
       margin-top: 24px;
     }
@@ -77,7 +80,7 @@ export default () => {
         >
           @dezineleo
         </a>
-        <p style={{ margin: 0 }}>
+        <p>
           Web Developer, Graphic Designer and English Teacher. PM for work
           inquires.
         </p>
