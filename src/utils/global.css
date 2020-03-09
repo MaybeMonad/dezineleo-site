@@ -286,6 +286,7 @@ pre[data-line] {
   /* background-color: var(--black); */
   -webkit-overflow-scrolling: touch;
   overflow: visible;
+  display: flex;
 }
 
 ::selection {
@@ -678,6 +679,7 @@ article .link-box {
   background-repeat: no-repeat;
   background-size: 24px 24px;
   background-position: 15px 14px;
+  margin-bottom: 20px;
 }
 
 /* article .link-box */

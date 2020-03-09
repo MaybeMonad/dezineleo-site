@@ -2,11 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 import profilePic from '../assets/profile-pic.png'
 import styled from 'styled-components'
-// import { rhythm } from '../utils/typography'
 
 const Bio = styled.div`
   display: flex;
-  margin-bottom: 24px;
+  margin: 24px 0;
   background-color: white;
   border-radius: 6px;
   padding: 32px;
@@ -55,6 +54,9 @@ const Bio = styled.div`
         opacity: 1;
       }
     }
+  }
+  .reach-me {
+    padding-left: 24px;
   }
   @media (max-width: 672px) {
     flex-direction: column;

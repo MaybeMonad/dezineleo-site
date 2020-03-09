@@ -10,15 +10,6 @@ This is [Yang Jin](https://mobile.twitter.com/dezineleo)'s personal website, whi
 4. [Dezine Icons](https://dezineleo.com/dezine-icons/) - Another free icon system for better design experience.
 5. [Dezine](https://dezineleo.com/dezine-design-system/) - A less but better design system.
 
-## Playground
-
-1. [Functional Programming](https://dezineleo.com/functional-programming/)
-2. [Augmented Reality](https://dezineleo.com/augmented-reality/)
-3. [Machine Learning](https://dezineleo.com/machine-learning/)
-4. [WebAssembly](https://dezineleo.com/web-assembly/)
-5. [Mobile Application Development](https://dezineleo.com/mobile-application-development/)
-6. [Scraping](https://dezineleo.com/scraping/)
-
 ## Topics
 
 1. [Startup experiment](https://dezineleo.com/startup-experiment/)

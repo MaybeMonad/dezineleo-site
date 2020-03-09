@@ -6,6 +6,8 @@ type: topic
 thumbnail: ./css_box_model.svg
 ---
 ```toc
+from-heading: 2
+to-heading: 2
 ```
 
 ## Block Boxes vs Inline Boxes
