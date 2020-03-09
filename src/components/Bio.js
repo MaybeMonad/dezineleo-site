@@ -1,49 +1,112 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import profilePic from '../assets/profile-pic.png'
+import styled from 'styled-components'
 // import { rhythm } from '../utils/typography'
 
-class Bio extends React.Component {
-  render() {
-    return (
-      <div
-        style={{
-          display: 'flex',
-          marginBottom: 24,
-          background: 'white',
-          // background: '#d8ece8',
-          borderRadius: '5px',
-          padding: '32px 42px',
-          border: 'var(--border)',
-          // boxShadow: 'var(--box-shadow)',
-        }}
-      >
-        <img
-          src={profilePic}
-          alt={`Yang Jin`}
-          style={{
-            marginRight: 24,
-            marginBottom: 0,
-            width: 56,
-            minWidth: 56,
-            height: 56,
-            borderRadius: '50%',
-            display: 'inline-block',
-          }}
-        />
-        <div>
-          <p style={{ margin: 0 }}>
-            Personal site by <Link to="/about">Yang Jin</Link>. I am enthusing
-            about learning and creating.
-          </p>
-          <Link to="/about" style={{ marginRight: 20 }}>
-            #resume
-          </Link>
-          <Link to="/what-i-use">#what-i-use</Link>
-        </div>
-      </div>
-    )
+const Bio = styled.div`
+  display: flex;
+  margin-bottom: 24px;
+  background-color: white;
+  border-radius: 6px;
+  padding: 32px;
+  border: var(--border);
+  .avatar {
+    margin: 0 24px 0 0;
+    width: 72px;
+    min-width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: inline-block;
   }
-}
+  h3,
+  p {
+    margin: 0;
+    line-height: 1.4;
+  }
+  p {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  a {
+    &.twitter_me {
+      color: var(--font-grey);
+      display: block;
+      font-size: 13px;
+    }
+  }
+  ul {
+    padding: 0;
+    list-style: none;
+    margin: 12px 0 0 0;
+    li {
+      display: inline-block;
+      margin: 0 12px 0 0;
+      background-color: var(--bg-grey);
+      opacity: 0.6;
+      border-radius: 4px;
+      padding: 0 12px;
+      transition: opacity 0.3s ease;
+      a {
+        font-family: var(--font-regular);
+        font-size: 12px;
+      }
+      :hover {
+        opacity: 1;
+      }
+    }
+  }
+  @media (max-width: 672px) {
+    flex-direction: column;
+    .reach_me {
+      margin-top: 24px;
+    }
+  }
+`
 
-export default Bio
+export default () => {
+  return (
+    <Bio>
+      <img className="avatar" src={profilePic} alt={`Yang Jin`} />
+      <div className="info">
+        <h3>Yang Jin</h3>
+        <a
+          className="twitter_me"
+          href="https://twitter.com/dezineleo"
+          target="_blank"
+        >
+          @dezineleo
+        </a>
+        <p style={{ margin: 0 }}>
+          Web Developer, Graphic Designer and English Teacher. PM for work
+          inquires.
+        </p>
+        <ul>
+          <li>
+            <Link to="/about">#resume</Link>
+          </li>
+          <li>
+            <Link to="/what-i-use">#what-i-use</Link>
+          </li>
+        </ul>
+      </div>
+      <div className="d-flex justify-start align-items-start reach_me">
+        <a
+          className="message_me"
+          style={{ marginRight: 12 }}
+          href="https://twitter.com/dezineleo"
+          target="_blank"
+        >
+          <button className="btn btn-small btn-grey">Message</button>
+        </a>
+        <a
+          className="follow_me"
+          href="https://twitter.com/dezineleo"
+          target="_blank"
+        >
+          <button className="btn btn-small btn-primary">Follow</button>
+        </a>
+      </div>
+    </Bio>
+  )
+}

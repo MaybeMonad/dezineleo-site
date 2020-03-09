@@ -204,7 +204,7 @@ export default props => {
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </article>
       </main>
-      <aside style={{ margin: '24px auto 0 auto', maxWidth: '46rem' }}>
+      <aside style={{ margin: '56px auto 0 auto', maxWidth: '46rem' }}>
         <Bio />
       </aside>
     </Layout>
