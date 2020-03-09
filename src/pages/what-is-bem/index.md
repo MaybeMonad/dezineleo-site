@@ -27,7 +27,30 @@ BEM stands for <span class="hl-1">Block</span>, <span class="hl-2">Element</span
 + **Element** - No standalone meaning but semantically tied to its block like `menu item`.
 + **Modifier** - A flag on a block or element to change appearance or behavior like `disabled`.
 
+Now you can connect them with naming rules as `.block__element--modifier-value`.
+
+## Examples
+
+```html
+<form class="form form--theme-xmas form--simple">
+  <input class="form__input" type="text" />
+  <input
+    class="form__submit form__submit--disabled"
+    type="submit" />
+</form>
+```
+
+```css
+.form { }
+.form--theme-xmas { }
+.form--simple { }
+.form__input { }
+.form__submit { }
+.form__submit--disabled { }
+```
+
 
 ## Further Reading
 
 1. [BEM](http://getbem.com/)
+2. [BEM](https://en.bem.info/)
