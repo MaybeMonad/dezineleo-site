@@ -5,11 +5,15 @@ spoiler: A Chinese version of Elm docs.
 type: project
 github: https://github.com/DezineLeo/elm-lang-docs-zh
 site: https://elm.dezineleo.com/
+cover: ./cover.png
 thumbnail: ./logo_break_elm.svg
 logo: ./logo_break_elm.svg
+version: '1.0'
+updateDate: 2020-03-10
+price: 'Free'
+compatibility: ['VuePress', 'Elm 0.19+']
+tags: ['Elm', 'Chinese']
 ---
-
-<!-- ![Break Elm](./featured.png) -->
 
 ## Elm 中文指南
 

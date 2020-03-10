@@ -1,14 +1,18 @@
 ---
 title: JavaScript Hub
-date: 2019-07-12
+date: '2019-07-09'
 spoiler: A sweet and free JavaScript learning application for JavaScript lovers.
 type: project
 github: https://github.com/DezineLeo/javascript-hub
-site: https://javascript-hub.dezineleo.com/
-live: https://javascript-hub.dezineleo.com/
-version: v1.0.0
+site: https://javascript-hub.dezineleo.com
+cover: ./cover.png
 thumbnail: ./logo_js_hub.svg
 logo: ./logo_js_hub.svg
+version: '1.0'
+updateDate: '2020-03-10'
+price: 'Free'
+compatibility: ['Svelte 3', 'Sapper', 'Prism']
+tags: ['Freebie', 'JavaScript']
 ---
 
 As a self-taught web developer, I can always deliver coding stuff, even if I don't know the essence. Yes, Google it or StackOverflow it when I'm trapped. However, I could have made better stuff if I mastered more coding skills. So I've tried to dive deep into the JavaScript through courses and still in progress. I build **JavaScript Hub** to not only help JS newbies but also try to build a mind map for myself.
@@ -50,6 +54,3 @@ The main idea is to establish a **true-or-false** selection panel with statistic
 1. [JavaScript Hub](https://javascript-hub.dezineleo.com)
 2. [Prism](https://prismjs.com/)
 3. [Svelte](https://svelte.dev/)
-
-
-

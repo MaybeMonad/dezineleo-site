@@ -55,7 +55,7 @@ const Bio = styled.div`
       }
     }
   }
-  .reach-me {
+  .reach_me {
     padding-left: 24px;
   }
   @media (max-width: 672px) {

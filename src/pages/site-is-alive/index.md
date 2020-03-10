@@ -5,6 +5,7 @@ spoiler: Leo's personal site project.
 type: 'project'
 thumbnail: ./launch.svg
 logo: ./launch.svg
+updateDate: '2020-03-09'
 ---
 
 ```toc

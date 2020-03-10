@@ -185,7 +185,12 @@ export default props => {
                     fontWeight: 'normal',
                   }}
                 >
-                  {formatPostDate(post.frontmatter.date, lang)}
+                  {`Pulished: ${formatPostDate(post.frontmatter.date, lang)}`}
+                  {post.frontmatter.updateDate &&
+                    ` / Updated: ${formatPostDate(
+                      post.frontmatter.updateDate,
+                      lang
+                    )}`}
                   {` / ${formatReadingTime(post.timeToRead)}`}
                 </p>
               </div>
@@ -228,6 +233,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        updateDate(formatString: "MMMM DD, YYYY")
         spoiler
         type
         github

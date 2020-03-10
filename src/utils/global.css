@@ -30,10 +30,9 @@ body {
   --font-cond-medium: 'futura_cond_medium';
   --font-cond-bold: 'futura_cond_bold';
   --brand: #003cff;
-  /* --primary: #5183f5; */
-  --primary: #1b95e0;
+  --primary: rgb(0, 153, 255);
   --primary-light: #eff8ff;
-  --primary-hover: #0078c9;
+  --primary-hover: rgb(0, 142, 237);
   --secondary: #fd18fe;
   /* --secondary-hover: rgba(29, 161, 242, 0.2); */
   --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
@@ -292,9 +291,6 @@ pre[data-line] {
 ::selection {
   color: white;
   background: var(--primary);
-  /* background: rgba(255,235,20,.7); */
-  /* background: var(--inlineCode-bg);
-  color: var(--black); */
 }
 
 strong {
@@ -492,6 +488,7 @@ tbody tr:hover {
   box-shadow: none;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 
 .btn:hover {
@@ -501,6 +498,11 @@ tbody tr:hover {
 
 .btn-grey {
   background-color: var(--bg-grey);
+  color: var(--black);
+}
+
+.btn-grey:hover {
+  background-color: #e1e1e1;
   color: var(--black);
 }
 
@@ -526,6 +528,10 @@ tbody tr:hover {
   font-size: 13px;
   padding: 8px 16px;
   border-radius: 4px;
+}
+
+.btn-large {
+  padding: 14px 16px;
 }
 
 main {

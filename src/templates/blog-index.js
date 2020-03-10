@@ -426,14 +426,14 @@ export default props => {
       <SideProjects>
         <StyledSideProject
           logo={BreakElm}
-          link="/break-elm"
+          link="/projects/break-elm"
           title="Break Elm"
           des="Elm doc for Chinese"
           version=""
         />
         <StyledSideProject
           logo={JSHub}
-          link="/javascript-hub"
+          link="/projects/javascript-hub"
           title="JS Hub"
           des="Learn JavaScript"
           version="v1.0.0"
