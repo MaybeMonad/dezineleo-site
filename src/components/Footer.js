@@ -36,7 +36,8 @@ const Footer = styled.footer`
   }
 `
 
-export default () => {
+export default props => {
+  const { style } = props
   const Link = styled.a`
     font-family: var(--font-regular);
     margin-left: 14px;
@@ -46,7 +47,7 @@ export default () => {
   `
 
   return (
-    <Footer className="d-flex justify-between align-items-center">
+    <Footer style={style} className="d-flex justify-between align-items-center">
       <div className="copyright">Dezine © 2020</div>
       <div className="find-me d-flex justify-between align-items-center">
         <div className="email">

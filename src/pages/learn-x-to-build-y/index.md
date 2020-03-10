@@ -5,7 +5,7 @@ spoiler: Learn a new programming language / technique to build something real wo
 type: project
 github: https://github.com/DezineLeo/programming-challenge
 thumbnail: ./code.svg
-logo: ./logo.png
+logo: ./code.svg
 ---
 
 ![What I cannot create, I do not understand.](./feynman.png)

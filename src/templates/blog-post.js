@@ -7,6 +7,7 @@ import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import styled from 'styled-components'
+import Footer from '../components/Footer'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
 
 export default props => {
@@ -207,6 +208,7 @@ export default props => {
       <aside style={{ margin: '56px auto 48px auto', maxWidth: '46rem' }}>
         <Bio />
       </aside>
+      <Footer style={{ margin: '0 auto', maxWidth: '46rem' }} />
     </Layout>
   )
 }

@@ -6,10 +6,18 @@ import dayjs from 'dayjs'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-// import Footer from '../components/Footer'
+import Footer from '../components/Footer'
 
 const Archive = styled.div`
   border-bottom: 1px solid var(--border-grey);
+  &:last-child {
+    border: 0;
+  }
+  sup {
+    font-family: var(--font-light);
+    font-size: 14px;
+    margin-left: 2px;
+  }
   .post {
     margin-bottom: 32px;
     img {
@@ -50,7 +58,10 @@ const Posts = props => {
     <div className={className}>
       {archive.map(a => (
         <Archive key={a.year}>
-          <h2 className="year">{a.year}</h2>
+          <h2 className="year">
+            {a.year}
+            <sup>{a.posts.length}</sup>
+          </h2>
           {a.posts.map(p => (
             <Link to={p.link} key={p.title}>
               <div className="post d-flex justify-start align-items-start">
@@ -99,7 +110,7 @@ export default props => {
           }
         })}
       />
-      {/* <Footer /> */}
+      <Footer style={{ maxWidth: '48rem', margin: '0 auto' }} />
     </Layout>
   )
 }
