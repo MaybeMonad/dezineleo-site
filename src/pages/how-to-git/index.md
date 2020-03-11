@@ -32,7 +32,7 @@ You can download Git here: [https://git-scm.com/downloads](https://git-scm.com/d
 
 After installing it, open your terminal and type the following command to check if the Git is ready to go.
 
-```terminal
+```bash
 git --version
 ```
 
@@ -40,7 +40,7 @@ git --version
 
 First of all, you need to set up your name and email address as follows:
 
-```terminal
+```bash
 git config --global user.name "Your Name"
 git config --global user.email name@example.com
 ```
@@ -49,7 +49,7 @@ git config --global user.email name@example.com
 
 Here is what the magic happens.
 
-```terminal
+```bash
 # Initializing a repository
 git init
 
@@ -74,7 +74,7 @@ git checkout master
 
 ### 4. Branch it
 
-```terminal
+```bash
 # Create a new branch
 git branch <new-branch-name>
 
@@ -90,14 +90,14 @@ git checkout master
 
 ### 5. Merge it
 
-```terminal
+```bash
 # Merge changes from a different branch into current branch
 git merge <branch-name>
 ```
 
 ### 6. Remote it
 
-```terminal
+```bash
 # Add a remote repository
 git remote add origin <repo-url>
 
@@ -110,7 +110,7 @@ git push origin master
 
 ### 7. Other commands
 
-```terminal
+```bash
 # List branches
 git branch
 

@@ -36,7 +36,7 @@ var site;
 site = "Dezineleo";
 ```
 
-```javascript
+```javascript{5}
 // ES6
 
 // Uncaught TypeError: Assignment to constant variable.

@@ -65,6 +65,7 @@ const Bio = styled.div`
     }
     .reach_me {
       margin-top: 24px;
+      padding-left: 0px;
     }
   }
 `

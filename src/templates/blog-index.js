@@ -308,6 +308,23 @@ export default props => {
       line-height: 16px;
       font-family: var(--font-regular);
     }
+    @media (max-width: 376px) {
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: var(--primary-light);
+      border-radius: 8px;
+      padding: 20px;
+      img {
+        max-width: 36px;
+        margin-bottom: 12px;
+      }
+      h2 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
   `
 
   const SideProjects = styled.div`
@@ -319,10 +336,6 @@ export default props => {
       display: grid;
       grid-template-columns: calc(50% - 12px) calc(50% - 12px);
       grid-gap: 24px;
-    }
-    @media (max-width: 376px) {
-      display: grid;
-      grid-template-columns: 100%;
     }
   `
 
