@@ -1,7 +1,7 @@
 ---
 title: JavaScript Checklist
 date: 2020-03-04
-updateDate: 2020-03-04
+updateDate: 2020-03-11
 spoiler: How much do you know about JavaScript?
 type: 'topic'
 thumbnail: ./js.svg
@@ -16,7 +16,7 @@ to-heading: 2
 
 > The [`void` operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void) evaluates the given `expression` and then returns `undefined`.
 
-### Use cases
+### Usage
 
 1. `<a href="javascript:void(0)">`
 2. Using `void 0` to shorten `undefined`
@@ -48,7 +48,7 @@ to-heading: 2
       .then(() => resolveFunc('Done'));
    ```
    
-### Links
+### Further Reading
 
 1. [A case for using void in modern JavaScript](https://gist.github.com/slikts/dee3702357765dda3d484d8888d3029e)
 2. [void operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void)
@@ -59,7 +59,7 @@ to-heading: 2
 
 In JavaScript, `undefined` is one of the **primitive values** while it is **not** a reserved keyword. 
 
-### Use cases
+### Usage
 
 1. It is not recommended to reassign values to `undefined`. 
 
@@ -74,6 +74,26 @@ In JavaScript, `undefined` is one of the **primitive values** while it is **not*
 
 A not-assigned variable is of type `undefined`. A function without a `return` statement, or a function with an empty return statement returns `undefined`.
 
-### Links
+### Further Reading
 
 1. [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
+
+## Set
+
+> The [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) object lets you store unique values of any type, whether primitive values or object references.
+
+All `NaN` values in Set are equated (Even though **NaN !== NaN**).
+
+### Usage
+
+```js{5, 7}
+let newSet = new Set()
+
+newSet.add(1) // Set(1) {1}
+newSet.add(5) // Set(2) {1, 5}
+newSet.add(5) // Set(2) {1, 5}
+newSet.add({a: 1, b: 2}) // Set(3) {1, 5, {…}}
+newSet.add({a: 1, b: 2}) // Set(4) {1, 5, {…}, {…}}
+
+newSet.has(1) // true
+```
