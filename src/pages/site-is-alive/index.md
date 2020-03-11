@@ -49,7 +49,7 @@ Here is a quick guide to set up your local dev environment (For MAC).
 
 Open your terminal and type in.
 
-```terminal
+```bash
 # Install gatsby-cli
 npm install --global gatsby-cli
 

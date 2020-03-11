@@ -1,9 +1,11 @@
 ---
 title: JavaScript Checklist
-date: '2020-03-04'
+date: 2020-03-04
+updateDate: 2020-03-04
 spoiler: How much do you know about JavaScript?
 type: 'topic'
 thumbnail: ./js.svg
+status: In Progress
 ---
 ```toc
 from-heading: 2

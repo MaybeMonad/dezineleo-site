@@ -201,9 +201,12 @@ pre[class*='language-'] ::selection {
   background: rgba(0, 0, 0, 0.06);
 }
 
+.token {
+  font-weight: 700;
+}
+
 .token.attr-name {
   color: #f40088;
-  font-weight: 700;
   font-style: italic;
 }
 
@@ -214,7 +217,6 @@ pre[class*='language-'] ::selection {
 .token.string,
 .token.url {
   color: #008eed;
-  font-weight: 700;
 }
 
 .token.variable {
@@ -223,7 +225,6 @@ pre[class*='language-'] ::selection {
 
 .token.number {
   color: #ff7f59;
-  font-weight: 700;
 }
 
 .token.builtin,
@@ -231,6 +232,10 @@ pre[class*='language-'] ::selection {
 .token.constant,
 .token.function {
   color: #f40088;
+}
+
+.token.tag .token.punctuation {
+  color: var(--primary);
   font-weight: 700;
 }
 
@@ -241,35 +246,30 @@ pre[class*='language-'] ::selection {
 
 .token.punctuation {
   color: #333;
-  /* font-weight: 700; */
+  font-weight: 300;
 }
 
 .token.selector,
 .token.doctype {
   color: #f40088;
-  font-weight: 700;
 }
 
 .token.class-name {
   color: #a500fc;
-  font-weight: 700;
 }
 
 .token.tag,
 .token.operator,
 .token.keyword {
   color: var(--primary);
-  font-weight: 700;
 }
 
 .token.boolean {
   color: rgb(255, 88, 116);
-  font-weight: 700;
 }
 
 .token.property {
   color: var(--primary);
-  font-weight: 700;
 }
 
 .token.namespace {
@@ -285,9 +285,9 @@ pre[data-line] {
   background-color: #e7f0f5;
   display: block;
   margin-right: -1.3125rem;
-  margin-left: -1.3125rem;
-  padding-right: 1em;
-  padding-left: 0.75em;
+  margin-left: -1.3rem;
+  padding-right: 1.3em;
+  padding-left: 1.2em;
   border-left: 0.25em solid var(--primary);
 }
 
@@ -325,8 +325,13 @@ a:active {
   box-shadow: none;
 }
 
+article h1 {
+  font-size: 2.4rem;
+}
+
 article h2 {
   border-bottom: 1px solid var(--border-grey);
+  margin-top: 2rem;
 }
 
 article p {
@@ -699,6 +704,12 @@ article .link-box {
   background-size: 24px 24px;
   background-position: 15px 14px;
   margin-bottom: 20px;
+}
+
+article .info {
+  background-color: #fff5d9;
+  border-radius: 6px;
+  padding: 12px 20px;
 }
 
 /* article .link-box */

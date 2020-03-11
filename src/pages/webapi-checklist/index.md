@@ -1,9 +1,11 @@
 ---
 title: Web API Checklist
-date: '2020-03-07'
+date: 2020-03-07
+updateDate: 2020-03-07
 spoiler: How much do you know about Web API?
 type: 'topic'
 thumbnail: ./js.svg
+status: In Progress
 ---
 ```toc
 from-heading: 2

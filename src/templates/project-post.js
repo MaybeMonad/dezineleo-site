@@ -59,10 +59,10 @@ export default props => {
     max-width: 120%;
     border-radius: 12px;
     margin: 24px 0 32px -10%;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
-      0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
-      0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-      0 100px 80px rgba(0, 0, 0, 0.07);
+    // box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    //   0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+    //   0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    //   0 100px 80px rgba(0, 0, 0, 0.07);
   `
 
   const Project = styled.main`
@@ -93,6 +93,17 @@ export default props => {
         font-size: 13px;
       }
       ul {
+        &.compatible_ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li {
+            &::before {
+              margin-right: 0.3rem;
+              content: '✅';
+            }
+          }
+        }
         li {
           font-size: 13px;
         }
@@ -206,7 +217,7 @@ export default props => {
             </a>
           )}
           <h3>Compatible With</h3>
-          <ul>
+          <ul className="compatible_ul">
             {post.frontmatter.compatibility.map(c => (
               <li key={c}>{c}</li>
             ))}

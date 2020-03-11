@@ -1,9 +1,11 @@
 ---
 title: ReactJS Checklist
-date: '2020-03-05'
+date: 2020-03-05
+updateDate: 2020-03-05
 spoiler: How much do you know about React.js?
 type: 'topic'
 thumbnail: ./reactjs.svg
+status: In Progress
 ---
 ```toc
 from-heading: 2

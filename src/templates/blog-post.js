@@ -84,27 +84,6 @@ export default props => {
     font-size: 14px;
   `
 
-  const ProjectHeader = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: calc(100% - 40px);
-    padding: 15px 20px;
-    margin: 12px 0 32px 0;
-    ${'' /* background-color: var(--primary-light); */}
-    background-color: #fff5d9;
-    border-radius: 8px;
-    ${'' /* color: var(--primary); */}
-    @media (max-width: 672px) {
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      .left {
-        margin-bottom: 12px;
-      }
-    }
-  `
-
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO
@@ -129,72 +108,30 @@ export default props => {
               alignItems: 'center',
             }}
           >
-            {post.frontmatter.type === 'project' ? (
-              <div style={{ width: '100%' }}>
-                <ProjectHeader>
-                  <div className="d-flex justify-start align-items-center left">
-                    <img
-                      style={{ maxWidth: 36, marginRight: 10 }}
-                      src={post.frontmatter.logo?.publicURL}
-                      alt={post.frontmatter.title}
-                    />
-                    <h3 style={{ margin: 0 }}>{post.frontmatter.title}</h3>
-                  </div>
-                  <div>
-                    {post.frontmatter.site && (
-                      <a
-                        href={post.frontmatter.site}
-                        target="_blank"
-                        style={{ marginRight: 10 }}
-                      >
-                        <button className="btn btn-small">View</button>
-                      </a>
-                    )}
-                    {post.frontmatter.github && (
-                      <a href={post.frontmatter.github} target="_blank">
-                        <button className="btn btn-small">GitHub</button>
-                      </a>
-                    )}
-                  </div>
-                </ProjectHeader>
-                <div>
-                  <h1
-                    style={{
-                      color: 'var(--textTitle)',
-                      marginBottom: '0.42rem',
-                    }}
-                  >
-                    {post.frontmatter.title}
-                  </h1>
-                  <p>{post.frontmatter.spoiler}</p>
-                </div>
-              </div>
-            ) : (
-              <div>
-                <h1
-                  style={{ color: 'var(--textTitle)', marginBottom: '0.42rem' }}
-                >
-                  {post.frontmatter.title}
-                </h1>
-                <p
-                  style={{
-                    display: 'block',
-                    marginTop: '0.3rem',
-                    fontSize: 14,
-                    color: 'rgba(0,0,0,.6)',
-                    fontWeight: 'normal',
-                  }}
-                >
-                  {`Pulished: ${formatPostDate(post.frontmatter.date, lang)}`}
-                  {post.frontmatter.updateDate &&
-                    ` / Updated: ${formatPostDate(
-                      post.frontmatter.updateDate,
-                      lang
-                    )}`}
-                  {` / ${formatReadingTime(post.timeToRead)}`}
-                </p>
-              </div>
-            )}
+            <div>
+              <h1
+                style={{ color: 'var(--textTitle)', marginBottom: '0.42rem' }}
+              >
+                {post.frontmatter.title}
+              </h1>
+              <p
+                style={{
+                  display: 'block',
+                  marginTop: '0.3rem',
+                  fontSize: 14,
+                  color: 'rgba(0,0,0,.6)',
+                  fontWeight: 'normal',
+                }}
+              >
+                {`Pulished: ${formatPostDate(post.frontmatter.date, lang)}`}
+                {post.frontmatter.updateDate &&
+                  ` / Updated: ${formatPostDate(
+                    post.frontmatter.updateDate,
+                    lang
+                  )}`}
+                {` / ${formatReadingTime(post.timeToRead)}`}
+              </p>
+            </div>
             {translations.length > 0 && (
               <StyledLang>
                 Change Lang:
@@ -207,6 +144,12 @@ export default props => {
               </StyledLang>
             )}
           </header>
+          {post.frontmatter.status === 'In Progress' && (
+            <div className="info">
+              🚧 <b>This post is in progress</b> – Last updated{' '}
+              {post.frontmatter.updateDate}.
+            </div>
+          )}
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </article>
       </main>
@@ -238,6 +181,7 @@ export const pageQuery = graphql`
         type
         github
         site
+        status
         thumbnail {
           publicURL
           name

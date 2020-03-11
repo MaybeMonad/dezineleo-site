@@ -1,11 +1,69 @@
 ---
 title: CSS Checklist
 date: 2020-02-25
+updateDate: 2020-03-11
 spoiler: CSS is undersung.
 type: topic
 thumbnail: ./css.svg
+status: In Progress
 ---
-<style>
+```toc
+from-heading: 2
+to-heading: 2
+```
+
+## linear-gradient()
+
+> The [linear-gradient()](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient) CSS function creates an image consisting of a progressive transition between two or more colors along a straight line. Its result is an object of the `<gradient>` data type, which is a special kind of `<image>`.
+
+### Syntax
+
+```markup
+linear-gradient() = linear-gradient(
+  [ <angle> | to <side-or-corner> ]? ,
+  <color-stop-list>
+)
+<side-or-corner> = [left | right] || [top | bottom]
+```
+
+### Usage
+
+```css
+.gradient-1 {
+  background-image:
+    linear-gradient(
+      to top right, 
+      red, #f06d06
+    );
+}
+
+.gradient-2 {
+  background-image:
+    linear-gradient(
+      to right, 
+      #fffdc2,
+      #fffdc2 15%,
+      #d7f0a2 15%,
+      #d7f0a2 85%,
+      #fffdc2 85%
+    );
+}
+```
+
+<div class="link-box">
+
+CSS Linear Gradient: [https://css-tricks.com/snippets/css/css-linear-gradient/](https://css-tricks.com/snippets/css/css-linear-gradient/)
+
+</div>
+<div class="link-box">
+
+linear-gradient(): [https://tympanus.net/codrops/css_reference/linear-gradient/](https://tympanus.net/codrops/css_reference/linear-gradient/)
+
+</div>
+
+
+
+<!-- <style>
   .list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -399,8 +457,8 @@ thumbnail: ./css.svg
 ### @supports
 
 </div>
-</div>
+</div> -->
 
-## Links
-- [CSS Reference](https://tympanus.net/codrops/css_reference/)
+<!-- ## Further Reading
+- [CSS Reference](https://tympanus.net/codrops/css_reference/) -->
 
