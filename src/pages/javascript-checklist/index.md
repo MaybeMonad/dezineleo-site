@@ -1,7 +1,7 @@
 ---
 title: JavaScript Checklist
 date: 2020-03-04
-updateDate: 2020-03-12
+updateDate: 2020-03-13
 spoiler: How much do you know about JavaScript?
 type: 'topic'
 thumbnail: ./js.svg
@@ -221,3 +221,164 @@ Related JS challenge: [Find all occurrences of NaN in an array](/javascript-chal
 
 > The [`Number.isNaN()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN) method determines whether the passed value is `NaN` and its type is `Number`. It is a more robust version of the original, global `isNaN()`.
 
+## forEach()
+
+> The [`forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) method executes a provided function once for each array element.
+
+### Usage
+
+1. Using `thisArg`
+  ```js
+    function Counter() {
+      this.sum = 0
+      this.count = 0
+    }
+    Counter.prototype.add = function(array) {
+      array.forEach((entry) => {
+        this.sum += entry
+        ++this.count
+      }, this)
+      // ^---- Note : If passing the callback function uses an arrow function expression, the thisArg parameter can be omitted, since all arrow functions lexically bind the this value.
+    }
+
+    const obj = new Counter()
+    obj.add([2, 5, 9])
+    obj.count
+    // 3 
+    obj.sum
+    // 16
+  ```
+
+2. Copying an object
+  ```js
+    function copy(obj) {
+      const copy = Object.create(Object.getPrototypeOf(obj))
+      const propNames = Object.getOwnPropertyNames(obj)
+
+      propNames.forEach((name) => {
+        const desc = Object.getOwnPropertyDescriptor(obj, name)
+        Object.defineProperty(copy, name, desc)
+      })
+
+      return copy
+    }
+
+    const obj1 = { a: 1, b: 2 }
+    const obj2 = copy(obj1) // obj2 looks like obj1 now
+  ```
+
+3. Modifying the array during iteration
+  ```js{10}
+    let words = ['one', 'two', 'three', 'four']
+    words.forEach((word) => {
+      console.log(word)
+      if (word === 'two') {
+        words.shift()
+      }
+    })
+    // one
+    // two
+    // four
+  ```
+
+4. Flatten an array
+  ```js
+    function flatten(arr) {
+      const result = []
+
+      arr.forEach((i) => {
+        if (Array.isArray(i)) {
+          result.push(...flatten(i))
+        } else {
+          result.push(i)
+        }
+      })
+      
+      return result
+    }
+
+    // Usage
+    const nested = [1, 2, 3, [4, 5, [6, 7], 8, 9]]
+
+    flatten(nested) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  ```
+
+  ## reduce()
+
+  > The [`reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+
+  ```js
+  // syntax
+  arr.reduce(callback(accumulator, currentValue, currentIndex, sourceArray) {...}, initialValue)
+  ```
+
+  + If `initialValue` is not provided, `reduce()` will execute the callback function starting at index `1`, skipping the first index. If `initialValue` is provided, it will start at index `0`.
+  + If the array is empty and no `initialValue` is provided, [`TypeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError) will be thrown.
+
+  ```js
+  let maxCallback = ( acc, cur ) => Math.max( acc.x, cur.x );
+  let maxCallback2 = ( max, cur ) => Math.max( max, cur );
+
+  // reduce without initialValue
+  [ { x: 2 }, { x: 22 }, { x: 42 } ].reduce( maxCallback ); // NaN
+  [ { x: 2 }, { x: 22 }            ].reduce( maxCallback ); // 22
+  [ { x: 2 }                       ].reduce( maxCallback ); // { x: 2 }
+  [                                ].reduce( maxCallback ); // TypeError
+
+  // map & reduce with initialValue; better solution, also works for empty or larger arrays
+  [ { x: 22 }, { x: 42 } ].map( el => el.x )
+                          .reduce( maxCallback2, -Infinity );
+  ```
+
+  Flatten an array of arrays.
+
+  ```js
+  let flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+    ( accumulator, currentValue ) => accumulator.concat(currentValue),
+    []
+  )
+  ```
+
+  <div class="link-box">
+
+  Related JS challenge: [Flattern an array of arrays](/javascript-challenge/#flattern-an-array-of-arrays)
+
+  </div>
+
+  ## includes()
+
+  ### Array.prototype.includes()
+
+  > The [`includes()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes) method determines whether an array includes a certain value among its entries, returning `true` or `false` as appropriate.
+
+  ```js
+  [1, 2, 3].includes(2)      // true
+  [1, 2, 3].includes(4)      // false
+  [1, 2, 3].includes(3, 3)   // false
+  [1, 2, 3].includes(3, -1)  // true
+  [1, 2, NaN].includes(NaN)  // true
+  ```
+
+  If `fromIndex` is negative, the computed index is calculated to be used as a position in the array at which to begin searching for `valueToFind`. If the computed index is less or equal than <span class="hl-4">-1 * arr.length</span>, the entire array will be searched.
+
+  ```js
+  // array length is 3
+  // fromIndex is -100
+  // computed index is 3 + (-100) = -97
+
+  let arr = ['a', 'b', 'c']
+
+  arr.includes('a', -100) // true
+  arr.includes('b', -100) // true
+  arr.includes('c', -100) // true
+  arr.includes('a', -2)   // false
+  ```
+
+  `includes()` method is intentionally generic. It does not require `this` value to be an Array object, so it can be applied to other kinds of objects (e.g. array-like objects).
+
+  ```js
+  (function() {
+    console.log([].includes.call(arguments, 'a'))  // true
+    console.log([].includes.call(arguments, 'd'))  // false
+  })('a','b','c') 
+  ```

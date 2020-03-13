@@ -12,8 +12,6 @@ thumbnail: ./js.svg
 
 Yeah, I know it is not that easy to understand, but as a JavaScript coder, you cannot ignore it. So let’s get this sh*t done together.
 
-Here is a quick preview of the topics.
-
 ## What is JavaScript Prototype?
 
 Before talking about JavaScript Prototype, you ought to understand **JavaScript Object** firstly.
