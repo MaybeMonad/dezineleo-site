@@ -16,6 +16,7 @@ import BreakElm from '../../static/home/logo_break_elm.svg'
 import Decon from '../../static/home/logo_decon.svg'
 // import HYG from '../../static/home/hyg.png'
 import Intro from '../../static/home/intro.png'
+import Top from '../../static/home/top@2x.png'
 // import IconLink from '../../static/icon_link.svg'
 import IconCode from '../../static/icon_code.svg'
 import NewsArrow from '../../static/news_arrow.svg'
@@ -434,7 +435,7 @@ export default props => {
             </Link>
           </Links>
         </div>
-        <img className="intro" src={Intro} alt="About Yang Jin" />
+        <img className="intro" src={Top} alt="About Yang Jin" />
       </Aside>
       <SideProjects>
         <StyledSideProject
