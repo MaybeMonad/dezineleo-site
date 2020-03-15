@@ -9,6 +9,9 @@ import SEO from '../components/SEO'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
+import dayjs from 'dayjs'
+
+import Alarm from '../../static/icon_alarm.svg'
 
 export default props => {
   const post = props.data.markdownRemark
@@ -84,6 +87,39 @@ export default props => {
     font-size: 14px;
   `
 
+  const Deadline = styled.div`
+    background-color: var(--bg-grey);
+    position: relative;
+    display: inline-block;
+    padding: 6px 14px 6px 12px;
+    border-radius: 4px;
+    overflow: hidden;
+    color: var(--font-grey);
+    .deadline {
+      color: var(--black);
+      margin-left: 4px;
+    }
+    .progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #e1e1e1;
+      display: inline-block;
+      height: 100%;
+    }
+    p {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      img {
+        margin: -3px 6px 0 0;
+      }
+    }
+  `
+
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO
@@ -94,6 +130,14 @@ export default props => {
       />
       <main>
         <article>
+          {post.frontmatter.thumbnail &&
+            post.frontmatter.type === 'challenge' && (
+              <img
+                src={post.frontmatter.cover.publicURL}
+                alt=""
+                style={{ width: '100%' }}
+              />
+            )}
           {post.frontmatter.thumbnail && post.frontmatter.type === 'topic' && (
             <img
               src={post.frontmatter.thumbnail.publicURL}
@@ -150,6 +194,26 @@ export default props => {
               {post.frontmatter.updateDate}.
             </div>
           )}
+          {post.frontmatter.deadline && (
+            <Deadline>
+              <span
+                className="progress"
+                style={{
+                  width: `${(dayjs().diff(dayjs(post.frontmatter.date), 'day') *
+                    100) /
+                    dayjs(post.frontmatter.deadline).diff(
+                      dayjs(post.frontmatter.date),
+                      'day'
+                    )}%`,
+                }}
+              ></span>
+              <p>
+                <img src={Alarm} alt="" />
+                Deadline:{' '}
+                <span className="deadline">{post.frontmatter.deadline}</span>
+              </p>
+            </Deadline>
+          )}
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </article>
       </main>
@@ -182,6 +246,11 @@ export const pageQuery = graphql`
         github
         site
         status
+        deadline(formatString: "MMMM DD, YYYY")
+        cover {
+          publicURL
+          name
+        }
         thumbnail {
           publicURL
           name
