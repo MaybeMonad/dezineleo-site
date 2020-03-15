@@ -184,7 +184,6 @@ export default props => {
         border-radius: 3px;
         font-size: 12px;
         line-height: 12px;
-        // font-family: var(--font-medium);
         display: inline-block;
         margin-bottom: 20px;
       }
@@ -193,7 +192,8 @@ export default props => {
         margin: 0 0 20px 0;
       }
       h1 {
-        font-size: 32px;
+        font-size: 42px;
+        margin: 0 0 8px 0;
       }
     }
     img.intro {
@@ -216,7 +216,7 @@ export default props => {
       img.intro {
         max-width: 100%;
         margin-right: 0px;
-        margin-left: -30px;
+        margin-left: -20px;
       }
     }
   `
@@ -417,7 +417,7 @@ export default props => {
           <div className="notification">
             <span style={{ fontSize: 16 }}>🎯</span> Hunting for new job!
           </div>
-          <h1 style={{ margin: '0 0 8px 0' }}>
+          <h1>
             <span style={{ fontFamily: 'var(--font-medium)' }}>Hi, I'm</span>{' '}
             Yang Jin <StyledHand>👋</StyledHand>
           </h1>
