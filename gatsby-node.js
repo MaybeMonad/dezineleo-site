@@ -18,6 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve('./src/templates/blog-post.js')
     const projectPost = path.resolve('./src/templates/project-post.js')
+    const challengePost = path.resolve('./src/templates/challenge-post.js')
 
     // Create index pages for all supported languages
     Object.keys(supportedLanguages).forEach(langKey => {
@@ -128,6 +129,27 @@ exports.createPages = ({ graphql, actions }) => {
             createPage({
               path: post.node.fields.slug,
               component: projectPost,
+              context: {
+                slug: post.node.fields.slug,
+                translations,
+                translatedLinks: [],
+              },
+            })
+          })
+
+          const challenges = posts.filter(
+            ({ node }) => node.fields.slug.split('/')[1] === 'challenges'
+          )
+
+          _.each(challenges, post => {
+            const translations =
+              translationsByDirectory[
+                _.get(post, 'node.fields.directoryName')
+              ] || []
+
+            createPage({
+              path: post.node.fields.slug,
+              component: challengePost,
               context: {
                 slug: post.node.fields.slug,
                 translations,

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 // import Img from 'gatsby-image'
@@ -9,41 +9,15 @@ import SEO from '../components/SEO'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
 import { formatPostDate, formatReadingTime } from '../utils/helpers'
+import dayjs from 'dayjs'
+
+import Alarm from '../../static/icon_alarm.svg'
 
 export default props => {
   const post = props.data.markdownRemark
   const siteTitle = get(props, 'data.site.siteMetadata.title')
   let { previous, next, slug, translations } = props.pageContext
   const lang = post.fields.langKey
-
-  useEffect(() => {
-    const selector = ['article h2', 'article h3']
-    const nodes = document.querySelectorAll(selector)
-    const config = {
-      threshold: 0,
-    }
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const id = entry.target.getAttribute('id')
-        const target = document.querySelector(`.toc li a[href="#${id}"]`)
-        if (target) {
-          if (entry.intersectionRatio > 0) {
-            target.classList.add('active')
-          } else {
-            target.classList.remove('active')
-          }
-        }
-      })
-    }, config)
-
-    nodes.forEach(section => {
-      observer.observe(section)
-    })
-
-    // return () => {
-    //   // cleanup
-    // };
-  }, [])
 
   // Replace original links with translated when available.
   let html = post.html
@@ -84,6 +58,39 @@ export default props => {
     font-size: 14px;
   `
 
+  const Deadline = styled.div`
+    background-color: var(--bg-grey);
+    position: relative;
+    display: inline-block;
+    padding: 6px 14px 6px 12px;
+    border-radius: 4px;
+    overflow: hidden;
+    color: var(--font-grey);
+    .deadline {
+      color: var(--black);
+      margin-left: 4px;
+    }
+    .progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #e1e1e1;
+      display: inline-block;
+      height: 100%;
+    }
+    p {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      img {
+        margin: -3px 6px 0 0;
+      }
+    }
+  `
+
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO
@@ -94,11 +101,11 @@ export default props => {
       />
       <main>
         <article>
-          {post.frontmatter.thumbnail && post.frontmatter.type === 'topic' && (
+          {post.frontmatter.cover && (
             <img
-              src={post.frontmatter.thumbnail.publicURL}
+              src={post.frontmatter.cover.publicURL}
               alt=""
-              style={{ width: 72 }}
+              style={{ width: '100%' }}
             />
           )}
           <header
@@ -150,6 +157,24 @@ export default props => {
               {post.frontmatter.updateDate}.
             </div>
           )}
+          <Deadline>
+            <span
+              className="progress"
+              style={{
+                width: `${(dayjs().diff(dayjs(post.frontmatter.date), 'day') *
+                  100) /
+                  dayjs(post.frontmatter.deadline).diff(
+                    dayjs(post.frontmatter.date),
+                    'day'
+                  )}%`,
+              }}
+            ></span>
+            <p>
+              <img src={Alarm} alt="" />
+              Deadline:{' '}
+              <span className="deadline">{post.frontmatter.deadline}</span>
+            </p>
+          </Deadline>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </article>
       </main>
@@ -162,7 +187,7 @@ export default props => {
 }
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query ChallengePostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -180,15 +205,12 @@ export const pageQuery = graphql`
         spoiler
         type
         status
+        deadline(formatString: "MMMM DD, YYYY")
         cover {
           publicURL
           name
         }
         thumbnail {
-          publicURL
-          name
-        }
-        logo {
           publicURL
           name
         }
