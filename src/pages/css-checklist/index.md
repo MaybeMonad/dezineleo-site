@@ -1,7 +1,7 @@
 ---
 title: CSS Checklist
 date: 2020-02-25
-updateDate: 2020-03-11
+updateDate: 2020-03-31
 spoiler: CSS is undersung.
 type: topic
 thumbnail: ./css.svg
@@ -61,7 +61,18 @@ linear-gradient(): [https://tympanus.net/codrops/css_reference/linear-gradient/]
 
 </div>
 
+## CSS Specificity
 
+CSS Specificity is the "rule" for browsers to determine which style is applied to an elment.
+
+**Specificity Hierarchy**: <span class="hl-1">Inline styles</span> > <span class="hl-2">IDs</span> > <span class="hl-3">Classes, attributes and pseudo-classes</span> > <span class="hl-4">Elements and pseudo-elements</span>
+
+```css
+/* A little test - So who wins? */
+div#a {background-color: green;}
+#a {background-color: yellow;}
+div[id=a] {background-color: blue;}
+```
 
 <!-- <style>
   .list {
