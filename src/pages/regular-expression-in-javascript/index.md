@@ -1,6 +1,7 @@
 ---
-title: new RegExp(/^[a-zA-Z]+$/, 'g')
-date: '2018-07-15'
+title: Regular Expression Guide
+date: 2018-07-15
+updateDate: 2020-04-02
 spoiler: We talk about regular expression in JavaScript.
 type: 'topic'
 thumbnail: ./js.svg
@@ -144,14 +145,13 @@ phoneNum2.match(reg); // output is null
 phoneNum3.match(reg); // output is ["15656781234"]
 ```
 
-Now the challenge is upgraded, please use RegExp to output the last 8 numbers in a phone number and replace them with ********.
+Now the challenge is upgraded, please use RegExp to output the last 8 numbers in a phone number and replace them with \*\*\*\*\*\*\*\*.
 
 ```javascript
 const phoneNum = '18855556666';
 // remove flag "g" to get the last 8 numbers
 const reg = new RegExp(/^1(3|5|7|8){1}\d{1}(\d{8})$/);
-// output is "88889999"
-const lastEightNum = phoneNum.match(reg)[2];
+const lastEightNum = phoneNum.match(reg)[2]; // output is "55556666"
 
 phoneNum.replace(lastEightNum, '********');
 ```
