@@ -486,7 +486,7 @@ export default props => {
             </p>
           </TitleWithDes>
           <FeaturedProjects>
-            <Link to="/javascript-hub">
+            <Link to="/projects/javascript-hub">
               <div className="project-card javascript-hub">
                 <img src={JSHubLogo} alt="JavaScript Hub" />
                 <h2>
@@ -495,7 +495,7 @@ export default props => {
                 <p>v1.0.0</p>
               </div>
             </Link>
-            <Link to="/break-elm">
+            <Link to="/projects/break-elm">
               <div className="project-card break-elm">
                 <h2>Break Elm</h2>
                 <p>Based on official docs, I’ve created 3 real world demos.</p>
