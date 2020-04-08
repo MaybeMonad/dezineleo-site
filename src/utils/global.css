@@ -309,7 +309,7 @@ pre[data-line] {
 
 strong {
   font-family: var(--font-medium);
-  font-weight: 400;
+  /* font-weight: 400; */
 }
 
 a {
@@ -367,7 +367,7 @@ ol {
 }
 
 li {
-  margin-bottom: calc(1.75rem / 2);
+  margin-bottom: calc(1.75rem / 4);
 }
 
 hr {

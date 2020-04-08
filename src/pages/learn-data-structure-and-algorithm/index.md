@@ -1,11 +1,13 @@
 ---
-title: Learn Data Structure and Algorithm
+title: 数据结构与算法之痛
 date: 2020-04-07
-updateData: 2020-04-07
-spoiler: I've no idea about them as a web developer for the past couple years.
+updateDate: 2020-04-08
+spoiler: I have no idea about them in the past couple years.
 type: topic
 thumbnail: ./code.svg
 logo: ./code.svg
+status: In Progress
+tags: ['Data Structure', 'Algorithm']
 ---
 
 ```toc
@@ -17,15 +19,18 @@ to-heading: 3
 
 这次的学习我准备了几份学习资料，它们分别是：
 
-1. 拉勾教育出品的《300分钟搞定数据结构与算法》
-2. CoderPro from TechSeries
-3. [JavaScript Algorithms and Data Structures](https://github.com/trekhleb/javascript-algorithms)
-4. [LeetCode Solutions](https://github.com/azl397985856/leetcode)
-5. [labuladong的算法小抄](https://labuladong.gitbook.io/algo/)
+1. [《300分钟搞定数据结构与算法》](https://kaiwu.lagou.com/course/courseInfo.htm?courseId=3#/content) - 拉勾教育活动 1 元购得
+2. [数据结构与算法之美](https://time.geekbang.org/column/intro/100017301) - 极客时间 ￥69
+3. [CoderPro](https://www.techseries.dev/coderpro) from TechSeries - $57 购得，本来只是支持 YouTuber，现在正好拿来学习。
+4. [JavaScript Algorithms and Data Structures](https://github.com/trekhleb/javascript-algorithms)
+5. [LeetCode Solutions](https://github.com/azl397985856/leetcode)
+6. [labuladong的算法小抄](https://labuladong.gitbook.io/algo/)
 
-![](./tech_interview.png)
+<!-- ![](./tech_interview.png) -->
 
-## 常用数据结构
+## 复杂度分析
+
+**大 O 复杂度表示法** - 用于表示代码执行时间随数据规模增长的**趋势**，也称**渐进时间复杂度**（Asymptotic Time Complexity），简称**时间复杂度**。
 
 
 

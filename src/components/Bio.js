@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import profilePic from '../assets/profile-pic.png'
+import profilePic from '../assets/avatar_medium.png'
 import styled from 'styled-components'
 
 const Bio = styled.div`
