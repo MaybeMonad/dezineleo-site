@@ -2,67 +2,56 @@ import React, { useState } from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import styled from 'styled-components'
-// import moment from 'moment'
 import dayjs from 'dayjs'
+const relativeTime = require('dayjs/plugin/relativeTime')
+dayjs.extend(relativeTime)
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
-// import { formatPostDate, formatReadingTime } from '../utils/helpers'
-// import FullWidthWrapper from '../components/FullWidthWrapper'
 import JSHub from '../../static/home/logo_js_hub.svg'
 import DeStatic from '../../static/home/logo_destatic.svg'
 import BreakElm from '../../static/home/logo_break_elm.svg'
 import Decon from '../../static/home/logo_decon.svg'
-// import HYG from '../../static/home/hyg.png'
-// import Intro from '../../static/home/intro.png'
 import Top from '../../static/home/top.jpg'
-// import IconLink from '../../static/icon_link.svg'
-import IconCode from '../../static/icon_code.svg'
-import NewsArrow from '../../static/news_arrow.svg'
+// import IconCode from '../../static/icon_code.svg'
 
-const Section = props => {
-  const { className, children, title, external, style } = props
-
-  return (
-    <div className={className} style={style}>
-      <div className="heading">
-        <h3 className="d-flex justify-between align-items-center">
-          <img src={IconCode} alt="" />
-          {title}
-        </h3>
-        {external}
-      </div>
-      {children}
-    </div>
-  )
-}
-
-const StyledSection = styled(Section)`
-  margin: 24px 0 24px 0;
-  .heading {
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 24px 0 16px 0;
-    width: 100%;
-    padding: 0 0 8px 0;
-    h3 {
+const ArticleList = styled.main`
+  margin: 0 0 24px 0;
+  &.notebook {
+    display: grid;
+    grid-template-columns: calc(33.33% - 21px) calc(33.33% - 21px) calc(
+        33.33% - 21px
+      );
+    grid-gap: 32px;
+    article {
+      border: 1px solid var(--border-grey);
       margin: 0;
-      img {
-        margin-right: 8px;
+      header {
+        flex-direction: column;
+        img {
+          margin: 0 0 8px 0;
+          width: 48px;
+          min-width: 48px;
+        }
+        h3 {
+          margin: 0;
+          line-height: 1.4;
+        }
+      }
+      p {
+        &.date {
+          color: var(--font-grey);
+          font-size: 12px;
+        }
       }
     }
   }
-`
-
-const ArticleList = styled.main`
-  margin: 0;
   article {
-    padding: 18px 24px 28px 24px;
+    padding: 18px 24px;
     transition: background-color 0.3s ease;
     border-radius: 8px;
-    margin: 0 -24px;
+    margin: 0 -24px 12px -24px;
     position: relative;
     z-index: 1;
     ::before {
@@ -111,16 +100,27 @@ const ArticleList = styled.main`
           font-family: var(--font-regular);
           margin: 0;
         }
+        .badge,
         .wip {
-          background-color: var(--bg-grey);
-          font-size: 12px;
-          color: var(--font-grey);
           border-radius: 3px;
           padding: 3px 8px;
+          font-size: 12px;
+          margin-top: 8px;
           display: inline-block;
+        }
+        .badge {
+          color: var(--primary);
+          text-transform: uppercase;
+          margin-right: 12px;
+          &.Featured {
+            background-color: rgb(0, 153, 255, 0.12);
+          }
+        }
+        .wip {
+          background-color: var(--bg-grey);
+          color: var(--font-grey);
           font-weight: 300;
           font-family: var(--font-regular);
-          margin-top: 8px;
           strong {
             font-family: var(--font-medium);
             font-weight: 500;
@@ -187,12 +187,6 @@ export default props => {
   const posts = get(props, 'data.allMarkdownRemark.edges').filter(
     ({ node }) => node.fields.langKey === langKey
   )
-  // const projects = get(props, 'data.allMarkdownRemark.edges').filter(
-  //   ({ node }) => get(node, 'frontmatter.type') === 'project'
-  // )
-  // const experiments = get(props, 'data.allMarkdownRemark.edges').filter(
-  //   ({ node }) => get(node, 'frontmatter.type') === 'experiment'
-  // )
 
   const Aside = styled.aside`
     padding: 36px 0 48px 0;
@@ -363,69 +357,11 @@ export default props => {
     }
   `
 
-  // const News = props => {
-  //   const { className, style, img, title, link, date, totalLinks } = props
-  //   return (
-  //     <Link to={link} className={className} style={style}>
-  //       <div className="news_header">
-  //         <h3>
-  //           Issue <span>{title}</span>
-  //         </h3>
-  //         <img src={NewsArrow} alt="" />
-  //       </div>
-  //       <img src={img} alt={title} />
-  //       <div className="news_footer">
-  //         <span className="news_date">{dayjs(date).format('MMM D, YYYY')}</span>
-  //         <span className="links">{totalLinks} Links</span>
-  //       </div>
-  //     </Link>
-  //   )
-  // }
-
-  // const StyledNews = styled(News)`
-  //   border-radius: 12px;
-  //   padding: 5px 12px 10px 12px;
-  //   background-color: var(--black);
-  //   color: white;
-  //   display: block;
-  //   .news_header {
-  //     display: flex;
-  //     justify-content: space-between;
-  //     align-items: center;
-  //     h3 {
-  //       font-size: 16px;
-  //       margin: 0 0 5px 0;
-  //       span {
-  //         color: #ffe293;
-  //       }
-  //     }
-  //     img {
-  //       width: 10px;
-  //       margin: 0 0 5px 0;
-  //     }
-  //   }
-  //   img {
-  //     max-width: 100%;
-  //     width: 100%;
-  //   }
-  //   .news_footer {
-  //     span {
-  //       font-size: 12px;
-  //       line-height: 16px;
-  //       margin: 0 10px 0 0;
-  //       font-family: var(--font-medium);
-  //       border-radius: 4px;
-  //       color: var(--font-grey);
-  //       background-color: #4a4a4a;
-  //       padding: 3px 6px;
-  //     }
-  //   }
-  // `
-
   const MainContent = styled.div`
     display: grid;
     grid-template-columns: calc(75% - 56px) 25%;
     grid-gap: 56px;
+    margin: 0 0 24px 0;
     @media (max-width: 672px) {
       grid-template-columns: 100%;
       grid-gap: 0;
@@ -444,6 +380,7 @@ export default props => {
               const title = get(node, 'frontmatter.title') || node.fields.slug
               const spoiler = get(node, 'frontmatter.spoiler') || ''
               const status = get(node, 'frontmatter.status') || ''
+              const badge = get(node, 'frontmatter.badge') || ''
               const newest =
                 dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
               return (
@@ -460,11 +397,14 @@ export default props => {
                         <div className="article-info">
                           <h3>{title}</h3>
                           {spoiler && <p className="spoiler">{spoiler}</p>}
+                          {badge && (
+                            <span className={`badge ${badge}`}>{badge}</span>
+                          )}
                           {status === 'In Progress' && (
-                            <div className="wip">
+                            <span className="wip">
                               <strong>WIP</strong> - Updated on{' '}
                               {node.frontmatter.updateDate}
-                            </div>
+                            </span>
                           )}
                         </div>
                       </div>
@@ -482,7 +422,7 @@ export default props => {
       </ArticleList>
     ),
     Notes: (
-      <ArticleList>
+      <ArticleList className="notebook">
         {posts
           .filter(({ node }) => get(node, 'frontmatter.type') === 'note')
           .map(({ node }, index) => {
@@ -491,33 +431,23 @@ export default props => {
               const newest =
                 dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
               return (
-                <Link
-                  style={{
-                    boxShadow: 'none',
-                    color: 'var(--black)',
-                    fontFamily: 'var(--font-bold)',
-                  }}
-                  to={node.fields.slug}
-                  rel="bookmark"
-                  key={title}
-                >
+                <Link to={node.fields.slug} rel="bookmark" key={title}>
                   <article key={node.fields.slug}>
                     <header>
-                      <h3>
-                        {node.frontmatter.thumbnail && (
-                          <img
-                            src={node.frontmatter.thumbnail.publicURL}
-                            alt={title}
-                          />
-                        )}
-                        {title}
-                      </h3>
-                      {newest && (
+                      {node.frontmatter.thumbnail && (
+                        <img
+                          src={node.frontmatter.thumbnail.publicURL}
+                          alt={title}
+                        />
+                      )}
+                      <h3>{title}</h3>
+                      {/* {newest && (
                         <div className="alert">
                           <div className="new">New!</div>
                         </div>
-                      )}
+                      )} */}
                     </header>
+                    <p className="date">{node.frontmatter.date}</p>
                   </article>
                 </Link>
               )
@@ -535,16 +465,7 @@ export default props => {
               const newest =
                 dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
               return (
-                <Link
-                  style={{
-                    boxShadow: 'none',
-                    color: 'var(--black)',
-                    fontFamily: 'var(--font-bold)',
-                  }}
-                  to={node.fields.slug}
-                  rel="bookmark"
-                  key={title}
-                >
+                <Link to={node.fields.slug} rel="bookmark" key={title}>
                   <article key={node.fields.slug}>
                     <header>
                       <h3>
@@ -597,11 +518,95 @@ export default props => {
 
   const Activities = styled.div`
     h3 {
-      margin: 0;
+      margin: 0 0 24px 0;
       font-size: 16px;
       text-transform: uppercase;
     }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        display: flex;
+        a {
+          color: var(--primary);
+        }
+        &:first-child {
+          .activity-dot {
+            &:before {
+              box-shadow: 0 0 0 4px rgb(0, 153, 255, 0.12);
+            }
+          }
+        }
+        .activity-dot {
+          position: relative;
+          border-color: var(--bg-grey);
+          padding: 0 0.5rem;
+          &:before,
+          &:after {
+            content: '';
+            position: absolute;
+            border-color: inherit;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          &:before {
+            border-color: var(--primary);
+            z-index: 1;
+          }
+          &:after {
+            width: 0;
+            height: auto;
+            top: 32px;
+            bottom: -16px;
+            border-right-width: 0;
+            border-top-width: 0;
+            border-bottom-width: 0;
+            border-radius: 0;
+            z-index: 0;
+          }
+        }
+        .activity-body {
+          padding: 0 0 0.25rem 1rem;
+          p {
+            margin: 10px 0 0 0;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: var(--font-medium);
+            line-height: 1.5;
+          }
+          .date {
+            font-size: 12px;
+            color: var(--font-grey);
+            font-family: var(--font-regular);
+          }
+        }
+      }
+    }
   `
+
+  const activities = [
+    {
+      content:
+        'New version of this site is released, checkout the <a href="https://github.com/DezineLeo/dezineleo-site" target="_blank">Source</a>.',
+      date: '2020-04-08',
+    },
+    {
+      content:
+        'Become a Dribbble player. Visit my <a href="https://dribbble.com/dezineleo" target="_blank">Dribbble Page</a>.',
+      date: '2018-08-01',
+    },
+    {
+      content: 'Site is alive!',
+      date: '2018-07-01',
+    },
+  ]
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -678,24 +683,18 @@ export default props => {
         </TabSection>
         <Activities>
           <h3>Activities</h3>
+          <ul>
+            {activities.map(a => (
+              <li key={a.content}>
+                <div className="activity-dot"></div>
+                <div className="activity-body">
+                  <p dangerouslySetInnerHTML={{ __html: a.content }} />
+                  <p className="date">{dayjs(a.date).from(dayjs())}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </Activities>
-        {/* <StyledSection title="News">
-          {posts
-            .filter(({ node }) => get(node, 'frontmatter.type') === 'news')
-            .map(({ node }, index) => {
-              const { title, thumbnail, date, totalLinks } = node.frontmatter
-              return (
-                <StyledNews
-                  link={node.fields.slug}
-                  img={thumbnail.publicURL}
-                  title={title}
-                  date={date}
-                  totalLinks={totalLinks}
-                  key={title}
-                />
-              )
-            })}
-        </StyledSection> */}
       </MainContent>
       <Footer />
     </Layout>
@@ -724,6 +723,7 @@ export const pageQuery = graphql`
             status
             title
             spoiler
+            badge
             type
             github
             version

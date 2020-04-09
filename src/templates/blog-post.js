@@ -88,17 +88,18 @@ export default props => {
   const PostHeader = styled.header`
     .tags {
       text-transform: uppercase;
-      color: var(--font-grey);
+      color: var(--primary);
       list-style: none;
       padding: 0;
       margin: 0;
       font-size: 12px;
       li {
         display: inline-block;
-        background-color: var(--bg-grey);
+        background-color: rgb(0, 153, 255, 0.12);
         border-radius: 4px;
         padding: 4px 10px;
         margin-right: 12px;
+        font-family: var(--font-medium);
       }
     }
     h1 {

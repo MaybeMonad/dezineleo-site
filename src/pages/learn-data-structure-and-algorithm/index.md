@@ -1,5 +1,5 @@
 ---
-title: 数据结构与算法之痛
+title: Data Structure and Algorithm
 date: 2020-04-07
 updateDate: 2020-04-08
 spoiler: I have no idea about them in the past couple years.
