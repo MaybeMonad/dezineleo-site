@@ -567,7 +567,7 @@ main {
 }
 
 .alert {
-  align-self: center;
+  /* align-self: center; */
   justify-self: flex-end;
   margin-left: 1rem;
 }

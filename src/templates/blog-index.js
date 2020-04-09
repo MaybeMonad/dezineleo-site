@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import styled from 'styled-components'
@@ -15,8 +15,8 @@ import DeStatic from '../../static/home/logo_destatic.svg'
 import BreakElm from '../../static/home/logo_break_elm.svg'
 import Decon from '../../static/home/logo_decon.svg'
 // import HYG from '../../static/home/hyg.png'
-import Intro from '../../static/home/intro.png'
-import Top from '../../static/home/top@2x.png'
+// import Intro from '../../static/home/intro.png'
+import Top from '../../static/home/top.jpg'
 // import IconLink from '../../static/icon_link.svg'
 import IconCode from '../../static/icon_code.svg'
 import NewsArrow from '../../static/news_arrow.svg'
@@ -59,7 +59,7 @@ const StyledSection = styled(Section)`
 const ArticleList = styled.main`
   margin: 0;
   article {
-    padding: 18px 24px;
+    padding: 18px 24px 28px 24px;
     transition: background-color 0.3s ease;
     border-radius: 8px;
     margin: 0 -24px;
@@ -87,22 +87,45 @@ const ArticleList = styled.main`
     header {
       position: relative;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-    }
-    h3 {
-      position: relative;
-      margin-top: 0;
-      display: flex;
-      align-items: center;
-      font-size: 1.36rem;
-      line-height: 1.67rem;
-      margin-bottom: 0;
       img {
-        width: 36px;
-        min-width: 36px;
-        height: 36px;
-        margin-right: 12px;
+        margin-right: 30px;
+        width: 60px;
+        min-width: 60px;
+        height: 60px;
+      }
+      .article-info {
+        h3 {
+          position: relative;
+          margin-top: 0;
+          display: flex;
+          align-items: center;
+          font-size: 1.36rem;
+          line-height: 1.67rem;
+          margin-bottom: 0;
+        }
+        .spoiler {
+          font-size: 16px;
+          font-weight: 300;
+          font-family: var(--font-regular);
+          margin: 0;
+        }
+        .wip {
+          background-color: var(--bg-grey);
+          font-size: 12px;
+          color: var(--font-grey);
+          border-radius: 3px;
+          padding: 3px 8px;
+          display: inline-block;
+          font-weight: 300;
+          font-family: var(--font-regular);
+          margin-top: 8px;
+          strong {
+            font-family: var(--font-medium);
+            font-weight: 500;
+          }
+        }
       }
     }
     p {
@@ -197,7 +220,7 @@ export default props => {
       }
     }
     img.intro {
-      max-width: 480px;
+      max-width: 360px;
       margin-right: -20px;
       padding-top: 30px;
     }
@@ -332,7 +355,7 @@ export default props => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0 48px 0;
+    padding: 20px 0 72px 0;
     @media (max-width: 672px) {
       display: grid;
       grid-template-columns: calc(50% - 12px) calc(50% - 12px);
@@ -340,64 +363,64 @@ export default props => {
     }
   `
 
-  const News = props => {
-    const { className, style, img, title, link, date, totalLinks } = props
-    return (
-      <Link to={link} className={className} style={style}>
-        <div className="news_header">
-          <h3>
-            Issue <span>{title}</span>
-          </h3>
-          <img src={NewsArrow} alt="" />
-        </div>
-        <img src={img} alt={title} />
-        <div className="news_footer">
-          <span className="news_date">{dayjs(date).format('MMM D, YYYY')}</span>
-          <span className="links">{totalLinks} Links</span>
-        </div>
-      </Link>
-    )
-  }
+  // const News = props => {
+  //   const { className, style, img, title, link, date, totalLinks } = props
+  //   return (
+  //     <Link to={link} className={className} style={style}>
+  //       <div className="news_header">
+  //         <h3>
+  //           Issue <span>{title}</span>
+  //         </h3>
+  //         <img src={NewsArrow} alt="" />
+  //       </div>
+  //       <img src={img} alt={title} />
+  //       <div className="news_footer">
+  //         <span className="news_date">{dayjs(date).format('MMM D, YYYY')}</span>
+  //         <span className="links">{totalLinks} Links</span>
+  //       </div>
+  //     </Link>
+  //   )
+  // }
 
-  const StyledNews = styled(News)`
-    border-radius: 12px;
-    padding: 5px 12px 10px 12px;
-    background-color: var(--black);
-    color: white;
-    display: block;
-    .news_header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      h3 {
-        font-size: 16px;
-        margin: 0 0 5px 0;
-        span {
-          color: #ffe293;
-        }
-      }
-      img {
-        width: 10px;
-        margin: 0 0 5px 0;
-      }
-    }
-    img {
-      max-width: 100%;
-      width: 100%;
-    }
-    .news_footer {
-      span {
-        font-size: 12px;
-        line-height: 16px;
-        margin: 0 10px 0 0;
-        font-family: var(--font-medium);
-        border-radius: 4px;
-        color: var(--font-grey);
-        background-color: #4a4a4a;
-        padding: 3px 6px;
-      }
-    }
-  `
+  // const StyledNews = styled(News)`
+  //   border-radius: 12px;
+  //   padding: 5px 12px 10px 12px;
+  //   background-color: var(--black);
+  //   color: white;
+  //   display: block;
+  //   .news_header {
+  //     display: flex;
+  //     justify-content: space-between;
+  //     align-items: center;
+  //     h3 {
+  //       font-size: 16px;
+  //       margin: 0 0 5px 0;
+  //       span {
+  //         color: #ffe293;
+  //       }
+  //     }
+  //     img {
+  //       width: 10px;
+  //       margin: 0 0 5px 0;
+  //     }
+  //   }
+  //   img {
+  //     max-width: 100%;
+  //     width: 100%;
+  //   }
+  //   .news_footer {
+  //     span {
+  //       font-size: 12px;
+  //       line-height: 16px;
+  //       margin: 0 10px 0 0;
+  //       font-family: var(--font-medium);
+  //       border-radius: 4px;
+  //       color: var(--font-grey);
+  //       background-color: #4a4a4a;
+  //       padding: 3px 6px;
+  //     }
+  //   }
+  // `
 
   const MainContent = styled.div`
     display: grid;
@@ -406,6 +429,177 @@ export default props => {
     @media (max-width: 672px) {
       grid-template-columns: 100%;
       grid-gap: 0;
+    }
+  `
+
+  const [currentTab, setCurrentTab] = useState('Topics')
+
+  const tabs = {
+    Topics: (
+      <ArticleList>
+        {posts
+          .filter(({ node }) => get(node, 'frontmatter.type') === 'topic')
+          .map(({ node }, index) => {
+            if (index < 7) {
+              const title = get(node, 'frontmatter.title') || node.fields.slug
+              const spoiler = get(node, 'frontmatter.spoiler') || ''
+              const status = get(node, 'frontmatter.status') || ''
+              const newest =
+                dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
+              return (
+                <Link to={node.fields.slug} rel="bookmark" key={title}>
+                  <article key={node.fields.slug}>
+                    <header>
+                      <div className="d-flex">
+                        {node.frontmatter.thumbnail && (
+                          <img
+                            src={node.frontmatter.thumbnail.publicURL}
+                            alt={title}
+                          />
+                        )}
+                        <div className="article-info">
+                          <h3>{title}</h3>
+                          {spoiler && <p className="spoiler">{spoiler}</p>}
+                          {status === 'In Progress' && (
+                            <div className="wip">
+                              <strong>WIP</strong> - Updated on{' '}
+                              {node.frontmatter.updateDate}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      {newest && (
+                        <div className="alert">
+                          <div className="new">New!</div>
+                        </div>
+                      )}
+                    </header>
+                  </article>
+                </Link>
+              )
+            }
+          })}
+      </ArticleList>
+    ),
+    Notes: (
+      <ArticleList>
+        {posts
+          .filter(({ node }) => get(node, 'frontmatter.type') === 'note')
+          .map(({ node }, index) => {
+            if (index < 7) {
+              const title = get(node, 'frontmatter.title') || node.fields.slug
+              const newest =
+                dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
+              return (
+                <Link
+                  style={{
+                    boxShadow: 'none',
+                    color: 'var(--black)',
+                    fontFamily: 'var(--font-bold)',
+                  }}
+                  to={node.fields.slug}
+                  rel="bookmark"
+                  key={title}
+                >
+                  <article key={node.fields.slug}>
+                    <header>
+                      <h3>
+                        {node.frontmatter.thumbnail && (
+                          <img
+                            src={node.frontmatter.thumbnail.publicURL}
+                            alt={title}
+                          />
+                        )}
+                        {title}
+                      </h3>
+                      {newest && (
+                        <div className="alert">
+                          <div className="new">New!</div>
+                        </div>
+                      )}
+                    </header>
+                  </article>
+                </Link>
+              )
+            }
+          })}
+      </ArticleList>
+    ),
+    Challenges: (
+      <ArticleList>
+        {posts
+          .filter(({ node }) => get(node, 'frontmatter.type') === 'challenge')
+          .map(({ node }, index) => {
+            if (index < 7) {
+              const title = get(node, 'frontmatter.title') || node.fields.slug
+              const newest =
+                dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
+              return (
+                <Link
+                  style={{
+                    boxShadow: 'none',
+                    color: 'var(--black)',
+                    fontFamily: 'var(--font-bold)',
+                  }}
+                  to={node.fields.slug}
+                  rel="bookmark"
+                  key={title}
+                >
+                  <article key={node.fields.slug}>
+                    <header>
+                      <h3>
+                        {node.frontmatter.thumbnail && (
+                          <img
+                            src={node.frontmatter.thumbnail.publicURL}
+                            alt={title}
+                          />
+                        )}
+                        {title}
+                      </h3>
+                      {newest && (
+                        <div className="alert">
+                          <div className="new">New!</div>
+                        </div>
+                      )}
+                    </header>
+                  </article>
+                </Link>
+              )
+            }
+          })}
+      </ArticleList>
+    ),
+  }
+
+  const TabSection = styled.div`
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 24px;
+      li {
+        cursor: pointer;
+        margin-right: 36px;
+        text-transform: uppercase;
+        padding-bottom: 6px;
+        font-size: 16px;
+        &.active {
+          font-family: var(--font-bold);
+          font-weight: 700;
+          border-bottom: 2px solid var(--black);
+        }
+      }
+    }
+  `
+
+  const Activities = styled.div`
+    h3 {
+      margin: 0;
+      font-size: 16px;
+      text-transform: uppercase;
     }
   `
 
@@ -468,59 +662,24 @@ export default props => {
         />
       </SideProjects>
       <MainContent>
-        <StyledSection
-          title="Latest"
-          external={
-            <Link to="/archive">
-              <button className="btn btn-small btn-grey">View All</button>
-            </Link>
-          }
-        >
-          <ArticleList>
-            {posts
-              .filter(({ node }) => get(node, 'frontmatter.type') !== 'news')
-              .map(({ node }, index) => {
-                if (index < 7) {
-                  const title =
-                    get(node, 'frontmatter.title') || node.fields.slug
-                  const newest =
-                    dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
-                  return (
-                    <Link
-                      style={{
-                        boxShadow: 'none',
-                        color: 'var(--black)',
-                        fontFamily: 'var(--font-bold)',
-                      }}
-                      to={node.fields.slug}
-                      rel="bookmark"
-                      key={title}
-                    >
-                      <article key={node.fields.slug}>
-                        <header>
-                          <h3>
-                            {node.frontmatter.thumbnail && (
-                              <img
-                                src={node.frontmatter.thumbnail.publicURL}
-                                alt={title}
-                              />
-                            )}
-                            {title}
-                          </h3>
-                          {newest && (
-                            <div className="alert">
-                              <div className="new">New!</div>
-                            </div>
-                          )}
-                        </header>
-                      </article>
-                    </Link>
-                  )
-                }
-              })}
-          </ArticleList>
-        </StyledSection>
-        <StyledSection title="News">
+        <TabSection>
+          <ul>
+            {Object.keys(tabs).map(t => (
+              <li
+                key={t}
+                className={currentTab === t ? 'active' : ''}
+                onClick={() => setCurrentTab(t)}
+              >
+                {t}
+              </li>
+            ))}
+          </ul>
+          {tabs[currentTab]}
+        </TabSection>
+        <Activities>
+          <h3>Activities</h3>
+        </Activities>
+        {/* <StyledSection title="News">
           {posts
             .filter(({ node }) => get(node, 'frontmatter.type') === 'news')
             .map(({ node }, index) => {
@@ -536,7 +695,7 @@ export default props => {
                 />
               )
             })}
-        </StyledSection>
+        </StyledSection> */}
       </MainContent>
       <Footer />
     </Layout>
@@ -561,6 +720,8 @@ export const pageQuery = graphql`
           timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
+            updateDate(formatString: "MMMM DD, YYYY")
+            status
             title
             spoiler
             type

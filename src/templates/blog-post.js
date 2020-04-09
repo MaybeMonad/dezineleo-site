@@ -140,6 +140,17 @@ export default props => {
       margin-top: 18px;
       display: inline-block;
     }
+    @media (max-width: 672px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .spoiler {
+        font-size: 18px;
+      }
+      .info {
+        font-size: 14px;
+      }
+    }
   `
 
   return (

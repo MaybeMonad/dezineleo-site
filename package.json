@@ -41,7 +41,8 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "typography-theme-wordpress-2016": "^0.16.19",
+    "zarm": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
