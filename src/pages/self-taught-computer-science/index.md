@@ -14,7 +14,7 @@ from-heading: 2
 to-heading: 3
 ```
 
-非科班，野路子，半路出家...没错，作为一个半吊子程序员，我还在努力补习[《数据结构与算法之痛》](/learn-data-structure-and-algorithm/)，同样，基础而又全面的 CS 课程，我也不想落下，而除了兴趣，更多只为迎合。
+非科班，野路子，半路出家...没错，作为一个半吊子程序员，我还在努力补习[《Data Structure and Algorithm》](/learn-data-structure-and-algorithm/)，同样，我也不想落下基础 CS 课程。
 
 ## 计算机原理
 

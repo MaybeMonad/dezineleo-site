@@ -27,9 +27,14 @@ const ArticleList = styled.main`
         33.33% - 21px
       );
     grid-gap: 32px;
+    grid-auto-rows: 1fr;
     article {
       border: 1px solid var(--border-grey);
       margin: 0;
+      height: calc(100% - 36px);
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
       header {
         flex-direction: column;
         img {
