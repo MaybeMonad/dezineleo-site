@@ -109,7 +109,7 @@ export default props => {
     .spoiler {
       font-size: 24px;
       font-family: var(--font-light);
-      font-weight: 100;
+      font-weight: 200;
       line-height: 1.4;
     }
     .post-info {

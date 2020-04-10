@@ -7,6 +7,7 @@ const relativeTime = require('dayjs/plugin/relativeTime')
 dayjs.extend(relativeTime)
 
 import Layout from '../components/Layout'
+import FullWidthWrapper from '../components/FullWidthWrapper'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
 import JSHub from '../../static/home/logo_js_hub.svg'
@@ -14,10 +15,12 @@ import DeStatic from '../../static/home/logo_destatic.svg'
 import BreakElm from '../../static/home/logo_break_elm.svg'
 import Decon from '../../static/home/logo_decon.svg'
 import Top from '../../static/home/top.jpg'
+import Alarm from '../../static/icon_alarm.svg'
 // import IconCode from '../../static/icon_code.svg'
 
 const ArticleList = styled.main`
   margin: 0 0 24px 0;
+  background-color: transparent;
   &.notebook {
     display: grid;
     grid-template-columns: calc(33.33% - 21px) calc(33.33% - 21px) calc(
@@ -37,6 +40,7 @@ const ArticleList = styled.main`
         h3 {
           margin: 0;
           line-height: 1.4;
+          word-break: break-word;
         }
       }
       p {
@@ -47,17 +51,33 @@ const ArticleList = styled.main`
       }
     }
   }
+  &.challenges {
+    margin: 0 0 24px 0;
+    article {
+      border: 1px solid var(--border-grey);
+      margin: 0;
+      header {
+        align-items: center;
+        h3 {
+          margin: 0;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
   article {
     padding: 18px 24px;
     transition: background-color 0.3s ease;
     border-radius: 8px;
-    margin: 0 -24px 12px -24px;
+    margin: 0 -24px 20px -24px;
     position: relative;
     z-index: 1;
     ::before {
       content: '';
       transition: all 0.32s ease;
-      background-color: var(--bg-grey);
+      background-color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
       border-radius: 8px;
       display: block;
       position: absolute;
@@ -285,7 +305,7 @@ export default props => {
     ::before {
       content: '';
       transition: all 0.28s ease;
-      background-color: var(--bg-grey);
+      background-color: var(--bg-light);
       border-radius: 8px;
       display: block;
       position: absolute;
@@ -361,10 +381,52 @@ export default props => {
     display: grid;
     grid-template-columns: calc(75% - 56px) 25%;
     grid-gap: 56px;
-    margin: 0 0 24px 0;
+    margin: 0 auto 24px auto;
+    padding: 56px 0 0 0;
+    max-width: 56rem;
     @media (max-width: 672px) {
       grid-template-columns: 100%;
       grid-gap: 0;
+    }
+  `
+
+  const Deadline = styled.div`
+    background-color: var(--bg-grey);
+    position: relative;
+    display: inline-block;
+    padding: 6px 14px 6px 12px;
+    border-radius: 4px;
+    overflow: hidden;
+    color: var(--font-grey);
+    img {
+      width: 20px !important;
+      height: 20px !important;
+      min-width: 20px !important;
+      margin-right: 10px !important;
+    }
+    .deadline {
+      color: var(--black);
+      margin-left: 4px;
+    }
+    .progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #e1e1e1;
+      display: inline-block;
+      height: 100%;
+    }
+    p {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 12px;
+      img {
+        margin: -3px 6px 0 0;
+      }
     }
   `
 
@@ -426,7 +488,7 @@ export default props => {
         {posts
           .filter(({ node }) => get(node, 'frontmatter.type') === 'note')
           .map(({ node }, index) => {
-            if (index < 7) {
+            if (index < 9) {
               const title = get(node, 'frontmatter.title') || node.fields.slug
               const newest =
                 dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
@@ -456,14 +518,12 @@ export default props => {
       </ArticleList>
     ),
     Challenges: (
-      <ArticleList>
+      <ArticleList className="challenges">
         {posts
           .filter(({ node }) => get(node, 'frontmatter.type') === 'challenge')
           .map(({ node }, index) => {
             if (index < 7) {
               const title = get(node, 'frontmatter.title') || node.fields.slug
-              const newest =
-                dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
               return (
                 <Link to={node.fields.slug} rel="bookmark" key={title}>
                   <article key={node.fields.slug}>
@@ -477,11 +537,29 @@ export default props => {
                         )}
                         {title}
                       </h3>
-                      {newest && (
-                        <div className="alert">
-                          <div className="new">New!</div>
-                        </div>
-                      )}
+                      <Deadline>
+                        <span
+                          className="progress"
+                          style={{
+                            width: `${(dayjs().diff(
+                              dayjs(node.frontmatter.date),
+                              'day'
+                            ) *
+                              100) /
+                              dayjs(node.frontmatter.deadline).diff(
+                                dayjs(node.frontmatter.date),
+                                'day'
+                              )}%`,
+                          }}
+                        ></span>
+                        <p>
+                          <img src={Alarm} alt="" />
+                          Deadline:{' '}
+                          <span className="deadline">
+                            {node.frontmatter.deadline}
+                          </span>
+                        </p>
+                      </Deadline>
                     </header>
                   </article>
                 </Link>
@@ -503,14 +581,48 @@ export default props => {
       margin-bottom: 24px;
       li {
         cursor: pointer;
-        margin-right: 36px;
+        margin-right: 24px;
         text-transform: uppercase;
-        padding-bottom: 6px;
         font-size: 16px;
+        padding: 3px 12px;
+        border-radius: 4px;
+        font-family: var(--font-medium);
+        position: relative;
+        z-index: 1;
+        transition: all 0.32s ease;
+        span {
+          position: relative;
+          z-index: 1;
+        }
+        :active {
+          transform: scale(0.9);
+        }
+        ::before {
+          content: '';
+          transition: all 0.32s ease;
+          background-color: var(--bg-grey);
+          border-radius: 4px;
+          display: block;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 0;
+          height: 0;
+          z-index: 0;
+        }
+        :hover::before {
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+        }
         &.active {
-          font-family: var(--font-bold);
           font-weight: 700;
-          border-bottom: 2px solid var(--black);
+          background-color: var(--primary);
+          color: white;
+          ::before {
+            background-color: var(--primary);
+          }
         }
       }
     }
@@ -623,7 +735,8 @@ export default props => {
           <h3
             style={{ fontFamily: 'var(--font-regular)', fontWeight: 'normal' }}
           >
-            A designer && maker based in Hangzhou, China.
+            A Web Developer / UI Designer / Illustrator / English Teacher based
+            in Hangzhou, China.
           </h3>
           <Links>
             <Link to="/about">
@@ -666,37 +779,41 @@ export default props => {
           version="v1.0"
         />
       </SideProjects>
-      <MainContent>
-        <TabSection>
-          <ul>
-            {Object.keys(tabs).map(t => (
-              <li
-                key={t}
-                className={currentTab === t ? 'active' : ''}
-                onClick={() => setCurrentTab(t)}
-              >
-                {t}
-              </li>
-            ))}
-          </ul>
-          {tabs[currentTab]}
-        </TabSection>
-        <Activities>
-          <h3>Activities</h3>
-          <ul>
-            {activities.map(a => (
-              <li key={a.content}>
-                <div className="activity-dot"></div>
-                <div className="activity-body">
-                  <p dangerouslySetInnerHTML={{ __html: a.content }} />
-                  <p className="date">{dayjs(a.date).from(dayjs())}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </Activities>
-      </MainContent>
-      <Footer />
+      <FullWidthWrapper
+        style={{ backgroundColor: 'var(--bg-light)', border: 'none' }}
+      >
+        <MainContent>
+          <TabSection>
+            <ul>
+              {Object.keys(tabs).map(t => (
+                <li
+                  key={t}
+                  className={currentTab === t ? 'active' : ''}
+                  onClick={() => setCurrentTab(t)}
+                >
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+            {tabs[currentTab]}
+          </TabSection>
+          <Activities>
+            <h3>Activities</h3>
+            <ul>
+              {activities.map(a => (
+                <li key={a.content}>
+                  <div className="activity-dot"></div>
+                  <div className="activity-body">
+                    <p dangerouslySetInnerHTML={{ __html: a.content }} />
+                    <p className="date">{dayjs(a.date).from(dayjs())}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </Activities>
+        </MainContent>
+        <Footer style={{ maxWidth: '56rem', margin: '0 auto' }} />
+      </FullWidthWrapper>
     </Layout>
   )
 }
@@ -729,6 +846,7 @@ export const pageQuery = graphql`
             version
             site
             totalLinks
+            deadline(formatString: "MMMM DD, YYYY")
             thumbnail {
               publicURL
               name

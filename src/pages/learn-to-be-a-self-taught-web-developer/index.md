@@ -23,12 +23,9 @@ to-heading: 3
 
 同样，我也准备了一些学习资料：
 
-1. [重学前端](https://time.geekbang.org/column/intro/100023201) - 极客时间 ￥74
-2. 《JavaScript 高级程序设计（第 3 版）》
-3. [《Eloquent JavaScript》](https://eloquentjavascript.net/)
-4. [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md)
 
-## Part 1：HTML、CSS & JavaScript
+
+## Basics
 
 ### HTML
 
@@ -36,7 +33,7 @@ to-heading: 3
 
 ### JavaScript
 
-## Part 2：Vue、React & TypeScript
+## Frameworks
 
 ### Vue
 
@@ -44,19 +41,27 @@ to-heading: 3
 
 ### TypeScript
 
-## Part 3：Node.js、GraphQL
+## Server Side
 
 ### Node.js
 
 ### GraphQL
 
-## Part 4：Three.js、WebGL
+## 3D
 
 ### Three.js
 
 ### WebGL
 
-## Part 4：Network
+## Native
+
+## 参考资料
+
+1. [web.dev](https://web.dev/)
+2. [重学前端](https://time.geekbang.org/column/intro/100023201)
+3. 《JavaScript 高级程序设计（第 3 版）》
+3. [《Eloquent JavaScript》](https://eloquentjavascript.net/)
+5. [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md)
 
 
 

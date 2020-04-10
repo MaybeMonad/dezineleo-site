@@ -10,6 +10,7 @@ body {
   --border-grey: #e8e8e8;
   --dark-border-grey: #313131;
   --bg-grey: #f2f2f2;
+  --bg-light: #f9fafb;
   --border: 1px solid var(--border-grey);
   --dark-border: 1px solid var(--dark-border-grey);
   --font-family: var(--font-regular), PingFang SC, Microsoft YaHei,
