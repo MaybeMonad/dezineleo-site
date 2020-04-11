@@ -167,15 +167,15 @@ code[class*='language-text'] {
 }
 
 div.code-toolbar > .toolbar {
-  right: 24px !important;
-  top: 5px !important;
+  right: 12px !important;
+  top: 12px !important;
 }
 
 div.code-toolbar > .toolbar span {
   box-shadow: none !important;
-  font-size: 15px !important;
-  background-color: var(--primary) !important;
-  color: white !important;
+  font-size: 16px !important;
+  background-color: transparent !important;
+  color: hsl(225deg, 15%, 50%) !important;
   font-family: var(--font-medium) !important;
   border-radius: 0 0 3px 3px !important;
   padding: 3px 8px !important;
