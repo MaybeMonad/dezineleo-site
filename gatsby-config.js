@@ -43,12 +43,20 @@ module.exports = {
             },
           },
           'gatsby-remark-autolink-headers',
-          {
-            resolve: 'gatsby-remark-prismjs',
-            options: {
-              inlineCodeMarker: '÷',
-            },
-          },
+          // {
+          //   resolve: 'gatsby-remark-prismjs',
+          //   options: {
+          //     classPrefix: 'language-',
+          //     inlineCodeMarker: '›',
+          //     noInlineHighlight: false,
+          //     showLineNumbers: true,
+          //     prompt: {
+          //       user: 'john',
+          //       host: 'doe',
+          //       global: false,
+          //     },
+          //   },
+          // },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
           {

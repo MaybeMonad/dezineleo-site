@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 // import Img from 'gatsby-image'
+import Prism from 'prismjs'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -18,6 +19,8 @@ export default props => {
   const lang = post.fields.langKey
 
   useEffect(() => {
+    Prism.highlightAll()
+
     const selector = ['article h2', 'article h3']
     const nodes = document.querySelectorAll(selector)
     const config = {

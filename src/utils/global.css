@@ -154,6 +154,33 @@ code[class*='language-text'] {
 }
 
 /* Code blocks */
+.code-toolbar {
+  width: 100%;
+}
+
+.gatsby-highlight[data-language='bash'] .toolbar {
+  opacity: 0 !important;
+}
+
+.toolbar {
+  opacity: 1 !important;
+}
+
+div.code-toolbar > .toolbar {
+  right: 24px !important;
+  top: 5px !important;
+}
+
+div.code-toolbar > .toolbar span {
+  box-shadow: none !important;
+  font-size: 15px !important;
+  background-color: var(--primary) !important;
+  color: white !important;
+  font-family: var(--font-medium) !important;
+  border-radius: 0 0 3px 3px !important;
+  padding: 3px 8px !important;
+}
+
 pre[class*='language-'] {
   overflow: auto;
   /* padding: 1.3125rem; */

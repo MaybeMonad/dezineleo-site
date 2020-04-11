@@ -8,6 +8,7 @@
     "url": "https://github.com/DezineLeo/dezineleo-site/issues"
   },
   "dependencies": {
+    "babel-plugin-prismjs": "^2.0.1",
     "dayjs": "^1.8.20",
     "gatsby": "^2.19.21",
     "gatsby-image": "^2.2.41",
@@ -35,7 +36,7 @@
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
     "lodash": "^4.17.15",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.20.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
