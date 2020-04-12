@@ -9,3 +9,10 @@ status: 'In Progress'
 tags: ['JavaScript']
 ---
 
+<!-- ```toc
+from-heading: 2
+to-heading: 3
+``` -->
+
+> 本笔记参考《JavaScript 高级程序设计（第 3 版）》
+

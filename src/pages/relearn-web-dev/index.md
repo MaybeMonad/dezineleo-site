@@ -23,43 +23,13 @@ to-heading: 3
 
 从今天开始，我将以目前所掌握的知识为基础，Relearn 当前 Web 开发的相关技能。
 
-## Basics
+## 学习笔记
 
-### HTML
-
-### CSS
-
-### JavaScript
-
-## Frameworks
-
-### Vue
-
-### React
-
-### TypeScript
-
-## Server Side
-
-### Node.js
-
-### GraphQL
-
-## 3D
-
-### Three.js
-
-### WebGL
-
-## Native
-
-## 参考资料
-
-1. [web.dev](https://web.dev/)
-2. [重学前端](https://time.geekbang.org/column/intro/100023201)
-3. 《JavaScript 高级程序设计（第 3 版）》
-3. [《Eloquent JavaScript》](https://eloquentjavascript.net/)
-5. [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md)
+1. [重学前端](/notes/relearn-frontend)
+2. [《JavaScript 高级程序设计（第 3 版）》](/notes/professional-javascript-for-web-developers)
+3. [Eloquent JavaScript](/notes/eloquent-javascript)
+4. [You Don't Know JS](/notes/you-dont-know-js)
+<!-- 5. [web.dev](https://web.dev/) -->
 
 
 

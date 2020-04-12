@@ -498,32 +498,32 @@ export default props => {
         {posts
           .filter(({ node }) => get(node, 'frontmatter.type') === 'note')
           .map(({ node }, index) => {
-            if (index < 9) {
-              const title = get(node, 'frontmatter.title') || node.fields.slug
-              const newest =
-                dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month')
-              return (
-                <Link to={node.fields.slug} rel="bookmark" key={title}>
-                  <article key={node.fields.slug}>
-                    <header>
-                      {node.frontmatter.thumbnail && (
-                        <img
-                          src={node.frontmatter.thumbnail.publicURL}
-                          alt={title}
-                        />
-                      )}
-                      <h3>{title}</h3>
-                      {/* {newest && (
-                        <div className="alert">
-                          <div className="new">New!</div>
-                        </div>
-                      )} */}
-                    </header>
-                    <p className="date">{node.frontmatter.date}</p>
-                  </article>
-                </Link>
-              )
+            const title = get(node, 'frontmatter.title') || node.fields.slug
+            {
+              /* const newest =
+              dayjs(node.frontmatter.date) > dayjs().subtract(1, 'month') */
             }
+            return (
+              <Link to={node.fields.slug} rel="bookmark" key={title}>
+                <article key={node.fields.slug}>
+                  <header>
+                    {node.frontmatter.thumbnail && (
+                      <img
+                        src={node.frontmatter.thumbnail.publicURL}
+                        alt={title}
+                      />
+                    )}
+                    <h3>{title}</h3>
+                    {/* {newest && (
+                      <div className="alert">
+                        <div className="new">New!</div>
+                      </div>
+                    )} */}
+                  </header>
+                  <p className="date">{node.frontmatter.date}</p>
+                </article>
+              </Link>
+            )
           })}
       </ArticleList>
     ),

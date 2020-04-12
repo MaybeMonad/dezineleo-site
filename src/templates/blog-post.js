@@ -20,7 +20,9 @@ export default props => {
 
   useEffect(() => {
     Prism.highlightAll()
+  }, [post])
 
+  useEffect(() => {
     const selector = ['article h2', 'article h3']
     const nodes = document.querySelectorAll(selector)
     const config = {
