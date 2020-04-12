@@ -160,6 +160,10 @@ const ArticleList = styled.main`
   }
   @media (max-width: 672px) {
     overflow: hidden;
+    &.notebook {
+      grid-template-columns: 100%;
+      ${'' /* grid-gap: 0; */}
+    }
     article {
       header {
         flex-direction: row;
@@ -392,6 +396,7 @@ export default props => {
     @media (max-width: 672px) {
       grid-template-columns: 100%;
       grid-gap: 0;
+      padding: 56px 24px;
     }
   `
 
