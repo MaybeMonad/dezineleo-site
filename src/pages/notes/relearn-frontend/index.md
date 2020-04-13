@@ -45,6 +45,6 @@ to-heading: 3
 
 JavaScript 中的 +0 和 -0，在加法运算中无区别，但在除法运算中需要注意除以 -0 会得到无穷大的结果。
 
-根据双精度浮点数的定义，Number 类型中有效的整数范围是 -0x1fffffffffffff 至 0x1fffffffffffff，所以 Number 无法精确表示此范围外的整数。
+根据双精度浮点数的定义，`number` 类型中有效的整数范围是 -0x1fffffffffffff 至 0x1fffffffffffff，所以 `number` 无法精确表示此范围外的整数。同样，非整数的 `number` 无法用 == 或 === 来比较。
 
 ### 1.2 对象
