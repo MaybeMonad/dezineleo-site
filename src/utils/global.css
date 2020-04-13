@@ -471,7 +471,11 @@ blockquote {
   padding: 1.5rem;
   line-height: 1.6;
   font-size: 1rem;
+}
+
+blockquote strong {
   font-family: var(--font-medium);
+  font-weight: 500;
 }
 
 blockquote p {
