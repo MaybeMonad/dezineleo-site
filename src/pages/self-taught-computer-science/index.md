@@ -1,12 +1,14 @@
 ---
-title: Teach Yourself to Become a Software Developer
+title: Self-taught Computer Science
 date: 2020-04-08
-updateDate: 2020-04-08
+updateDate: 2020-04-13
 spoiler: As a self-taught programmer, I know what I can do.
 type: topic
+cover: ./future.jpg
 thumbnail: ./code.svg
 logo: ./code.svg
 status: In Progress
+tags: ['CS', 'Self-Taught']
 ---
 
 ```toc

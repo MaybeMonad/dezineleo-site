@@ -91,70 +91,110 @@ export default props => {
   // `
 
   const PostHeader = styled.header`
-    .tags {
-      text-transform: uppercase;
-      color: var(--primary);
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 12px;
-      li {
-        display: inline-block;
-        background-color: rgb(0, 153, 255, 0.12);
-        border-radius: 4px;
-        padding: 4px 10px;
-        margin-right: 12px;
-        font-family: var(--font-medium);
-      }
-    }
+    width: 56rem;
+    margin: 0 0 0 -10rem;
     h1 {
       font-size: 2.8rem;
       margin: 12px 0;
+      text-align: center;
     }
     .spoiler {
       font-size: 24px;
       font-family: var(--font-light);
       font-weight: 200;
       line-height: 1.4;
+      text-align: center;
+    }
+    .cover {
+      max-width: 100%;
+      margin: 36px 0 0 0;
+      display: block;
+      border-radius: 6px;
     }
     .post-info {
-      display: block;
-      margin: 28px 0 42px 0;
-      font-size: 14px;
-      color: var(--font-grey);
-      border-top: 1px solid var(--border-grey);
+      border-bottom: 1px solid var(--border-grey);
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
+      margin: 0 0 64px 0;
       align-items: center;
-      line-height: 1;
-      padding: 16px 0;
-      font-size: 12px;
-      h4 {
-        margin: 0 0 5px 0;
-        color: var(--black);
-        text-transform: uppercase;
-        font-size: 13px;
+      .author {
+        display: block;
+        font-size: 14px;
+        color: var(--font-grey);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        line-height: 1;
+        padding: 16px 0;
+        font-size: 12px;
+        h4 {
+          margin: 0 0 5px 0;
+          color: var(--black);
+          text-transform: uppercase;
+          font-size: 13px;
+        }
+        img {
+          width: 36px;
+          height: 36px;
+          border-radius: 100px;
+          margin-right: 12px;
+        }
       }
-      img {
-        width: 36px;
-        height: 36px;
-        border-radius: 100px;
-        margin-right: 12px;
+      .more {
+        .tags {
+          text-transform: uppercase;
+          color: var(--primary);
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          font-size: 12px;
+          li {
+            display: inline-block;
+            background-color: rgb(0, 153, 255, 0.12);
+            border-radius: 4px;
+            padding: 4px 10px;
+            margin: 0 12px 0 0;
+            font-family: var(--font-medium);
+          }
+        }
+        .info {
+          margin-top: 0;
+          display: inline-block;
+          font-size: 12px;
+          border-radius: 4px;
+          padding: 4px 10px;
+          color: var(--black);
+        }
       }
-    }
-    .info {
-      margin-top: 18px;
-      display: inline-block;
     }
     @media (max-width: 672px) {
+      max-width: 100%;
+      margin: 0;
+      h1,
+      .spoiler {
+        text-align: left;
+      }
       h1 {
         font-size: 2rem;
       }
       .spoiler {
         font-size: 18px;
       }
+      .post-info {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 36px;
+        .more {
+          .tags {
+            li {
+              margin: 0 12px 12px 0;
+            }
+          }
+        }
+      }
       .info {
         font-size: 14px;
+        margin-bottom: 16px;
       }
     }
   `
@@ -169,37 +209,41 @@ export default props => {
       />
       <main>
         <article>
-          {/* {post.frontmatter.thumbnail && post.frontmatter.type === 'topic' && (
-            <img
-              src={post.frontmatter.thumbnail.publicURL}
-              alt=""
-              style={{ width: 72 }}
-            />
-          )} */}
           <PostHeader>
-            {post.frontmatter.tags && (
-              <ul className="tags">
-                {post.frontmatter.tags.map(tag => (
-                  <li key={tag}>{tag}</li>
-                ))}
-              </ul>
-            )}
             <h1 style={{ color: 'var(--textTitle)', marginBottom: '0.42rem' }}>
               {post.frontmatter.title}
             </h1>
             <div className="spoiler">{post.frontmatter.spoiler}</div>
-            {post.frontmatter.status === 'In Progress' && (
-              <div className="info">
-                🚧 <b>This post is in progress</b> – Last updated{' '}
-                {post.frontmatter.updateDate}.
-              </div>
+            {post.frontmatter.cover && (
+              <img
+                className="cover"
+                src={post.frontmatter.cover.publicURL}
+                alt={post.frontmatter.title}
+              />
             )}
             <div className="post-info">
-              <img src={profilePic} alt="@dezineleo" />
-              <div>
-                <h4>Yang Jin</h4>
-                {`${formatPostDate(post.frontmatter.date, lang)}`}
-                {` / ${formatReadingTime(post.timeToRead)}`}
+              <div className="author">
+                <img src={profilePic} alt="@dezineleo" />
+                <div>
+                  <h4>Yang Jin</h4>
+                  {`${formatPostDate(post.frontmatter.date, lang)}`}
+                  {` / ${formatReadingTime(post.timeToRead)}`}
+                </div>
+              </div>
+              <div className="more">
+                {post.frontmatter.tags && (
+                  <ul className="tags">
+                    {post.frontmatter.tags.map(tag => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                    {post.frontmatter.status === 'In Progress' && (
+                      <div className="info">
+                        🚧 <b>WIP</b> – Last updated{' '}
+                        {post.frontmatter.updateDate}.
+                      </div>
+                    )}
+                  </ul>
+                )}
               </div>
             </div>
             {/* {translations.length > 0 && (

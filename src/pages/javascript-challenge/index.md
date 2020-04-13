@@ -1,11 +1,13 @@
 ---
 title: JavaScript Challenge
 date: 2020-03-11
-updateDate: 2020-03-13
+updateDate: 2020-04-13
 spoiler: Some practical JavaScript tricks.
 type: 'topic'
+cover: ./toy.jpg
 thumbnail: ./js.svg
 status: In Progress
+tags: ['JavaScript']
 ---
 ```toc
 from-heading: 2

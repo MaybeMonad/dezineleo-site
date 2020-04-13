@@ -4,8 +4,10 @@ date: 2020-04-07
 updateDate: 2020-04-07
 spoiler: Obviously, it's a necessity for future.
 type: topic
+cover: ./science.jpg
 thumbnail: ./unity.svg
 status: In Progress
+tags: ['Machine Learning', 'Deep Learning']
 ---
 ```toc
 from-heading: 2

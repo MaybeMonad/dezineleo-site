@@ -1,9 +1,10 @@
 ---
 title: Data Structure and Algorithm
 date: 2020-04-07
-updateDate: 2020-04-08
+updateDate: 2020-04-13
 spoiler: I have no idea about them in the past couple years.
 type: topic
+cover: ./algorithm.jpg
 thumbnail: ./code.svg
 logo: ./code.svg
 status: In Progress

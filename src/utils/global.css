@@ -229,6 +229,8 @@ pre[class*='language-'] ::selection {
   font-family: Menlo, Roboto Mono, Courier New, monospace;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.06);
+  padding: 3px 6px;
+  font-size: 13px;
 }
 
 .token {
@@ -356,6 +358,19 @@ a:active {
   box-shadow: none;
 }
 
+article {
+  color: rgba(12, 21, 46, 0.72);
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  color: var(--black);
+}
+
 article h1 {
   font-size: 2.4rem;
 }
@@ -370,7 +385,9 @@ article h3 {
 }
 
 article p {
-  font-size: 17px;
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 30px;
 }
 
 article a {
@@ -699,7 +716,7 @@ main {
 }
 
 article {
-  max-width: 46rem;
+  max-width: 36rem;
   margin: 0 auto;
 }
 

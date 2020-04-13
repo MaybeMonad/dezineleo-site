@@ -4,7 +4,7 @@ date: 2020-04-09
 updateDate: 2020-04-10
 spoiler: 《Python 深度学习》学习笔记
 type: note
-cover: ./study.svg
+cover: ./dark.jpg
 thumbnail: ./study.svg
 status: 'In Progress'
 tags: ['Deep Learning', 'Machine Learning', 'Python']
