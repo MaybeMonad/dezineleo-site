@@ -1,7 +1,7 @@
 ---
 title: Relearn Web Dev
 date: 2020-04-12
-updateDate: 2020-04-12
+updateDate: 2020-04-14
 spoiler: 《重学前端》笔记
 type: note
 cover: ./re.jpg
