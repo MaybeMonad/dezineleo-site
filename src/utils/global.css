@@ -21,7 +21,7 @@ body {
   --font-regular: 'ubunturegular';
   --font-medium: 'ubuntu_mediumregular';
   --font-bold: 'ubuntubold'; */
-  /* Futura PT */
+  --font-article: rgba(12, 21, 46, 0.72);
   --font-light: 'rubiklight';
   --font-regular: 'rubikregular';
   --font-medium: 'rubikmedium';
@@ -81,7 +81,7 @@ pre.language-bash code.language-bash {
   margin: 0.2rem 0 1rem 0;
   font-size: 15px;
   background: white;
-  color: #333;
+  color: var(--font-article);
 }
 
 pre.language-bash code.language-bash::before {
@@ -104,7 +104,7 @@ pre.language-bash code.language-bash::before {
 code[class*='language-'],
 pre[class*='language-'],
 pre code {
-  color: #333;
+  color: var(--font-article);
   font-size: 15px;
   font-family: Menlo, Consolas, Monaco, source-code-pro, 'Courier New',
     monospace;
@@ -359,7 +359,7 @@ a:active {
 }
 
 article {
-  color: rgba(12, 21, 46, 0.72);
+  color: var(--font-article);
 }
 
 article h1,
@@ -465,16 +465,18 @@ blockquote {
   color: rgba(0, 0, 0, 0.8);
   border: none;
   background: #fff8e4;
+  /* background: rgb(0,153,255,0.06); */
   border-radius: 4px;
-  font-weight: 500;
+  font-weight: 400;
   margin: 1.5rem 0;
   padding: 1.5rem;
   line-height: 1.6;
   font-size: 1rem;
+  border: 1px solid #f3e09a;
 }
 
 blockquote strong {
-  font-family: var(--font-medium);
+  font-family: var(--font-bold);
   font-weight: 500;
 }
 
@@ -798,8 +800,8 @@ article .link-box p {
 .toc > ul {
   position: absolute;
   right: -224px;
-  top: -20px;
-  max-width: 156px;
+  top: -10px;
+  max-width: 164px;
   overflow: hidden;
 }
 
@@ -839,11 +841,12 @@ article .link-box p {
 
 .toc > ul:before {
   content: 'Table of Contents';
-  font-family: var(--font-bold);
+  font-family: var(--font-medium);
   border-bottom: 1px solid var(--border-grey);
   padding-bottom: 5px;
   margin-bottom: 15px;
   display: block;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1280px) {

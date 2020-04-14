@@ -4,8 +4,10 @@ date: 2020-04-03
 updateDate: 2020-04-07
 spoiler: Thanks to COVID-19, I get three month access to Unity Learn Premium.
 type: topic
+cover: ./vr.jpg
 thumbnail: ./unity.svg
 status: In Progress
+tags: ['Unity 3D', 'Game']
 ---
 ```toc
 from-heading: 2

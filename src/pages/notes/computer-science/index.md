@@ -4,16 +4,16 @@ date: 2020-04-13
 updateDate: 2020-04-13
 spoiler: CS 笔记
 type: note
-cover: ./study.svg
+cover: ./computer.jpg
 thumbnail: ./study.svg
 status: 'In Progress'
 tags: ['Computer Science']
 ---
 
-<!-- ```toc
+```toc
 from-heading: 2
 to-heading: 3
-``` -->
+```
 
 > 本笔记参考 [Computer Science | YouTube](https://www.youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo)
 
