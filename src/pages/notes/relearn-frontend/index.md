@@ -101,6 +101,108 @@ Number、String 和 Boolean 这三个构造器搭配 `new` 时产生对象，直
 
 相反，数字转字符串就没那么多规矩，直接使用十进制表示。
 
+---
 
+**装箱操作** - 把基本类型转换为对应的对象，属于类型转换中**相当重要**的种类。
+
+全局 `Symbol` 函数无法使用 `new` 来调用，这时候就可以利用函数的 `call` 方法来强制装箱。
+
+```js
+var symbolObject =
+  (function(){
+    return this;
+  }).call(Symbol("a"));
+
+console.log(typeof symbolObject); //object
+console.log(symbolObject instanceof Symbol); //true
+console.log(symbolObject.constructor == Symbol); //true
+```
+
+装箱机制会频繁产生临时对象，在一些对性能要求较高的场景下，尽量避免对基本类型做装箱转换。
+
+使用内置的 `Object` 函数，可以显式调用装箱。
+
+```js
+var symbolObject = Object(Symbol("a"));
+
+console.log(typeof symbolObject); //object
+console.log(symbolObject instanceof Symbol); //true
+console.log(symbolObject.constructor == Symbol); //true
+```
+
+每一类装箱对象都有私有的 `Class` 属性，这些属性可用 `Object.prototype.toString` 获取。
+
+```js
+var symbolObject = Object(Symbol("a"));
+
+console.log(Object.prototype.toString.call(symbolObject)); //[object Symbol]
+```
+
+在 JavaScript 中，没有任何方法可以更改私有的 `Class` 属性，因此，相比 `instanceof`，`Object.prototype.toString` 能更准确地识别对象的基本类型。
+
+需要注意的是 `call` 方法本身会产生装箱操作，所以需要配合 `typeof` 来区分是基本类型还是对象类型。
+
+除了装箱操作，还有拆箱操作，在 JavaScript 标准中，定义了 `ToPrimitive` 函数，它能实现对象类型转换为基本类型，即**拆箱操作**。
+
+对象到 `String` 和 `Number` 的转换都遵循“先拆箱再转换”的规则，即通过拆箱转换，将对象变成基本类型，再从基本类型转换为对应的 `String` 或 `Number`。
+
+拆箱转换会尝试调用 `valueOf` 和 `toString` 来获得拆箱后的基本类型，如果 `valueOf` 和 `toString` 都不存在，或者没有返回基本类型，就会产生 TypeError：
+
+```js
+var o = {
+  valueOf : () => {console.log("valueOf"); return {}},
+  toString : () => {console.log("toString"); return {}}
+}
+
+o * 2
+// valueOf
+// toString
+// TypeError
+```
+
+我们可以看到 `valueOf` 比 `toString` 先被调用，但在 String 的装箱操作中就会先调用 `toString`。
+
+ES6 之后还支持对象通过显示指定 @@toPrimitive Symbol 来覆盖原来的行为。
+
+```js
+var o = {
+  valueOf : () => {console.log("valueOf"); return {}},
+  toString : () => {console.log("toString"); return {}}
+}
+
+o[Symbol.toPrimitive] = () => {
+  console.log("toPrimitive");
+  return "hello";
+}
+
+console.log(o + "")
+// toPrimitive
+// hello
+```
+
+---
+
+除了上述七种语言类型，还有一些规范类型：
+
++ List 和 Record：用于描述函数传参过程。
++ Set：主要用于解释字符集
++ Completion Record：用于描述异常、跳出等语句的执行过程。
++ Reference：用于描述对象属性访问、delete 等。
++ Property Descriptor：用于描述对象的属性。
++ Lexical Environment 和 Environment Record：用于描述变量和作用域。
++ Data Block：用于描述二进制数据。
+
+| 示例 | typeof | 运行时类型行为 |
+|:---|:---|:---|
+| null | **object** | Null |
+| {} | object | Object |
+| (function(){}) | function | **Object** |
+| 2 | number | Number |
+| "hello" | string | String |
+| true | boolean | Boolean |
+| void 0 | undefined | Undefined |
+| Symbol('a') | symbol | Symbol |
 
 ### 1.2 对象
+
+**JavaScript Object** - 语言和宿主的基础设施由对象来提供，并且 JavaScript 程序即是一系列互相通讯的对象集合。
