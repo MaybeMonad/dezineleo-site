@@ -1,7 +1,7 @@
 ---
 title: Relearn Web Dev
 date: 2020-04-12
-updateDate: 2020-04-14
+updateDate: 2020-04-17
 spoiler: 《重学前端》笔记
 type: note
 cover: ./re.jpg
@@ -205,4 +205,4 @@ console.log(o + "")
 
 ### 1.2 对象
 
-**JavaScript Object** - 语言和宿主的基础设施由对象来提供，并且 JavaScript 程序即是一系列互相通讯的对象集合。
+**JavaScript Object** - 语言和宿主的基础设施由对象来提供，JavaScript 程序即是一系列互相通讯的对象集合。
