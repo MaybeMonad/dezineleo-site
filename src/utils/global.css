@@ -770,6 +770,10 @@ article .info {
   padding: 12px 20px;
 }
 
+article video {
+  max-width: 100%;
+}
+
 /* article .link-box */
 
 article .link-box p {
