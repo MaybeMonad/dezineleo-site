@@ -49,7 +49,7 @@ to-heading: 3
 > true
 ```
 
-<span class="hl-1">Symbol</span> <span class="hl-2">独一无二</span> - `var mySymbol = Symbol("my symbol");`
+<span class="hl-1">Symbol</span> <span class="hl-2">独一无二</span> <span class="hl-3">Key</span> - `var mySymbol = Symbol("my symbol");`
 
 <div class="link-box">
 
@@ -57,13 +57,9 @@ to-heading: 3
 
 </div>
 
-在 JavaScript 中，对象是“属性的集合”，包括数据属性和访问器属性，二者都是 key-value 结构，key 可以是字符串或 `symbol` 类型。
-
-与 C++ 和 Java 中的类不同的是 JavaScript 中的“类”仅仅是运行时对象的一个私有属性，而且无法自定义类型。
+<span class="hl-1">Class</span> <span class="hl-2">运行时对象</span> <span class="hl-3">私有属性</span> 
 
 <span class="hl-1">基本类型</span> <span class="hl-2">对应对象中的属性</span> <span class="hl-3">Number</span> <span class="hl-4">String</span> <span class="hl-2">Boolean</span> <span class="hl-3">Symbol</span>
-
-也就是说 2 与 `new Number(2)` 是完全不同的值，一个是 `number` 类型，一个是对象类型。
 
 Number、String 和 Boolean 这三个构造器搭配 `new` 时产生对象，直接调用时表示强制类型转换。
 
