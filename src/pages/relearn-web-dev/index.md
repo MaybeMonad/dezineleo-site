@@ -31,6 +31,7 @@ to-heading: 3
 2. [《JavaScript 高级程序设计（第 3 版）》](/notes/professional-javascript-for-web-developers)
 3. [Eloquent JavaScript](/notes/eloquent-javascript)
 4. [You Don't Know JS](/notes/you-dont-know-js)
+5. [JavaScript Tutorial](/notes/javascript-tutorial/)
 
 <!-- 5. [web.dev](https://web.dev/) -->
 
