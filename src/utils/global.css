@@ -156,6 +156,7 @@ code[class*='language-text'] {
 /* Code blocks */
 .code-toolbar {
   width: 100%;
+  margin-top: 42px;
 }
 
 pre[class=' language-bash'] + .toolbar {

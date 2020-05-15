@@ -203,4 +203,70 @@ top:
 
 ### 1.4 字符串
 
+<span class="hl-1">转义</span> <span class="hl-2">\0</span> <span class="hl-3">\b</span> <span class="hl-4">\f</span> <span class="hl-2">\n</span> <span class="hl-3">\r</span> <span class="hl-4">\t</span> <span class="hl-2">\v</span> <span class="hl-3">\\'</span> <span class="hl-4">\\"</span> <span class="hl-2">\\\\</span> <span class="hl-3">\HHH</span> <span class="hl-4">\xHH</span> <span class="hl-2">\uXXXX</span>
+
+```js
+'\251' // "©"
+'\xA9' // "©"
+'\u00A9' // "©"
+
+'\172' === 'z' // true
+'\x7A' === 'z' // true
+'\u007A' === 'z' // true
+```
+
+<span class="hl-1">字符串</span> <span class="hl-2">数组</span> <span class="hl-3">只读</span>
+
+<span class="hl-1">UTF-16</span> <span class="hl-2">两字节</span> <span class="hl-3">U+10000 - U+10FFFF</span> <span class="hl-4">length = 2</span>
+
+<span class="hl-1">Base64</span> <span class="hl-2">btoa()</span> <span class="hl-3">atob()</span> <span class="hl-4">ASCII</span>
+
+```js
+// 非 ASCII 码的字符不适用直接转换，需先转码
+
+function b64Encode(str) {
+  return btoa(encodeURIComponent(str));
+}
+
+function b64Decode(str) {
+  return decodeURIComponent(atob(str));
+}
+
+b64Encode('你好') // "JUU0JUJEJUEwJUU1JUE1JUJE"
+b64Decode('JUU0JUJEJUEwJUU1JUE1JUJE') // "你好"
+```
+
+### 1.5 对象
+
+<span class="hl-1">delete 命令</span> <span class="hl-2">对象本身属性</span> <span class="hl-3">NOT 继承的属性</span>
+
+<span class="hl-1">in 运算符</span> <span class="hl-2">属性存在与否</span> <span class="hl-3">hasOwnProperty</span>
+
+```js
+// for...in 循环遍历所有可遍历属性，包括继承的属性
+
+var person = { name: '老张' };
+
+for (var key in person) {
+  if (person.hasOwnProperty(key)) {
+    console.log(key);
+  }
+}
+// name
+```
+
+```js
+// with 语句内部不是块级作用域，不建议使用
+
+var obj = {};
+with (obj) {
+  p1 = 4;
+  p2 = 5;
+}
+
+obj.p1 // undefined
+p1 // 4
+```
+
+### 1.6 函数
 
