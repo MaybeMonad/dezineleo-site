@@ -92,7 +92,7 @@ export default props => {
 
   const PostHeader = styled.header`
     width: 72rem;
-    margin: 0 0 0 -10rem;
+    margin: 0 0 0 -18rem;
     h1 {
       font-size: 2.8rem;
       margin: 12px 0;
@@ -112,7 +112,7 @@ export default props => {
       border-radius: 6px;
     }
     .post-info {
-      border-bottom: 1px solid var(--border-grey);
+      border-bottom: var(--border);
       display: flex;
       justify-content: space-between;
       margin: 0 0 64px 0;

@@ -7,7 +7,7 @@ import GitHub from '../../static/home/github.svg'
 
 const Footer = styled.footer`
   padding: 36px 0;
-  border-top: 1px solid var(--border-grey);
+  border-top: var(--border);
   .copyright {
     font-family: var(--font-bold);
     font-size: 16px;

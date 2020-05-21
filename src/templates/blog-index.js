@@ -14,18 +14,19 @@ import LinkBlock from '../components/LinkBlock'
 import BlockContainer from '../components/BlockContainer'
 import IntroCard from '../components/IntroCard'
 
-import JSHub from '../../static/home/logo_js_hub.svg'
-import DeStatic from '../../static/home/logo_destatic.svg'
-import BreakElm from '../../static/home/logo_break_elm.svg'
-import Decon from '../../static/home/logo_decon.svg'
+// import JSHub from '../../static/home/logo_js_hub.svg'
+// import DeStatic from '../../static/home/logo_destatic.svg'
+// import BreakElm from '../../static/home/logo_break_elm.svg'
+// import Decon from '../../static/home/logo_decon.svg'
 import Alarm from '../../static/icon_alarm.svg'
-import CardTwitter from '../../static/card_twitter.png'
-import CardGitHub from '../../static/card_github.svg'
-import CardDribbble from '../../static/card_dribbble.svg'
+// import CardTwitter from '../../static/card_twitter.png'
+// import CardGitHub from '../../static/card_github.svg'
+// import CardDribbble from '../../static/card_dribbble.svg'
 import DarkAvatar from '../../static/home/dark_avatar.png'
 import IconProjects from '../../static/icon_projects.svg'
 import IconNotes from '../../static/icon_notes.svg'
 import IconBooks from '../../static/icon_books.svg'
+import Star from '../../static/icon_star.svg'
 // import IconCode from '../../static/icon_code.svg'
 
 const ArticleList = styled.main`
@@ -39,12 +40,14 @@ const ArticleList = styled.main`
     grid-gap: 32px;
     grid-auto-rows: 1fr;
     article {
-      border: 1px solid var(--border-grey);
+      border: var(--border);
+      // background-color: var(--dark-1);
       margin: 0;
       height: calc(100% - 36px);
       display: flex;
       justify-content: space-between;
       flex-direction: column;
+      max-width: none;
       header {
         flex-direction: column;
         img {
@@ -69,8 +72,9 @@ const ArticleList = styled.main`
   &.challenges {
     margin: 0 0 24px 0;
     article {
-      border: 1px solid var(--border-grey);
+      border: var(--border);
       margin: 0;
+      max-width: none;
       header {
         align-items: center;
         h3 {
@@ -88,10 +92,11 @@ const ArticleList = styled.main`
     margin: 0 -24px 20px -24px;
     position: relative;
     z-index: 1;
+    max-width: none;
     ::before {
       content: '';
       transition: all 0.32s ease;
-      background-color: white;
+      background-color: var(--dark-1);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
       border-radius: 8px;
       display: block;
@@ -102,11 +107,20 @@ const ArticleList = styled.main`
       height: 0;
       z-index: 0;
     }
-    :hover::before {
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
+    :hover {
+      &::before {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+      header {
+        .article-info {
+          .wip {
+            background-color: var(--dark-2);
+          }
+        }
+      }
     }
     header {
       position: relative;
@@ -152,10 +166,11 @@ const ArticleList = styled.main`
           }
         }
         .wip {
-          background-color: var(--bg-grey);
-          color: var(--font-grey);
+          background-color: var(--dark-1);
+          color: var(--dark-3);
           font-weight: 300;
           font-family: var(--font-regular);
+          transition: all 0.32s ease;
           strong {
             font-family: var(--font-medium);
             font-weight: 500;
@@ -166,6 +181,9 @@ const ArticleList = styled.main`
     p {
       position: relative;
       margin-bottom: 0;
+      &.spoiler {
+        color: var(--dark-3);
+      }
     }
   }
   @media (max-width: 672px) {
@@ -179,6 +197,50 @@ const ArticleList = styled.main`
         flex-direction: row;
         h3 {
           font-size: 1.2rem;
+        }
+      }
+    }
+  }
+`
+
+const Projects = styled.div`
+  padding: 48px 0 0 36px;
+  h3 {
+    color: var(--dark-3);
+    text-transform: uppercase;
+    margin: 0 0 32px 0;
+  }
+  ul {
+    padding: 0;
+    li {
+      display: inline-block;
+      list-style: none;
+      margin: 0 0 42px 0;
+      padding: 0;
+      .lang {
+        text-transform: uppercase;
+        color: var(--dark-3);
+        font-size: 15px;
+        font-family: var(--font-bold);
+      }
+      h2 {
+        margin: 0;
+        font-size: 24px;
+        color: var(--light);
+        line-height: 1.4;
+      }
+      p {
+        margin: 2px 0 14px 0;
+        font-size: 15px;
+        color: var(--dark-3);
+        line-height: 1.4;
+      }
+      .stars {
+        color: var(--dark-3);
+        font-size: 15px;
+        font-family: var(--font-bold);
+        img {
+          margin-right: 6px;
         }
       }
     }
@@ -207,112 +269,12 @@ export default props => {
     }
   `
 
-  const SideProject = props => {
-    const { logo, link, title, des, github, version, className, style } = props
-
-    return (
-      <Link className={className} style={style} to={link}>
-        <img src={logo} alt={title} />
-        <div className="project-intro">
-          <h2>
-            {title}
-            {/* {version && <sup>{version}</sup>} */}
-          </h2>
-          <p>{des}</p>
-        </div>
-      </Link>
-    )
-  }
-
-  const StyledSideProject = styled(SideProject)`
-    box-shadow: none;
-    transition: box-shadow 0.3s ease 0s;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    ::before {
-      content: '';
-      transition: all 0.28s ease;
-      background-color: var(--bg-light);
-      border-radius: 8px;
-      display: block;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 0;
-      height: 0;
-      z-index: 0;
-    }
-    :hover::before {
-      width: calc(100% + 40px);
-      height: calc(100% + 40px);
-      left: -20px;
-      top: -20px;
-    }
-    img {
-      max-width: 48px;
-      margin-right: 14px;
-      position: relative;
-    }
-    h2 {
-      position: relative;
-      font-size: 18px;
-      margin: 0;
-      text-transform: uppercase;
-      sup {
-        color: var(--brand);
-        font-family: var(--font-regular);
-        font-size: 10px;
-        margin-left: 2px;
-      }
-    }
-    p {
-      position: relative;
-      font-size: 13px;
-      color: var(--font-grey);
-      margin: 0;
-      line-height: 16px;
-      font-family: var(--font-regular);
-    }
-    @media (max-width: 376px) {
-      flex-direction: column;
-      align-items: flex-start;
-      background-color: var(--primary-light);
-      border-radius: 8px;
-      padding: 20px;
-      img {
-        max-width: 36px;
-        margin-bottom: 12px;
-      }
-      h2 {
-        font-size: 15px;
-      }
-      p {
-        font-size: 12px;
-      }
-    }
-  `
-
-  const SideProjects = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0 72px 0;
-    @media (max-width: 672px) {
-      display: grid;
-      grid-template-columns: calc(50% - 12px) calc(50% - 12px);
-      grid-gap: 24px;
-    }
-  `
-
   const MainContent = styled.div`
     display: grid;
-    grid-template-columns: calc(75% - 56px) 25%;
-    grid-gap: 56px;
-    margin: 0 auto 24px auto;
-    padding: 56px 0 0 0;
+    grid-template-columns: 2fr 1fr;
+    // grid-gap: 36px;
+    margin: 0 auto;
+    padding: 0;
     max-width: 72rem;
     @media (max-width: 672px) {
       grid-template-columns: 100%;
@@ -383,7 +345,8 @@ export default props => {
                       <div className="d-flex">
                         {node.frontmatter.thumbnail && (
                           <img
-                            src={node.frontmatter.thumbnail.publicURL}
+                            // src={node.frontmatter.thumbnail.publicURL}
+                            src={IconBooks}
                             alt={title}
                           />
                         )}
@@ -502,6 +465,8 @@ export default props => {
   }
 
   const TabSection = styled.div`
+    border-right: var(--border);
+    padding: 48px 32px 0 0;
     ul {
       list-style: none;
       padding: 0;
@@ -521,6 +486,7 @@ export default props => {
         position: relative;
         z-index: 1;
         transition: all 0.32s ease;
+        color: var(--dark-3);
         span {
           position: relative;
           z-index: 1;
@@ -531,7 +497,7 @@ export default props => {
         ::before {
           content: '';
           transition: all 0.32s ease;
-          background-color: var(--bg-grey);
+          background-color: var(--dark-2);
           border-radius: 4px;
           display: block;
           position: absolute;
@@ -541,120 +507,146 @@ export default props => {
           height: 0;
           z-index: 0;
         }
-        :hover::before {
-          width: 100%;
-          height: 100%;
-          left: 0;
-          top: 0;
+        :hover {
+          &::before {
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+          }
+          color: var(--dark-4);
         }
         &.active {
           font-weight: 700;
-          background-color: var(--primary);
-          color: white;
+          background-color: var(--light);
+          color: var(--dark-0);
           ::before {
-            background-color: var(--primary);
+            background-color: var(--light);
           }
         }
       }
     }
   `
 
-  const Activities = styled.div`
-    h3 {
-      margin: 0 0 24px 0;
-      font-size: 16px;
-      text-transform: uppercase;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      li {
-        display: flex;
-        a {
-          color: var(--primary);
-        }
-        &:first-child {
-          .activity-dot {
-            &:before {
-              box-shadow: 0 0 0 4px rgb(0, 153, 255, 0.12);
-            }
-          }
-        }
-        .activity-dot {
-          position: relative;
-          border-color: var(--bg-grey);
-          padding: 0 0.5rem;
-          &:before,
-          &:after {
-            content: '';
-            position: absolute;
-            border-color: inherit;
-            border-width: 2px;
-            border-style: solid;
-            border-radius: 50%;
-            width: 8px;
-            height: 8px;
-            top: 14px;
-            left: 50%;
-            transform: translateX(-50%);
-          }
-          &:before {
-            border-color: var(--primary);
-            z-index: 1;
-          }
-          &:after {
-            width: 0;
-            height: auto;
-            top: 32px;
-            bottom: -16px;
-            border-right-width: 0;
-            border-top-width: 0;
-            border-bottom-width: 0;
-            border-radius: 0;
-            z-index: 0;
-          }
-        }
-        .activity-body {
-          padding: 0 0 0.25rem 1rem;
-          p {
-            margin: 10px 0 0 0;
-            font-size: 14px;
-            font-weight: 500;
-            font-family: var(--font-medium);
-            line-height: 1.5;
-          }
-          .date {
-            font-size: 12px;
-            color: var(--font-grey);
-            font-family: var(--font-regular);
-          }
-        }
-      }
-    }
-  `
+  // const Activities = styled.div`
+  //   h3 {
+  //     margin: 0 0 24px 0;
+  //     font-size: 16px;
+  //     text-transform: uppercase;
+  //     color: var(--dark-3);
+  //   }
+  //   ul {
+  //     list-style: none;
+  //     padding: 0;
+  //     margin: 0;
+  //     li {
+  //       display: flex;
+  //       a {
+  //         color: var(--primary);
+  //       }
+  //       &:first-child {
+  //         .activity-dot {
+  //           &:before {
+  //             box-shadow: 0 0 0 4px rgb(0, 153, 255, 0.12);
+  //           }
+  //         }
+  //       }
+  //       .activity-dot {
+  //         position: relative;
+  //         border-color: var(--bg-grey);
+  //         padding: 0 0.5rem;
+  //         &:before,
+  //         &:after {
+  //           content: '';
+  //           position: absolute;
+  //           border-color: inherit;
+  //           border-width: 2px;
+  //           border-style: solid;
+  //           border-radius: 50%;
+  //           width: 8px;
+  //           height: 8px;
+  //           top: 14px;
+  //           left: 50%;
+  //           transform: translateX(-50%);
+  //         }
+  //         &:before {
+  //           border-color: var(--primary);
+  //           z-index: 1;
+  //         }
+  //         &:after {
+  //           width: 0;
+  //           height: auto;
+  //           top: 32px;
+  //           bottom: -16px;
+  //           border-right-width: 0;
+  //           border-top-width: 0;
+  //           border-bottom-width: 0;
+  //           border-radius: 0;
+  //           z-index: 0;
+  //         }
+  //       }
+  //       .activity-body {
+  //         padding: 0 0 0.25rem 1rem;
+  //         p {
+  //           margin: 10px 0 0 0;
+  //           font-size: 14px;
+  //           font-weight: 500;
+  //           font-family: var(--font-medium);
+  //           line-height: 1.5;
+  //         }
+  //         .date {
+  //           font-size: 12px;
+  //           color: var(--font-grey);
+  //           font-family: var(--font-regular);
+  //         }
+  //       }
+  //     }
+  //   }
+  // `
 
-  const activities = [
+  // const activities = [
+  //   {
+  //     content:
+  //       'New version of this site is released, checkout the <a href="https://github.com/DezineLeo/dezineleo-site" target="_blank">Source</a>.',
+  //     date: '2020-04-08',
+  //   },
+  //   {
+  //     content:
+  //       'Become a Dribbble player. Visit my <a href="https://dribbble.com/dezineleo" target="_blank">Dribbble Page</a>.',
+  //     date: '2018-08-01',
+  //   },
+  //   {
+  //     content: 'Site is alive!',
+  //     date: '2018-07-01',
+  //   },
+  // ]
+
+  const projects = [
     {
-      content:
-        'New version of this site is released, checkout the <a href="https://github.com/DezineLeo/dezineleo-site" target="_blank">Source</a>.',
-      date: '2020-04-08',
+      lang: 'Vue',
+      name: 'Break Elm',
+      desc: 'A Chinese version of Elm docs.',
+      stars: 0,
     },
     {
-      content:
-        'Become a Dribbble player. Visit my <a href="https://dribbble.com/dezineleo" target="_blank">Dribbble Page</a>.',
-      date: '2018-08-01',
+      lang: 'Svelte',
+      name: 'JavaScript Hub',
+      desc:
+        'A sweet and free JavaScript learning application for JavaScript lovers.',
+      stars: 0,
     },
     {
-      content: 'Site is alive!',
-      date: '2018-07-01',
+      lang: 'Pug',
+      name: 'DeStatic',
+      desc: 'A starter HTML Template using Pug, Sass, Webpack, Gulp.',
+      stars: 0,
     },
   ]
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO />
-      <BlockContainer
+      {/* <BlockContainer
         display="grid"
         column={3}
         className="horizontal"
@@ -678,7 +670,7 @@ export default props => {
           des="dribbble.com/dezineleo"
           link="https://dribbble.com/dezineleo"
         />
-      </BlockContainer>
+      </BlockContainer> */}
       <Aside>
         <IntroCard
           avatar={DarkAvatar}
@@ -732,36 +724,13 @@ export default props => {
           />
         </BlockContainer>
       </Aside>
-      {/* <SideProjects>
-        <StyledSideProject
-          logo={BreakElm}
-          link="/projects/break-elm"
-          title="Break Elm"
-          des="Elm doc for Chinese"
-          version=""
-        />
-        <StyledSideProject
-          logo={JSHub}
-          link="/projects/javascript-hub"
-          title="JS Hub"
-          des="Learn JavaScript"
-          version="v1.0.0"
-        />
-        <StyledSideProject
-          logo={DeStatic}
-          link="/destatic"
-          title="DeStatic"
-          des="Pug-based starter"
-          version="v1.0.1"
-        />
-        <StyledSideProject
-          logo={Decon}
-          link="/decon"
-          title="Decon"
-          des="Icon System"
-          version="v1.0"
-        />
-      </SideProjects> */}
+      <FullWidthWrapper
+        style={{
+          backgroundColor: 'none',
+          border: 'var(--border)',
+          borderWidth: '1px 0 0 0',
+        }}
+      ></FullWidthWrapper>
       <MainContent>
         <TabSection>
           <ul>
@@ -777,7 +746,23 @@ export default props => {
           </ul>
           {tabs[currentTab]}
         </TabSection>
-        <Activities>
+        <Projects>
+          <h3>Featured Projects</h3>
+          <ul>
+            {projects.map(p => (
+              <li key={p.name}>
+                <div className="lang">{p.lang}</div>
+                <h2>{p.name}</h2>
+                <p>{p.desc}</p>
+                <div className="stars">
+                  <img src={Star} alt="" />
+                  {p.stars}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </Projects>
+        {/* <Activities>
           <h3>Activities</h3>
           <ul>
             {activities.map(a => (
@@ -790,13 +775,9 @@ export default props => {
               </li>
             ))}
           </ul>
-        </Activities>
+        </Activities> */}
       </MainContent>
       <Footer style={{ maxWidth: '72rem', margin: '0 auto' }} />
-      {/* <FullWidthWrapper
-        style={{ backgroundColor: 'var(--bg-light)', border: 'none' }}
-      >
-      </FullWidthWrapper> */}
     </Layout>
   )
 }

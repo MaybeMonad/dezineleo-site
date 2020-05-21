@@ -369,7 +369,8 @@ a:active {
 }
 
 article {
-  color: var(--font-article);
+  /* color: var(--font-article); */
+  color: var(--dark-4);
 }
 
 article h1,
@@ -386,7 +387,7 @@ article h1 {
 }
 
 article h2 {
-  border-bottom: 1px solid var(--border-grey);
+  border-bottom: var(--border);
   margin-top: 2rem;
 }
 
@@ -621,7 +622,7 @@ tbody tr:hover {
 }
 
 main {
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 0;
   /* border: var(--border);
   padding: 16px 42px;
@@ -638,8 +639,8 @@ main {
 .alert .new {
   font-size: 14px;
   padding: 5px 12px;
-  background: #fff5d9;
-  color: #f7b801;
+  background: var(--dark-2);
+  color: var(--dark-4);
   display: inline-block;
   border-radius: 4px;
   text-align: center;
