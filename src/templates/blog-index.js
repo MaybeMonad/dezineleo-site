@@ -10,12 +10,22 @@ import Layout from '../components/Layout'
 import FullWidthWrapper from '../components/FullWidthWrapper'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
+import LinkBlock from '../components/LinkBlock'
+import BlockContainer from '../components/BlockContainer'
+import IntroCard from '../components/IntroCard'
+
 import JSHub from '../../static/home/logo_js_hub.svg'
 import DeStatic from '../../static/home/logo_destatic.svg'
 import BreakElm from '../../static/home/logo_break_elm.svg'
 import Decon from '../../static/home/logo_decon.svg'
-import Top from '../../static/home/top.jpg'
 import Alarm from '../../static/icon_alarm.svg'
+import CardTwitter from '../../static/card_twitter.png'
+import CardGitHub from '../../static/card_github.svg'
+import CardDribbble from '../../static/card_dribbble.svg'
+import DarkAvatar from '../../static/home/dark_avatar.png'
+import IconProjects from '../../static/icon_projects.svg'
+import IconNotes from '../../static/icon_notes.svg'
+import IconBooks from '../../static/icon_books.svg'
 // import IconCode from '../../static/icon_code.svg'
 
 const ArticleList = styled.main`
@@ -175,38 +185,6 @@ const ArticleList = styled.main`
   }
 `
 
-const StyledHand = styled.span`
-  animation-name: wavingHand;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
-
-  @keyframes wavingHand {
-    0% {
-      transform: rotate(0deg);
-    }
-    10% {
-      transform: rotate(-10deg);
-    }
-    20% {
-      transform: rotate(12deg);
-    }
-    30% {
-      transform: rotate(-10deg);
-    }
-    40% {
-      transform: rotate(9deg);
-    }
-    50% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-`
-
 export default props => {
   const {
     pageContext: { langKey },
@@ -219,70 +197,13 @@ export default props => {
 
   const Aside = styled.aside`
     padding: 36px 0 48px 0;
-    .hello {
-      z-index: 2;
-      max-width: 480px;
-      position: relative;
-      text-align: left;
-      .notification {
-        background-color: #fff5d9;
-        padding: 10px 12px;
-        border-radius: 3px;
-        font-size: 12px;
-        line-height: 12px;
-        display: inline-block;
-        margin-bottom: 20px;
-      }
-      h3 {
-        font-size: 18px;
-        margin: 0 0 20px 0;
-      }
-      h1 {
-        font-size: 42px;
-        margin: 0 0 8px 0;
-      }
-    }
-    img.intro {
-      max-width: 360px;
-      margin-right: -20px;
-      padding-top: 30px;
-    }
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 36px;
     @media (max-width: 672px) {
       flex-direction: column;
       align-items: flex-start;
       padding: 36px 0;
-      .hello {
-        h1 {
-          font-size: 28px;
-        }
-        h3 {
-          font-size: 16px;
-        }
-      }
-      img.intro {
-        max-width: 100%;
-        margin-right: 0px;
-        margin-left: -20px;
-      }
-    }
-  `
-
-  const Links = styled.div`
-    a {
-      margin-right: 16px;
-      font-size: 16px;
-      font-family: var(--font-bold);
-      box-shadow: none;
-      display: inline-flex;
-      align-items: center;
-      img {
-        margin-right: 6px;
-      }
-    }
-    @media (max-width: 672px) {
-      a {
-        margin-right: 12px;
-      }
     }
   `
 
@@ -392,7 +313,7 @@ export default props => {
     grid-gap: 56px;
     margin: 0 auto 24px auto;
     padding: 56px 0 0 0;
-    max-width: 56rem;
+    max-width: 72rem;
     @media (max-width: 672px) {
       grid-template-columns: 100%;
       grid-gap: 0;
@@ -733,33 +654,85 @@ export default props => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO />
-      <Aside className="d-flex justify-between align-items-center">
-        <div className="hello">
-          <div className="notification">
-            <span style={{ fontSize: 16 }}>🎯</span> Hunting for new job!
-          </div>
-          <h1>
-            <span style={{ fontFamily: 'var(--font-medium)' }}>Hi, I'm</span>{' '}
-            Yang Jin <StyledHand>👋</StyledHand>
-          </h1>
-          <h3
-            style={{ fontFamily: 'var(--font-regular)', fontWeight: 'normal' }}
-          >
-            A Web Developer / UI Designer / Illustrator / English Teacher based
-            in Hangzhou, China.
-          </h3>
-          <Links>
-            <Link to="/about">
-              <button className="btn">My Resume</button>
-            </Link>
-            <Link to="/2019">
-              <button className="btn btn-grey">2019 Report</button>
-            </Link>
-          </Links>
-        </div>
-        <img className="intro" src={Top} alt="About Yang Jin" />
+      <BlockContainer
+        display="grid"
+        column={3}
+        className="horizontal"
+        style={{ margin: '24px 0' }}
+      >
+        <LinkBlock
+          icon={CardTwitter}
+          title="Twitter"
+          des="@dezineleo"
+          link="https://twitter.com/dezineleo"
+        />
+        <LinkBlock
+          icon={CardGitHub}
+          title="GitHub"
+          des="github.com/dezineleo"
+          link="https://github.com/dezineleo"
+        />
+        <LinkBlock
+          icon={CardDribbble}
+          title="Dribbble"
+          des="dribbble.com/dezineleo"
+          link="https://dribbble.com/dezineleo"
+        />
+      </BlockContainer>
+      <Aside>
+        <IntroCard
+          avatar={DarkAvatar}
+          title="Hi, I'm Yang Jin."
+          intro="A Web Developer / UI Designer / Illustrator / English Teacher based in Hangzhou, China."
+          extra={
+            <div
+              style={{
+                color: 'var(--dark-4)',
+                fontFamily: 'var(--font-bold)',
+                fontSize: 22,
+                marginTop: 40,
+              }}
+            >
+              Ever since I was a child, I have always been passionate about{' '}
+              <span style={{ color: 'var(--light)' }}>illustrating</span> and{' '}
+              <span style={{ color: 'var(--light)' }}>computer-like stuff</span>
+              . However, I chose to study English instead of CS to become a{' '}
+              <span style={{ color: 'var(--light)' }}>
+                self-taught web developer
+              </span>
+              .
+            </div>
+          }
+        />
+        <BlockContainer
+          display="grid"
+          column={1}
+          className="vertical justify-start"
+        >
+          <LinkBlock
+            icon={IconProjects}
+            iconSize={72}
+            title="PROJECTS"
+            des="What I'm building"
+            link="https://twitter.com/dezineleo"
+          />
+          <LinkBlock
+            icon={IconNotes}
+            iconSize={72}
+            title="NOTES"
+            des="What I'm learning"
+            link="https://github.com/dezineleo"
+          />
+          <LinkBlock
+            icon={IconBooks}
+            iconSize={72}
+            title="BOOKS"
+            des="What I'm reading"
+            link="https://dribbble.com/dezineleo"
+          />
+        </BlockContainer>
       </Aside>
-      <SideProjects>
+      {/* <SideProjects>
         <StyledSideProject
           logo={BreakElm}
           link="/projects/break-elm"
@@ -788,42 +761,42 @@ export default props => {
           des="Icon System"
           version="v1.0"
         />
-      </SideProjects>
-      <FullWidthWrapper
+      </SideProjects> */}
+      <MainContent>
+        <TabSection>
+          <ul>
+            {Object.keys(tabs).map(t => (
+              <li
+                key={t}
+                className={currentTab === t ? 'active' : ''}
+                onClick={() => setCurrentTab(t)}
+              >
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+          {tabs[currentTab]}
+        </TabSection>
+        <Activities>
+          <h3>Activities</h3>
+          <ul>
+            {activities.map(a => (
+              <li key={a.content}>
+                <div className="activity-dot"></div>
+                <div className="activity-body">
+                  <p dangerouslySetInnerHTML={{ __html: a.content }} />
+                  <p className="date">{dayjs(a.date).from(dayjs())}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </Activities>
+      </MainContent>
+      <Footer style={{ maxWidth: '72rem', margin: '0 auto' }} />
+      {/* <FullWidthWrapper
         style={{ backgroundColor: 'var(--bg-light)', border: 'none' }}
       >
-        <MainContent>
-          <TabSection>
-            <ul>
-              {Object.keys(tabs).map(t => (
-                <li
-                  key={t}
-                  className={currentTab === t ? 'active' : ''}
-                  onClick={() => setCurrentTab(t)}
-                >
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-            {tabs[currentTab]}
-          </TabSection>
-          <Activities>
-            <h3>Activities</h3>
-            <ul>
-              {activities.map(a => (
-                <li key={a.content}>
-                  <div className="activity-dot"></div>
-                  <div className="activity-body">
-                    <p dangerouslySetInnerHTML={{ __html: a.content }} />
-                    <p className="date">{dayjs(a.date).from(dayjs())}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </Activities>
-        </MainContent>
-        <Footer style={{ maxWidth: '56rem', margin: '0 auto' }} />
-      </FullWidthWrapper>
+      </FullWidthWrapper> */}
     </Layout>
   )
 }

@@ -33,7 +33,7 @@ export default props => {
     height: 72px;
     padding: 0;
     transition: all 0.24s ease;
-    padding: 0rem 1.3rem;
+    padding: 20px 0;
     margin: 0 auto;
     h1 {
       margin: 0;
@@ -70,6 +70,9 @@ export default props => {
       }
     }
     nav {
+      background-color: var(--dark-1);
+      border-radius: 100px;
+      padding: 20px;
       a {
         padding: 8px 24px;
         box-shadow: none;
@@ -125,36 +128,19 @@ export default props => {
           padding: `0rem 1.3rem`,
         }}
       >
-        <FullWidthWrapper
-          className={`fullwidth-${pathname}`}
-          style={{ borderBottom: 'none' }}
-        >
-          <Header>
-            <h1>
-              <Link to={'/'} style={{ position: 'relative' }}>
-                <span style={{ fontFamily: 'var(--font-bold)' }}>Dezine</span>
-                <span className="version">v2.3</span>
-              </Link>
-            </h1>
-            <nav>
-              <Link to={'/'}>Home</Link>
-              <Link to={'/archive'}>Archive</Link>
-              <Link to={'/about'}>About</Link>
-            </nav>
-            {/* <div className="header-top-right" style={{ fontSize: 13 }}>
-              <span>Stay focus, make impact.</span>
-              <a
-                style={{
-                  marginLeft: 20,
-                  display: 'inline-block',
-                }}
-                href="mailto:dezineleo@gmail.com"
-              >
-                Hire Me
-              </a>
-            </div> */}
-          </Header>
-        </FullWidthWrapper>
+        <Header>
+          <h1>
+            <Link to={'/'} style={{ position: 'relative' }}>
+              <span style={{ fontFamily: 'var(--font-bold)' }}>Dezine</span>
+              <span className="version">v2.3</span>
+            </Link>
+          </h1>
+          <nav>
+            <Link to={'/'}>Home</Link>
+            <Link to={'/archive'}>Archive</Link>
+            <Link to={'/about'}>About</Link>
+          </nav>
+        </Header>
         {children}
       </div>
     </div>

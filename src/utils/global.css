@@ -5,13 +5,11 @@ html {
 
 body {
   --pink: rgb(255, 167, 196);
-  --black: #191919;
   --font-grey: #a3a3a3;
   --border-grey: #e8e8e8;
   --dark-border-grey: #313131;
   --bg-grey: #f2f2f2;
   --bg-light: #f9fafb;
-  --border: 1px solid var(--border-grey);
   --dark-border: 1px solid var(--dark-border-grey);
   --font-family: var(--font-regular), PingFang SC, Microsoft YaHei,
     Noto Sans CJK SC, WenQuanYi Micro Hei, system-ui, -apple-system, sans-serif;
@@ -52,13 +50,14 @@ body.light {
   --hr: hsla(0, 0%, 0%, 0.2);
   --inlineCode-bg: rgba(255, 229, 100, 0.2);
   --inlineCode-text: #1a1a1a;
+  --black: #191919;
+  --border: 1px solid var(--border-grey);
   /* font-weight: 300; */
 }
 
-/* body.dark {
+body.dark {
   -webkit-font-smoothing: antialiased;
-
-  --bg: #282c35;
+  --bg: #000001;
   --header: #ffffff;
   --textNormal: rgba(255, 255, 255, 0.88);
   --textTitle: #ffffff;
@@ -67,7 +66,15 @@ body.light {
   --inlineCode-bg: hsl(222, 14%, 25%);
   --inlineCode-text: #e6e6e6;
   font-weight: 300;
-} */
+  --black: #eff0f2;
+  --dark-0: #000001;
+  --dark-1: #1b1c1e;
+  --dark-2: #343537;
+  --dark-3: #77787a;
+  --dark-4: #b3b4b6;
+  --border: 1px solid #242527;
+  --light: #eff0f2;
+}
 
 pre.language-bash code.language-bash {
   position: relative;
