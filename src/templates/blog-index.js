@@ -14,20 +14,12 @@ import LinkBlock from '../components/LinkBlock'
 import BlockContainer from '../components/BlockContainer'
 import IntroCard from '../components/IntroCard'
 
-// import JSHub from '../../static/home/logo_js_hub.svg'
-// import DeStatic from '../../static/home/logo_destatic.svg'
-// import BreakElm from '../../static/home/logo_break_elm.svg'
-// import Decon from '../../static/home/logo_decon.svg'
-import Alarm from '../../static/icon_alarm.svg'
-// import CardTwitter from '../../static/card_twitter.png'
-// import CardGitHub from '../../static/card_github.svg'
-// import CardDribbble from '../../static/card_dribbble.svg'
+// import Alarm from '../../static/icon_alarm.svg'
 import DarkAvatar from '../../static/home/dark_avatar.png'
 import IconProjects from '../../static/icon_projects.svg'
 import IconNotes from '../../static/icon_notes.svg'
 import IconBooks from '../../static/icon_books.svg'
 import Star from '../../static/icon_star.svg'
-// import IconCode from '../../static/icon_code.svg'
 
 const ArticleList = styled.main`
   margin: 0 0 24px 0;
@@ -158,11 +150,11 @@ const ArticleList = styled.main`
           display: inline-block;
         }
         .badge {
-          color: var(--primary);
+          color: var(--heading);
           text-transform: uppercase;
           margin-right: 12px;
           &.Featured {
-            background-color: rgb(0, 153, 255, 0.12);
+            background-color: var(--dark-1);
           }
         }
         .wip {
@@ -195,8 +187,22 @@ const ArticleList = styled.main`
     article {
       header {
         flex-direction: row;
-        h3 {
-          font-size: 1.2rem;
+        .article-info {
+          h3 {
+            font-size: 1.2rem;
+          }
+          p.spoiler {
+            font-size: 14px;
+            line-height: 20px;
+            margin-top: 8px;
+          }
+        }
+        img {
+          max-width: 48px;
+          min-width: 48px;
+          width: 48px;
+          height: 48px;
+          margin-right: 24px;
         }
       }
     }
@@ -245,6 +251,9 @@ const Projects = styled.div`
       }
     }
   }
+  @media (max-width: 672px) {
+    padding: 48px 0 0 0;
+  }
 `
 
 export default props => {
@@ -263,6 +272,7 @@ export default props => {
     grid-template-columns: 2fr 1fr;
     grid-gap: 36px;
     @media (max-width: 672px) {
+      grid-template-columns: 1fr;
       flex-direction: column;
       align-items: flex-start;
       padding: 36px 0;
@@ -279,49 +289,49 @@ export default props => {
     @media (max-width: 672px) {
       grid-template-columns: 100%;
       grid-gap: 0;
-      padding: 56px 24px;
+      padding: 56px 0px 0 0;
     }
   `
 
-  const Deadline = styled.div`
-    background-color: var(--bg-grey);
-    position: relative;
-    display: inline-block;
-    padding: 6px 14px 6px 12px;
-    border-radius: 4px;
-    overflow: hidden;
-    color: var(--font-grey);
-    img {
-      width: 20px !important;
-      height: 20px !important;
-      min-width: 20px !important;
-      margin-right: 10px !important;
-    }
-    .deadline {
-      color: var(--black);
-      margin-left: 4px;
-    }
-    .progress {
-      position: absolute;
-      left: 0;
-      top: 0;
-      background-color: #e1e1e1;
-      display: inline-block;
-      height: 100%;
-    }
-    p {
-      position: relative;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      font-size: 12px;
-      img {
-        margin: -3px 6px 0 0;
-      }
-    }
-  `
+  // const Deadline = styled.div`
+  //   background-color: var(--bg-grey);
+  //   position: relative;
+  //   display: inline-block;
+  //   padding: 6px 14px 6px 12px;
+  //   border-radius: 4px;
+  //   overflow: hidden;
+  //   color: var(--font-grey);
+  //   img {
+  //     width: 20px !important;
+  //     height: 20px !important;
+  //     min-width: 20px !important;
+  //     margin-right: 10px !important;
+  //   }
+  //   .deadline {
+  //     color: var(--black);
+  //     margin-left: 4px;
+  //   }
+  //   .progress {
+  //     position: absolute;
+  //     left: 0;
+  //     top: 0;
+  //     background-color: #e1e1e1;
+  //     display: inline-block;
+  //     height: 100%;
+  //   }
+  //   p {
+  //     position: relative;
+  //     margin: 0;
+  //     padding: 0;
+  //     display: flex;
+  //     justify-content: flex-start;
+  //     align-items: center;
+  //     font-size: 12px;
+  //     img {
+  //       margin: -3px 6px 0 0;
+  //     }
+  //   }
+  // `
 
   const [currentTab, setCurrentTab] = useState('Topics')
 
@@ -411,57 +421,57 @@ export default props => {
           })}
       </ArticleList>
     ),
-    Challenges: (
-      <ArticleList className="challenges">
-        {posts
-          .filter(({ node }) => get(node, 'frontmatter.type') === 'challenge')
-          .map(({ node }, index) => {
-            if (index < 7) {
-              const title = get(node, 'frontmatter.title') || node.fields.slug
-              return (
-                <Link to={node.fields.slug} rel="bookmark" key={title}>
-                  <article key={node.fields.slug}>
-                    <header>
-                      <h3>
-                        {node.frontmatter.thumbnail && (
-                          <img
-                            src={node.frontmatter.thumbnail.publicURL}
-                            alt={title}
-                          />
-                        )}
-                        {title}
-                      </h3>
-                      <Deadline>
-                        <span
-                          className="progress"
-                          style={{
-                            width: `${(dayjs().diff(
-                              dayjs(node.frontmatter.date),
-                              'day'
-                            ) *
-                              100) /
-                              dayjs(node.frontmatter.deadline).diff(
-                                dayjs(node.frontmatter.date),
-                                'day'
-                              )}%`,
-                          }}
-                        ></span>
-                        <p>
-                          <img src={Alarm} alt="" />
-                          Deadline:{' '}
-                          <span className="deadline">
-                            {node.frontmatter.deadline}
-                          </span>
-                        </p>
-                      </Deadline>
-                    </header>
-                  </article>
-                </Link>
-              )
-            }
-          })}
-      </ArticleList>
-    ),
+    // Challenges: (
+    //   <ArticleList className="challenges">
+    //     {posts
+    //       .filter(({ node }) => get(node, 'frontmatter.type') === 'challenge')
+    //       .map(({ node }, index) => {
+    //         if (index < 7) {
+    //           const title = get(node, 'frontmatter.title') || node.fields.slug
+    //           return (
+    //             <Link to={node.fields.slug} rel="bookmark" key={title}>
+    //               <article key={node.fields.slug}>
+    //                 <header>
+    //                   <h3>
+    //                     {node.frontmatter.thumbnail && (
+    //                       <img
+    //                         src={node.frontmatter.thumbnail.publicURL}
+    //                         alt={title}
+    //                       />
+    //                     )}
+    //                     {title}
+    //                   </h3>
+    //                   <Deadline>
+    //                     <span
+    //                       className="progress"
+    //                       style={{
+    //                         width: `${(dayjs().diff(
+    //                           dayjs(node.frontmatter.date),
+    //                           'day'
+    //                         ) *
+    //                           100) /
+    //                           dayjs(node.frontmatter.deadline).diff(
+    //                             dayjs(node.frontmatter.date),
+    //                             'day'
+    //                           )}%`,
+    //                       }}
+    //                     ></span>
+    //                     <p>
+    //                       <img src={Alarm} alt="" />
+    //                       Deadline:{' '}
+    //                       <span className="deadline">
+    //                         {node.frontmatter.deadline}
+    //                       </span>
+    //                     </p>
+    //                   </Deadline>
+    //                 </header>
+    //               </article>
+    //             </Link>
+    //           )
+    //         }
+    //       })}
+    //   </ArticleList>
+    // ),
   }
 
   const TabSection = styled.div`
@@ -526,100 +536,12 @@ export default props => {
         }
       }
     }
+    @media (max-width: 672px) {
+      padding: 0;
+      border-right: none;
+      border-bottom: var(--border);
+    }
   `
-
-  // const Activities = styled.div`
-  //   h3 {
-  //     margin: 0 0 24px 0;
-  //     font-size: 16px;
-  //     text-transform: uppercase;
-  //     color: var(--dark-3);
-  //   }
-  //   ul {
-  //     list-style: none;
-  //     padding: 0;
-  //     margin: 0;
-  //     li {
-  //       display: flex;
-  //       a {
-  //         color: var(--primary);
-  //       }
-  //       &:first-child {
-  //         .activity-dot {
-  //           &:before {
-  //             box-shadow: 0 0 0 4px rgb(0, 153, 255, 0.12);
-  //           }
-  //         }
-  //       }
-  //       .activity-dot {
-  //         position: relative;
-  //         border-color: var(--bg-grey);
-  //         padding: 0 0.5rem;
-  //         &:before,
-  //         &:after {
-  //           content: '';
-  //           position: absolute;
-  //           border-color: inherit;
-  //           border-width: 2px;
-  //           border-style: solid;
-  //           border-radius: 50%;
-  //           width: 8px;
-  //           height: 8px;
-  //           top: 14px;
-  //           left: 50%;
-  //           transform: translateX(-50%);
-  //         }
-  //         &:before {
-  //           border-color: var(--primary);
-  //           z-index: 1;
-  //         }
-  //         &:after {
-  //           width: 0;
-  //           height: auto;
-  //           top: 32px;
-  //           bottom: -16px;
-  //           border-right-width: 0;
-  //           border-top-width: 0;
-  //           border-bottom-width: 0;
-  //           border-radius: 0;
-  //           z-index: 0;
-  //         }
-  //       }
-  //       .activity-body {
-  //         padding: 0 0 0.25rem 1rem;
-  //         p {
-  //           margin: 10px 0 0 0;
-  //           font-size: 14px;
-  //           font-weight: 500;
-  //           font-family: var(--font-medium);
-  //           line-height: 1.5;
-  //         }
-  //         .date {
-  //           font-size: 12px;
-  //           color: var(--font-grey);
-  //           font-family: var(--font-regular);
-  //         }
-  //       }
-  //     }
-  //   }
-  // `
-
-  // const activities = [
-  //   {
-  //     content:
-  //       'New version of this site is released, checkout the <a href="https://github.com/DezineLeo/dezineleo-site" target="_blank">Source</a>.',
-  //     date: '2020-04-08',
-  //   },
-  //   {
-  //     content:
-  //       'Become a Dribbble player. Visit my <a href="https://dribbble.com/dezineleo" target="_blank">Dribbble Page</a>.',
-  //     date: '2018-08-01',
-  //   },
-  //   {
-  //     content: 'Site is alive!',
-  //     date: '2018-07-01',
-  //   },
-  // ]
 
   const projects = [
     {
@@ -646,31 +568,6 @@ export default props => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO />
-      {/* <BlockContainer
-        display="grid"
-        column={3}
-        className="horizontal"
-        style={{ margin: '24px 0' }}
-      >
-        <LinkBlock
-          icon={CardTwitter}
-          title="Twitter"
-          des="@dezineleo"
-          link="https://twitter.com/dezineleo"
-        />
-        <LinkBlock
-          icon={CardGitHub}
-          title="GitHub"
-          des="github.com/dezineleo"
-          link="https://github.com/dezineleo"
-        />
-        <LinkBlock
-          icon={CardDribbble}
-          title="Dribbble"
-          des="dribbble.com/dezineleo"
-          link="https://dribbble.com/dezineleo"
-        />
-      </BlockContainer> */}
       <Aside>
         <IntroCard
           avatar={DarkAvatar}
@@ -706,21 +603,21 @@ export default props => {
             iconSize={72}
             title="PROJECTS"
             des="What I'm building"
-            link="https://twitter.com/dezineleo"
+            link="/projects"
           />
           <LinkBlock
             icon={IconNotes}
             iconSize={72}
             title="NOTES"
             des="What I'm learning"
-            link="https://github.com/dezineleo"
+            link="/notes"
           />
           <LinkBlock
             icon={IconBooks}
             iconSize={72}
             title="BOOKS"
             des="What I'm reading"
-            link="https://dribbble.com/dezineleo"
+            link="/books"
           />
         </BlockContainer>
       </Aside>
@@ -762,20 +659,6 @@ export default props => {
             ))}
           </ul>
         </Projects>
-        {/* <Activities>
-          <h3>Activities</h3>
-          <ul>
-            {activities.map(a => (
-              <li key={a.content}>
-                <div className="activity-dot"></div>
-                <div className="activity-body">
-                  <p dangerouslySetInnerHTML={{ __html: a.content }} />
-                  <p className="date">{dayjs(a.date).from(dayjs())}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </Activities> */}
       </MainContent>
       <Footer style={{ maxWidth: '72rem', margin: '0 auto' }} />
     </Layout>

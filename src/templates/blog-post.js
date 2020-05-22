@@ -143,14 +143,15 @@ export default props => {
       .more {
         .tags {
           text-transform: uppercase;
-          color: var(--primary);
+          // color: var(--primary);
+          color: var(--dark-4);
           list-style: none;
           padding: 0;
           margin: 0;
           font-size: 12px;
           li {
             display: inline-block;
-            background-color: rgb(0, 153, 255, 0.12);
+            background-color: var(--dark-1);
             border-radius: 4px;
             padding: 4px 10px;
             margin: 0 12px 0 0;
@@ -163,7 +164,6 @@ export default props => {
           font-size: 12px;
           border-radius: 4px;
           padding: 4px 10px;
-          color: var(--black);
         }
       }
     }

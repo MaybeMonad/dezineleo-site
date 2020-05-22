@@ -43,14 +43,8 @@ const Projects = props => {
                 Live
               </a>
             ) : (
-              <Link to={p.link}>Intro</Link>
+              <Link to={p.link}>Read More</Link>
             )}
-            {p.github && (
-              <a href={p.github || ''} target="_blank">
-                GitHub
-              </a>
-            )}
-            {/* {p.version && <span className="project-version">{p.version}</span>} */}
           </div>
         </div>
       ))}
@@ -176,7 +170,7 @@ export default props => {
   } = props
   const siteTitle = get(props, 'props.data.site.siteMetadata.title')
   const projects = get(props, 'data.allMarkdownRemark.edges').filter(
-    ({ node }) => get(node, 'frontmatter.type') === 'project'
+    ({ node }) => get(node, 'frontmatter.type') === 'note'
   )
 
   return (
@@ -186,7 +180,7 @@ export default props => {
         <Bio />
       </aside> */}
       <StyledSection
-        title="All Projects"
+        title="All Notes"
         // external={
         //   <a className="btn" href="/projects" style={{ fontSize: 13 }}>
         //     All Projects

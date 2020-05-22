@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
-const LinkBlock = styled.a`
+const LinkBlock = styled(Link)`
   display: flex;
   // margin: 24px 0;
   background-color: white;
@@ -33,7 +34,7 @@ export default props => {
   const { icon, iconSize, title, des, link } = props
 
   return (
-    <LinkBlock href={link} target="_blank" iconSize={iconSize}>
+    <LinkBlock to={link} iconSize={iconSize}>
       <div className="d-flex justify-start align-items-center">
         <img src={icon} alt="" />
         <div className="content">

@@ -82,10 +82,10 @@ export default props => {
       }
     }
     @media (max-width: 672px) {
-      padding: 0 1.3rem;
+      padding: 0 0;
       left: 0;
-      width: calc(100% - 2.6rem);
-      background-color: var(--black);
+      // width: calc(100% - 2.6rem);
+      // background-color: var(--black);
       h1 {
         a {
           color: white;
@@ -98,8 +98,10 @@ export default props => {
         }
       }
       nav {
+        background-color: transparent;
+        padding: 0;
         a {
-          color: white;
+          color: var(--dark-4);
           padding: 8px 0 8px 20px;
           font-size: 14px;
           &:first-child {
@@ -132,7 +134,7 @@ export default props => {
           <h1>
             <Link to={'/'} style={{ position: 'relative' }}>
               <span style={{ fontFamily: 'var(--font-bold)' }}>Dezine</span>
-              <span className="version">v2.3</span>
+              <span className="version">v2.4</span>
             </Link>
           </h1>
           <nav>

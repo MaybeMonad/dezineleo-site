@@ -44,10 +44,33 @@ const IntroCard = styled.div`
     @media (max-width: 672px) {
       a {
         margin-right: 12px;
+        width: 100%;
+        margin: 0 0 20px 0;
+        button {
+          width: 100%;
+          font-size: 16px;
+          padding: 12px;
+        }
+        :last-child {
+          margin: 0;
+        }
       }
     }
   }
   @media (max-width: 672px) {
+    padding: 32px;
+    h1 {
+      font-size: 36px;
+    }
+    .intro {
+      flex-direction: column;
+      img {
+        margin: 0 0 32px 0;
+      }
+    }
+    .extra {
+      display: none;
+    }
   }
 `
 
@@ -56,7 +79,7 @@ export default props => {
 
   return (
     <IntroCard>
-      <div className="d-flex justify-start align-items-start">
+      <div className="intro d-flex justify-start align-items-start">
         <img className="avatar" src={avatar} alt="" />
         <div className="hello">
           <h1>

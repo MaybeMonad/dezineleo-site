@@ -19,7 +19,7 @@ const Archive = styled.div`
     margin-left: 2px;
   }
   .post {
-    margin-bottom: 32px;
+    margin-bottom: 42px;
     img {
       width: 36px;
       min-width: 36px;

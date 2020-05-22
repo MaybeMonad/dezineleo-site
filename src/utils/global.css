@@ -29,7 +29,8 @@ body {
   --font-cond-medium: 'futura_cond_medium';
   --font-cond-bold: 'futura_cond_bold';
   --brand: #003cff;
-  --primary: rgb(0, 153, 255);
+  /* --primary: rgb(0, 153, 255); */
+  --primary: #f40088;
   --primary-light: #eff8ff;
   --primary-hover: rgb(0, 142, 237);
   --secondary: #fd18fe;
@@ -74,6 +75,7 @@ body.dark {
   --dark-4: #b3b4b6;
   --border: 1px solid #242527;
   --light: #eff0f2;
+  --heading: #ffce80;
 }
 
 pre.language-bash code.language-bash {
@@ -111,7 +113,7 @@ pre.language-bash code.language-bash::before {
 code[class*='language-'],
 pre[class*='language-'],
 pre code {
-  color: var(--font-article);
+  color: var(--dark-4);
   font-size: 15px;
   font-family: Menlo, Consolas, Monaco, source-code-pro, 'Courier New',
     monospace;
@@ -136,7 +138,8 @@ pre code {
   display: block;
   padding: 2rem 1.5rem;
   overflow: auto;
-  background-color: #f2f7fa;
+  /* background-color: #f2f7fa; */
+  background-color: var(--dark-1);
   border: 0;
 }
 
@@ -177,7 +180,7 @@ pre[class=' language-bash'] + .toolbar {
 div.code-toolbar > .toolbar {
   right: 20px !important;
   top: -28px !important;
-  background-color: #f2f7fa;
+  background-color: var(--dark-1);
   border-radius: 8px 8px 0 0;
 }
 
@@ -187,7 +190,7 @@ div.code-toolbar > .toolbar span {
   font-size: 14px !important;
   /* background-color: rgb(0, 153, 255, 0.5) !important; */
   background-color: transparent !important;
-  color: var(--font-article) !important;
+  color: var(--dark-3) !important;
   font-family: var(--font-medium) !important;
   border-radius: 0 0 3px 3px !important;
   padding: 0px 8px !important;
@@ -229,7 +232,7 @@ pre[class*='language-'] ::selection {
 :not(pre) > code[class*='language-'] {
   font-family: Menlo, Roboto Mono, Courier New, monospace;
   padding: 3px 5px;
-  color: var(--black);
+  color: var(--light);
   font-weight: 500;
   border-radius: 4px;
 }
@@ -238,8 +241,8 @@ pre[class*='language-'] ::selection {
   border: none;
   font-family: Menlo, Roboto Mono, Courier New, monospace;
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.06);
-  padding: 3px 6px;
+  background: var(--dark-2);
+  padding: 4px 6px;
   font-size: 13px;
 }
 
@@ -253,7 +256,7 @@ pre[class*='language-'] ::selection {
 }
 
 .token.comment {
-  color: rgb(128, 147, 147);
+  color: var(--dark-3);
   font-weight: 400;
 }
 
@@ -288,7 +291,7 @@ pre[class*='language-'] ::selection {
 }
 
 .token.punctuation {
-  color: #333;
+  color: var(--dark-3);
   font-weight: 300;
 }
 
@@ -351,6 +354,7 @@ pre[data-line] {
 
 strong {
   font-family: var(--font-medium);
+  color: var(--light);
   /* font-weight: 400; */
 }
 
@@ -389,6 +393,7 @@ article h1 {
 article h2 {
   border-bottom: var(--border);
   margin-top: 2rem;
+  color: var(--heading);
 }
 
 article h3 {
@@ -404,17 +409,19 @@ article p {
 article a {
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  color: var(--primary);
+  color: var(--light);
   font-family: var(--font-medium);
   font-weight: 500;
-  box-shadow: 0 2px 0 0 #e2eafd;
+  box-shadow: 0 2px 0 0 var(--primary);
+  padding: 2px;
 }
 
 article a:hover,
 article a:active {
-  box-shadow: 0 2px 0 0 var(--primary-hover);
-  color: var(--primary-hover);
-  background: var(--primary-light);
+  /* box-shadow: 0 2px 0 0 var(--primary-hover); */
+  color: var(--light);
+  background: var(--primary);
+  border-radius: 3px;
   /* border-bottom: 2px solid #2161f2; */
 }
 
@@ -429,7 +436,7 @@ li {
 }
 
 hr {
-  background-color: var(--border-grey);
+  background-color: #242527;
   border: 0;
   height: 1px;
 }
@@ -473,9 +480,9 @@ h1 {
 }
 
 blockquote {
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--dark-4);
   border: none;
-  background: #fff8e4;
+  background: var(--dark-2);
   /* background: rgb(0,153,255,0.06); */
   border-radius: 4px;
   font-weight: 400;
@@ -483,7 +490,7 @@ blockquote {
   padding: 1.5rem;
   line-height: 1.6;
   font-size: 1rem;
-  border: 1px solid #f3e09a;
+  /* border: 1px solid #f3e09a; */
 }
 
 blockquote strong {
@@ -515,7 +522,7 @@ blockquote p {
 table {
   /* border: 2px solid var(--black); */
   border-spacing: 0;
-  background-color: white;
+  background-color: var(--dark-1);
   width: 100%;
   border-collapse: collapse;
 }
@@ -561,7 +568,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-  background-color: var(--bg-grey);
+  background-color: var(--dark-2);
 }
 
 .btn {
@@ -584,13 +591,13 @@ tbody tr:hover {
 }
 
 .btn-grey {
-  background-color: var(--bg-grey);
-  color: var(--black);
+  background-color: var(--dark-3);
+  color: var(--light);
 }
 
 .btn-grey:hover {
-  background-color: #e1e1e1;
-  color: var(--black);
+  background-color: var(--dark-1);
+  color: var(--light);
 }
 
 .btn-primary {
@@ -599,7 +606,9 @@ tbody tr:hover {
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
+  /* background-color: var(--primary-hover); */
+  background-color: var(--dark-1);
+  color: var(--light);
 }
 
 .btn-secondary {
@@ -683,6 +692,7 @@ main {
   background-color: var(--bg);
   /* transition: color 0.2s ease-out, background-color 0.2s ease-out; */
   min-height: 100vh;
+  font-weight: normal;
   /* overflow: hidden; */
 }
 
@@ -710,22 +720,28 @@ main {
 .hl-5 {
   padding: 3px 6px;
   border-radius: 4px;
+  color: var(--light);
+  font-weight: normal;
 }
 
 .hl-1 {
-  background-color: #fcd3e6;
+  /* background-color: #fcd3e6; */
+  background-color: #ff439a;
 }
 
 .hl-2 {
-  background-color: #fbeed5;
+  /* background-color: #fbeed5; */
+  background-color: #ffaf14;
 }
 
 .hl-3 {
-  background-color: #d3e4f9;
+  /* background-color: #d3e4f9; */
+  background-color: #499bff;
 }
 
 .hl-4 {
-  background-color: #fedfd2;
+  /* background-color: #fedfd2; */
+  background-color: #ff6b2d;
 }
 
 .hl-5 {
@@ -764,10 +780,10 @@ article .box-title {
 }
 
 article .link-box {
-  background-color: var(--primary-light);
+  background-color: var(--dark-2);
   padding: 12px 18px 12px 48px;
   border-radius: 6px;
-  color: var(--primary);
+  /* color: var(--primary); */
   background-image: url(../../static/article_link.svg);
   background-repeat: no-repeat;
   background-size: 24px 24px;
@@ -776,7 +792,8 @@ article .link-box {
 }
 
 article .info {
-  background-color: #fff5d9;
+  background-color: var(--dark-1);
+  color: var(--dark-3);
   border-radius: 6px;
   padding: 12px 20px;
 }
@@ -857,7 +874,7 @@ article .link-box p {
 .toc > ul:before {
   content: 'Table of Contents';
   font-family: var(--font-medium);
-  border-bottom: 1px solid var(--border-grey);
+  border-bottom: var(--border);
   padding-bottom: 5px;
   margin-bottom: 15px;
   display: block;
@@ -875,7 +892,7 @@ article .link-box p {
     top: 0;
     left: 0;
     right: 0;
-    background: var(--bg-grey);
+    background: var(--dark-1);
     padding: 20px 28px;
     border-radius: 6px;
     max-width: 100%;

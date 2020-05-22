@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const Bio = styled.div`
   display: flex;
   margin: 24px 0;
-  background-color: white;
+  background-color: var(--dark-2);
   border-radius: 6px;
   padding: 32px;
   border: var(--border);
@@ -41,7 +41,7 @@ const Bio = styled.div`
     li {
       display: inline-block;
       margin: 0 12px 0 0;
-      background-color: var(--bg-grey);
+      background-color: var(--dark-3);
       opacity: 0.6;
       border-radius: 4px;
       padding: 0 12px;
