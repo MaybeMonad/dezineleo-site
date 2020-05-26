@@ -45,7 +45,7 @@ const IntroCard = styled.div`
       a {
         margin-right: 12px;
         width: 100%;
-        margin: 0 0 20px 0;
+        margin: 0 0 16px 0;
         button {
           width: 100%;
           font-size: 16px;

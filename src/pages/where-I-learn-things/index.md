@@ -4,6 +4,7 @@ date: 2020-02-27
 spoiler: Here is a collective of resources to learn new things without a dime.
 type: topic
 thumbnail: ./resources.svg
+status: 'In Progress'
 ---
 
 ## HTML & CSS

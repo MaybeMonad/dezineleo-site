@@ -240,6 +240,8 @@ const Projects = styled.div`
         font-size: 15px;
         color: var(--dark-3);
         line-height: 1.4;
+        font-weight: normal;
+        font-family: var(--font-regular);
       }
       .stars {
         color: var(--dark-3);
@@ -339,7 +341,11 @@ export default props => {
     Topics: (
       <ArticleList>
         {posts
-          .filter(({ node }) => get(node, 'frontmatter.type') === 'topic')
+          .filter(
+            ({ node }) =>
+              get(node, 'frontmatter.type') === 'topic' &&
+              get(node, 'frontmatter.status') !== 'In Progress'
+          )
           .map(({ node }, index) => {
             if (index < 7) {
               const title = get(node, 'frontmatter.title') || node.fields.slug
@@ -549,6 +555,7 @@ export default props => {
       name: 'Break Elm',
       desc: 'A Chinese version of Elm docs.',
       stars: 0,
+      link: '/projects/break-elm',
     },
     {
       lang: 'Svelte',
@@ -556,12 +563,14 @@ export default props => {
       desc:
         'A sweet and free JavaScript learning application for JavaScript lovers.',
       stars: 0,
+      link: '/projects/javascript-hub',
     },
     {
       lang: 'Pug',
       name: 'DeStatic',
       desc: 'A starter HTML Template using Pug, Sass, Webpack, Gulp.',
       stars: 0,
+      link: '/destatic',
     },
   ]
 
@@ -648,13 +657,15 @@ export default props => {
           <ul>
             {projects.map(p => (
               <li key={p.name}>
-                <div className="lang">{p.lang}</div>
-                <h2>{p.name}</h2>
-                <p>{p.desc}</p>
-                <div className="stars">
-                  <img src={Star} alt="" />
-                  {p.stars}
-                </div>
+                <Link to={p.link}>
+                  <div className="lang">{p.lang}</div>
+                  <h2>{p.name}</h2>
+                  <p>{p.desc}</p>
+                  <div className="stars">
+                    <img src={Star} alt="" />
+                    {p.stars}
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>
