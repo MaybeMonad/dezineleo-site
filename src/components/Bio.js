@@ -110,7 +110,7 @@ export default () => {
           href="https://twitter.com/dezineleo"
           target="_blank"
         >
-          <button className="btn btn-small btn-primary">Follow</button>
+          <button className="btn btn-small btn-grey">Follow</button>
         </a>
       </div>
     </Bio>

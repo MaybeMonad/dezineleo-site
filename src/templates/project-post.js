@@ -90,7 +90,7 @@ export default props => {
         margin-bottom: 14px;
       }
       h3 {
-        border-bottom: 1px solid var(--border-grey);
+        border-bottom: var(--border);
         font-size: 15px;
       }
       p {
@@ -137,7 +137,7 @@ export default props => {
           display: flex;
           justify-content: flex-start;
           li {
-            background-color: var(--bg-grey);
+            background-color: var(--dark-1);
             color: var(--font-grey);
             font-size: 12px;
             font-family: var(--font-medium);

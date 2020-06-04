@@ -94,14 +94,14 @@ pre.language-bash code.language-bash {
   padding: 1rem;
   font-family: Menlo, Consolas, Monaco, source-code-pro, 'Courier New',
     monospace;
-  border: 1px solid #d8d9da;
+  /* border: 1px solid #d8d9da; */
   /* box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16); */
   border-radius: 6px;
   padding-top: 45px;
   margin: 0.2rem 0 1rem 0;
   font-size: 15px;
-  background: white;
-  color: var(--font-article);
+  background: var(--dark-1);
+  color: var(--dark-4);
 }
 
 pre.language-bash code.language-bash::before {
@@ -110,8 +110,8 @@ pre.language-bash code.language-bash::before {
   top: 0;
   left: 0;
   /* height: 25px; */
-  background: #e1e1e1;
-  color: #c2c3c4;
+  background: var(--dark-2);
+  color: var(--dark-3);
   width: 100%;
   font-size: 2.5rem;
   margin: 0;
@@ -585,8 +585,8 @@ tbody tr:hover {
 
 .btn {
   border-radius: 6px;
-  background-color: var(--black);
-  color: white;
+  background-color: var(--light);
+  color: var(--dark-2);
   padding: 10px 24px;
   font-family: var(--font-bold);
   transition: background-color 0.32s ease, color 0.2s ease;
@@ -766,10 +766,10 @@ article {
 }
 
 article .list-box {
-  border: 2px solid var(--primary);
+  /* border: 2px solid var(--primary); */
   border-radius: 8px;
   padding: 24px 32px 4px 32px;
-  background-color: #eef8ff;
+  background-color: var(--dark-1);
   margin-bottom: 24px;
 }
 
@@ -779,7 +779,7 @@ article .list-box ul {
 }
 
 article .box-title {
-  background-color: var(--primary);
+  background-color: var(--dark-2);
   padding: 6px 24px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;

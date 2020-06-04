@@ -6,7 +6,6 @@ spoiler: How I build my own theme for dev.
 thumbnail: ./js.svg
 type: topic
 status: 'In Progress'
-
 ---
 
 ```toc
