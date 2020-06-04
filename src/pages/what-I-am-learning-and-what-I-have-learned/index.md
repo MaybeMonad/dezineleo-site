@@ -28,7 +28,6 @@ thumbnail: ./js.svg
   <div class="column">
 
 ## What I'm learning
----
 
 ### Programming languages
 
@@ -63,7 +62,6 @@ thumbnail: ./js.svg
   <div class="column">
   
 ## What I've learned
----
 
 ### Programming languages
 

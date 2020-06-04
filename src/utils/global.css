@@ -28,6 +28,7 @@ body {
   --font-bold: 'rubikbold';
   --font-heavy: 'rubikblack';
   --font-heading: 'Bree Serif';
+  --font-text: 'RobotoSlab Regular';
   --font-cond-regular: 'futura_cond_book';
   --font-cond-medium: 'futura_cond_medium';
   --font-cond-bold: 'futura_cond_bold';
@@ -62,7 +63,7 @@ body.light {
   --hr: hsla(0, 0%, 0%, 0.2);
   --inlineCode-bg: rgba(255, 229, 100, 0.2);
   --inlineCode-text: #1a1a1a;
-  --black: #191919;
+  --black: #222;
   --border: 1px solid var(--border-grey);
   /* font-weight: 300; */
 }
@@ -94,14 +95,14 @@ pre.language-bash code.language-bash {
   padding: 1rem;
   font-family: Menlo, Consolas, Monaco, source-code-pro, 'Courier New',
     monospace;
-  /* border: 1px solid #d8d9da; */
+  border: 1px solid #d8d9da;
   /* box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16); */
   border-radius: 6px;
   padding-top: 45px;
   margin: 0.2rem 0 1rem 0;
   font-size: 15px;
-  background: var(--dark-1);
-  color: var(--dark-4);
+  background: white;
+  color: var(--black);
 }
 
 pre.language-bash code.language-bash::before {
@@ -110,8 +111,8 @@ pre.language-bash code.language-bash::before {
   top: 0;
   left: 0;
   /* height: 25px; */
-  background: var(--dark-2);
-  color: var(--dark-3);
+  background: #e1e1e1;
+  color: #c2c3c4;
   width: 100%;
   font-size: 2.5rem;
   margin: 0;
@@ -124,7 +125,7 @@ pre.language-bash code.language-bash::before {
 code[class*='language-'],
 pre[class*='language-'],
 pre code {
-  color: var(--dark-4);
+  color: var(--black);
   font-size: 15px;
   font-family: Menlo, Consolas, Monaco, source-code-pro, 'Courier New',
     monospace;
@@ -150,7 +151,7 @@ pre code {
   padding: 2rem 1.5rem;
   overflow: auto;
   /* background-color: #f2f7fa; */
-  background-color: var(--dark-1);
+  background-color: var(--bg-grey);
   border: 0;
 }
 
@@ -170,8 +171,8 @@ kbd {
 }
 
 code[class*='language-text'] {
-  font-family: var(--font-regular), Consolas, Menlo, Monaco, 'source-code-pro',
-    Courier New, monospace;
+  font-family: Consolas, Menlo, Monaco, 'source-code-pro', Courier New,
+    monospace;
 }
 
 /* Code blocks */
@@ -190,9 +191,9 @@ pre[class=' language-bash'] + .toolbar {
 
 div.code-toolbar > .toolbar {
   right: 20px !important;
-  top: -28px !important;
-  background-color: var(--dark-1);
-  border-radius: 8px 8px 0 0;
+  top: -25px !important;
+  background-color: var(--bg-grey);
+  border-radius: 6px 6px 0 0;
 }
 
 div.code-toolbar > .toolbar span {
@@ -201,10 +202,10 @@ div.code-toolbar > .toolbar span {
   font-size: 14px !important;
   /* background-color: rgb(0, 153, 255, 0.5) !important; */
   background-color: transparent !important;
-  color: var(--dark-3) !important;
-  font-family: var(--font-medium) !important;
+  color: var(--font-grey) !important;
+  /* font-family: var(--font-medium) !important; */
   border-radius: 0 0 3px 3px !important;
-  padding: 0px 8px !important;
+  padding: 4px 12px !important;
 }
 
 pre[class*='language-'] {
@@ -252,7 +253,7 @@ pre[class*='language-'] ::selection {
   border: none;
   font-family: Menlo, Roboto Mono, Courier New, monospace;
   border-radius: 4px;
-  background: var(--dark-2);
+  background: var(--bg-grey);
   padding: 4px 6px;
   font-size: 13px;
 }
@@ -267,7 +268,7 @@ pre[class*='language-'] ::selection {
 }
 
 .token.comment {
-  color: var(--dark-3);
+  color: var(--font-grey);
   font-weight: 400;
 }
 
@@ -364,9 +365,12 @@ pre[data-line] {
 } */
 
 strong {
-  font-family: var(--font-medium);
-  color: var(--light);
+  /* font-family: var(--font-medium); */
+  /* color: var(--light); */
   /* font-weight: 400; */
+  color: var(--black);
+  font-weight: 800;
+  font-family: var(--font-heading);
 }
 
 a {
@@ -405,33 +409,38 @@ article h2 {
   border-bottom: var(--border);
   margin-top: 2rem;
   color: var(--heading);
+  font-size: 1.7rem;
+  padding: 0 0 12px 0;
 }
 
 article h3 {
   margin-top: 2rem;
+  font-size: 1.3rem;
 }
 
 article p {
-  font-size: 16px;
-  line-height: 30px;
+  font-size: 1.12rem;
+  line-height: 2.1rem;
   margin-bottom: 30px;
+  font-family: var(--font-text);
 }
 
 article a {
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   color: var(--light);
-  font-family: var(--font-medium);
+  /* font-family: var(--font-medium); */
   font-weight: 500;
-  box-shadow: 0 2px 0 0 var(--primary);
-  padding: 2px;
+  /* box-shadow: 0 2px 0 0 var(--primary); */
+  box-shadow: 0 2px 0 0 var(--black);
+  padding: 0px 2px;
 }
 
 article a:hover,
 article a:active {
   /* box-shadow: 0 2px 0 0 var(--primary-hover); */
-  color: var(--light);
-  background: var(--primary);
+  color: var(--primary);
+  /* background: var(--primary); */
   border-radius: 3px;
   /* border-bottom: 2px solid #2161f2; */
 }
@@ -440,10 +449,13 @@ ul,
 ol {
   padding: 0 0 0 20px;
   margin-bottom: 1.75rem;
+  font-size: 1.1rem;
+  line-height: 1.9rem;
+  font-family: var(--font-text);
 }
 
 li {
-  margin-bottom: calc(1.75rem / 4);
+  margin-bottom: calc(3.2rem / 4);
 }
 
 hr {
@@ -487,27 +499,42 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+
 .anchor {
   box-shadow: none;
 }
 
 blockquote {
-  color: var(--dark-4);
+  /* color: var(--dark-4); */
   border: none;
-  background: var(--dark-2);
+  background: var(--bg-grey);
   /* background: rgb(0,153,255,0.06); */
   border-radius: 4px;
   font-weight: 400;
   margin: 1.5rem 0;
   padding: 1.5rem;
-  line-height: 1.6;
+  line-height: 1.4rem;
   font-size: 1rem;
   /* border: 1px solid #f3e09a; */
 }
 
+blockquote p {
+  line-height: 1.6rem;
+  font-size: 1rem;
+}
+
 blockquote strong {
-  font-family: var(--font-bold);
-  font-weight: 500;
+  /* font-family: var(--font-bold); */
+  font-weight: 800;
 }
 
 blockquote p {
@@ -585,10 +612,10 @@ tbody tr:hover {
 
 .btn {
   border-radius: 6px;
-  background-color: var(--light);
-  color: var(--dark-2);
+  background-color: var(--black);
+  color: white;
   padding: 10px 24px;
-  font-family: var(--font-bold);
+  font-family: var(--font-heading);
   transition: background-color 0.32s ease, color 0.2s ease;
   font-size: 14px;
   box-shadow: none;
@@ -737,31 +764,31 @@ main {
 }
 
 .hl-1 {
-  /* background-color: #fcd3e6; */
-  background-color: #ff439a;
+  background-color: #fcd3e6;
+  /* background-color: #ff439a; */
 }
 
 .hl-2 {
-  /* background-color: #fbeed5; */
-  background-color: #ffaf14;
+  background-color: #fbeed5;
+  /* background-color: #ffaf14; */
 }
 
 .hl-3 {
-  /* background-color: #d3e4f9; */
-  background-color: #499bff;
+  background-color: #d3e4f9;
+  /* background-color: #499bff; */
 }
 
 .hl-4 {
-  /* background-color: #fedfd2; */
-  background-color: #ff6b2d;
+  background-color: #fedfd2;
+  /* background-color: #ff6b2d; */
 }
 
 .hl-5 {
-  background-color: #d4e8e2;
+  /* background-color: #d4e8e2; */
 }
 
 article {
-  max-width: 36rem;
+  /* max-width: 36rem; */
   margin: 0 auto;
 }
 
@@ -769,7 +796,7 @@ article .list-box {
   /* border: 2px solid var(--primary); */
   border-radius: 8px;
   padding: 24px 32px 4px 32px;
-  background-color: var(--dark-1);
+  background-color: var(--bg-grey);
   margin-bottom: 24px;
 }
 
@@ -779,24 +806,24 @@ article .list-box ul {
 }
 
 article .box-title {
-  background-color: var(--dark-2);
+  background-color: var(--bg-grey);
   padding: 6px 24px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   margin-bottom: -8px;
-  color: white;
-  font-family: var(--font-medium);
-  font-size: 16px;
+  /* font-family: var(--font-medium); */
+  font-size: 1.1rem;
   position: relative;
   z-index: 9;
 }
 
 article .link-box {
-  background-color: var(--dark-2);
-  padding: 12px 18px 12px 48px;
+  background-color: var(--bg-grey);
+  /* padding: 12px 18px 12px 48px; */
+  padding: 12px 18px 12px 18px;
   border-radius: 6px;
   /* color: var(--primary); */
-  background-image: url(../../static/article_link.svg);
+  /* background-image: url(../../static/article_link.svg); */
   background-repeat: no-repeat;
   background-size: 24px 24px;
   background-position: 15px 14px;
@@ -871,7 +898,7 @@ article .link-box p {
   overflow: hidden;
   text-overflow: ellipsis;
   display: inherit;
-  font-family: var(--font-regular);
+  /* font-family: var(--font-regular); */
 }
 
 .toc ul a.active {
@@ -885,8 +912,9 @@ article .link-box p {
 
 .toc > ul:before {
   content: 'Table of Contents';
-  font-family: var(--font-medium);
+  /* font-family: var(--font-medium); */
   border-bottom: var(--border);
+  font-size: 1rem;
   padding-bottom: 5px;
   margin-bottom: 15px;
   display: block;

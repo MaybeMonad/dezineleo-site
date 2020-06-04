@@ -92,18 +92,18 @@ export default props => {
 
   const PostHeader = styled.header`
     width: var(--max-content-width);
-    margin: 0 0 0 -18rem;
+    // margin: 0 0 0 -18rem;
     h1 {
       font-size: 2.8rem;
       margin: 12px 0;
       text-align: center;
     }
     .spoiler {
-      font-size: 24px;
-      font-family: var(--font-light);
-      font-weight: 200;
+      font-size: 21px;
+      font-weight: 400;
       line-height: 1.4;
       text-align: center;
+      color: var(--font-grey);
     }
     .cover {
       max-width: 100%;
@@ -117,6 +117,9 @@ export default props => {
       justify-content: space-between;
       margin: 0 0 64px 0;
       align-items: center;
+      &.center {
+        justify-content: center;
+      }
       .author {
         display: block;
         font-size: 14px;
@@ -221,7 +224,9 @@ export default props => {
                 alt={post.frontmatter.title}
               />
             )}
-            <div className="post-info">
+            <div
+              className={`post-info ${post.frontmatter.cover ? '' : 'center'}`}
+            >
               <div className="author">
                 <img src={profilePic} alt="@dezineleo" />
                 <div>

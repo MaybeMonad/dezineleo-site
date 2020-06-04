@@ -78,16 +78,14 @@ export default props => {
       }
     }
     nav {
-      // background-color: var(--black);
       border-radius: 100px;
-      padding: 20px;
       a {
-        padding: 8px 24px;
+        padding: 8px 0;
         box-shadow: none;
         text-transform: uppercase;
         font-size: 15px;
         font-weight: 700;
-        // font-family: var(--font-bold);
+        margin-left: 48px;
       }
     }
     @media (max-width: 672px) {

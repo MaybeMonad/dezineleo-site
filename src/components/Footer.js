@@ -11,15 +11,14 @@ const Footer = styled.footer`
   padding: 36px 0;
   border-top: var(--border);
   .copyright {
-    font-family: var(--font-bold);
+    font-family: var(--font-heading);
+    font-weight: 700;
     font-size: 16px;
   }
   .find-me {
     .email {
-      font-family: var(--font-medium);
       a {
         color: var(--font-grey);
-        font-family: var(--font-regular);
         padding: 1rem;
       }
     }
@@ -28,7 +27,6 @@ const Footer = styled.footer`
     flex-direction: column;
     align-items: flex-start;
     .find-me {
-      ${'' /* align-items: flex-start; */}
       .email {
         a {
           padding: 0;

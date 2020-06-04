@@ -14,7 +14,8 @@ const Archive = styled.div`
     border: 0;
   }
   sup {
-    font-family: var(--font-light);
+    // font-family: var(--font-light);
+    font-weight: 100;
     font-size: 14px;
     margin-left: 2px;
   }

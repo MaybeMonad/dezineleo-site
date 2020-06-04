@@ -76,7 +76,7 @@
   font-style: normal;
 } */
 
-@font-face {
+/* @font-face {
   font-family: 'futura_cond_book';
   src: url(./files/FuturaPTCond-Book.woff2) format('woff2');
   font-weight: normal;
@@ -135,7 +135,7 @@
     url('./files/rubik-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 @font-face {
   font-family: 'Bree Serif';
@@ -143,3 +143,19 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'RobotoSlab Regular';
+  src: url('./files/RobotoSlab-Regular.woff') format('woff2'),
+    url('./files/RobotoSlab-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* @font-face {
+  font-family: 'RobotoSlab ExtraBold';
+  src: url('./files/RobotoSlab-ExtraBold.woff') format('woff2'),
+      url('./files/RobotoSlab-ExtraBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+} */

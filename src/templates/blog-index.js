@@ -19,7 +19,7 @@ const ArticleList = styled.main`
   background-color: transparent;
   &.notebook {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 32px;
     grid-auto-rows: 1fr;
     article {
@@ -177,54 +177,54 @@ const ArticleList = styled.main`
   }
 `
 
-const Projects = styled.div`
-  padding: 48px 0 0 36px;
-  h3 {
-    color: var(--dark-3);
-    text-transform: uppercase;
-    margin: 0 0 32px 0;
-  }
-  ul {
-    padding: 0;
-    li {
-      display: inline-block;
-      list-style: none;
-      margin: 0 0 42px 0;
-      padding: 0;
-      .lang {
-        text-transform: uppercase;
-        color: var(--font-grey);
-        font-size: 12px;
-      }
-      h2 {
-        margin: 0;
-        font-size: 1.2rem;
-        color: var(--light);
-        line-height: 1.4;
-        margin-bottom: 6px;
-      }
-      p {
-        margin: 2px 0 14px 0;
-        font-size: 13px;
-        color: var(--dark-3);
-        line-height: 1.4;
-        font-weight: normal;
-        font-family: var(--font-regular);
-      }
-      .stars {
-        color: var(--dark-3);
-        font-size: 15px;
-        font-family: var(--font-bold);
-        img {
-          margin-right: 6px;
-        }
-      }
-    }
-  }
-  @media (max-width: 672px) {
-    padding: 48px 0 0 0;
-  }
-`
+// const Projects = styled.div`
+//   padding: 48px 0 0 36px;
+//   h3 {
+//     color: var(--dark-3);
+//     text-transform: uppercase;
+//     margin: 0 0 32px 0;
+//   }
+//   ul {
+//     padding: 0;
+//     li {
+//       display: inline-block;
+//       list-style: none;
+//       margin: 0 0 42px 0;
+//       padding: 0;
+//       .lang {
+//         text-transform: uppercase;
+//         color: var(--font-grey);
+//         font-size: 12px;
+//       }
+//       h2 {
+//         margin: 0;
+//         font-size: 1.2rem;
+//         color: var(--light);
+//         line-height: 1.4;
+//         margin-bottom: 6px;
+//       }
+//       p {
+//         margin: 2px 0 14px 0;
+//         font-size: 13px;
+//         color: var(--dark-3);
+//         line-height: 1.4;
+//         font-weight: normal;
+//         font-family: var(--font-regular);
+//       }
+//       .stars {
+//         color: var(--dark-3);
+//         font-size: 15px;
+//         font-family: var(--font-bold);
+//         img {
+//           margin-right: 6px;
+//         }
+//       }
+//     }
+//   }
+//   @media (max-width: 672px) {
+//     padding: 48px 0 0 0;
+//   }
+// `
 
 export default props => {
   const {
@@ -248,7 +248,7 @@ export default props => {
 
   const MainContent = styled.div`
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    // grid-template-columns: 2fr 1fr;
     // grid-gap: 36px;
     margin: 0 auto;
     padding: 0;
@@ -441,7 +441,7 @@ export default props => {
   }
 
   const TabSection = styled.div`
-    border-right: var(--border);
+    // border-right: var(--border);
     padding: 48px 32px 0 0;
     ul {
       list-style: none;
@@ -456,7 +456,8 @@ export default props => {
         margin-right: 16px;
         text-transform: uppercase;
         font-size: 16px;
-        padding: 6px 16px;
+        padding: 1px 16px;
+        font-weight: 700;
         border-radius: 4px;
         position: relative;
         z-index: 1;
@@ -507,30 +508,30 @@ export default props => {
     }
   `
 
-  const projects = [
-    {
-      lang: 'Vue',
-      name: 'Break Elm',
-      desc: 'A Chinese version of Elm docs.',
-      stars: 0,
-      link: '/projects/break-elm',
-    },
-    {
-      lang: 'Svelte',
-      name: 'JavaScript Hub',
-      desc:
-        'A sweet and free JavaScript learning application for JavaScript lovers.',
-      stars: 0,
-      link: '/projects/javascript-hub',
-    },
-    {
-      lang: 'Pug',
-      name: 'DeStatic',
-      desc: 'A starter HTML Template using Pug, Sass, Webpack, Gulp.',
-      stars: 0,
-      link: '/destatic',
-    },
-  ]
+  // const projects = [
+  //   {
+  //     lang: 'Vue',
+  //     name: 'Break Elm',
+  //     desc: 'A Chinese version of Elm docs.',
+  //     stars: 0,
+  //     link: '/projects/break-elm',
+  //   },
+  //   {
+  //     lang: 'Svelte',
+  //     name: 'JavaScript Hub',
+  //     desc:
+  //       'A sweet and free JavaScript learning application for JavaScript lovers.',
+  //     stars: 0,
+  //     link: '/projects/javascript-hub',
+  //   },
+  //   {
+  //     lang: 'Pug',
+  //     name: 'DeStatic',
+  //     desc: 'A starter HTML Template using Pug, Sass, Webpack, Gulp.',
+  //     stars: 0,
+  //     link: '/destatic',
+  //   },
+  // ]
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -610,7 +611,7 @@ export default props => {
           </ul>
           {tabs[currentTab]}
         </TabSection>
-        <Projects>
+        {/* <Projects>
           <h3>Featured Projects</h3>
           <ul>
             {projects.map(p => (
@@ -627,7 +628,7 @@ export default props => {
               </li>
             ))}
           </ul>
-        </Projects>
+        </Projects> */}
       </MainContent>
       <Footer />
     </Layout>
