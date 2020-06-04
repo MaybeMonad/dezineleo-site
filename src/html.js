@@ -45,8 +45,8 @@ export default class HTML extends React.Component {
                 });
 
                 // setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
-                // setTheme('light');
-                setTheme('dark');
+                setTheme('light');
+                // setTheme('dark');
               })();
             `,
             }}

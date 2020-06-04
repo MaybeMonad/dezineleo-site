@@ -10,15 +10,8 @@ import Layout from '../components/Layout'
 import FullWidthWrapper from '../components/FullWidthWrapper'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
-import LinkBlock from '../components/LinkBlock'
-import BlockContainer from '../components/BlockContainer'
 import IntroCard from '../components/IntroCard'
-
-// import Alarm from '../../static/icon_alarm.svg'
-import DarkAvatar from '../../static/home/dark_avatar.png'
-import IconProjects from '../../static/icon_projects.svg'
-import IconNotes from '../../static/icon_notes.svg'
-import IconBooks from '../../static/icon_books.svg'
+import Avatar from '../../static/avatar.png'
 import Star from '../../static/icon_star.svg'
 
 const ArticleList = styled.main`
@@ -26,9 +19,7 @@ const ArticleList = styled.main`
   background-color: transparent;
   &.notebook {
     display: grid;
-    grid-template-columns: calc(33.33% - 21px) calc(33.33% - 21px) calc(
-        33.33% - 21px
-      );
+    grid-template-columns: 1fr 1fr;
     grid-gap: 32px;
     grid-auto-rows: 1fr;
     article {
@@ -88,8 +79,8 @@ const ArticleList = styled.main`
     ::before {
       content: '';
       transition: all 0.32s ease;
-      background-color: var(--dark-1);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      background-color: var(--bg-grey);
+      // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
       border-radius: 8px;
       display: block;
       position: absolute;
@@ -105,13 +96,6 @@ const ArticleList = styled.main`
         height: 100%;
         left: 0;
         top: 0;
-      }
-      header {
-        .article-info {
-          .wip {
-            background-color: var(--dark-2);
-          }
-        }
       }
     }
     header {
@@ -129,53 +113,37 @@ const ArticleList = styled.main`
         h3 {
           position: relative;
           margin-top: 0;
-          display: flex;
+          // display: flex;
           align-items: center;
           font-size: 1.36rem;
           line-height: 1.67rem;
-          margin-bottom: 0;
+          margin-bottom: 6px;
+          .new {
+            font-weight: 300;
+            margin-left: 3px;
+            font-size: 13px;
+            color: var(--primary);
+          }
         }
         .spoiler {
           font-size: 16px;
           font-weight: 300;
-          font-family: var(--font-regular);
           margin: 0;
         }
-        .badge,
-        .wip {
-          border-radius: 3px;
-          padding: 3px 8px;
-          font-size: 12px;
-          margin-top: 8px;
+        .release-date {
+          font-size: 13px;
+          // font-size: 1rem;
+          margin-bottom: 8px;
+          color: var(--font-grey);
           display: inline-block;
-        }
-        .badge {
-          color: var(--heading);
-          text-transform: uppercase;
-          margin-right: 12px;
-          &.Featured {
-            background-color: var(--dark-1);
-          }
-        }
-        .wip {
-          background-color: var(--dark-1);
-          color: var(--dark-3);
           font-weight: 300;
-          font-family: var(--font-regular);
           transition: all 0.32s ease;
-          strong {
-            font-family: var(--font-medium);
-            font-weight: 500;
-          }
         }
       }
     }
     p {
       position: relative;
       margin-bottom: 0;
-      &.spoiler {
-        color: var(--dark-3);
-      }
     }
   }
   @media (max-width: 672px) {
@@ -225,19 +193,19 @@ const Projects = styled.div`
       padding: 0;
       .lang {
         text-transform: uppercase;
-        color: var(--dark-3);
-        font-size: 15px;
-        font-family: var(--font-bold);
+        color: var(--font-grey);
+        font-size: 12px;
       }
       h2 {
         margin: 0;
-        font-size: 24px;
+        font-size: 1.2rem;
         color: var(--light);
         line-height: 1.4;
+        margin-bottom: 6px;
       }
       p {
         margin: 2px 0 14px 0;
-        font-size: 15px;
+        font-size: 13px;
         color: var(--dark-3);
         line-height: 1.4;
       }
@@ -268,9 +236,6 @@ export default props => {
 
   const Aside = styled.aside`
     padding: 36px 0 48px 0;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 36px;
     @media (max-width: 672px) {
       grid-template-columns: 1fr;
       flex-direction: column;
@@ -285,7 +250,7 @@ export default props => {
     // grid-gap: 36px;
     margin: 0 auto;
     padding: 0;
-    max-width: 72rem;
+    max-width: var(--max-content-width);
     @media (max-width: 672px) {
       grid-template-columns: 100%;
       grid-gap: 0;
@@ -353,32 +318,27 @@ export default props => {
                   <article key={node.fields.slug}>
                     <header>
                       <div className="d-flex">
-                        {node.frontmatter.thumbnail && (
+                        {/* {node.frontmatter.thumbnail && (
                           <img
                             // src={node.frontmatter.thumbnail.publicURL}
                             src={IconBooks}
                             alt={title}
                           />
-                        )}
+                        )} */}
                         <div className="article-info">
-                          <h3>{title}</h3>
+                          <span className="release-date">
+                            {node.frontmatter.date}
+                          </span>
+                          <h3>
+                            {title}
+                            {newest && <sup className="new">New!</sup>}
+                          </h3>
                           {spoiler && <p className="spoiler">{spoiler}</p>}
-                          {badge && (
+                          {/* {badge && (
                             <span className={`badge ${badge}`}>{badge}</span>
-                          )}
-                          {status === 'In Progress' && (
-                            <span className="wip">
-                              <strong>WIP</strong> - Updated on{' '}
-                              {node.frontmatter.updateDate}
-                            </span>
-                          )}
+                          )} */}
                         </div>
                       </div>
-                      {newest && (
-                        <div className="alert">
-                          <div className="new">New!</div>
-                        </div>
-                      )}
                     </header>
                   </article>
                 </Link>
@@ -401,12 +361,12 @@ export default props => {
               <Link to={node.fields.slug} rel="bookmark" key={title}>
                 <article key={node.fields.slug}>
                   <header>
-                    {node.frontmatter.thumbnail && (
+                    {/* {node.frontmatter.thumbnail && (
                       <img
                         src={node.frontmatter.thumbnail.publicURL}
                         alt={title}
                       />
-                    )}
+                    )} */}
                     <h3>{title}</h3>
                     {/* {newest && (
                       <div className="alert">
@@ -487,16 +447,15 @@ export default props => {
       margin-bottom: 24px;
       li {
         cursor: pointer;
-        margin-right: 24px;
+        margin-right: 16px;
         text-transform: uppercase;
         font-size: 16px;
-        padding: 3px 12px;
+        padding: 6px 16px;
         border-radius: 4px;
-        font-family: var(--font-medium);
         position: relative;
         z-index: 1;
         transition: all 0.32s ease;
-        color: var(--dark-3);
+        font-size: 14px;
         span {
           position: relative;
           z-index: 1;
@@ -507,7 +466,7 @@ export default props => {
         ::before {
           content: '';
           transition: all 0.32s ease;
-          background-color: var(--dark-2);
+          background-color: var(--bg-grey);
           border-radius: 4px;
           display: block;
           position: absolute;
@@ -524,14 +483,13 @@ export default props => {
             left: 0;
             top: 0;
           }
-          color: var(--dark-4);
         }
         &.active {
-          font-weight: 700;
-          background-color: var(--light);
-          color: var(--dark-0);
+          // font-weight: 700;
+          background-color: var(--black);
+          color: white;
           ::before {
-            background-color: var(--light);
+            background-color: var(--black);
           }
         }
       }
@@ -570,14 +528,14 @@ export default props => {
       <SEO />
       <Aside>
         <IntroCard
-          avatar={DarkAvatar}
+          avatar={Avatar}
           title="Hi, I'm Yang Jin."
           intro="A Web Developer / UI Designer / Illustrator / English Teacher based in Hangzhou, China."
           extra={
             <div
               style={{
                 color: 'var(--dark-4)',
-                fontFamily: 'var(--font-bold)',
+                fontFamily: 'var(--font-heading)',
                 fontSize: 22,
                 marginTop: 40,
               }}
@@ -593,34 +551,34 @@ export default props => {
             </div>
           }
         />
-        <BlockContainer
-          display="grid"
-          column={1}
-          className="vertical justify-start"
-        >
-          <LinkBlock
-            icon={IconProjects}
-            iconSize={72}
-            title="PROJECTS"
-            des="What I'm building"
-            link="/projects"
-          />
-          <LinkBlock
-            icon={IconNotes}
-            iconSize={72}
-            title="NOTES"
-            des="What I'm learning"
-            link="/notes"
-          />
-          <LinkBlock
-            icon={IconBooks}
-            iconSize={72}
-            title="BOOKS"
-            des="What I'm reading"
-            link="/books"
-          />
-        </BlockContainer>
       </Aside>
+      {/* <BlockContainer
+        display="grid"
+        column={3}
+        className="vertical justify-start"
+      >
+        <LinkBlock
+          icon={IconProjects}
+          iconSize={36}
+          title="PROJECTS"
+          // des="What I'm building"
+          link="/projects"
+        />
+        <LinkBlock
+          icon={IconNotes}
+          iconSize={36}
+          title="NOTES"
+          // des="What I'm learning"
+          link="/notes"
+        />
+        <LinkBlock
+          icon={IconBooks}
+          iconSize={36}
+          title="BOOKS"
+          // des="What I'm reading"
+          link="/books"
+        />
+      </BlockContainer> */}
       <FullWidthWrapper
         style={{
           backgroundColor: 'none',
@@ -660,7 +618,7 @@ export default props => {
           </ul>
         </Projects>
       </MainContent>
-      <Footer style={{ maxWidth: '72rem', margin: '0 auto' }} />
+      <Footer />
     </Layout>
   )
 }

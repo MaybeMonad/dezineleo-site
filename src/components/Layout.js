@@ -4,7 +4,8 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 // import { debounce } from 'lodash'
 import { pageMaxWidth } from '../utils/constants'
-import FullWidthWrapper from '../components/FullWidthWrapper'
+// import FullWidthWrapper from '../components/FullWidthWrapper'
+import Avatar from '../../static/home/dark_avatar.png'
 
 export default props => {
   const { children } = props
@@ -17,14 +18,14 @@ export default props => {
     setPathname(location.pathname.split('/')[1])
   }, [])
 
-  const TopNav = props => {
-    const { className, style, children } = props
-    return (
-      <header class={`${!active ? '' : 'active '}${className}`} style={style}>
-        {children}
-      </header>
-    )
-  }
+  // const TopNav = props => {
+  //   const { className, style, children } = props
+  //   return (
+  //     <header class={`${!active ? '' : 'active '}${className}`} style={style}>
+  //       {children}
+  //     </header>
+  //   )
+  // }
 
   const Header = styled.header`
     display: flex;
@@ -45,6 +46,13 @@ export default props => {
         font-size: 21px;
         margin-right: 20px;
         tansition: color 0.2s ease;
+        display: flex;
+        align-items: center;
+      }
+      img {
+        max-width: 24px;
+        margin-right: 8px;
+        border-radius: 100%;
       }
     }
     .version {
@@ -65,12 +73,12 @@ export default props => {
       }
       a {
         font-size: 12px;
-        font-family: var(--font-bold);
+        // font-family: var(--font-bold);
         color: var(--black);
       }
     }
     nav {
-      background-color: var(--dark-1);
+      // background-color: var(--black);
       border-radius: 100px;
       padding: 20px;
       a {
@@ -78,19 +86,13 @@ export default props => {
         box-shadow: none;
         text-transform: uppercase;
         font-size: 15px;
-        font-family: var(--font-bold);
+        font-weight: 700;
+        // font-family: var(--font-bold);
       }
     }
     @media (max-width: 672px) {
       padding: 0 0;
       left: 0;
-      // width: calc(100% - 2.6rem);
-      // background-color: var(--black);
-      h1 {
-        a {
-          color: white;
-        }
-      }
       .header-top-right {
         span,
         a {
@@ -101,7 +103,6 @@ export default props => {
         background-color: transparent;
         padding: 0;
         a {
-          color: var(--dark-4);
           padding: 8px 0 8px 20px;
           font-size: 14px;
           &:first-child {
@@ -126,15 +127,20 @@ export default props => {
         style={{
           marginLeft: 'auto',
           marginRight: 'auto',
-          maxWidth: pageMaxWidth,
+          maxWidth: 'var(--max-content-width)',
           padding: `0rem 1.3rem`,
         }}
       >
         <Header>
           <h1>
             <Link to={'/'} style={{ position: 'relative' }}>
-              <span style={{ fontFamily: 'var(--font-bold)' }}>Dezine</span>
-              <span className="version">v2.4</span>
+              <img src={Avatar} alt="Yang Jin" />
+              <span
+                style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
+              >
+                Dezine Leo
+              </span>
+              {/* <span className="version">v2.4</span> */}
             </Link>
           </h1>
           <nav>

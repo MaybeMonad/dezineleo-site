@@ -322,7 +322,7 @@ export const keys = {
   toolCategories,
 }
 
-export const pageMaxWidth = '72rem'
+export const pageMaxWidth = '56rem'
 
 export const StylesOf2019 = {
   dark: '#222429',

@@ -14,7 +14,9 @@ body {
   --font-family: var(--font-regular), PingFang SC, Microsoft YaHei,
     Noto Sans CJK SC, WenQuanYi Micro Hei, system-ui, -apple-system, sans-serif;
   background-color: var(--bg);
-  font: 100%/1.75 var(--font-family);
+  /* font: 100%/1.75 var(--font-family); */
+  font-size: 12px;
+  font-family: var(--font-heading);
   /* --font-light: 'ubuntu_lightregular';
   --font-regular: 'ubunturegular';
   --font-medium: 'ubuntu_mediumregular';
@@ -25,12 +27,14 @@ body {
   --font-medium: 'rubikmedium';
   --font-bold: 'rubikbold';
   --font-heavy: 'rubikblack';
+  --font-heading: 'Bree Serif';
   --font-cond-regular: 'futura_cond_book';
   --font-cond-medium: 'futura_cond_medium';
   --font-cond-bold: 'futura_cond_bold';
   --brand: #003cff;
   /* --primary: rgb(0, 153, 255); */
-  --primary: #f40088;
+  /* --primary: #f40088; */
+  --primary: #e13445;
   --primary-light: #eff8ff;
   --primary-hover: rgb(0, 142, 237);
   --secondary: #fd18fe;
@@ -40,6 +44,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   margin: 0;
+
+  --bg-01: #efefef;
+  --btn-default-bg: var(--black);
+  --btn-default-color: white;
+  --btn-grey-bg: #f6f6f6;
+  --btn-grey-color: var(--black);
+  --max-content-width: 42rem;
 }
 
 body.light {
@@ -347,10 +358,10 @@ pre[data-line] {
   display: flex;
 }
 
-::selection {
+/* ::selection {
   color: white;
   background: var(--primary);
-}
+} */
 
 strong {
   font-family: var(--font-medium);
@@ -362,7 +373,7 @@ a {
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   color: var(--black);
-  font-family: var(--font-medium);
+  font-family: var(--font-heading);
   font-weight: 500;
   /* box-shadow: 0 1px 0 0 currentColor; */
 }
@@ -466,7 +477,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-bold);
+  /* font-family: var(--font-bold); */
+  font-family: var(--font-heading);
   font-weight: bold;
 }
 

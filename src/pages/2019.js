@@ -198,7 +198,7 @@ const Main = styled.div`
 `
 
 const Row = styled.div`
-  max-width: ${pageMaxWidth};
+  max-width: var(--max-content-width);
   margin: 0 auto;
   img {
     max-width: 100%;

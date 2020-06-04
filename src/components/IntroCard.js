@@ -5,12 +5,12 @@ import StyledHand from '../components/Hand'
 import Button from '../components/Button'
 
 const IntroCard = styled.div`
-  background-color: var(--dark-1);
+  // background-color: var(--bg-01);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 56px;
-  border-radius: 16px;
+  // padding: 56px;
+  // border-radius: 16px;
   flex-direction: column;
   h1 {
     font-size: 40px;
@@ -18,9 +18,9 @@ const IntroCard = styled.div`
     margin: 0;
   }
   h3 {
-    font-family: var(--font-regular);
+    // font-family: var(--font-regular);
     font-weight: normal;
-    color: var(--dark-4);
+    color: var(--font-grey);
     font-size: 16px;
     margin: 5px 0 18px 0;
   }
@@ -33,7 +33,7 @@ const IntroCard = styled.div`
     a {
       margin-right: 16px;
       font-size: 16px;
-      font-family: var(--font-bold);
+      // font-family: var(--font-bold);
       box-shadow: none;
       display: inline-flex;
       align-items: center;
@@ -67,9 +67,6 @@ const IntroCard = styled.div`
       img {
         margin: 0 0 32px 0;
       }
-    }
-    .extra {
-      display: none;
     }
   }
 `

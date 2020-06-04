@@ -8,7 +8,7 @@ const LinkBlock = styled(Link)`
   background-color: white;
   border-radius: 16px;
   padding: 32px;
-  background-color: var(--dark-1);
+  background-color: var(--bg-01);
   img {
     width: ${props => (props.iconSize ? props.iconSize + 'px' : '48px')};
     margin-right: 18px;
@@ -36,10 +36,10 @@ export default props => {
   return (
     <LinkBlock to={link} iconSize={iconSize}>
       <div className="d-flex justify-start align-items-center">
-        <img src={icon} alt="" />
+        {icon && <img src={icon} alt="" />}
         <div className="content">
           <h2>{title}</h2>
-          <p>{des}</p>
+          {des && <p>{des}</p>}
         </div>
       </div>
     </LinkBlock>

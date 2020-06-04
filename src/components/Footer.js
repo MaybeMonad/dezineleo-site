@@ -6,6 +6,8 @@ import Dribbble from '../../static/home/dribbble.svg'
 import GitHub from '../../static/home/github.svg'
 
 const Footer = styled.footer`
+  max-width: var(--max-content-width);
+  margin: 0 auto;
   padding: 36px 0;
   border-top: var(--border);
   .copyright {

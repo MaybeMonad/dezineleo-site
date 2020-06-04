@@ -91,7 +91,7 @@ export default props => {
   // `
 
   const PostHeader = styled.header`
-    width: 72rem;
+    width: var(--max-content-width);
     margin: 0 0 0 -18rem;
     h1 {
       font-size: 2.8rem;
