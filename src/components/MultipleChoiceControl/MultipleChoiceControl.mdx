@@ -1,0 +1,33 @@
+---
+name: MultipleChoiceControl
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Value } from 'react-powerplug';
+
+import MultipleChoiceControl from './MultipleChoiceControl'
+import Choice from './Choice'
+
+# MultipleChoiceControl
+
+> A radio button group, to be used (along with other Control components) with
+> MultiAxisDemo
+
+## Static
+
+<Playground>
+  <Value>
+    {({ value, setValue }) => (
+      <MultipleChoiceControl
+        id="things"
+        label="Things"
+        value={value}
+        updateValue={(key, val) => setValue(val)}
+      >
+        <Choice id="a">Apple</Choice>
+        <Choice id="b">Banana</Choice>
+        <Choice id="c">Carrot</Choice>
+      </MultipleChoiceControl>
+    )}
+  </Value>
+</Playground>

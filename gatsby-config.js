@@ -1,176 +1,60 @@
+const path = require('path');
+
+const alias = require('./webpack-alias');
+const rssConfig = require('./rss-plugin-config');
+
 module.exports = {
   siteMetadata: {
-    title: 'Dezineleo',
-    author: 'Yang Jin',
-    description: 'Personal site by Yang Jin.',
-    siteUrl: 'https://dezineleo.com',
+    title: "Josh Comeau's Blog",
+    author: 'Josh Comeau',
+    description:
+      'Personal blog of Josh Comeau, a front-end software engineer. Focuses on teaching important concepts about web development and React.js, through dynamic interactions.',
+    siteUrl: 'https://www.joshwcomeau.com',
     social: {
-      twitter: '@dezineleo',
+      twitter: '@joshwcomeau',
     },
   },
-  pathPrefix: '/',
   plugins: [
+    rssConfig,
+
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-alias-imports`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
+        alias,
+        extensions: [],
+      },
+    },
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-flow',
+    'gatsby-plugin-styled-components',
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          posts: require.resolve('./src/components/BlogPost/BlogPost.js'),
+        },
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-table-of-contents`,
-            options: {
-              exclude: 'Table of Contents',
-              tight: false,
-              fromHeading: 1,
-              toHeading: 6,
-            },
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 746,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          'gatsby-remark-autolink-headers',
-          // {
-          //   resolve: 'gatsby-remark-prismjs',
-          //   options: {
-          //     classPrefix: 'language-',
-          //     inlineCodeMarker: '›',
-          //     noInlineHighlight: false,
-          //     showLineNumbers: true,
-          //     prompt: {
-          //       user: 'john',
-          //       host: 'doe',
-          //       global: false,
-          //     },
-          //   },
-          // },
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-          {
-            resolve: 'gatsby-remark-external-links',
-            options: {
-              target: '_blank',
-            },
-          },
-        ],
+        name: 'posts',
+        path: `${__dirname}/src/pages/posts`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-optimize-svgs`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'src', 'assets', 'images'),
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-122476051-1`,
+        trackingId: 'UA-119170920-1',
+        cookieExpires: 63072000, // two years
       },
     },
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                const siteUrl = site.siteMetadata.siteUrl
-                const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at overreacted.io. You can read it online by <a href="${siteUrl +
-                  edge.node.fields.slug}">clicking here</a>.)</div>
-              `
-
-                let html = edge.node.html
-                // Hacky workaround for https://github.com/gaearon/overreacted.io/issues/65
-                html = html
-                  .replace(/href="\//g, `href="${siteUrl}/`)
-                  .replace(/src="\//g, `src="${siteUrl}/`)
-                  .replace(/"\/static\//g, `"${siteUrl}/static/`)
-                  .replace(/,\s*\/static\//g, `,${siteUrl}/static/`)
-
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.frontmatter.spoiler,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': html + postText }],
-                })
-              })
-            },
-            query: `
-              {
-                allMarkdownRemark(
-                  limit: 1000,
-                  sort: { order: DESC, fields: [frontmatter___date] }
-                  filter: {fields: { langKey: {eq: "en"}}}
-                ) {
-                  edges {
-                    node {
-                      excerpt(pruneLength: 250)
-                      html
-                      fields { 
-                        slug   
-                      }
-                      frontmatter {
-                        title
-                        date
-                        spoiler
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: '/rss.xml',
-            title: "Dezineleo's Personal Blog RSS Feed",
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Dezineleo`,
-        short_name: `Dezineleo`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#ffa7c4`,
-        display: `minimal-ui`,
-        icon: `src/assets/icon.png`,
-        theme_color_in_head: false,
-      },
-    },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: 'gatsby-plugin-i18n',
-      options: {
-        langKeyDefault: 'en',
-        useLangKeyLayout: false,
-      },
-    },
-    `gatsby-plugin-catch-links`,
-    `gatsby-plugin-styled-components`,
   ],
-}
+};

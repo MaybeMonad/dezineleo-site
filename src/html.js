@@ -1,67 +1,42 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class HTML extends React.Component {
-  render() {
-    return (
-      <html {...this.props.htmlAttributes}>
-        <head>
-          <meta charSet="utf-8" />
-          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
-          {this.props.headComponents}
-        </head>
-        <body {...this.props.bodyAttributes} className="dark">
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-              (function() {
-                window.__onThemeChange = function() {};
-                function setTheme(newTheme) {
-                  window.__theme = newTheme;
-                  preferredTheme = newTheme;
-                  document.body.className = newTheme;
-                  window.__onThemeChange(newTheme);
-                }
+import faviconSrc from './assets/favicon-jc-logo.png';
 
-                var preferredTheme;
-                try {
-                  preferredTheme = localStorage.getItem('theme');
-                } catch (err) { }
+export default function HTML(props) {
+  return (
+    <html lang="en" {...props.htmlAttributes}>
+      <head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta
+          name="description"
+          content="Web development and front-end engineering blog"
+        />
+        <meta
+          name="keywords"
+          content="reactjs, javascript, front-end, web development"
+        />
 
-                window.__setPreferredTheme = function(newTheme) {
-                  setTheme(newTheme);
-                  try {
-                    localStorage.setItem('theme', newTheme);
-                  } catch (err) {}
-                }
+        <link rel="icon" type="image/png" href={`${faviconSrc}?v=1`} />
 
-                var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-                darkQuery.addListener(function(e) {
-                  window.__setPreferredTheme(e.matches ? 'dark' : 'light')
-                });
-
-                // setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
-                setTheme('light');
-                // setTheme('dark');
-              })();
-            `,
-            }}
-          />
-          {this.props.preBodyComponents}
-          <div
-            key={`body`}
-            id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: this.props.body }}
-          />
-          {this.props.postBodyComponents}
-        </body>
-      </html>
-    )
-  }
+        {props.headComponents}
+      </head>
+      <body {...props.bodyAttributes}>
+        {props.preBodyComponents}
+        <div
+          key="body"
+          id="___gatsby"
+          dangerouslySetInnerHTML={{ __html: props.body }}
+        />
+        {props.postBodyComponents}
+      </body>
+    </html>
+  );
 }
 
 HTML.propTypes = {
@@ -71,4 +46,4 @@ HTML.propTypes = {
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
   postBodyComponents: PropTypes.array,
-}
+};

@@ -1,0 +1,85 @@
+const Foldable = ({ width, height, src }) => {
+  const [
+    foldAngle,
+    setFoldAngle,
+  ] = React.useState(0);
+
+  // Both our top half and bottom half share
+  // a few common styles
+  const sharedStyles = {
+    width,
+    height: height / 2,
+  };
+
+  return (
+    <div style={{ perspective: 500 }}>
+      {/* Top half */}
+      <div
+        style={{
+          ...sharedStyles,
+          overflow: 'hidden',
+        }}
+      >
+        <img
+          src={src}
+          alt="a neon Chinese alley"
+          style={{
+            width,
+            height,
+          }}
+        />
+      </div>
+
+      {/* Bottom half */}
+      <div
+        style={{
+          ...sharedStyles,
+          backgroundSize: `${width}px ${height}px`,
+          backgroundImage: `url(${src})`,
+          backgroundPosition: `0px -100%`,
+          transform: `rotateX(${foldAngle}deg)`,
+          transformOrigin: 'center top',
+          willChange: 'transform',
+          // This property is new ⤸
+          transformStyle: 'preserve-3d',
+        }}
+      >
+        {/* This child is new ⤸ */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0, bottom: 0,
+            background:
+              'hsla(0, 100%, 100%, 0.9)',
+            backfaceVisibility: 'hidden',
+            transform:
+              'rotateX(180deg) translateZ(.5px)',
+          }}
+        />
+      </div>
+
+      {/* Slider control */}
+      <br />
+      <label htmlFor="slider">Fold ratio:</label>
+      <input
+        id="slider"
+        type="range"
+        min={0}
+        max={180}
+        value={foldAngle}
+        onChange={ev =>
+          setFoldAngle(ev.target.value)
+        }
+        style={{ width }}
+      />
+    </div>
+  );
+};
+
+render(
+  <Foldable
+    width={200}
+    height={300}
+    src={src}
+  />
+);

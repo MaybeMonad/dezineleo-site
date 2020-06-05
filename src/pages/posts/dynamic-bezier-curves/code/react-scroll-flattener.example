@@ -1,0 +1,110 @@
+class DynamicBezierCurve extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    // As the user scrolls through our scrollable area,
+    // the scrollRatio represents the amount completed,
+    // from 0 (way at the bottom) to 1 (at the top).
+    this.state = {
+      scrollRatio: 0,
+    };
+
+    // This live-editing environment doesn't support
+    // property-initializer syntax, so I'm doing my
+    // binds in the constructor. 🤷
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(ev) {
+    const windowHeight = window.innerHeight;
+    const svgBB = this.node.getBoundingClientRect();
+
+    const pixelsScrolled = windowHeight - svgBB.top;
+
+    let scrollRatio = pixelsScrolled / windowHeight;
+
+    // We don't care about the negative values when it's
+    // below the viewport, or the greater-than-1 values when
+    // it's above the viewport.
+    scrollRatio = clamp(scrollRatio, 0, 1);
+
+    // Small optimization, avoid re-rendering when the
+    // SVG isn't in the viewport.
+    if (this.state.scrollRatio !== scrollRatio) {
+      this.setState({ scrollRatio });
+    }
+  }
+
+  render() {
+    const { scrollRatio } = this.state;
+
+    // Use our `getInterpolatedValue` function from the
+    // previous code snippet to figure out the values for
+    // the start point and the control points.
+    const startPoint = getInterpolatedValue(
+      300, // curvy value
+      0, // flat value
+      scrollRatio
+    );
+
+    const firstControlPoint = getInterpolatedValue(
+      -100, // curvy value
+      0, // flat value
+      scrollRatio
+    );
+
+    const secondControlPoint = getInterpolatedValue(
+      450, // curvy value
+      0, // flat value
+      scrollRatio
+    );
+
+    // Unlike the other 3 points, the `endPoint` is
+    // constant, and doesn't need interpolation.
+    const endPoint = 0;
+
+    // Create the SVG path instructions, using our
+    // interpolated values.
+    // Unlike previous examples, we want to fill this one
+    // in, not just make a stroked line. So we need to add
+    // a couple other lines after the curve, to make sure
+    // the box fills in correctly.
+    const instructions = `
+      M 0,${startPoint}
+      C 100,${firstControlPoint}
+        200,${secondControlPoint}
+        300,${endPoint}
+      L 300,300
+      L 0,300
+    `;
+
+    // NOTE: the instructions created assume a 300x300
+    // viewBox. To make this component more flexible, you
+    // could set `viewBoxWidth` and `viewBoxHeight`
+    // variables as props.
+
+    return (
+      <svg
+        ref={node => (this.node = node)}
+        viewBox="0 0 300 300"
+      >
+        <path d={instructions} fill="hotpink" />
+      </svg>
+    );
+  }
+}
+
+// Utility function that clamps a given value to a
+// specific range (inclusive, between min and max).
+const clamp = (val, min, max) =>
+  Math.max(min, Math.min(max, val));
+
+render(<DynamicBezierCurve headerHeight={55} />);
