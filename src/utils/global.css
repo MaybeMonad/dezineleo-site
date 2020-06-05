@@ -35,7 +35,8 @@ body {
   --brand: #003cff;
   /* --primary: rgb(0, 153, 255); */
   /* --primary: #f40088; */
-  --primary: #e13445;
+  /* --primary: #e13445; */
+  --primary: #d0021b;
   --primary-light: #eff8ff;
   --primary-hover: rgb(0, 142, 237);
   --secondary: #fd18fe;
@@ -50,6 +51,7 @@ body {
   --btn-default-bg: var(--black);
   --btn-default-color: white;
   --btn-grey-bg: #f6f6f6;
+  --btn-grey-bg-hover: #efefef;
   --btn-grey-color: var(--black);
   --max-content-width: 42rem;
 }
@@ -426,13 +428,14 @@ article p {
 }
 
 article a {
-  transition: all 0.2s ease-in-out;
+  transition: all 0s ease-in-out;
   text-decoration: none;
-  color: var(--light);
+  color: #326891;
+  text-decoration: underline;
   /* font-family: var(--font-medium); */
   font-weight: 500;
   /* box-shadow: 0 2px 0 0 var(--primary); */
-  box-shadow: 0 2px 0 0 var(--black);
+  /* box-shadow: 0 2px 0 0 var(--black); */
   padding: 0px 2px;
 }
 
@@ -441,7 +444,8 @@ article a:active {
   /* box-shadow: 0 2px 0 0 var(--primary-hover); */
   color: var(--primary);
   /* background: var(--primary); */
-  border-radius: 3px;
+  /* border-radius: 3px; */
+  text-decoration: none;
   /* border-bottom: 2px solid #2161f2; */
 }
 
@@ -798,6 +802,14 @@ article .list-box {
   padding: 24px 32px 4px 32px;
   background-color: var(--bg-grey);
   margin-bottom: 24px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.07);
+  border-radius: 3px;
+  border-style: solid;
+  border-color: #c4c4c4;
+  border-width: 1px;
+  margin-right: 4px;
+  /* font-size: 1em; */
+  background-color: #fff;
 }
 
 article .list-box ul {

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 // import { debounce } from 'lodash'
 import { pageMaxWidth } from '../utils/constants'
 // import FullWidthWrapper from '../components/FullWidthWrapper'
-import Avatar from '../../static/home/dark_avatar.png'
+import Avatar from '../../static/avatar_lined.svg'
 
 export default props => {
   const { children } = props
@@ -50,7 +50,7 @@ export default props => {
         align-items: center;
       }
       img {
-        max-width: 24px;
+        max-width: 36px;
         margin-right: 8px;
         border-radius: 100%;
       }
@@ -82,7 +82,6 @@ export default props => {
       a {
         padding: 8px 0;
         box-shadow: none;
-        text-transform: uppercase;
         font-size: 15px;
         font-weight: 700;
         margin-left: 48px;

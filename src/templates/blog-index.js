@@ -12,7 +12,7 @@ import SEO from '../components/SEO'
 import Footer from '../components/Footer'
 import IntroCard from '../components/IntroCard'
 import Avatar from '../../static/avatar.png'
-import Star from '../../static/icon_star.svg'
+// import Star from '../../static/icon_star.svg'
 
 const ArticleList = styled.main`
   margin: 0 0 24px 0;
@@ -24,7 +24,6 @@ const ArticleList = styled.main`
     grid-auto-rows: 1fr;
     article {
       border: var(--border);
-      // background-color: var(--dark-1);
       margin: 0;
       height: calc(100% - 36px);
       display: flex;
@@ -78,24 +77,26 @@ const ArticleList = styled.main`
     max-width: none;
     ::before {
       content: '';
-      transition: all 0.32s ease;
+      transition: all 0.2s ease;
       background-color: var(--bg-grey);
       // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
       border-radius: 8px;
       display: block;
       position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 0;
-      height: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      // left: 50%;
+      // top: 50%;
+      // width: 0;
+      // height: 0;
       z-index: 0;
+      left: 0;
+      top: 0;
     }
     :hover {
       &::before {
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
+        opacity: 1;
       }
     }
     header {

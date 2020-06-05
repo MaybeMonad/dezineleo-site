@@ -15,12 +15,15 @@ const Button = styled.button`
   cursor: pointer;
   outline: none;
   &:hover {
-    background-color: var(--primary);
+    background-color: #000;
     color: white;
   }
   &.grey {
     background-color: var(--btn-grey-bg);
     color: var(--btn-grey-color);
+    &:hover {
+      background-color: var(--btn-grey-bg-hover);
+    }
   }
 `
 
