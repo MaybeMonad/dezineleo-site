@@ -11,7 +11,7 @@ export default ({ width = 100, height = 50, ...delegated }) => (
       width={width}
       height={height}
       squiggleWidth={10}
-      stroke={COLORS.gray[900]}
+      stroke={COLORS.gray[300]}
       strokeWidth={2}
     />
   </Wrapper>

@@ -74,18 +74,16 @@ const Base = styled.div`
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-family: "Bree Serif";
 `;
 
 const H1 = styled(Base)`
   font-size: 72px;
-  letter-spacing: -2px;
 `;
 
 const H2 = styled(Base)`
   font-size: 48px;
-  letter-spacing: -0.5px;
   padding-top: 65px;
 `;
 
@@ -95,12 +93,12 @@ const H3 = styled(Base)`
 `;
 
 const H4 = styled(Base)`
-  font-size: 32px;
-  padding-top: 30px;
+  font-size: 1.4rem;
+  padding-top: 2.4rem;
 `;
 
 const H5 = styled(Base)`
-  font-size: 28px;
+  font-size: 1.2rem;
 `;
 
 const H6 = styled(Base)`

@@ -58,7 +58,7 @@ const IndexPage = ({ data }) => {
         <BorderWrapper>
           <InnerWrapper>
             <Title>Hi, Hey, Hello! <WavingHand>👋</WavingHand></Title>
-            <Paragraph>
+            <Paragraph fontSize="1.2rem" fontFamily="Bree Serif">
               Hi, I'm{' '}
               <TextLink href="https://www.twitter.com/dezineleo">
                 Yang Jin
@@ -66,7 +66,7 @@ const IndexPage = ({ data }) => {
               . I'm a staff frontend developer located at Hangzhou, China.
             </Paragraph>
 
-            <Paragraph>
+            <Paragraph fontSize="1.2rem" fontFamily="Bree Serif">
               Ever since I was a child, I have always been passionate about illustrating and computer-like stuff. However, I chose to study English instead of CS to become a self-taught web developer.
             </Paragraph>
 

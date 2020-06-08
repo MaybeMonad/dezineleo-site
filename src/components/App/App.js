@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    color: ${COLORS.pink[500]};
+    color: ${COLORS.blue[500]};
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -38,7 +38,7 @@ const GlobalStyles = createGlobalStyle`
     For unknown reasons, 'InlineCode' isn't being used with MDX.
     Duplicating those styles here.
   */
-  p code {
+  p code, li code {
     display: inline-block;
     font-family: Menlo, Roboto Mono, Courier New, monospace;
     font-size: 0.8em;

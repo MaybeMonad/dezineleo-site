@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import styled from 'styled-components';
+import dayjs from 'dayjs';
 
 import { COLORS, BREAKPOINTS } from '@constants';
 import { humanizeDate } from '@helpers/date.helpers';
@@ -11,10 +12,12 @@ import Paragraph from '../Paragraph';
 import Link from '../Link';
 
 const IndexPost = ({ path, title, abstract, publishedOn }) => {
+  const newest = dayjs(publishedOn) > dayjs().subtract(1, 'month');;
+  
   return (
     <Wrapper>
       <PostLink href={path}>
-        <PostTitle>{title}</PostTitle>
+        <PostTitle>{title}{newest && <New>New!</New>}</PostTitle>
       </PostLink>
       <Date>{humanizeDate(publishedOn)}</Date>
       <Abstract>{abstract} </Abstract>
@@ -58,7 +61,7 @@ const PostLink = styled(Link)`
 
 const PostTitle = styled.h3`
   position: relative;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   line-height: 2.4rem;
   font-weight: 600;
   color: ${COLORS.gray[900]};
@@ -84,6 +87,14 @@ const Abstract = styled(Paragraph)`
   line-height: 1.8rem;
   font-size: 1.14rem;
   position: relative;
+`;
+
+const New = styled.sup`
+  font-weight: 300;
+  margin-left: 6px;
+  font-size: 0.8rem;
+  color: ${COLORS.red[500]};
+  vertical-align: super;
 `;
 
 export default IndexPost;

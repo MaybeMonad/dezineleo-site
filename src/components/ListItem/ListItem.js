@@ -56,12 +56,12 @@ const Wrapper = styled.li`
 
 const IconWrapper = styled.div`
   padding-right: 16px;
-  padding-top: 2px;
+  line-height: 1.4rem;
 `;
 
 const Children = styled.div`
-  font-size: 1.1rem;
-  line-height: 1.9rem;
+  font-size: 1rem;
+  line-height: 1.6rem;
 `;
 
 export default ListItem;

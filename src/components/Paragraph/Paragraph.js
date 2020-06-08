@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { BREAKPOINTS } from '@constants';
 
 export default styled.p`
-  font-size: 1.12rem;
-  line-height: 2.05rem;
+  font-size: ${props => props.fontSize || '1rem'};
+  line-height: 2rem;
   margin-bottom: 2rem;
+  font-family: ${props => props.fontFamily || 'RobotoSlab Regular'};
 
   @media ${BREAKPOINTS.sm} {
     font-size: 1.25rem;

@@ -8,7 +8,10 @@ abstract: A non-profit social platform for blind dating.
 interactive: false
 ---
 
-Around two years ago, I took over this project and was responsible for the UI/UX and frontend development since then. I've designed a version called **v2.0** before, but it's just semi-finished. So at the end of 2019, I decided to make a whole new design as well as rewrite the code in React instead of Vue.
+import hyg from '@assets/videos/hyg.webm';
+import VideoGif from '@components/VideoGif';
+
+Around two years ago, I took over this project and was responsible for the UI design and frontend development since then. I've designed a version called **v2.0** before, but it's just semi-finished. So at the end of 2019, I decided to make a whole new design as well as rewrite the code in React instead of Vue.
 
 # Abstract
 
@@ -22,9 +25,14 @@ The original project was based on Vue 2, for better development, I spent around 
 
 I wanna talk this part like a seasoned web designer, however, I don't even know the color design principle.😅 Thus, I cannot tell you why I apply this color or that layout. What always prompts me to do design stuff is quite simple - I just like it! This is what I want! Besides, I enjoy playing with new things and partly know a little coding stuff.
 
-<video controls>
-  <source src="./hyg.webm" type="video/webm"></source>
-</video>
+<VideoGif
+  src={hyg}
+  caption={
+    <>
+      Demo of the new version.
+    </>
+  }
+/>
 
 Thanks to [Remix Icon](https://remixicon.com/) for offering such concise and practical icons.
 
