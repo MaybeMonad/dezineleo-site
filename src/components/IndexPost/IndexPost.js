@@ -16,10 +16,10 @@ const IndexPost = ({ path, title, abstract, publishedOn }) => {
   
   return (
     <Wrapper>
-      <PostLink href={path}>
-        <PostTitle>{title}{newest && <New>New!</New>}</PostTitle>
-      </PostLink>
       <Date>{humanizeDate(publishedOn)}</Date>
+      <PostLink href={path}>
+        <PostTitle>{title}</PostTitle>{newest && <New>New!</New>}
+      </PostLink>
       <Abstract>{abstract} </Abstract>
     </Wrapper>
   );
@@ -32,6 +32,7 @@ const Wrapper = styled.div`
   padding: 28px 32px 22px 32px;
   transition: background-color 0.3s ease;
   z-index: 1;
+
   ::before {
     content: '';
     transition: all 0.2s ease;
@@ -46,6 +47,7 @@ const Wrapper = styled.div`
     left: 0;
     top: 0;
   }
+
   :hover {
     &::before {
       opacity: 1;
@@ -61,32 +63,40 @@ const PostLink = styled(Link)`
 
 const PostTitle = styled.h3`
   position: relative;
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   line-height: 2.4rem;
   font-weight: 600;
   color: ${COLORS.gray[900]};
-  margin: -10px 0 -4px;
+  margin: -10px 0 8px;
+  display: inline-block;
+  text-decoration: none;
+  
+  :hover {
+    text-decoration: underline;
+  }
 
   @media ${BREAKPOINTS.sm} {
-    font-size: 42px;
+    font-size: 1.55rem;
   }
 `;
 
 const Date = styled.h5`
   position: relative;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: ${COLORS.gray[400]};
   margin-bottom: 12px;
-  margin-top: 8px;
 `;
 
 const Abstract = styled(Paragraph)`
-  font-size: 1.2rem;
   margin-bottom: 0rem;
-  line-height: 1.8rem;
-  font-size: 1.14rem;
+  line-height: 1.6rem;
+  font-size: 1.02rem;
   position: relative;
+
+  @media ${BREAKPOINTS.sm} {
+    font-size: 1rem;
+  }
 `;
 
 const New = styled.sup`

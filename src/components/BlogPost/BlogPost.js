@@ -27,12 +27,11 @@ import TextLink from '@components/TextLink';
 import Heading from '@components/Heading';
 import Image from '@components/Image';
 import Em from '@components/Em';
-
-import type { Frontmatter } from '@types';
+// import TableOfContents from '@components/TableOfContents'
 
 const HEADER_HEIGHT = 50;
 
-const getHero = heroStyle => {
+const getHero = (heroStyle) => {
   switch (heroStyle) {
     case 'simple':
       return SimpleHero;
@@ -42,22 +41,24 @@ const getHero = heroStyle => {
   }
 };
 
-type Props = {
-  children: React$Node,
-  pageContext: {
-    frontmatter: Frontmatter,
-  },
-};
 
 const SubSubHeading = props => <Heading size={5} {...props} />;
 
-export default ({ children, pageContext, location }: Props) => {
+export default (props, data) => {
+  const { children, pageContext, location } = props;
   const {
     title,
     isPublished,
     publishedOn,
     heroStyle,
   } = pageContext.frontmatter;
+
+  // console.log(children)
+
+  // const headings = children.filter(c => c.props.mdxType[0] === 'h').map(c => ({
+  //   depth: Number(c.props.mdxType[1]),
+  //   id: c.props.children.join('-')
+  // }))
 
   const Hero = getHero(heroStyle);
 
@@ -90,7 +91,7 @@ export default ({ children, pageContext, location }: Props) => {
         li: ListItem,
         img: Image,
         em: Em,
-        code: InlineCode,
+        // code: InlineCode,
       }}
     >
       <App>
@@ -122,7 +123,7 @@ export default ({ children, pageContext, location }: Props) => {
 
           <MainContent>
             <MaxWidthWrapper>{children}</MaxWidthWrapper>
-
+            {/* <TableOfContents headings={headings} /> */}
             <Spacer size={160} />
           </MainContent>
         </FullWidth>
@@ -130,6 +131,15 @@ export default ({ children, pageContext, location }: Props) => {
     </MDXProvider>
   );
 };
+
+export const postQuery = graphql`
+  query PostById($id: String!) {
+    mdx(id: {eq: $id}) {
+      tableOfContents(maxDepth: 10)
+      timeToRead
+    }
+  }
+`
 
 const MainContent = styled.div`
   position: relative;

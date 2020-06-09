@@ -21,15 +21,6 @@ import WavingHand from '../components/WavingHand'
 
 import Avatar from '../assets/avatar.svg'
 
-type PostData = {
-  id: string,
-  path: string,
-  title: string,
-  abstract: string,
-  isPublished: boolean,
-  publishedOn: string,
-};
-
 const IndexPage = ({ data }) => {
   const posts = getPosts(data);
 
@@ -113,7 +104,7 @@ const sortDatesDescending = (a, b) => {
   return a.publishedOn > b.publishedOn ? -1 : 1;
 };
 
-const getPosts = (data: any): Array<PostData> =>
+const getPosts = data =>
   data.allSitePage.edges
     .map(edge => {
       const { node } = edge;
@@ -164,11 +155,11 @@ export const query = graphql`
 `;
 
 const Wrapper = styled.div`
-  padding: 10px;
+  // padding: 10px;
 
-  @media ${BREAKPOINTS.sm} {
-    padding: 6px;
-  }
+  // @media ${BREAKPOINTS.sm} {
+  //   padding: 6px;
+  // }
 `;
 
 const BorderWrapper = styled.div`
@@ -193,7 +184,7 @@ const Title = styled.h1`
   // letter-spacing: -2.4px;
 
   @media ${BREAKPOINTS.sm} {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     letter-spacing: -1px;
   }
 `;
@@ -207,47 +198,36 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 72px;
+  // height: 72px;
   padding: 0;
   transition: all 0.24s ease;
-  padding: 20px 0;
+  padding: 36px 0;
   margin: 0 auto;
+
   h1 {
-    margin: 0;
     a {
       box-shadow: none;
       text-decoration: none;
-      color: var(--black);
-      display: inherit;
-      font-size: 21px;
+      color: ${COLORS.gray[900]};
+      font-size: 1.4rem;
       margin-right: 20px;
-      tansition: color 0.2s ease;
       display: flex;
       align-items: center;
     }
+
     img {
       max-width: 36px;
-      margin-right: 8px;
-      border-radius: 100%;
+      margin-right: 12px;
     }
+
     span {
       padding-bottom: 4px;
     }
   }
-  .version {
-    background-color: var(--primary);
-    border-radius: 4px;
-    border-bottom-left-radius: 0;
-    padding: 1px 4px;
-    font-size: 12px;
-    color: white;
-    position: absolute;
-    right: -38px;
-    top: 0;
-  }
+
   nav {
-    border-radius: 100px;
     font-family: 'Bree Serif';
+
     a {
       padding: 4px 16px 6px 16px;
       border-radius: 3px;
@@ -258,22 +238,31 @@ const Header = styled.header`
       color: ${COLORS.gray[900]};
       text-decoration: none;
       transition: background-color 400ms ease;
+
       :hover {
         background-color: ${COLORS.gray[100]};
       }
+
       :active {
         background-color: ${COLORS.gray[200]};
       }
     }
   }
-  @media (max-width: 672px) {
-    padding: 0 0;
+
+  @media ${BREAKPOINTS.sm} {
+    padding: 0 16px;
     left: 0;
+
+    span {
+      display: none;
+    }
+
     nav {
       padding: 0;
+
       a {
         padding: 8px 0 8px 20px;
-        // font-size: 14px;
+
         &:first-child {
           display: none;
         }

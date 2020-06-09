@@ -52,6 +52,59 @@ const GlobalStyles = createGlobalStyle`
   button:focus:not(:focus-visible) {
     outline: none;
   }
+
+  /*
+    For syntax highlighting.
+  */
+
+  pre[class*='language-'], code[class*='language-'] {
+    font-family: Menlo, Roboto Mono, Courier New, monospace;
+  }
+
+  pre[class*='language-'] {
+    overflow: auto;
+    margin: 1em 0;
+    padding: 1.2em;
+    border-radius: 3px;
+    font-size: 0.85em;
+    line-height: 1.6em;
+    // border: 1px solid ${COLORS.gray[300]};
+    border: 1px solid #d1d5da;
+  }
+
+  body div.code-toolbar {
+    margin-bottom: 2rem;
+    
+    .line-numbers .line-numbers-rows {
+      border: none;
+      top: -2px;
+    }
+
+    pre {
+      margin-bottom: -1px;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .toolbar {
+      position: relative;
+      background-color: ${COLORS.gray[50]};
+      border: 1px solid #d1d5da;
+      top: 0;
+      left: 0;
+      border-radius: 0 0 4px 4px;
+      padding: 2px 2px 4px 10px;
+      opacity: 1;
+
+      .toolbar-item {
+        span {
+          background-color: transparent;
+          box-shadow: none;
+          border-radius: 0;
+          color: ${COLORS.gray[500]};
+        }
+      }
+    }
+  }
 `;
 
 export default ({ children }) => {

@@ -1,0 +1,14 @@
+// URL match rules
+// https:// or http://
+// xx.com or yy.xx.com
+
+const site1 = 'https://dezineleo.com';
+const site2 = 'https://dezineleo.com/posts/2018/07/es6-knowledge-map-for-react-beginner'
+let reg = new RegExp(/https?:\/\/\w+.\w+\/?$/g);
+
+reg.test(site1); // output is true
+reg.test(site2); // output is false
+
+// If you want to match site2
+reg = new RegExp(/https?:\/\/\w+.\w+\/?(\w+-?\w+\/?)+$/);
+reg.test(site2); // output is true

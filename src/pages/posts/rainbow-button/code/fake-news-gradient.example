@@ -1,6 +1,0 @@
-.gradient {
-  background: radial-gradient(...);
-  
-  /* 🙅‍♀️ Doesn't work */
-  transition: background 1000ms;
-}

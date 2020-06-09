@@ -1,0 +1,13 @@
+// get URL parameters
+// match rules
+// ?xxx=xxx
+const site = 'https://dezineleo.com/post?category=javascript&tag=regexp';
+const reg = new RegExp(/(?!(?:(\?|\&)))(\w+)=(\w+)/g);
+
+site.match(reg); // output is ["category=javascript", "tag=regexp"]
+
+// split the string
+site.match(reg).map(item => {
+  item.split('=');
+  return item;
+});

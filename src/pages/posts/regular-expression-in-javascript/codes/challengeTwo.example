@@ -1,0 +1,11 @@
+// password should be numbers only
+// \d - any digit
+// [0-9] - numbers 0 to 9
+
+const pwd1 = '12345678';
+const pwd2 = 'dezineleo123';
+const reg1 = new RegExp(/^\d+$/, 'g');
+const reg2 = /^[0-9]+$/g;
+
+reg1.test(pwd1); // output is true
+reg2.test(pwd2); // output is false

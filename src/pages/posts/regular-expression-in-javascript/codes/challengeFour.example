@@ -1,0 +1,15 @@
+// phone number match rules
+// length is 11
+// starts by number 1
+// second number should be 3, 5, 7 or 8
+// (…) - capture group
+// (a|b|c) - matches a, b or c
+
+const phoneNum1 = '110';
+const phoneNum2 = '138666677779';
+const phoneNum3 = '15656781234';
+const reg = new RegExp(/^1(3|5|7|8){1}\d{9}$/g);
+
+phoneNum1.match(reg); // output is null
+phoneNum2.match(reg); // output is null
+phoneNum3.match(reg); // output is ["15656781234"]

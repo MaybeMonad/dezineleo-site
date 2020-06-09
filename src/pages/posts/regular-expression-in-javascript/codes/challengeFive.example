@@ -1,0 +1,7 @@
+// Email match rules
+// characters, numbers, -
+// @ & .
+// suffix like com, cn
+// ? - optional character
+
+const reg = new RegExp(/\w+-?\w+@\w+.(com|cn)/g);

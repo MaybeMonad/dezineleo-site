@@ -1,0 +1,11 @@
+// password should be alphanumeric character
+// {n,m} - n to m repetition
+// \w - any alphanumeric character
+
+const pwd1 = 'leo123';
+const pwd2 = 'dezineleo123';
+const reg1 = new RegExp(/^\w{6}$/, 'g');
+const reg2 = /^\w{6}$/g;
+
+reg1.test(pwd1); // output is true
+reg2.test(pwd2); // output is false

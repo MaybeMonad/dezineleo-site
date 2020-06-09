@@ -1,0 +1,9 @@
+// username should be characters only
+
+const username1 = 'dezineleo';
+const username2 = 'dezineleo123';
+const reg1 = new RegExp(/^[a-zA-Z]+$/, 'g');
+const reg2 = /^[a-zA-Z]+$/g;
+
+reg1.test(username1); // output is true
+reg2.test(username2); // output is false

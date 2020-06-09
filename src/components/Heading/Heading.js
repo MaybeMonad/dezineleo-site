@@ -13,7 +13,7 @@ const slugify = (str = '') =>
     .replace(/\s/g, '-')
     .replace(/[^a-zA-Z0-9-]/g, '');
 
-class Heading extends Component<Props> {
+class Heading extends Component {
   static propTypes = {
     size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
     anchorId: PropTypes.string,
@@ -23,8 +23,6 @@ class Heading extends Component<Props> {
   static defaultProps = {
     size: 3,
   };
-
-  node: HTMLElement;
 
   componentDidMount() {
     // Check and see if the anchor ID is duplicated
@@ -74,7 +72,7 @@ const Base = styled.div`
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-family: "Bree Serif";
 `;
 

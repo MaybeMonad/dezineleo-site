@@ -1,14 +1,12 @@
 ---
 title: What is BEM?
 slug: what-is-bem
-isPublished: true
+isPublished: false
 publishedOn: 2020-03-06T15:00:00-0400
 heroStyle: 'simple'
 abstract: Block Element Modifier is a methodology that helps you to create reusable components and code sharing in front-end development.
 interactive: false
 ---
-```toc
-```
 
 > [BEM](http://getbem.com/) — **Block Element Modifier** is a methodology that helps you to create reusable components and code sharing in front-end development.
 
@@ -33,24 +31,25 @@ Now you can connect them with naming rules as `.block__element--modifier-value`.
 
 ## Examples
 
-```html
+import Code from '@components/Code'
+
+<Code lang="html" code={`
 <form class="form form--theme-xmas form--simple">
   <input class="form__input" type="text" />
   <input
     class="form__submit form__submit--disabled"
     type="submit" />
 </form>
-```
+`} />
 
-```css
+<Code lang="css" code={`
 .form { }
 .form--theme-xmas { }
 .form--simple { }
 .form__input { }
 .form__submit { }
 .form__submit--disabled { }
-```
-
+`} />
 
 ## Further Reading
 

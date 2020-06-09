@@ -5,13 +5,13 @@ const rssConfig = require('./rss-plugin-config');
 
 module.exports = {
   siteMetadata: {
-    title: "Josh Comeau's Blog",
-    author: 'Josh Comeau',
+    title: "Yang Jin's Blog",
+    author: 'Yang Jin',
     description:
-      'Personal blog of Josh Comeau, a front-end software engineer. Focuses on teaching important concepts about web development and React.js, through dynamic interactions.',
-    siteUrl: 'https://www.joshwcomeau.com',
+      'Personal blog of Yang Jin, a web developer and UI designer.',
+    siteUrl: 'https://www.dezineleo.com',
     social: {
-      twitter: '@joshwcomeau',
+      twitter: '@dezineleo',
     },
   },
   plugins: [
@@ -33,6 +33,8 @@ module.exports = {
         defaultLayouts: {
           posts: require.resolve('./src/components/BlogPost/BlogPost.js'),
         },
+        // remarkPlugins: [require("remark-highlight.js")],
+        rehypePlugins: [require('@mapbox/rehype-prism')],
       },
     },
     {

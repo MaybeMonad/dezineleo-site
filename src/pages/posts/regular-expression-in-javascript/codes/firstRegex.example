@@ -1,0 +1,8 @@
+// Set up the target string
+// Now if we want to match 'dezineleo', you can use two different expression
+const targetStr = 'Leo is nobody and his blog dezineleo.com is not cool.';
+const reg1 = new RegExp('dezineleo', 'g'); // flags 'g' is not a must
+const reg2 = /dezineleo/;
+
+targetStr.match(reg1); // output is an array
+reg2.test(targetStr); // output is true

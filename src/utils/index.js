@@ -75,6 +75,21 @@ export const clamp = (val, min = 0, max = 1) =>
 export const roundTo = (number, places = 0) =>
   Math.round(number * 10 ** places) / 10 ** places;
 
+export const slugify = (str = '') => {
+  let slug = str
+    .toLowerCase()
+    .replace(/\s/g, '-')
+    .replace(/[^a-zA-Z0-9-]/g, '');
+
+  // If the value starts with a number, swap it out!
+  // Doing this in a dumb way for now.
+  if (slug.match(/^[\d]{1,2}-/)) {
+    slug = slug.replace(/^[\d]{1,2}-/, 'digit');
+  }
+
+  return slug;
+};
+
 export const debounce = (callback, wait, timeoutId = null) => (...args) => {
   window.clearTimeout(timeoutId);
 

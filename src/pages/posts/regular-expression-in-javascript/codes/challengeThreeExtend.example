@@ -1,0 +1,11 @@
+// password length
+// min 6
+// max 9
+
+const pwd1 = 'leo123';
+const pwd2 = 'dezineleo123';
+const reg1 = new RegExp(/^\w{6,9}$/, 'g');
+const reg2 = /^\w{6,9}$/g;
+
+reg1.test(pwd1); // output is true
+reg2.test(pwd2); // output is false
