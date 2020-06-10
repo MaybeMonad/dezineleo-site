@@ -32,9 +32,9 @@ const Pre = styled.pre`
   &.line-highlight {
     background: white;
   }
-  
+
   .line-highlight {
-    margin-top: 1.2em;
+    margin-top: 1.02em;
     background: rgba(0, 0, 0, 0.03);
   }
 `
