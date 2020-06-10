@@ -28,7 +28,9 @@ import installPrism from './code/installation.example'
 import Sidenote from '@components/Sidenote'
 import InlineCode from '@components/InlineCode'
 
-<Sidenote sidenote={'我也不太清楚 🤦🏻‍♂️'}>你知道 <InlineCode>npm install --save</InlineCode> 和 <InlineCode>npm install --save-dev</InlineCode> 的区别和用法吗？</Sidenote>
+<Sidenote sidenote={'我也不太清楚 🤦🏻‍♂️'}>
+  你知道 <InlineCode>npm install --save</InlineCode> 和 <InlineCode>npm install --save-dev</InlineCode> 的区别和用法吗？
+</Sidenote>
 
 import BabelRCCode from './code/babelrc.example'
 
@@ -36,7 +38,10 @@ import BabelRCCode from './code/babelrc.example'
 
 <Code lang="json" code={BabelRCCode} />
 
-创建 `Code` 组件
+
+<Sidenote sidenote={'高亮的主题我是抄 GitHub 的，CSS 代码我就没放上来了，不知道会不会侵权 🤐'}>
+  创建 <InlineCode>Code</InlineCode> 组件。
+</Sidenote>
 
 import CodeComponent from './code/codeComponent.example'
 
@@ -46,7 +51,7 @@ import CodeComponent from './code/codeComponent.example'
 
 以往在阅读实体书时有写**旁注**的习惯，现在回过头看自己以前写的内容，我也会产生新的想法。虽然我可以直接暴力改写，但同时也**失去了思考的过程**，于是我就想通过 Sidenote 来记录一些新想法。此外，也可用于展示引用来源或扩展阅读等，不仅实用还能提升阅读体验。
 
-<Sidenote sidenote={<>以下代码涉及其他文件，仅供思路参考，所有源码请前往 <a href="https://github.com/DezineLeo/dezineleo-site" target="_blank">GitHub</a> 查看。</>}>
+<Sidenote sidenote={<>以下代码仅供思路参考，其中涉及的其他文件请前往 <a href="https://github.com/DezineLeo/dezineleo-site" target="_blank">GitHub</a> 查看。</>}>
   为了方便实用，我写了个 Sidenote 组件，代码了灵感来自 <a href="https://github.com/edwardtufte/tufte-css" target="_blank">Tufte CSS</a>。
 </Sidenote>
 

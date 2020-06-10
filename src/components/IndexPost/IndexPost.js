@@ -29,7 +29,7 @@ const Wrapper = styled.div`
   margin-bottom: 72px;
   position: relative;
   margin: 0 -32px 20px -32px;
-  padding: 28px 32px 22px 32px;
+  padding: 24px 32px 24px 32px;
   transition: background-color 0.3s ease;
   z-index: 1;
 
