@@ -81,7 +81,7 @@ export const BREAKPOINTS = {
   desktop: `(min-width: ${BREAKPOINT_SIZES.sm + 1}px)`,
 };
 
-export const READING_WIDTH = 672;
+export const READING_WIDTH = 600;
 export const EXTRA_WIDE_WIDTH = 1024;
 
 const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i;

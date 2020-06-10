@@ -9,8 +9,8 @@ const MaxWidthWrapper = styled.div`
   max-width: ${props => props.maxWidth || `${READING_WIDTH}px`};
   margin-left: auto;
   margin-right: auto;
-  padding-left: 32px;
-  padding-right: 32px;
+  // padding-left: 32px;
+  // padding-right: 32px;
 
   @media ${BREAKPOINTS.sm} {
     padding-left: 16px;

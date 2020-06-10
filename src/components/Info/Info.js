@@ -40,7 +40,6 @@ const Info = ({ type, children }) => {
 
 const Wrapper = styled.div`
   position: relative;
-  margin: 2rem;
 
   @media ${BREAKPOINTS.sm} {
     margin-left: -16px;
@@ -54,8 +53,10 @@ const Contents = styled.div`
   display: flex;
   padding: 16px;
   background: ${COLORS.gray[100]};
+  border-radius: 6px;
   /* color: #fff; */
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
 `;
 
 const Background = styled.div`

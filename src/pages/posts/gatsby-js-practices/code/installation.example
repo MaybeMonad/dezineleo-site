@@ -1,0 +1,5 @@
+# 安装 prismjs 包
+npm install --save prismjs
+
+# 安装 babel-plugin-prismjs
+npm install --save-dev babel-plugin-prismjs

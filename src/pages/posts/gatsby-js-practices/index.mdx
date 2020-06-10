@@ -1,0 +1,59 @@
+---
+title: My Gatsby.js Practices
+publishedOn: 2020-06-10
+slug: my-gatsby-js-practices
+isPublished: true
+heroStyle: 'simple'
+abstract: How I use Gatsby.js to build websites.
+interactive: false
+---
+
+import Info from '@components/Info'
+
+<Info type="funFact">
+  声明一下，v3 的底子来自 <a href="https://github.com/joshwcomeau/blog" target="_blank">Josh Wcomeau</a> 的老版博客源码，在此，感谢 Josh 的开源共享，向大佬学习 🙏🏻。
+</Info>
+
+# Code/Syntax Highlighting
+
+对技术博客而言，**代码高亮**是必需品，我自己选用了 [Prism.js](https://prismjs.com/) 来实现。至于为何选择 Prism.js 而不是 [Highlight.js](https://highlightjs.org/)，我一开始也看了不少观点，大多是看谁能支持更多的语言，而我查看的大多情况都是使用 Prism.js，于是我选择了从众。
+
+话不多说，直接从零开始写个简单的代码高亮组件。
+
+import Code from '@components/Code'
+import installPrism from './code/installation.example'
+
+<Code lang="bash" code={installPrism} />
+
+import Sidenote from '@components/Sidenote'
+import InlineCode from '@components/InlineCode'
+
+<Sidenote sidenote={'我也不太清楚 🤦🏻‍♂️'}>你知道 <InlineCode>npm install --save</InlineCode> 和 <InlineCode>npm install --save-dev</InlineCode> 的区别和用法吗？</Sidenote>
+
+import BabelRCCode from './code/babelrc.example'
+
+在项目根目录下创建 `.babelrc` 文件。
+
+<Code lang="json" code={BabelRCCode} />
+
+创建 `Code` 组件
+
+import CodeComponent from './code/codeComponent.example'
+
+<Code lang="js" code={CodeComponent} />
+
+# Sidenotes inspired by Tufte
+
+以往在阅读实体书时有写**旁注**的习惯，现在回过头看自己以前写的内容，我也会产生新的想法。虽然我可以直接暴力改写，但同时也**失去了思考的过程**，于是我就想通过 Sidenote 来记录一些新想法。此外，也可用于展示引用来源或扩展阅读等，不仅实用还能提升阅读体验。
+
+<Sidenote sidenote={<>以下代码涉及其他文件，仅供思路参考，所有源码请前往 <a href="https://github.com/DezineLeo/dezineleo-site" target="_blank">GitHub</a> 查看。</>}>
+  为了方便实用，我写了个 Sidenote 组件，代码了灵感来自 <a href="https://github.com/edwardtufte/tufte-css" target="_blank">Tufte CSS</a>。
+</Sidenote>
+
+import SidenoteCode from './code/sidenote.example'
+
+<Code lang="js" code={SidenoteCode} />
+
+<Sidenote sidenote={'这个功能少见，牛批 🤙🏻'}>
+  注意到 <InlineCode>counter</InlineCode>了吗？请注意<strong>在使用前需要重置一个值</strong>，默认值为 0。
+</Sidenote>
